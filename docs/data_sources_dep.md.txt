@@ -1,0 +1,65 @@
+#Datenquellen-Übersicht (Dependenz-Version)
+
+**Erstellt:** 2026-09-13
+**Issue:** #0b
+
+## 1. Originalstudie (JCR Replication/JCR_MONA_usage/ oder ../JCR-MONA_Data)
+- [X] Original-Datensatz gefunden: `<Dreher_Sturm_Vreeland_JCR.dta>`
+- [X] Codebook erstellt: `<CODEBOOK_MONA.md>`
+- [X] Original-Code gefunden: `<Dreher_Sturm_Vreeland_JCR.do>`, `<MergeActionImplementation.do>`, `<txt2dta7.do>`
+- Enthaltene Variablen: `unsc`, `avgcondtype_all`, `XDebtGNI`, `DebtServGNI`, `ResXDebt`, `GFCFGDP`, `ExtBalGDP`
+- Zeitraum Original: 1992–2008
+- **Codes für Kontrollvariablen (aus Original übernehmen):**
+  - XDebtGNI = `<DT_DOD_DECT_GN_ZS>`
+  - DebtServGNI = `<DT_TDS_DECT_GN_ZS>`
+  - ResXDebt = `<FI_RES_TOTL_DT_ZS>`
+  - ExtBalGDP = `<NE_RSB_GNFS_ZS>`
+  - GFCFGDP = `<NE_GDI_FTOT_ZS>`
+  - nomGDPUSD = `<NY_GDP_FCST_CD>`
+  - USaidGDP = abgeleitet aus `100*1000000*usaid/nomGDPUSD`
+  - imf_conc_gdp = abgeleitet aus `100*imf_conc/gdp_cur` [siehe Zeile 753-759]
+  - imf_noconc_gdp = abgeleitet aus `100*imf_noconc/gdp_cur` [siehe Zeile 753-759]
+
+## 2. MONA-Daten (Combined.xlsx)
+- [X] Datei vorhanden unter: `C:/Users/HP/io/MONA/Combined.xlsx`
+- Enthält: `Country Name`, `Country Code`, `Arrangement Number`, `Arrangement Type`,
+  `Approval date`, `Revised End Date`, `Initial End Date`, `Key Code`
+- Daten verfügbar ab: 2002
+- Anzahl Länder: `102`
+- Anzahl Programme (2002–2025): `14` ()
+
+## 3. WDI-Indikatoren (Rohstoffabhängigkeit – NEU)
+   Variable | WDI-Code | Verfügbar ab | Verfügbar bis | Abdeckung Afrika | Status |
+ |----------|----------|-------------|---------------|-----------------|--------|
+ | FuelExportPct | TX.VAL.FUEL.ZS.UN | <1962> | <2025> | <von 54 Ländern> | ☐ |
+ | MineralExportPct | TX.VAL.MMTL.ZS.UN | <1962> | <2025> | <von 54 Ländern> | ☐ |
+ | nomGDPUSD | NY.GDP.MKTP.CD | <1960> | <2025> | <von 54 Ländern> | ☐ |
+
+- [X] alle 3 Indikatoren für 2002–2025 abrufbar
+- [X] Download-Link gespeichert: `<https://databank.worldbank.org/reports.aspx?source=2&series=DT.DOD.DECT.GN.ZS&country=#>`
+- **Berechnung:** `Rohstoffabhängigkeit = FuelExportPct + MineralExportPct`
+
+**Anmerkung:** alle anderen Kontrollvariablen besitzen die gleichen WDI-Codes wie im Original
+
+## 4. UNSC-Mitgliedsdaten (2002–2025)
+- [X] Datei vorhanden unter: `C:\Users\HP\io\imf-replizierung\data\unsc`
+- Enthält: `Entity`, `Code`, `Year`, `United Nations membership status`
+- Quelle: `United Nations – Member States (2025).`
+- [X] Vorhanden bis 2008 (aus Originaldatensatz)
+- [X] Ergänzt für 2009–2024 
+- [X] Download-Link gespeichert: `<https://ourworldindata.org/grapher/united-nations-membership-status>`
+- **Wichtig:** 
+> Nur temporäre Mitglieder heraussuchen (keine ständigen: USA, UK, Frankreich, Russland, China)
+> 33 afrikanische Länder mit temporärer Mitgliedschaft 2000–2027
+> Sudan: NICHT enthalten (nie gewählt 2000–2025)
+> unsc3 = 1 für Mitgliedschaft in Jahr t ODER t-1 (zweijährige Amtszeit)
+
+
+## 5. Afrikanische Länderliste
+- [X] ISO-Codes  für alle 54 afrikanischen Länder erstellt (→ an #0c übergeben)
+- Quelle: [UN M49 – Africa](https://unstats.un.org/unsd/methodology/m49/)
+- **Hinweis:** in Originaldatensatz sind wdicode und idcnt angegeben
+
+## 6. Fehlende Daten / Probleme
+- `<hier eventuelle Lücken oder nicht verfügbare Indikatoren notieren>`
+- `<Länder mit fehlenden Rohstoffdaten identifizieren>`

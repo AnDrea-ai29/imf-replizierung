@@ -1,0 +1,23 @@
+# Große Binärdateien
+*.xlsx
+*.dta
+*.sav
+
+# Temporäre Dateien
+*.log
+*.tmp
+*.csv.tmp
+
+# Lokale Pfade (Windows)
+/c/Users/HP/
+
+# Systemdateien
+.DS_Store
+Thumbs.db
+
+# Excel-Temporärdateien
+~$*.xlsx
+
+# R/Stata-spezifisch
+.RData
+.Rhistory

@@ -76,7 +76,32 @@
 **Arghiri Emmanuel (1972)** — *Unequal Exchange*
 - [Ungleicher Austausch: Rohstoffreiche Länder sind für den Globalen Norden wirtschaftlich zu wertvoll, um destabilisiert zu werden.]
 
-**Ruy Mauro Marini 2022, 126**
+**Dos Santos (1970)** - *The structure of dependence*
+
+
+### Ruy Mauro Marini (2022) - *The Dialectics of Dependency*
+- [Dependenz unterscheidet sich von früheren Ausbeutungsstrukturen darin, dass sie nicht hauptsächlich auf politischer Unterordnung oder der Androhung militärischer Unterdrückung beruht, sondern auf der Reproduktion ökonomischer Strukturen, 
+	die Rückständigkeit und Schwäche anderer Nationen ausnutzt und verfestigt]
+
+### Antunes de Oliveira (2024) - *Dependency Theory*
+- [Dependenz ist das Equivalent der Internationalen Beziehungen zum Übergang der Gewinnextrahierung durch Zwang/Unterdrückung hin zur Extrahierung durch ökonomische Mittel; was ein Hauptmerkmal des Kapitalismus darstellt.(siehe dazu auch ***Wood (2022): The Origin of Capitalism***]
+- [Dependenz ist "a self-reproducing hierarchical relationship between politically independent capitalist societies (happening) through deeply embedded social, economic, and cultural structures based on gendered and racialized forms of oppression, which largely constrain the development possibilities of dependent societies while sustaining the wealth and the power of central societies.]
+- [Dependenz ist ein kapitalistisches Phänomen, das nach direkter kolonialer Herrschaft entsteht]
+
+
+>Die Dependenz-Theorie (Frank 1967, Amin 1974, Emmanuel 1972) argumentiert:
+>Die Peripherie exportiert Rohstoffe (Brennstoffe, Erze) an das Zentrum, um Devisen zu verdienen und Schuldendienst zu leisten.
+
+Die Mechanik ist:
+1. Afrikanisches Land exportiert Kobalt/Kupfer/Öl → TM.VAL.FUEL.ZS.WT + TM.VAL.MNER.ZS.WT (Exporte)
+2. Deviseneinnahmen fließen → Schuldendienst an IWF/Weltbank
+3. IWF-Konditionalität zwingt zu weiterem Rohstoffexport statt Diversifizierung → Extraktivismus
+
+
+
+
+
+
 ---
 
 ## 3. Verbindung: Theorie → Hypothesen → Modelle
@@ -102,8 +127,8 @@
 
 ## ✅ Checkliste vor dem Commit
 
-- [ ] Tabelle 2 aus Originalstudie ausgefüllt (Koeffizienten, p-Werte, N)
+- [X] Tabelle 2 aus Originalstudie ausgefüllt (Koeffizienten, p-Werte, N)
 - [ ] Dependenz-Thesen für Amin, Frank, Wallerstein notiert
 - [ ] Verbindung H2/H4 zu Theorien hergestellt
-- [ ] Datei als `original_study_dep_specs.md` gespeichert
+- [X] Datei als `original_study_dep_specs.md` gespeichert
 - [ ] `git add original_study_dep_specs.md && git commit -m "Issue #0a: Originalstudie + Dependenz-Theorie exzerpiert" && git push`
