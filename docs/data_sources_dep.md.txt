@@ -43,11 +43,11 @@
 
 ## 4. UNSC-Mitgliedsdaten (2002–2025)
 - [X] Datei vorhanden unter: `C:\Users\HP\io\imf-replizierung\data\unsc`
-- Enthält: `Entity`, `Code`, `Year`, `United Nations membership status`
-- Quelle: `United Nations – Member States (2025).`
+- Enthält: `ID`, `Year`, `Security Council Member`, `Last Update`
+- Quelle: `Peace Security Data Hub`
 - [X] Vorhanden bis 2008 (aus Originaldatensatz)
 - [X] Ergänzt für 2009–2024 
-- [X] Download-Link gespeichert: `<https://ourworldindata.org/grapher/united-nations-membership-status>`
+- [X] Download-Link gespeichert: `<https://psdata.un.org/dataset/DPPA-SCMEMBERSHIP>`
 - **Wichtig:** 
 > Nur temporäre Mitglieder heraussuchen (keine ständigen: USA, UK, Frankreich, Russland, China)
 > 33 afrikanische Länder mit temporärer Mitgliedschaft 2000–2027
@@ -58,7 +58,11 @@
 ## 5. Afrikanische Länderliste
 - [X] ISO-Codes  für alle 54 afrikanischen Länder erstellt (→ an #0c übergeben)
 - Quelle: [UN M49 – Africa](https://unstats.un.org/unsd/methodology/m49/)
-- **Hinweis:** in Originaldatensatz sind wdicode und idcnt angegeben
+- **Hinweis:** 
+> im Originaldatensatz sind wdicode und idcnt angegeben
+> ISO-Codes für 61 afrikanische Länder
+> Ein Land kann in einem Jahr mehrfach vorkommen, wenn es mehrere Sitze gibt (ständige + temporäre Mitglieder)
+> temporäre Mitglieder wechseln alle 2 Jahre (5 Sitze pro Jahr)
 
 ## 6. Fehlende Daten / Probleme
 - `<hier eventuelle Lücken oder nicht verfügbare Indikatoren notieren>`

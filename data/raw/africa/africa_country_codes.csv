@@ -1,0 +1,61 @@
+﻿Global Code;Global Name;Region Code;Region Name;Sub-region Code;Sub-region Name;Intermediate Region Code;Intermediate Region Name;Country or Area;M49 Code;ISO-alpha2 Code;ISO-alpha3 Code;Least Developed Countries (LDC);Land Locked Developing Countries (LLDC);Small Island Developing States (SIDS)
+1;World;2;Africa;15;Northern Africa;;;Algeria;12;DZ;DZA;;;
+1;World;2;Africa;15;Northern Africa;;;Egypt;818;EG;EGY;;;
+1;World;2;Africa;15;Northern Africa;;;Libya;434;LY;LBY;;;
+1;World;2;Africa;15;Northern Africa;;;Morocco;504;MA;MAR;;;
+1;World;2;Africa;15;Northern Africa;;;Sudan;729;SD;SDN;x;;
+1;World;2;Africa;15;Northern Africa;;;Tunisia;788;TN;TUN;;;
+1;World;2;Africa;15;Northern Africa;;;Western Sahara;732;EH;ESH;;;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;British Indian Ocean Territory;86;IO;IOT;;;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Burundi;108;BI;BDI;x;x;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Comoros;174;KM;COM;x;;x
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Djibouti;262;DJ;DJI;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Eritrea;232;ER;ERI;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Ethiopia;231;ET;ETH;x;x;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;French Southern Territories;260;TF;ATF;;;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Kenya;404;KE;KEN;;;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Madagascar;450;MG;MDG;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Malawi;454;MW;MWI;x;x;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Mauritius;480;MU;MUS;;;x
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Mayotte;175;YT;MYT;;;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Mozambique;508;MZ;MOZ;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Réunion;638;RE;REU;;;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Rwanda;646;RW;RWA;x;x;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Seychelles;690;SC;SYC;;;x
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Somalia;706;SO;SOM;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;South Sudan;728;SS;SSD;x;x;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Uganda;800;UG;UGA;x;x;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;United Republic of Tanzania;834;TZ;TZA;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Zambia;894;ZM;ZMB;x;x;
+1;World;2;Africa;202;Sub-Saharan Africa;14;Eastern Africa;Zimbabwe;716;ZW;ZWE;;x;
+1;World;2;Africa;202;Sub-Saharan Africa;17;Middle Africa;Angola;24;AO;AGO;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;17;Middle Africa;Cameroon;120;CM;CMR;;;
+1;World;2;Africa;202;Sub-Saharan Africa;17;Middle Africa;Central African Republic;140;CF;CAF;x;x;
+1;World;2;Africa;202;Sub-Saharan Africa;17;Middle Africa;Chad;148;TD;TCD;x;x;
+1;World;2;Africa;202;Sub-Saharan Africa;17;Middle Africa;Congo;178;CG;COG;;;
+1;World;2;Africa;202;Sub-Saharan Africa;17;Middle Africa;Democratic Republic of the Congo;180;CD;COD;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;17;Middle Africa;Equatorial Guinea;226;GQ;GNQ;;;
+1;World;2;Africa;202;Sub-Saharan Africa;17;Middle Africa;Gabon;266;GA;GAB;;;
+1;World;2;Africa;202;Sub-Saharan Africa;17;Middle Africa;Sao Tome and Principe;678;ST;STP;;;x
+1;World;2;Africa;202;Sub-Saharan Africa;18;Southern Africa;Botswana;72;BW;BWA;;x;
+1;World;2;Africa;202;Sub-Saharan Africa;18;Southern Africa;Eswatini;748;SZ;SWZ;;x;
+1;World;2;Africa;202;Sub-Saharan Africa;18;Southern Africa;Lesotho;426;LS;LSO;x;x;
+1;World;2;Africa;202;Sub-Saharan Africa;18;Southern Africa;Namibia;516;NA;NAM;;;
+1;World;2;Africa;202;Sub-Saharan Africa;18;Southern Africa;South Africa;710;ZA;ZAF;;;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Benin;204;BJ;BEN;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Burkina Faso;854;BF;BFA;x;x;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Cabo Verde;132;CV;CPV;;;x
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Côte d’Ivoire;384;CI;CIV;;;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Gambia;270;GM;GMB;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Ghana;288;GH;GHA;;;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Guinea;324;GN;GIN;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Guinea-Bissau;624;GW;GNB;x;;x
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Liberia;430;LR;LBR;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Mali;466;ML;MLI;x;x;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Mauritania;478;MR;MRT;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Niger;562;NE;NER;x;x;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Nigeria;566;NG;NGA;;;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Saint Helena;654;SH;SHN;;;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Senegal;686;SN;SEN;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Sierra Leone;694;SL;SLE;x;;
+1;World;2;Africa;202;Sub-Saharan Africa;11;Western Africa;Togo;768;TG;TGO;x;;
