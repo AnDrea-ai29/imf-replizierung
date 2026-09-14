@@ -1,0 +1,61 @@
+﻿Country or Area,ISO-alpha3 Code,M49 Code
+Algeria,DZA,12
+Egypt,EGY,818
+Libya,LBY,434
+Morocco,MAR,504
+Sudan,SDN,729
+Tunisia,TUN,788
+Western Sahara,ESH,732
+British Indian Ocean Territory,IOT,86
+Burundi,BDI,108
+Comoros,COM,174
+Djibouti,DJI,262
+Eritrea,ERI,232
+Ethiopia,ETH,231
+French Southern Territories,ATF,260
+Kenya,KEN,404
+Madagascar,MDG,450
+Malawi,MWI,454
+Mauritius,MUS,480
+Mayotte,MYT,175
+Mozambique,MOZ,508
+Réunion,REU,638
+Rwanda,RWA,646
+Seychelles,SYC,690
+Somalia,SOM,706
+South Sudan,SSD,728
+Uganda,UGA,800
+United Republic of Tanzania,TZA,834
+Zambia,ZMB,894
+Zimbabwe,ZWE,716
+Angola,AGO,24
+Cameroon,CMR,120
+Central African Republic,CAF,140
+Chad,TCD,148
+Congo,COG,178
+Democratic Republic of the Congo,COD,180
+Equatorial Guinea,GNQ,226
+Gabon,GAB,266
+Sao Tome and Principe,STP,678
+Botswana,BWA,72
+Eswatini,SWZ,748
+Lesotho,LSO,426
+Namibia,NAM,516
+South Africa,ZAF,710
+Benin,BEN,204
+Burkina Faso,BFA,854
+Cabo Verde,CPV,132
+Côte d’Ivoire,CIV,384
+Gambia,GMB,270
+Ghana,GHA,288
+Guinea,GIN,324
+Guinea-Bissau,GNB,624
+Liberia,LBR,430
+Mali,MLI,466
+Mauritania,MRT,478
+Niger,NER,562
+Nigeria,NGA,566
+Saint Helena,SHN,654
+Senegal,SEN,686
+Sierra Leone,SLE,694
+Togo,TGO,768
