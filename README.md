@@ -11,6 +11,8 @@ Vollständige Replizierung der Originalstudie Dreher et al. (2015) für 2002-200
 
 # IMF-Replizierung: Datenaufbereitung (Phase 2)
 
+# IMF-Replizierung: Datenaufbereitung (Phase 2)
+
 ## 📌 Projektstatus
 - ✅ **Phase 1**: Datenbeschaffung abgeschlossen
 - ✅ **Phase 2**: Datenaufbereitung abgeschlossen (2026-09-15)
@@ -19,6 +21,20 @@ Vollständige Replizierung der Originalstudie Dreher et al. (2015) für 2002-200
 ---
 
 ## 🔧 Wichtige Änderungen in Phase 2
+
+## [Phase 2] 2026-09-15
+### ✅ Erledigt
+- **MONA-Daten:** ISO3- und iso_numeric-Codes manuell in Combined_ISO.xlsx integriert (Mapping basierend auf Mona_mapping.txt)
+- **UNSC-Daten:** Panel bereits vorverarbeitet (unsc_membership_2002_2025.csv mit unsc3 für t/t-1)
+- **WDI-Daten:** Rohstoffabhängigkeit berechnet (FuelExportPct + MineralExportPct)
+- **Finaler Datensatz:** final_data_2002_2025.csv mit allen Variablen für Modellierung
+
+### 🔧 Anpassungen
+- Verknüpfung MONA ↔ WDI jetzt über `ISO3` (nicht mehr `Country Code`)
+- WDI-Variablen korrigiert:
+  - `FuelExportPct = TX.VAL.FUEL.ZS.UN` (Exporte)
+  - `MineralExportPct = TX.VAL.MMTL.ZS.UN` (Exporte)
+- Afrika-Codes: Verknüpfung über `ISO-alpha3 Code` (aus afrika_iso_codes_wdi.csv)
 
 ### Datenquellen
 | Datensatz | Datei | Beschreibung |
