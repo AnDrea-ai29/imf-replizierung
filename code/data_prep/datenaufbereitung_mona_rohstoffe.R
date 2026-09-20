@@ -122,6 +122,21 @@ data_part2 <- final_data %>% filter(`Approval Year` >= 2008, `Approval Year` <= 
 
 
 
+## Speichern der Datensätze
+# 1. Programmdaten (nach Aufbereitung)
+write_csv(program_data, "C:/Users/HP/io/imf-replizierung/data/processed/program_data_2002_2025.csv", na = "")
+
+# 2. WDI-Daten mit Rohstoffabhängigkeit
+write_csv(wdi_data, "C:/Users/HP/io/imf-replizierung/data/processed/wdi_2002_2025_dep.csv", na = "")
+
+# 3. Finaler Datensatz (für alle Analysen)
+write_csv(final_data, "C:/Users/HP/io/imf-replizierung/data/processed/final_data_2002_2025.csv", na = "")
+
+# 4. Teildatensätze (für Teil 1 & Teil 2 der Studie)
+write_csv(data_part1, "C:/Users/HP/io/imf-replizierung/data/processed/data_part1_2002_2008.csv", na = "")
+write_csv(data_part2, "C:/Users/HP/io/imf-replizierung/data/processed/data_part2_2008_2025_africa.csv", na = "")
+
+
 ##----------------------------------------------------##
 
 ##Check 1: Prüfe program_data
