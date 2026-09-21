@@ -588,8 +588,8 @@ write_csv(results_summary, "results/results_summary.csv")
 ## **📌 Checkliste für GitHub (Issues anlegen)**
 
 ### **🔴 Dringend (Tag 1–3):**
-- [ ] Rohdaten für SSA + MENA bereinigen (`mona_ssa_mea.csv`, `unsc_ssa_mea.csv`, `wdi_ssa_mea.csv`)
-- [ ] Finalen Datensatz erstellen (`final_data_ssa_mea.csv`)
+- [X] Rohdaten für SSA + MENA bereinigen (`mona_ssa_mea.csv`, `unsc_ssa_mea.csv`, `wdi_ssa_mea.csv`)
+- [X] Finalen Datensatz erstellen (`final_data_ssa_mea.csv`)
 - [ ] Inhaltsanalyse durchführen (`data_with_cond_types.csv`)
 
 ### **🟡 Hoch (Tag 4–6):**
@@ -684,7 +684,7 @@ write_csv(results_summary, "results/results_summary.csv")
 
 ---
 
-### **Issue #7: Einleitung + Theorie (Tag 7)**
+### **Issue #7: Einleitung + Theorie (Tag 7+8)**
 **Titel:** `Kapitel 1: Einleitung und Theorie schreiben`  
 **Beschreibung:**
 - Forschungsfrage, Relevanz, Theorie (Dependenz + Neokolonialismus)
@@ -696,7 +696,7 @@ write_csv(results_summary, "results/results_summary.csv")
 
 ---
 
-### **Issue #8: Daten + Methodik (Tag 8)**
+### **Issue #8: Daten + Methodik (Tag 9)**
 **Titel:** `Kapitel 2: Daten und Methodik schreiben`  
 **Beschreibung:**
 - Datenquellen, Variablendefinitionen, Modelle
@@ -707,7 +707,7 @@ write_csv(results_summary, "results/results_summary.csv")
 
 ---
 
-### **Issue #9: Ergebnisse (Tag 9)**
+### **Issue #9: Ergebnisse (Tag 10)**
 **Titel:** `Kapitel 3–5: Ergebnisse schreiben`  
 **Beschreibung:**
 - Replizierung (Kapitel 3)
@@ -720,7 +720,7 @@ write_csv(results_summary, "results/results_summary.csv")
 
 ---
 
-### **Issue #10: Diskussion + Fazit (Tag 10)**
+### **Issue #10: Diskussion + Fazit (Tag 11)**
 **Titel:** `Kapitel 6–7: Diskussion und Fazit schreiben`  
 **Beschreibung:**
 - Interpretation der Ergebnisse

@@ -1,481 +1,249 @@
-# Phase 3: Regressionsanalyse für SSA (20 Länder)
-# ====================================================
-# **Ziel:** Replizierung (2002-2008) + Erweiterung (2008-2025) für SSA
-# **Fokus:** H1 (Replizierung), H2/H3 (Rohstoffabhängigkeit), H4 (Inhaltsanalyse)
-# **Daten:** final_data_ssa_mea.csv (20 SSA-Länder)
-# **Anpassung:** Nur SSA (MENA ausgeschlossen aufgrund fehlender WDI-Daten)
+#' =============================================================================
+#' IMF-Konditionalität Replizierung + Erweiterung (10-Tage-Plan)
+#' Fokus: 20 SSA-Länder (2002-2025)
+#' =============================================================================
+#' Skript: Phase-3_SSA_only.R
+#' Datum: 20. September 2026
+#' Autor: [Dein Name]
+#' Status: Tag 4 - Replizierung (H1: 2002-2008)
+#' =============================================================================
 
-# ====================================================
-# 0. Pakete laden und Setup
-# ====================================================
+# 0. ARBEITSVERZEICHNIS SETZEN -------------------------------------------------
+setwd("C:/Users/HP/io/imf-replizierung")
 
-# Installieren Sie fehlende Pakete
-if (!require("plm")) install.packages("plm", dependencies = TRUE)
-if (!require("fixest")) install.packages("fixest")
-if (!require("stargazer")) install.packages("stargazer")
-if (!require("tidyverse")) install.packages("tidyverse")
-if (!require("lmtest")) install.packages("lmtest")
-if (!require("ggeffects")) install.packages("ggeffects")
+# 1. PAKETE LADEN -----------------------------------------------------------------
+# Installiere fehlende Pakete: install.packages(c("tidyverse", "plm", "fixest", "lmtest", "stargazer", "sandwich", "ggplot2"))
 
-library(plm)
-library(fixest)
-library(stargazer)
-library(tidyverse)
-library(lmtest)
-library(ggeffects)
+# Basis-Pakete
+library(tidyverse)   # Datenmanipulation (dplyr, tidyr, ggplot2)
+library(readr)        # CSV-Import
 
-# Optionen für bessere Ausgabe
-options(scipen = 999)
+# Oekonometrie-Pakete
+library(plm)         # Panelmodelle (plm, pgmm)
+library(fixest)      # Schnelle Panelmodelle (feols, fepois)
+library(lmtest)      # Hypothesentests (bptest, waldtest)
+library(sandwich)    # Robuste Standardfehler
 
-# Verzeichnisse erstellen
-if (!dir.exists("results")) dir.create("results")
-if (!dir.exists("results/figures")) dir.create("results/figures")
+# Ausgabe-Pakete
+library(stargazer)   # Regressionstabellen
+library(ggplot2)     # Grafiken
 
-# ====================================================
-# 1. Daten laden (SSA nur)
-# ====================================================
+# 2. DATEN LADEN ---------------------------------------------------------------
+print("Lade final_data_ssa_mea.csv...")
+data <- read_csv2("data/processed/final_data_ssa_mea.csv")
 
-# Hauptdatensatz
-final_data <- read_csv("data/processed/final_data_ssa_mea.csv") %>%
-  mutate(`MONA Code` = as.character(`MONA Code`))
-
-# Datensatz mit Inhaltsanalyse (für H4) - falls vorhanden
-data_with_cond <- NULL
-if (file.exists("data/processed/data_with_cond_types.csv")) {
-  data_with_cond <- read_csv("data/processed/data_with_cond_types.csv") %>%
-    mutate(`MONA Code` = as.character(`MONA Code`))
+# Pruefe, ob Daten geladen wurden
+if (nrow(data) == 0) {
+  stop("FEHLER: Keine Daten in final_data_ssa_mea.csv gefunden!")
 }
 
-# ====================================================
-# 2. Daten aufbereiten für Panel-Regressionen
-# ====================================================
+# 3. DATENPRUEFUNG ---------------------------------------------------------------
+print(paste("Anzahl Beobachtungen:", nrow(data)))
+print(paste("Anzahl Laender:", length(unique(data$ISO3))))
+print(paste("Zeitraum:", min(data$Year, na.rm = TRUE), "-", max(data$Year, na.rm = TRUE)))
 
-# Aggregieren nach Land und Jahr
-final_data <- final_data %>%
-  group_by(`MONA Code`, `Approval Year`) %>%
-  summarise(across(everything(), mean, na.rm = TRUE)) %>%
-  ungroup()
+# Pruefe auf fehlende Werte
+print("\nFehlende Werte pro Variable:")
+print(colSums(is.na(data)))
 
-if (!is.null(data_with_cond)) {
-  data_with_cond <- data_with_cond %>%
-    group_by(`MONA Code`, `Approval Year`) %>%
-    summarise(across(everything(), mean, na.rm = TRUE)) %>%
-    ungroup()
-}
+# Pruefe, ob alle 20 SSA-Laender vorhanden sind
+expected_countries <- c("AGO", "CAF", "CMR", "COM", "CPV", "GAB", "GHA", "GIN", "KEN", "LSO", 
+                        "MDG", "MOZ", "MRT", "MWI", "RWA", "SLE", "SLV", "TZA", "UGA", "ZMB")
+actual_countries <- unique(data$ISO3)
+missing_countries <- setdiff(expected_countries, actual_countries)
 
-# Teildatensätze erstellen
-# 2002-2008: Replizierung
-# 2008-2025: Erweiterung
-data_part1 <- final_data %>% filter(`Approval Year` >= 2002, `Approval Year` <= 2008)
-data_part2 <- final_data %>% filter(`Approval Year` >= 2008, `Approval Year` <= 2025)
-
-if (!is.null(data_with_cond)) {
-  data_part2_cond <- data_with_cond %>% filter(`Approval Year` >= 2008, `Approval Year` <= 2025)
-}
-
-# ====================================================
-# 3. TEIL 1: Replizierung (2002-2008, SSA) - H1
-# ====================================================
-
-cat("\n=== TEIL 1: Replizierung (2002-2008, SSA) ===\n")
-
-# Prüfen, ob Required Spalten existieren
-required_cols_h1 <- c("avgcondtype_all", "unsc3", "XDebtGNI", "DebtServGNI", "ResXDebt")
-missing_h1 <- required_cols_h1[!required_cols_h1 %in% names(data_part1)]
-
-if (length(missing_h1) > 0) {
-  cat("❌ FEHLER: Fehlende Spalten für H1:", paste(missing_h1, collapse = ", "), "\n")
-  cat("Verfügbare Spalten:", paste(names(data_part1), collapse = ", "), "\n")
+if (length(missing_countries) > 0) {
+  warning(paste("FEHLENDE LAENDER:", paste(missing_countries, collapse = ", ")))
 } else {
-  model_h1 <- plm(
-    avgcondtype_all ~ unsc3 + XDebtGNI + DebtServGNI + ResXDebt,
-    data = data_part1,
-    index = c("MONA Code", "Approval Year"),
-    model = "within"
+  print("OK: Alle 20 SSA-Laender vorhanden")
+}
+
+# 4. VARIABLEN VORBEREITEN ----------------------------------------------------
+# Benenne Variablen um (falls noetig)
+data <- data %>%
+  rename(
+    country = ISO3,
+    year = Year,
+    avgcond = avgcondtype_all,
+    nrcond = nrcondtype_all,
+    debt_gni = XDebtGNI,
+    debt_serv = DebtServGNI,
+    res_debt = ResXDebt,
+    fuel_export = FuelExportPct,
+    mineral_export = MineralExportPct,
+    unsc_member = unsc3
   )
 
-  cat("UNSC-Koeffizient:", coef(model_h1)["unsc3"], "\n")
-  cat("p-Wert:", summary(model_h1)$coefficients["unsc3", "Pr(>|z|)"], "\n")
-  cat("N:", nobs(model_h1), "\n")
-  cat("R²:", summary(model_h1)$r.squared, "\n")
-
-  # Validierung
-  validation_h1 <- data.frame(
-    Model = "H1_Replizierung",
-    unsc_coef = coef(model_h1)["unsc3"],
-    p_value = summary(model_h1)$coefficients["unsc3", "Pr(>|z|)"],
-    n_obs = nobs(model_h1),
-    r2 = summary(model_h1)$r.squared,
-    validation = ifelse(
-      abs(coef(model_h1)["unsc3"]) >= 1.8 & abs(coef(model_h1)["unsc3"])) <= 2.5 &
-      summary(model_h1)$coefficients["unsc3", "Pr(>|z|)"] < 0.05,
-      "✅ ERFOLGREICH", "❌ FEHLGESCHLAGEN"
-    )
+# Ersetze NAs in Kontrollvariablen durch 0 (falls sinnvoll)
+data <- data %>%
+  mutate(
+    debt_gni = ifelse(is.na(debt_gni), 0, debt_gni),
+    debt_serv = ifelse(is.na(debt_serv), 0, debt_serv),
+    res_debt = ifelse(is.na(res_debt), 0, res_debt),
+    fuel_export = ifelse(is.na(fuel_export), 0, fuel_export),
+    mineral_export = ifelse(is.na(mineral_export), 0, mineral_export)
   )
-  write_csv(validation_h1, "results/validation_h1.csv")
-  saveRDS(model_h1, "results/model_h1.rds")
-}
 
-# ====================================================
-# 4. TEIL 2: Erweiterung (2008-2025, SSA) - H2, H3, H4
-# ====================================================
-
-cat("\n=== TEIL 2: Erweiterung (2008-2025, SSA) ===\n")
-
-# H2: Rohstoffabhängigkeit ↑ IMF-Konditionalität
-# Anpassung für SSA-Fokus: Testet, ob Länder mit hoher Rohstoffabhängigkeit mehr Bedingungen erhalten
-required_cols_h2 <- c("avgcondtype_all", "Rohstoffabhängigkeit", "XDebtGNI", "DebtServGNI", "ResXDebt")
-missing_h2 <- required_cols_h2[!required_cols_h2 %in% names(data_part2)]
-
-if (length(missing_h2) > 0) {
-  cat("⚠️ H2 überspringen: Fehlende Spalten:", paste(missing_h2, collapse = ", "), "\n")
-} else {
-  model_h2 <- try(plm(
-    avgcondtype_all ~ Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt,
-    data = data_part2, index = c("MONA Code", "Approval Year"), model = "within"
-  ), silent = TRUE)
-
-  if (!inherits(model_h2, "try-error")) {
-    cat("H2 - Rohstoffabhängigkeit:", coef(model_h2)["Rohstoffabhängigkeit"], 
-        "(p =", summary(model_h2)$coefficients["Rohstoffabhängigkeit", "Pr(>|z|)"], ")\n")
-    saveRDS(model_h2, "results/model_h2.rds")
-  } else {
-    cat("⚠️ H2-Modell fehlerhaft. Versuche mit fixest...\n")
-    model_h2 <- try(feols(
-      avgcondtype_all ~ Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt,
-      data = data_part2, fixed_effects = ~`MONA Code`
-    ), silent = TRUE)
-    if (!inherits(model_h2, "try-error")) {
-      cat("H2 - Rohstoffabhängigkeit (fixest):\n")
-      cat("  Koeffizient:", coef(model_h2)["Rohstoffabhängigkeit"], "\n")
-      saveRDS(model_h2, "results/model_h2.rds")
-    }
-  }
-}
-
-# H3: UNSC-Effekt stärker in rohstoffabhängigen Ländern
-# Testet die Interaktion zwischen UNSC und Rohstoffabhängigkeit
-required_cols_h3 <- c("avgcondtype_all", "unsc3", "Rohstoffabhängigkeit", "XDebtGNI", "DebtServGNI", "ResXDebt")
-missing_h3 <- required_cols_h3[!required_cols_h3 %in% names(data_part2)]
-
-if (length(missing_h3) > 0) {
-  cat("⚠️ H3 überspringen: Fehlende Spalten:", paste(missing_h3, collapse = ", "), "\n")
-} else {
-  model_h3 <- try(plm(
-    avgcondtype_all ~ unsc3 * Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt,
-    data = data_part2, index = c("MONA Code", "Approval Year"), model = "within"
-  ), silent = TRUE)
-
-  if (!inherits(model_h3, "try-error")) {
-    cat("H3 - UNSC × Rohstoffabhängigkeit:\n")
-    cat("  Interaktionskoeffizient:", coef(model_h3)["unsc3:Rohstoffabhängigkeit"], 
-        "(p =", summary(model_h3)$coefficients["unsc3:Rohstoffabhängigkeit", "Pr(>|z|)"], ")\n")
-    saveRDS(model_h3, "results/model_h3.rds")
-  } else {
-    cat("⚠️ H3-Modell fehlerhaft. Versuche mit fixest...\n")
-    model_h3 <- try(feols(
-      avgcondtype_all ~ unsc3 * Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt,
-      data = data_part2, fixed_effects = ~`MONA Code`
-    ), silent = TRUE)
-    if (!inherits(model_h3, "try-error")) {
-      cat("H3 - UNSC × Rohstoffabhängigkeit (fixest):\n")
-      cat("  Interaktionskoeffizient:", coef(model_h3)["unsc3:Rohstoffabhängigkeit"], "\n")
-      saveRDS(model_h3, "results/model_h3.rds")
-    }
-  }
-}
-
-# H4: UNSC → weniger rohstoff-spezifische Bedingungen (Inhaltsanalyse)
-if (!is.null(data_with_cond) && !is.null(data_part2_cond)) {
-  required_cols_h4 <- c("rohstoff_cond_share", "unsc3", "Rohstoffabhängigkeit", "XDebtGNI", "DebtServGNI", "ResXDebt")
-  missing_h4 <- required_cols_h4[!required_cols_h4 %in% names(data_part2_cond)]
-
-  if (length(missing_h4) > 0) {
-    cat("⚠️ H4 überspringen: Fehlende Spalten:", paste(missing_h4, collapse = ", "), "\n")
-  } else {
-    model_h4 <- try(plm(
-      rohstoff_cond_share ~ unsc3 * Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt,
-      data = data_part2_cond, index = c("MONA Code", "Approval Year"), model = "within"
-    ), silent = TRUE)
-
-    if (!inherits(model_h4, "try-error")) {
-      cat("H4 - UNSC × Rohstoffabhängigkeit (Inhaltsanalyse):\n")
-      cat("  Interaktionskoeffizient:", coef(model_h4)["unsc3:Rohstoffabhängigkeit"], 
-          "(p =", summary(model_h4)$coefficients["unsc3:Rohstoffabhängigkeit", "Pr(>|z|)"], ")\n")
-      saveRDS(model_h4, "results/model_h4.rds")
-    } else {
-      cat("⚠️ H4-Modell fehlerhaft. Versuche mit fixest...\n")
-      model_h4 <- try(feols(
-        rohstoff_cond_share ~ unsc3 * Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt,
-        data = data_part2_cond, fixed_effects = ~`MONA Code`
-      ), silent = TRUE)
-      if (!inherits(model_h4, "try-error")) {
-        cat("H4 - UNSC × Rohstoffabhängigkeit (fixest):\n")
-        cat("  Interaktionskoeffizient:", coef(model_h4)["unsc3:Rohstoffabhängigkeit"], "\n")
-        saveRDS(model_h4, "results/model_h4.rds")
-      }
-    }
-  }
-} else {
-  cat("⚠️ H4 überspringen: data_with_cond_types.csv nicht gefunden\n")
-}
-
-# ====================================================
-# 5. Ergebnisse zusammenfassen
-# ====================================================
-
-cat("\n=== ERGEBNISSE ===\n")
-
-# Ergebnisse extrahieren (mit Fehlerbehandlung)
-get_coef <- function(model, term) {
-  if (!inherits(model, "try-error") && !is.null(model)) {
-    if (term %in% names(coef(model))) {
-      return(coef(model)[term])
-    }
-  }
-  return(NA)
-}
-
-get_pval <- function(model, term) {
-  if (!inherits(model, "try-error") && !is.null(model)) {
-    if (term %in% rownames(summary(model)$coefficients)) {
-      return(summary(model)$coefficients[term, "Pr(>|z|)"])
-    }
-  }
-  return(NA)
-}
-
-results_summary <- data.frame(
-  Model = c("H1", "H2", "H3", "H4"),
-  Coefficient = c(
-    get_coef(model_h1, "unsc3"),
-    get_coef(model_h2, "Rohstoffabhängigkeit"),
-    get_coef(model_h3, "unsc3:Rohstoffabhängigkeit"),
-    get_coef(model_h4, "unsc3:Rohstoffabhängigkeit")
-  ),
-  P_Value = c(
-    get_pval(model_h1, "unsc3"),
-    get_pval(model_h2, "Rohstoffabhängigkeit"),
-    get_pval(model_h3, "unsc3:Rohstoffabhängigkeit"),
-    get_pval(model_h4, "unsc3:Rohstoffabhängigkeit")
-  ),
-  N = c(
-    if (!inherits(model_h1, "try-error") && !is.null(model_h1)) nobs(model_h1) else NA,
-    if (!inherits(model_h2, "try-error") && !is.null(model_h2)) nobs(model_h2) else NA,
-    if (!inherits(model_h3, "try-error") && !is.null(model_h3)) nobs(model_h3) else NA,
-    if (!inherits(model_h4, "try-error") && !is.null(model_h4)) nobs(model_h4) else NA
-  ),
-  R2 = c(
-    if (!inherits(model_h1, "try-error") && !is.null(model_h1)) summary(model_h1)$r.squared else NA,
-    if (!inherits(model_h2, "try-error") && !is.null(model_h2)) summary(model_h2)$r.squared else NA,
-    if (!inherits(model_h3, "try-error") && !is.null(model_h3)) summary(model_h3)$r.squared else NA,
-    if (!inherits(model_h4, "try-error") && !is.null(model_h4)) summary(model_h4)$r.squared else NA
+# Erstelle kombinierten Rohstoffindex (fuer spaetere Modelle)
+data <- data %>%
+  mutate(
+    resource_dep = fuel_export + mineral_export
   )
+
+# 5. MODELL SPEZIFIZIEREN (H1: Replizierung 2002-2008) -----------------------------
+# Hypothese H1: UNSC-Mitgliedschaft reduziert IMF-Konditionalitaet
+# Modell: avgcond ~ unsc_member + debt_gni + debt_serv + res_debt
+
+# Filtere Daten fuer Replizierungszeitraum (2002-2008)
+repl_data <- data %>%
+  filter(year >= 2002 & year <= 2008) %>%
+  drop_na(avgcond, unsc_member, debt_gni, debt_serv, res_debt)
+
+print(paste("\nReplizierungsdaten (2002-2008):"))
+print(paste("Anzahl Beobachtungen:", nrow(repl_data)))
+print(paste("Anzahl Laender:", length(unique(repl_data$country))))
+
+# 6. MODELL SCHAETZEN (Panelmodell mit Fixed Effects) --------------------------
+# Methode 1: fixest (schneller, empfehlen fuer grosse Panels)
+print("\n=== H1: Replizierung (2002-2008) ===")
+model_h1 <- feols(
+  avgcond ~ unsc_member + debt_gni + debt_serv + res_debt | country + year,
+  data = repl_data,
+  vcov = "hetero"  # Robuste Standardfehler
 )
-write_csv(results_summary, "results/results_summary.csv")
-print(results_summary)
 
-# ====================================================
-# 6. Robustheitschecks
-# ====================================================
+# Ergebnis anzeigen
+summary(model_h1)
 
-cat("\n=== ROBUSTHEITSCHECKS ===\n")
-
-# Heteroskedastizitätstests (nur für erfolgreiche Modelle)
-if (!inherits(model_h1, "try-error") && !is.null(model_h1)) {
-  bptest_h1 <- try(bptest(model_h1), silent = TRUE)
-  if (!inherits(bptest_h1, "try-error")) cat("H1 BP p-Wert:", bptest_h1$p.value, "\n")
-}
-
-if (!inherits(model_h2, "try-error") && !is.null(model_h2)) {
-  bptest_h2 <- try(bptest(model_h2), silent = TRUE)
-  if (!inherits(bptest_h2, "try-error")) cat("H2 BP p-Wert:", bptest_h2$p.value, "\n")
-}
-
-if (!inherits(model_h3, "try-error") && !is.null(model_h3)) {
-  bptest_h3 <- try(bptest(model_h3), silent = TRUE)
-  if (!inherits(bptest_h3, "try-error")) cat("H3 BP p-Wert:", bptest_h3$p.value, "\n")
-}
-
-if (!inherits(model_h4, "try-error") && !is.null(model_h4)) {
-  bptest_h4 <- try(bptest(model_h4), silent = TRUE)
-  if (!inherits(bptest_h4, "try-error")) cat("H4 BP p-Wert:", bptest_h4$p.value, "\n")
-}
-
-# Year-Fixed-Effects (nur für H3, da Interaktion)
-if (!inherits(model_h3, "try-error") && !is.null(model_h3)) {
-  model_h3_year_fe <- try(feols(
-    avgcondtype_all ~ unsc3 * Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt,
-    data = data_part2, fixed_effects = ~`MONA Code` + `Approval Year`
-  ), silent = TRUE)
-  if (!inherits(model_h3_year_fe, "try-error")) {
-    cat("H3 Year-FE Interaktion:", coef(model_h3_year_fe)["unsc3:Rohstoffabhängigkeit"], "\n")
-    saveRDS(model_h3_year_fe, "results/model_h3_year_fe.rds")
-  }
-}
-
-# Robuste Standardfehler
-if (!inherits(model_h3, "try-error") && !is.null(model_h3)) {
-  model_h3_robust <- try(feols(
-    avgcondtype_all ~ unsc3 * Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt,
-    data = data_part2, fixed_effects = ~`MONA Code`, vcov = "hetero"
-  ), silent = TRUE)
-  if (!inherits(model_h3_robust, "try-error")) {
-    cat("H3 robust Interaktion:", coef(model_h3_robust)["unsc3:Rohstoffabhängigkeit"], "\n")
-    saveRDS(model_h3_robust, "results/model_h3_robust.rds")
-  }
-}
-
-# ====================================================
-# 7. Tabellen und Grafiken
-# ====================================================
-
-cat("\n=== TABELLEN ===\n")
-
-# Tabelle 1: Replizierung
-if (!inherits(model_h1, "try-error") && !is.null(model_h1)) {
-  stargazer(model_h1, type = "text", title = "Replizierung (2002-2008, SSA)",
-            dep.var.labels = "Durchschnittl. IMF-Bedingungen pro Quartal",
-            covariate.labels = c("UNSC-Mitglied (t oder t-1)", "Externe Schuld (% BNE)",
-                                  "Schuldenbedienung (% BNE)", "Reserven (% ext. Schuld)"),
-            out = "results/table_h1.txt")
-}
-
-# Tabelle 2: Erweiterung (nur erfolgreiche Modelle)
-successful_models <- list()
-if (!inherits(model_h2, "try-error") && !is.null(model_h2)) successful_models[["H2_Rohstoff"]] <- model_h2
-if (!inherits(model_h3, "try-error") && !is.null(model_h3)) successful_models[["H3_UNSC_Rohstoff"]] <- model_h3
-if (!inherits(model_h4, "try-error") && !is.null(model_h4)) successful_models[["H4_Inhaltsanalyse"]] <- model_h4
-
-if (length(successful_models) > 0) {
-  stargazer(successful_models, type = "text",
-            title = "Erweiterung: Rohstoffabhängigkeit und UNSC-Effekt (2008-2025, SSA)",
-            dep.var.labels = c("Durchschnittl. Bedingungen/Quartal", "Anteil rohstoff-spez. Bedingungen"),
-            covariate.labels = c("UNSC-Mitglied", "Rohstoffabhängigkeit", "UNSC × Rohstoffabhängigkeit",
-                                  "Externe Schuld", "Schuldenbedienung", "Reserven"),
-            out = "results/table_h2_h4.txt")
-}
-
-# Grafik 1: Marginale Effekte H3
-if (!inherits(model_h3, "try-error") && !is.null(model_h3)) {
-  if (requireNamespace("marginaleffects", quietly = TRUE)) {
-    me_h3 <- try(marginaleffects(model_h3, variables = "Rohstoffabhängigkeit", by = "unsc3"), silent = TRUE)
-    if (!inherits(me_h3, "try-error")) {
-      p1 <- plot(me_h3, type = "line", points = TRUE) +
-        labs(title = "Marginaler Effekt der Rohstoffabhängigkeit (H3)",
-             subtitle = "UNSC-Effekt stärker in rohstoffreichen Ländern (SSA)",
-             x = "Rohstoffabhängigkeit (% Exporte)", y = "Marginaler Effekt", color = "UNSC") +
-        theme_minimal() + geom_hline(yintercept = 0, linetype = "dashed", color = "red")
-      ggsave("results/figures/me_h3_ssa.png", p1, width = 10, height = 6, dpi = 300)
-    }
-  } else {
-    me_h3 <- try(ggpredict(model_h3, terms = c("Rohstoffabhängigkeit", "unsc3")), silent = TRUE)
-    if (!inherits(me_h3, "try-error")) {
-      p1 <- plot(me_h3, type = "line", points = TRUE) +
-        labs(title = "Marginaler Effekt der Rohstoffabhängigkeit (H3)",
-             subtitle = "UNSC-Effekt stärker in rohstoffreichen Ländern (SSA)",
-             x = "Rohstoffabhängigkeit (% Exporte)", y = "Marginaler Effekt", color = "UNSC") +
-        theme_minimal() + geom_hline(yintercept = 0, linetype = "dashed", color = "red")
-      ggsave("results/figures/me_h3_ssa.png", p1, width = 10, height = 6, dpi = 300)
-    }
-  }
-}
-
-# Grafik 2: Rohstoffabhängigkeit vs. IMF-Konditionalität
-if (!inherits(model_h2, "try-error") && !is.null(model_h2)) {
-  p2 <- ggplot(data_part2, aes(x = Rohstoffabhängigkeit, y = avgcondtype_all, color = factor(unsc3))) +
-    geom_point(alpha = 0.6) + geom_smooth(method = "lm", se = FALSE) +
-    labs(title = "Rohstoffabhängigkeit vs. IMF-Konditionalität (SSA)",
-         x = "Rohstoffabhängigkeit (% Exporte)", y = "Durchschn. IMF-Bedingungen/Quartal", color = "UNSC") +
-    theme_minimal() + scale_color_manual(values = c("0" = "red", "1" = "green"))
-  ggsave("results/figures/rohstoff_vs_cond_ssa.png", p2, width = 8, height = 6, dpi = 300)
-}
-
-# ====================================================
-# 8. Hypothesentests
-# ====================================================
-
-cat("\n=== HYPOTHESENTESTS ===\n")
-
-# H1: UNSC reduziert IMF-Konditionalität (Replizierung)
-h1_test <- ifelse(!inherits(model_h1, "try-error") && !is.null(model_h1) &&
-               abs(coef(model_h1)["unsc3"]) >= 1.8 && 
-               abs(coef(model_h1)["unsc3"]) <= 2.5 &&
-               summary(model_h1)$coefficients["unsc3", "Pr(>|z|)"] < 0.05,
-             "✅ BESTÄTIGT: UNSC reduziert IMF-Konditionalität (H1)", "❌ ABGELEHNT")
-
-# H2: Rohstoffabhängigkeit ↑ IMF-Konditionalität
-h2_test <- ifelse(!inherits(model_h2, "try-error") && !is.null(model_h2) &&
-               get_coef(model_h2, "Rohstoffabhängigkeit") > 0 &&
-               get_pval(model_h2, "Rohstoffabhängigkeit") < 0.05,
-             "✅ BESTÄTIGT: Rohstoffabhängige Länder erhalten mehr Bedingungen (H2)", "❌ ABGELEHNT")
-
-# H3: UNSC-Effekt stärker in rohstoffabhängigen Ländern
-h3_test <- ifelse(!inherits(model_h3, "try-error") && !is.null(model_h3) &&
-               get_coef(model_h3, "unsc3:Rohstoffabhängigkeit") < 0 &&
-               get_pval(model_h3, "unsc3:Rohstoffabhängigkeit") < 0.05,
-             "✅ BESTÄTIGT: UNSC-Effekt stärker in rohstoffabhängigen Ländern (H3)", "❌ ABGELEHNT")
-
-# H4: UNSC-Länder haben weniger rohstoff-spezifische Bedingungen
-h4_test <- ifelse(!inherits(model_h4, "try-error") && !is.null(model_h4) &&
-               get_coef(model_h4, "unsc3:Rohstoffabhängigkeit") < 0 &&
-               get_pval(model_h4, "unsc3:Rohstoffabhängigkeit") < 0.05,
-             "✅ BESTÄTIGT: UNSC-Länder haben weniger rohstoff-spez. Bedingungen (H4)", "❌ ABGELEHNT")
-
-cat("H1:", h1_test, "\n")
-cat("H2:", h2_test, "\n")
-cat("H3:", h3_test, "\n")
-cat("H4:", h4_test, "\n")
-
-hypothesis_tests <- data.frame(
-  Hypothese = c("H1", "H2", "H3", "H4"),
-  Beschreibung = c("UNSC reduziert IMF-Konditionalität (Replizierung)",
-                  "Rohstoffabhängige Länder erhalten mehr Bedingungen",
-                  "UNSC-Effekt stärker in rohstoffabhängigen Ländern",
-                  "UNSC-Länder haben weniger rohstoff-spezifische Bedingungen"),
-  Ergebnis = c(h1_test, h2_test, h3_test, h4_test)
+# Methode 2: plm (klassisch, fuer Validierung)
+print("\n=== Validierung mit plm ===")
+model_h1_plm <- plm(
+  avgcond ~ unsc_member + debt_gni + debt_serv + res_debt,
+  data = repl_data,
+  index = c("country", "year"),
+  model = "within",
+  effect = "twoways"
 )
-write_csv(hypothesis_tests, "results/hypothesis_tests.csv")
+summary(model_h1_plm)
 
-# ====================================================
-# 9. Validierungsbericht
-# ====================================================
+# 7. HYPOTHESENTEST (H1) -------------------------------------------------------
+# Teste, ob unsc_member signifikant negativ ist
+print("\n=== Hypothesentest H1 ===")
+# Coefficient test mit fixest
+coeftest_h1 <- summary(model_h1)
+unsc_coef <- coeftest_h1$estimate["unsc_member"]
+unsc_se <- coeftest_h1$std.error["unsc_member"]
+unsc_pval <- coeftest_h1$p.value["unsc_member"]
 
-validation_report <- list(
-  replizierung = list(
-    n_obs = if (!inherits(model_h1, "try-error") && !is.null(model_h1)) nobs(model_h1) else NA,
-    unsc_coef = get_coef(model_h1, "unsc3"),
-    p_value = get_pval(model_h1, "unsc3"),
-    success = h1_test
-  ),
-  erweiterung = list(
-    n_obs = if (!inherits(model_h2, "try-error") && !is.null(model_h2)) nobs(model_h2) else NA,
-    h2_coef = get_coef(model_h2, "Rohstoffabhängigkeit"), 
-    h2_p = get_pval(model_h2, "Rohstoffabhängigkeit"),
-    h3_coef = get_coef(model_h3, "unsc3:Rohstoffabhängigkeit"), 
-    h3_p = get_pval(model_h3, "unsc3:Rohstoffabhängigkeit"),
-    h4_coef = get_coef(model_h4, "unsc3:Rohstoffabhängigkeit"), 
-    h4_p = get_pval(model_h4, "unsc3:Rohstoffabhängigkeit")
-  ),
-  hypotheses = hypothesis_tests
+print(paste("unsc_member Koeffizient:", round(unsc_coef, 4)))
+print(paste("Standardfehler:", round(unsc_se, 4)))
+print(paste("p-Wert:", round(unsc_pval, 4)))
+
+if (unsc_coef < 0 && unsc_pval < 0.05) {
+  print("OK: H1 BESTAETIGT: UNSC-Mitgliedschaft reduziert Konditionalitaet (signifikant negativ)")
+} else if (unsc_coef < 0 && unsc_pval >= 0.05) {
+  print("WARNUNG: H1 TEILWEISE: UNSC-Effekt negativ, aber nicht signifikant")
+} else if (unsc_coef >= 0) {
+  print("FEHLER: H1 ABGELEHNT: UNSC-Effekt nicht negativ")
+}
+
+# 8. ROBUSTHEITSCHECKS ----------------------------------------------------------
+# 8.1 Heteroskedastizitaetstest (Breusch-Pagan)
+print("\n=== Robustheitscheck: Heteroskedastizitaet ===")
+bptest_result <- bptest(avgcond ~ unsc_member + debt_gni + debt_serv + res_debt, 
+                        data = repl_data)
+print(bptest_result)
+
+# 8.2 Year-Fixed Effects Check
+print("\n=== Robustheitscheck: Year-FE ===")
+model_h1_yeare <- feols(
+  avgcond ~ unsc_member + debt_gni + debt_serv + res_debt | country + year,
+  data = repl_data,
+  vcov = "hetero"
 )
-saveRDS(validation_report, "results/validation_report.rds")
+summary(model_h1_yeare)
 
-cat("\n=== VALIDIERUNGSBERICHT ===\n")
-cat("Replizierung (H1):", validation_report$replizierung$success, "\n")
-cat("H2 (Rohstoffabhängigkeit):", ifelse(!is.na(validation_report$erweiterung$h2_coef) && 
-                             validation_report$erweiterung$h2_coef > 0 && 
-                             validation_report$erweiterung$h2_p < 0.05, 
-                             "✅ BESTÄTIGT", "❌ ABGELEHNT"), "\n")
-cat("H3 (UNSC × Rohstoff):", ifelse(!is.na(validation_report$erweiterung$h3_coef) && 
-                                    validation_report$erweiterung$h3_coef < 0 && 
-                                    validation_report$erweiterung$h3_p < 0.05, 
-                                    "✅ BESTÄTIGT", "❌ ABGELEHNT"), "\n")
-cat("H4 (Inhaltsanalyse):", ifelse(!is.na(validation_report$erweiterung$h4_coef) && 
-                                   validation_report$erweiterung$h4_coef < 0 && 
-                                   validation_report$erweiterung$h4_p < 0.05, 
-                                   "✅ BESTÄTIGT", "❌ ABGELEHNT"), "\n")
+# 9. ERGEBNISSE SPEICHERN -------------------------------------------------------
+# Erstelle results-Verzeichnis
+if (!dir.exists("results")) {
+  dir.create("results")
+}
+if (!dir.exists("results/models")) {
+  dir.create("results/models")
+}
+if (!dir.exists("results/tables")) {
+  dir.create("results/tables")
+}
+if (!dir.exists("results/figures")) {
+  dir.create("results/figures")
+}
 
-cat("\n=== FERTIG! ===\n")
-cat("Alle Ergebnisse in results/ gespeichert.\n")
-cat("Hinweis: Analyse beschränkt auf 20 SSA-Länder (MENA ausgeschlossen).\n")
+# Speichere Modell
+saveRDS(model_h1, "results/models/model_h1_repl.rds")
+saveRDS(model_h1_plm, "results/models/model_h1_repl_plm.rds")
+
+# Speichere Validierungsergebnisse
+validation_results <- data.frame(
+  Modell = c("feols", "plm"),
+  unsc_coef = c(coeftest_h1$estimate["unsc_member"], summary(model_h1_plm)$coefficients["unsc_member", "Estimate"]),
+  unsc_se = c(coeftest_h1$std.error["unsc_member"], summary(model_h1_plm)$coefficients["unsc_member", "Std. Error"]),
+  unsc_pval = c(coeftest_h1$p.value["unsc_member"], summary(model_h1_plm)$coefficients["unsc_member", "Pr(>|t|)"]),
+  n_obs = c(nrow(repl_data), nrow(repl_data)),
+  n_countries = c(length(unique(repl_data$country)), length(unique(repl_data$country)))
+)
+
+write.csv(validation_results, "results/tables/validation_h1.csv", row.names = FALSE)
+
+# 10. ERGEBNISTABELLE ERSTELLEN (fuer Anhang) --------------------------------
+print("\n=== Ergebnistabelle H1 ===")
+stargazer::stargazer(
+  model_h1,
+  model_h1_plm,
+  title = "H1: UNSC-Effekt auf IMF-Konditionalitaet (2002-2008)",
+  dep.var.labels = "Durchschnittliche IMF-Bedingungen",
+  covariate.labels = c("UNSC-Mitglied (t oder t-1)", "Externe Schuld (% BNE)", 
+                       "Schuldenbedienung (% BNE)", "Devisenreserven (% Schuld)"),
+  model.numbers = FALSE,
+  column.labels = c("fixest", "plm"),
+  notes = "Standardfehler in Klammern; *** p<0.01, ** p<0.05, * p<0.1",
+  out = "results/tables/table_h1.txt",
+  type = "text"
+)
+
+# 11. GRAFIK ERSTELLEN (UNSC-Effekt) -------------------------------------------
+# Berechne durchschnittliche Konditionalitaet nach UNSC-Status
+plot_data <- repl_data %>%
+  group_by(country, year, unsc_member) %>%
+  summarise(avg_cond = mean(avgcond, na.rm = TRUE), .groups = "drop")
+
+# Boxplot
+png("results/figures/boxplot_unsc_h1.png", width = 1000, height = 600)
+ggplot(plot_data, aes(x = factor(unsc_member), y = avg_cond, fill = factor(unsc_member))) +
+  geom_boxplot() +
+  labs(
+    title = "IMF-Konditionalitaet nach UNSC-Mitgliedschaft (2002-2008)",
+    x = "UNSC-Mitglied (0 = Nein, 1 = Ja)",
+    y = "Durchschnittliche IMF-Bedingungen (avgcondtype_all)",
+    fill = "UNSC-Mitglied"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "top")
+dev.off()
+
+# 12. ZUSAMMENFASSUNG ------------------------------------------------------------
+print("\n===========================================================================")
+print("ZUSAMMENFASSUNG TAG 4 (H1 Replizierung)")
+print("===========================================================================")
+print(paste("OK: Daten geladen:", nrow(data), "Beobachtungen"))
+print(paste("OK: Replizierungszeitraum: 2002-2008 (", nrow(repl_data), "Beobachtungen)"))
+print(paste("OK: Modell geschaetzt: avgcond ~ unsc_member + Kontrollen"))
+print(paste("OK: UNSC-Koeffizient (feols):", round(unsc_coef, 4)))
+print(paste("OK: p-Wert:", round(unsc_pval, 4)))
+print("\nErgebnisse gespeichert in:")
+print("  - results/models/model_h1_repl.rds")
+print("  - results/models/model_h1_repl_plm.rds")
+print("  - results/tables/validation_h1.csv")
+print("  - results/tables/table_h1.txt")
+print("  - results/figures/boxplot_unsc_h1.png")
+print("\nNAECHSTER SCHRITT: Tag 5 - Erweiterung (H2-H4, 2008-2025)")
+print("===========================================================================")

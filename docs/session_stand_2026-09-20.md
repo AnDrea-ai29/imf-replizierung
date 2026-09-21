@@ -3,7 +3,7 @@
 **Datum:** 20. September 2026  
 **Phase:** Datenaufbereitung abgeschlossen (Tag 1–3)  
 **Nächste Phase:** Analyse (Tag 4–6)  
-**Anpassung:** Fokus auf SSA (20 Länder) statt SSA+MENA (22 Länder)  
+**Anpassung:** Fokus auf **20 SSA-Länder** (MENA ausgeschlossen aufgrund fehlender WDI-Daten)  
 
 ---
 
@@ -13,7 +13,7 @@
 
 | **Tag** | **Aufgabe** | **Status** | **Ergebnis** | **Datei** |
 |---------|-------------|------------|--------------|-----------|
-| **Tag 1** | Rohdaten für SSA + MENA filtern | ✅ **Abgeschlossen** | 22 Länder gefiltert | `mona_ssa_mea.csv`, `wdi_ssa_mea.csv`, `unsc_ssa_mea.csv` |
+| **Tag 1** | Rohdaten für SSA filtern | ✅ **Abgeschlossen** | **20 SSA-Länder** gefiltert | `mona_ssa_mea.csv`, `wdi_ssa_mea.csv`, `unsc_ssa_mea.csv` |
 | **Tag 2** | Finalen Datensatz erstellen | ✅ **Abgeschlossen** | MONA + WDI + UNSC kombiniert | `final_data_ssa_mea.csv` |
 | **Tag 2 (Anpassung)** | Fokus auf SSA (20 Länder) | ✅ **Entschieden** | MENA-Länder ausgeschlossen | `final_data_ssa_mea.csv` (angepasst) |
 
@@ -21,10 +21,10 @@
 
 ```
  data/processed/
- ├── mona_ssa_mea.csv          # IMF-Programme für SSA+MENA (39 Länder, 2002–2025)
- ├── wdi_ssa_mea.csv           # Rohstoffdaten für SSA+MENA (FuelExportPct, MineralExportPct)
- ├── unsc_ssa_mea.csv         # UNSC-Mitgliedschaft für SSA+MENA (unsc3)
- └── final_data_ssa_mea.csv   # Kombinierter Datensatz (Basis für Analyse)
+ ├── mona_ssa_mea.csv          # IMF-Programme für **20 SSA-Länder** (2002–2025)
+ ├── wdi_ssa_mea.csv           # Rohstoffdaten für **20 SSA-Länder** (FuelExportPct, MineralExportPct)
+ ├── unsc_ssa_mea.csv         # UNSC-Mitgliedschaft für **20 SSA-Länder** (unsc3)
+ └── final_data_ssa_mea.csv   # Kombinierter Datensatz (**20 SSA-Länder**, Basis für Analyse)
 ```
 
 ### 🎯 **Gefilterte Länder (Nur SSA - 20 Länder)**
@@ -33,7 +33,7 @@
 |------------|-----------|----------------|
 | **SSA** | **20** | AGO, CAF, CMR, COM, CPV, GAB, GHA, GIN, KEN, LSO, MDG, MOZ, MRT, MWI, RWA, SLE, SLV, TZA, UGA, ZMB |
 
-**Hinweis:** Ursprünglich waren 39 Länder (5 MENA + 34 SSA) geplant. Aufgrund fehlender Daten in der WDI-Datei (keine Rohstoffdaten für EGY, YEM, COD, COG, GNQ, STP, BDI, BEN, BFA, CIV, DJI, ETH, GMB, GNB, LBR, MLI, NER, NGA, SDN, SEN, SOM, SUR, TCD, TGO) wurden nur die **20 SSA-Länder** beibehalten, für die in **allen drei Datensätzen** (MONA, WDI, UNSC) Daten vorliegen.
+**Hinweis:** Ursprünglich waren 39 Länder (5 MENA + 34 SSA) geplant. Aufgrund fehlender Daten in der WDI-Datei (keine Rohstoffdaten für EGY, YEM, COD, COG, GNQ, STP, BDI, BEN, BFA, CIV, DJI, ETH, GMB, GNB, LBR, MLI, NER, NGA, SDN, SEN, SOM, SUR, TCD, TGO) wurden **nur die 20 SSA-Länder** beibehalten, für die in **allen drei Datensätzen** (MONA, WDI, UNSC) Daten vorliegen.
 
 ---
 
@@ -101,7 +101,7 @@ Da nur SSA analysiert wird (kein Regionalvergleich), wurden H2 und H3 angepasst.
 
 ### **📌 Wichtige Hinweise für Tag 4–6:**
 - **Arbeitsverzeichnis:** `C:/Users/HP/io/imf-replizierung/`
-- **Eingabedatei:** `data/processed/final_data_ssa_mea.csv` (20 SSA-Länder)
+- **Eingabedatei:** `data/processed/final_data_ssa_mea.csv` (**20 SSA-Länder**: AGO, CAF, CMR, COM, CPV, GAB, GHA, GIN, KEN, LSO, MDG, MOZ, MRT, MWI, RWA, SLE, SLV, TZA, UGA, ZMB)
 - **Ausgabeverzeichnis:** `results/` (wird automatisch erstellt)
 - **Benötigte Pakete:** `plm`, `fixest`, `lmtest`, `tidyverse`, `stargazer`
 - **Anpassung:** Nur SSA-Länder (20) - MENA ausgeschlossen
@@ -122,16 +122,16 @@ imf-replizierung/
 │   │       └── wdi_2002_2025_dep.csv
 │   │
 │   └── processed/
-│       ├── mona_ssa_mea.csv          # ✅ Tag 1
-│       ├── wdi_ssa_mea.csv           # ✅ Tag 1
-│       ├── unsc_ssa_mea.csv         # ✅ Tag 1
-│       └── final_data_ssa_mea.csv   # ✅ Tag 2
+│       ├── mona_ssa_mea.csv          # ✅ Tag 1 (**20 SSA-Länder**)
+│       ├── wdi_ssa_mea.csv           # ✅ Tag 1 (**20 SSA-Länder**)
+│       ├── unsc_ssa_mea.csv         # ✅ Tag 1 (**20 SSA-Länder**)
+│       └── final_data_ssa_mea.csv   # ✅ Tag 2 (**20 SSA-Länder**)
 │
 ├── code/
 │   ├── filter_working.R            # ✅ Tag 1 (MONA filtern)
 │   ├── filter_all_ssa_mea.R        # ✅ Tag 1 (alle 3 Dateien filtern)
 │   ├── create_final_data.R         # ✅ Tag 2 (Finalen Datensatz erstellen)
-│   └── Phase-3_SSA_MENA.R           # ⏳ Tag 4–6 (Analyse)
+│   └── Phase-3_SSA_only.R           # ⏳ Tag 4–6 (Analyse für **20 SSA-Länder**)
 │
 ├── docs/
 │   ├── session_10Tage_SSA_MENA.md   # 10-Tage-Plan
@@ -219,7 +219,7 @@ Co-Authored-By: Mistral Vibe <vibe@mistral.ai>
 
 | **Phase** | **Zeitraum** | **Status** | **Aufgabe** |
 |-----------|--------------|------------|-------------|
-| **Phase 1** | Tag 1–3 | ✅ **Abgeschlossen** | Datenaufbereitung (Filterung + Kombination, SSA-Fokus) |
+| **Phase 1** | Tag 1–3 | ✅ **Abgeschlossen** | Datenaufbereitung (Filterung + Kombination, **20 SSA-Länder**) |
 | **Phase 2** | Tag 4–6 | ⏳ **In Arbeit** | Analyse (H1–H4 + Robustheitschecks) |
 | **Phase 3** | Tag 7–10 | ⏳ **Geplant** | Hausarbeit schreiben (20 Seiten) |
 
@@ -227,7 +227,7 @@ Co-Authored-By: Mistral Vibe <vibe@mistral.ai>
 
 ## 📚 Letzte Aktualisierung
 - **Datum:** 20. September 2026
-- **Status:** ✅ Datenaufbereitung abgeschlossen (Tag 1–3) - **Fokus auf 20 SSA-Länder**
+- **Status:** ✅ Datenaufbereitung abgeschlossen (Tag 1–3) - **Fokus auf 20 SSA-Länder** (MENA ausgeschlossen wegen fehlender WDI-Daten)
 - **Nächster Schritt:** **Tag 4 – Replizierung (H1) mit Phase-3_SSA_only.R**
 - **Verantwortlich:** User
 - **Priorität:** ⭐⭐⭐ **Hoch**

@@ -1,7 +1,7 @@
-# IMF-Studie Replizierung mit SSA + MENA Fokus + Dependenz-Theorie
+# IMF-Studie Replizierung mit SSA-Fokus + Dependenz-Theorie
 
-**Vollständige Replizierung der Originalstudie Dreher et al. (2015) für 2002-2008 (SSA + MENA)**  
-**+ Erweiterung für SSA + MENA 2008-2025 mit Inhaltsanalyse der Bedingungen**
+**Vollständige Replizierung der Originalstudie Dreher et al. (2015) für 2002-2008 (SSA)**  
+**+ Erweiterung für SSA 2008-2025 mit Inhaltsanalyse der Bedingungen**
 
 ---
 
@@ -22,11 +22,11 @@
 ### Kernforschungsfrage:
 > **"Wie beeinflusst UNSC-Mitgliedschaft die IMF-Konditionalität in rohstoffabhängigen Ländern (SSA), und zeigt sich dies im Inhalt der Bedingungen?"**
 
-### Hypothesen (für SSA + MENA):
+### Hypothesen (für **20 SSA-Länder**):
 | **Hypothese** | **Beschreibung** | **Testmethode** | **Theoretische Grundlage** |
 |-------------|------------------|-----------------|-----------------------------|
 | **H1** | UNSC-Mitgliedschaft eines Landes reduziert seine IMF-Konditionalität (Replizierung Originalstudie 2002–2008) | `avgcondtype_all ~ unsc3 + XDebtGNI + DebtServGNI + ResXDebt` | Politische Ökonomie (Dreher et al. 2015) |
-| **H2** | **Regionen mit hoher Rohstoffabhängigkeit** haben einen **verstärkten UNSC-Effekt** | `avgcondtype_all ~ unsc3 * Region + Kontrollen` | Dependenz-Theorie (Amin 1974) |
+| **H2** | **Länder mit hoher Rohstoffabhängigkeit** haben einen **verstärkten UNSC-Effekt** | `avgcondtype_all ~ unsc3 * Rohstoffabhängigkeit + Kontrollen` | Dependenz-Theorie (Amin 1974) |
 | **H3** | **Rohstoffabhängigkeit verstärkt UNSC-Effekt** | `avgcondtype_all ~ unsc3 * Rohstoffabhängigkeit + Kontrollen` | Neokolonialismus (Emmanuel 1972) |
 | **H4** | UNSC-Länder haben **weniger rohstoff-spezifische Bedingungen** | `rohstoff_cond_share ~ unsc3 * Rohstoffabhängigkeit + Kontrollen` | **Weltsystemtheorie (Wallerstein 1974)** |
 
@@ -36,9 +36,9 @@
 
 | **Phase** | **Zeitraum** | **Status** | **Ergebnis** | **Fokus** |
 |-----------|--------------|------------|--------------|------------|
-| **Phase 1** | Datenbeschaffung & Aufbereitung | ✅ **Tag 1–3 ABGESCHLOSSEN** | `final_data_ssa_mea.csv` + Inhaltsanalyse | **SSA + MENA** |
-| **Phase 2** | Analyse | ⏳ **Tag 4–6** | Modelle H1–H4 + Robustheitschecks | **SSA + MENA** |
-| **Phase 3** | Schreiben | ⏳ **Tag 7–10** | 20-seitige Hausarbeit | **SSA + MENA + H4** |
+| **Phase 1** | Datenbeschaffung & Aufbereitung | ✅ **Tag 1–3 ABGESCHLOSSEN** | `final_data_ssa_mea.csv` + Inhaltsanalyse | **20 SSA-Länder** |
+| **Phase 2** | Analyse | ⏳ **Tag 4–6** | Modelle H1–H4 + Robustheitschecks | **20 SSA-Länder** |
+| **Phase 3** | Schreiben | ⏳ **Tag 7–10** | 20-seitige Hausarbeit | **SSA + H4** |
 
 ---
 
@@ -60,7 +60,7 @@
 ```
 imf-replizierung/
 ├── data/
-│   ├── raw/                       # Rohdaten (nur SSA + MENA)
+│   ├── raw/                       # Rohdaten (nur **20 SSA-Länder**)
 │   │   ├── mona/
 │   │   │   └── Combined_ISO.xlsx      # Mit ISO3 und iso_numeric
 │   │   ├── unsc/
@@ -68,7 +68,7 @@ imf-replizierung/
 │   │   └── wdi/
 │   │       └── wdi_2002_2025_dep.csv       # Rohstoffabhängigkeit
 │   │
-│   └── processed/                     # Aufbereitete Datensätze (nur SSA + MENA)
+│   └── processed/                     # Aufbereitete Datensätze (nur **20 SSA-Länder**)
 │       ├── final_data_ssa_mea.csv          # Finaler Datensatz
 │       └── data_with_cond_types.csv        # + klassifizierte Bedingungen
 │
@@ -106,10 +106,10 @@ imf-replizierung/
 | **MONA** | `data/raw/mona/Combined_ISO.xlsx` | Enthält **ISO3** und **iso_numeric** (manuell ergänzt) | IMF-Programme, Bedingungen | ✅ Vorhanden |
 | **UNSC** | `data/raw/unsc/unsc_membership_2002_2025.csv` | Panel mit **`unsc3`** (Mitglied in t oder t-1) | UNSC-Mitgliedschaft | ✅ Vorhanden |
 | **WDI** | `data/raw/wdi/wdi_2002_2025_dep.csv` | Rohstoffabhängigkeit: **`FuelExportPct` + `MineralExportPct`** | `TX.VAL.FUEL.ZS.UN`, `TX.VAL.MMTL.ZS.UN` | ✅ Vorhanden |
-| **MONA (SSA+MENA)** | `data/processed/mona_ssa_mea.csv` | **Gefiltert für 39 Länder** | IMF-Programme für SSA+MENA | ✅ **Tag 1** |
-| **WDI (SSA+MENA)** | `data/processed/wdi_ssa_mea.csv` | **Gefiltert für 39 Länder** | Rohstoffdaten für SSA+MENA | ✅ **Tag 1** |
-| **UNSC (SSA+MENA)** | `data/processed/unsc_ssa_mea.csv` | **Gefiltert für 39 Länder** | UNSC-Mitgliedschaft für SSA+MENA | ✅ **Tag 1** |
-| **Final (SSA+MENA)** | `data/processed/final_data_ssa_mea.csv` | **Kombinierter Datensatz für Analyse** | MONA + WDI + UNSC | ✅ **Tag 2** |
+| **MONA (SSA)** | `data/processed/mona_ssa_mea.csv` | **Gefiltert für 20 SSA-Länder** | IMF-Programme für SSA | ✅ **Tag 1** |
+| **WDI (SSA)** | `data/processed/wdi_ssa_mea.csv` | **Gefiltert für 20 SSA-Länder** | Rohstoffdaten für SSA | ✅ **Tag 1** |
+| **UNSC (SSA)** | `data/processed/unsc_ssa_mea.csv` | **Gefiltert für 20 SSA-Länder** | UNSC-Mitgliedschaft für SSA | ✅ **Tag 1** |
+| **Final (SSA)** | `data/processed/final_data_ssa_mea.csv` | **Kombinierter Datensatz für Analyse** | MONA + WDI + UNSC | ✅ **Tag 2** |
 | **Inhaltsanalyse** | `data/processed/data_with_cond_types.csv` | Klassifizierte Bedingungen | `rohstoff_cond`, `stabil_cond` | ⏳ Tag 3 |
 
 ---
@@ -123,9 +123,9 @@ imf-replizierung/
   - `MineralExportPct = TX.VAL.MMTL.ZS.UN` (Exporte)
 - **Verknüpfungen:** Alle Joins laufen über **`ISO3`**
 
-### 🟡 **Für SSA + MENA anpassen (Tag 1–3):**
+### 🟡 **Für 20 SSA-Länder (Tag 1–3):**
 1. **Daten filtern:**
-   - MONA, UNSC, WDI auf **SSA + MENA** beschränken
+   - MONA, UNSC, WDI auf **20 SSA-Länder** beschränken
    - Ergebnis: `final_data_ssa_mea.csv`
 
 2. **Inhaltsanalyse (H4):**
@@ -134,23 +134,22 @@ imf-replizierung/
      - **Stabilisierend:** *"fiscal"*, *"inflation"*, *"budget"*, *"debt"*
    - Ergebnis: `data_with_cond_types.csv`
 
-3. **Regionsvariable:**
-   - `Region` = **"SSA"** oder **"MENA"** (zeitinvariant pro Land)
+
 
 ---
 
-## 📈 Modelle (10-Tage-Version - SSA + MENA)
+## 📈 Modelle (10-Tage-Version - **20 SSA-Länder**)
 
-### Teil 1: Replizierung (2002-2008, SSA + MENA)
+### Teil 1: Replizierung (2002-2008, SSA)
 | **Modell** | **Spezifikation** | **Testet Hypothese** | **Erwartetes Ergebnis** |
 |-----------|------------------|----------------------|------------------------|
 | **M1** | `avgcondtype_all ~ unsc3 + XDebtGNI + DebtServGNI + ResXDebt` | **H1: Replizierung** | `unsc3` = −1.8 bis −2.5 |
 
-### Teil 2: Erweiterung (2008-2025, SSA + MENA)
+### Teil 2: Erweiterung (2008-2025, SSA)
 | **Modell** | **Spezifikation** | **Testet Hypothese** | **Erwartetes Ergebnis** |
 |-----------|------------------|----------------------|------------------------|
-| **M2** | `avgcondtype_all ~ unsc3 * Region + XDebtGNI + DebtServGNI + ResXDebt` | **H2: Regionaler UNSC-Effekt** | `unsc3:RegionMENA` ≠ 0 |
-| **M3** | `avgcondtype_all ~ unsc3 * Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt` | **H3: UNSC × Rohstoff** | `unsc3:Rohstoffabhängigkeit` < 0 |
+| **M2** | `avgcondtype_all ~ unsc3 * Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt` | **H2: UNSC × Rohstoffabhängigkeit** | `unsc3:Rohstoffabhängigkeit` ≠ 0 |
+| **M3** | `avgcondtype_all ~ unsc3 * Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt` | **H3: Verstärkter UNSC-Effekt** | `unsc3:Rohstoffabhängigkeit` < 0 |
 | **M4** | `rohstoff_cond_share ~ unsc3 * Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt` | **H4: Inhaltsanalyse** | `unsc3:Rohstoffabhängigkeit` < 0 |
 
 ### Robustheitschecks
@@ -179,7 +178,7 @@ imf-replizierung/
 ### **📅 Tagesplan (heute beginnen!)**
 | **Priorität** | **Tag** | **Aufgabe** | **Ergebnis** |
 |---------------|---------|-------------|--------------|
-| ⭐⭐⭐ | **Tag 1** | Rohdaten für SSA + MENA filtern | `mona_ssa_mea.csv`, `unsc_ssa_mea.csv`, `wdi_ssa_mea.csv` |
+| ⭐⭐⭐ | **Tag 1** | Rohdaten für **20 SSA-Länder** filtern | `mona_ssa_mea.csv`, `unsc_ssa_mea.csv`, `wdi_ssa_mea.csv` |
 | ⭐⭐⭐ | **Tag 2** | Finalen Datensatz erstellen | `final_data_ssa_mea.csv` |
 | ⭐⭐⭐ | **Tag 3** | Inhaltsanalyse (rohstoff-spezifische Bedingungen klassifizieren) | `data_with_cond_types.csv` |
 | ⭐⭐⭐ | **Tag 4** | Replizierung (2002–2008, H1) | `model_repl.rds` + Validierung |
@@ -201,7 +200,7 @@ imf-replizierung/
 | `Neu.md` | Ursprüngliche Änderungen (17.09.2026) | ⚠️ Veraltet |
 | `session_10Tage_SSA_MENA.md` | **⭐ Hauptdokument: 10-Tage-Fahrplan** | ✅ **AKTUELL** | ⭐⭐⭐ |
 | `README_Aufgabenplan_10TAGE.md` | **⭐ Aufgabenplan für 10 Tage** | ✅ **AKTUELL** | ⭐⭐⭐ |
-| `session_stand_2026-09-20.md` | **⭐ Aktueller Projektstand (Datenaufbereitung abgeschlossen)** | ✅ **NEU** | ⭐⭐⭐ |
+| `session_stand_2026-09-20.md` | **⭐ Aktueller Projektstand (Datenaufbereitung abgeschlossen, 20 SSA-Länder)** | ✅ **NEU** | ⭐⭐⭐ |
 | `README_Aufgabenplan_AKTUALISIERT.md` | Veraltet (2-Wochen-Plan) | ❌ Veraltet |
 | `session_neu_final_2Wochen_AKTUALISIERT.md` | Veraltet (2-Wochen-Plan) | ❌ Veraltet |
 
@@ -221,13 +220,13 @@ imf-replizierung/
 ## 📌 **Zusammenfassung: 10-Tage-Plan für 20 Seiten**
 
 ### **🎯 Ihr Fokus:**
-- **Region:** **Nur SSA** (20 Länder)
+- **Region:** **Nur SSA** (**20 Länder**: AGO, CAF, CMR, COM, CPV, GAB, GHA, GIN, KEN, LSO, MDG, MOZ, MRT, MWI, RWA, SLE, SLV, TZA, UGA, ZMB)
 - **Inhaltsanalyse (H4):** **Alleinstellungsmerkmal** – Test, ob UNSC-Länder weniger rohstoff-spezifische Bedingungen erhalten
 - **Zeitplan:** **10 Tage** (täglich 4–5 Stunden)
-- **Anpassung:** Fokus auf SSA aufgrund fehlender WDI-Daten für MENA-Länder
+- **Anpassung:** Fokus auf **20 SSA-Länder** aufgrund fehlender WDI-Daten für MENA-Länder
 
 ### **📅 Tagesplan:**
-- **Tag 1–3:** Daten (Filtern, Aufbereiten, Inhaltsanalyse)
+- **Tag 1–3:** Daten (Filtern, Aufbereiten, Inhaltsanalyse) – ✅ **Abgeschlossen**
 - **Tag 4–6:** Analyse (Replizierung + H2–H4 + Robustheitschecks)
 - **Tag 7–10:** Schreiben (20 Seiten)
 
@@ -237,6 +236,6 @@ imf-replizierung/
 - Kapitel 3–5 (Ergebnisse): **8 Seiten**
 - Kapitel 6–7 (Diskussion + Fazit): **5 Seiten**
 
-**Letzte Aktualisierung:** 2026-09-20  
-**Status:** ✅ **Datenaufbereitung abgeschlossen** (Tag 1–3) - **Fokus auf 20 SSA-Länder** | ⏳ **Analyse in Arbeit**  
+**Letzte Aktualisierung:** 2026-09-20 (korrigiert 20.09.2026)  
+**Status:** ✅ **Datenaufbereitung abgeschlossen** (Tag 1–3) - **Fokus auf 20 SSA-Länder** (MENA ausgeschlossen) | ⏳ **Analyse in Arbeit**  
 **Nächster Schritt:** **Tag 4 starten** – Replizierung (H1) mit Phase-3_SSA_only.R ausführen!
