@@ -6,43 +6,44 @@ library(tidyverse)
 library(plm)
 library(stargazer)
 
-# Daten für Replizierung (2002–2008)
-# Korrigierte Version - Verwende data_with_cond_types.csv wie im Originalplan
+# Daten für Replizierung (2002–2008) - ALLE LAENDER
 data_repl <- read.csv("data/processed/data_with_cond_types.csv")
 
-# Zuerst Jahr-Filter, DANN UNSC-Variation
+# Jahr-Filter (2002-2008)
 data_repl <- data_repl[data_repl$Year >= 2002 & data_repl$Year <= 2008, ]
 
-# Nur Länder mit Variation in unsc3 behalten
-data_repl <- data_repl %>%
-  group_by(ISO3) %>%
-  filter(length(unique(unsc3)) > 1) %>%
-  ungroup()
-
-# NAs in avgcondtype_all entfernen BEVOR Aggregation
+# NAs in avgcondtype_all entfernen
 data_repl <- data_repl %>%
   filter(!is.na(avgcondtype_all))
 
-# Duplikate pro (ISO3, Year) aggregieren (Mittelwert)
-data_repl <- data_repl %>%
-  group_by(ISO3, Year, unsc3, Rohstoffabhängigkeit, XDebtGNI, DebtServGNI, ResXDebt) %>%
-  summarise(avgcondtype_all = mean(avgcondtype_all, na.rm = TRUE), .groups = "drop")
+# Pruefe Spaltennamen
+print("Verfuegbare Spalten:")
+print(colnames(data_repl))
 
-print(paste("Länder mit UNSC-Variation (2002-2008):", n_distinct(data_repl$ISO3)))
-print(paste("Anzahl Beobachtungen nach Aggregation:", nrow(data_repl)))
-print(table(data_repl$unsc3))
-print("UNSC-Variation pro Land nach Aggregation:")
-print(data_repl %>%
-  group_by(ISO3) %>%
-  summarise(unsc3_values = paste(sort(unique(unsc3)), collapse = ", ")))
-print(table(data_repl$ISO3, data_repl$Year))
-print(summary(data_repl))
-print(data_repl %>% select(ISO3, Year, unsc3, avgcondtype_all) %>% head(25))
+# Duplikate pro (ISO3, Year) aggregieren (Mittelwert)
+# Verwende Rohstoffabhaengigkeit falls vorhanden, sonst FuelExportPct + MineralExportPct
+if("Rohstoffabhaengigkeit" %in% colnames(data_repl)) {
+  data_repl <- data_repl %>%
+    group_by(ISO3, Year, unsc3, Rohstoffabhaengigkeit, XDebtGNI, DebtServGNI, ResXDebt) %>%
+    summarise(avgcondtype_all = mean(avgcondtype_all, na.rm = TRUE), .groups = "drop")
+} else if("Rohstoffabhängigkeit" %in% colnames(data_repl)) {
+  data_repl <- data_repl %>%
+    group_by(ISO3, Year, unsc3, Rohstoffabhängigkeit, XDebtGNI, DebtServGNI, ResXDebt) %>%
+    summarise(avgcondtype_all = mean(avgcondtype_all, na.rm = TRUE), .groups = "drop")
+} else {
+  data_repl <- data_repl %>%
+    mutate(Rohstoffabhängigkeit = FuelExportPct + MineralExportPct) %>%
+    group_by(ISO3, Year, unsc3, Rohstoffabhängigkeit, XDebtGNI, DebtServGNI, ResXDebt) %>%
+    summarise(avgcondtype_all = mean(avgcondtype_all, na.rm = TRUE), .groups = "drop")
+}
+
+print(paste("Anzahl Laender (2002-2008):", n_distinct(data_repl$ISO3)))
+print(paste("Anzahl Beobachtungen:", nrow(data_repl)))
 
 model_repl <- plm(
   avgcondtype_all ~ unsc3 + Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt,
   data = data_repl,
-  index = c("ISO3"),  # Country Fixed Effects (Year-FE über Kontrollvariablen)
+  index = c("ISO3"),
   model = "within"
 )
 
@@ -52,11 +53,8 @@ saveRDS(model_repl, "results/model_repl.rds")
 # Validierung
 summary_repl <- summary(model_repl)
 
-# Check if unsc3 is in the model coefficients
 if ("unsc3" %in% names(coef(model_repl))) {
-  # Note: pooling model uses t-distribution, so p-value column is "Pr(>|t|)" not "Pr(>|z|)"
   p_col <- ifelse("Pr(>|t|)" %in% colnames(summary_repl$coefficients), "Pr(>|t|)", "Pr(>|z|)")
-  # For plm pooling model, r.squared is a named vector with rsq and adjrsq
   r2_val <- summary_repl$r.squared["rsq"]
   
   validation <- data.frame(
@@ -64,6 +62,7 @@ if ("unsc3" %in% names(coef(model_repl))) {
     unsc_p = summary_repl$coefficients["unsc3", p_col],
     n_obs = nobs(model_repl),
     r2 = r2_val,
+    n_countries = length(unique(data_repl$ISO3)),
     replication_success = ifelse(
       abs(coef(model_repl)["unsc3"]) >= 1.8 & abs(coef(model_repl)["unsc3"]) <= 2.5 & summary_repl$coefficients["unsc3", p_col] < 0.05,
       "SUCCESS",
@@ -72,7 +71,6 @@ if ("unsc3" %in% names(coef(model_repl))) {
     row.names = NULL
   )
 } else {
-  # For pooling model, r.squared is a named vector with rsq and adjrsq
   r2_val <- summary_repl$r.squared["rsq"]
   
   validation <- data.frame(
@@ -80,6 +78,7 @@ if ("unsc3" %in% names(coef(model_repl))) {
     unsc_p = NA,
     n_obs = nobs(model_repl),
     r2 = r2_val,
+    n_countries = length(unique(data_repl$ISO3)),
     replication_success = "FAILED",
     row.names = NULL
   )
@@ -88,15 +87,5 @@ if ("unsc3" %in% names(coef(model_repl))) {
 
 write.csv(validation, "results/validation_repl.csv", row.names = FALSE)
 
-# Modell laden
-model_repl <- readRDS("results/model_repl.rds")
-
 # Anzeigen
 summary(model_repl)
-
-
-
-
-
-
-
