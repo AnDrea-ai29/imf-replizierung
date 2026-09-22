@@ -594,9 +594,9 @@ write_csv(results_summary, "results/results_summary.csv")
 
 ### **🟡 Hoch (Tag 4–6):**
 - [x] Replizierung durchf. (`model_repl.rds`, `validation_repl.csv`)
-  - **Ergebnis:** Mit verfügbaren Daten (2002-2008, 3 Länder mit UNSC-Variation: AGO, GHA, TZA)
-  - **unsc_coef:** -3.377, **p:** 0.121, **n_obs:** 15, **r2:** 0.605
-  - **Status:** FAILED (p > 0.05), aber als Replizierungsversuch mit verfügbaren Daten akzeptiert
+  - **Ergebnis:** Mit allen 20 SSA-Laendern (2002-2008, 97 Beobachtungen)
+  - **unsc_coef:** -1.247, **p:** 0.685, **n_obs:** 97, **r2:** 0.019, **n_countries:** 20
+  - **Status:** FAILED (p > 0.05), aber als Replizierungsversuch mit allen verfügbaren Daten akzeptiert
 - [ ] Erweiterte Modelle testen (`model_h2.rds`, `model_h3.rds`, `model_h4.rds`)
 - [ ] Robustheitschecks durchführen
 - [ ] Ergebnisse zusammenfassen (`results_summary.csv`)
@@ -752,5 +752,5 @@ write_csv(results_summary, "results/results_summary.csv")
 - **10 Tage** → **realistisch**. 
 
 **📅 Letzte Aktualisierung:** 2026-09-22  
-**🎯 Status:** ✅ Tag 4 abgeschlossen (Replizierung mit verfügbaren Daten durchgeführt)
+**🎯 Status:** ✅ Tag 4 abgeschlossen (Replizierung mit allen 20 SSA-Laendern durchgeführt)
 **📂 Nächster Schritt:** Tag 5 morgen starten (Erweiterung H2-H4)
