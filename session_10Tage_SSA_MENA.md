@@ -1,7 +1,7 @@
 # Session: 10-Tage-Fahrplan für IMF-Replizierung mit SSA & MENA Fokus
 
 **Session-Name:** session_10Tage_SSA_MENA  
-**Erstellt:** 2026-09-17  
+**Erstellt:** 2026-09-22  
 **Zweck:** **Ultra-komprimierter 10-Tage-Plan** zur Fertigstellung der Hausarbeit mit Fokus auf **Sub-Saharan Africa (SSA) + Middle East & North Africa (MENA)**. 
 **Ziel:** 20-seitige Seminararbeit in **10 Tagen** mit klaren, umsetzbaren Schritten.
 
@@ -593,7 +593,10 @@ write_csv(results_summary, "results/results_summary.csv")
 - [ ] Inhaltsanalyse durchführen (`data_with_cond_types.csv`)
 
 ### **🟡 Hoch (Tag 4–6):**
-- [ ] Replizierung durchführen (`model_repl.rds`)
+- [x] Replizierung durchf. (`model_repl.rds`, `validation_repl.csv`)
+  - **Ergebnis:** Mit verfügbaren Daten (2002-2008, 3 Länder mit UNSC-Variation: AGO, GHA, TZA)
+  - **unsc_coef:** -3.377, **p:** 0.121, **n_obs:** 15, **r2:** 0.605
+  - **Status:** FAILED (p > 0.05), aber als Replizierungsversuch mit verfügbaren Daten akzeptiert
 - [ ] Erweiterte Modelle testen (`model_h2.rds`, `model_h3.rds`, `model_h4.rds`)
 - [ ] Robustheitschecks durchführen
 - [ ] Ergebnisse zusammenfassen (`results_summary.csv`)
@@ -608,7 +611,7 @@ write_csv(results_summary, "results/results_summary.csv")
 
 ## **🎯 GitHub-Issues (Beispiele)**
 
-### **Issue #1: Datenbeschaffung (Tag 1)**
+**📂 Nächster Schritt:** Tag 5 morgen starten (Erweiterung H2-H4)
 **Titel:** `Daten für SSA + MENA vorbereiten`  
 **Beschreibung:**
 - MONA-Daten für SSA + MENA filtern
@@ -720,7 +723,7 @@ write_csv(results_summary, "results/results_summary.csv")
 
 ---
 
-### **Issue #10: Diskussion + Fazit (Tag 11)**
+**📂 Nächster Schritt:** Tag 5 morgen starten (Erweiterung H2-H4)
 **Titel:** `Kapitel 6–7: Diskussion und Fazit schreiben`  
 **Beschreibung:**
 - Interpretation der Ergebnisse
@@ -748,6 +751,6 @@ write_csv(results_summary, "results/results_summary.csv")
 - **Inhaltsanalyse** → **Alleinstellungsmerkmal**. 
 - **10 Tage** → **realistisch**. 
 
-**📅 Letzte Aktualisierung:** 2026-09-17  
-**🎯 Status:** ✅ Plan für 10-Tage-Umsetzung bereit  
-**📂 Nächster Schritt:** Issue #1 (Datenbeschaffung) anlegen und mit Tag 1 beginnen!
+**📅 Letzte Aktualisierung:** 2026-09-22  
+**🎯 Status:** ✅ Tag 4 abgeschlossen (Replizierung mit verfügbaren Daten durchgeführt)
+**📂 Nächster Schritt:** Tag 5 morgen starten (Erweiterung H2-H4)

@@ -115,7 +115,7 @@ Dieses Dokument ist Ihr **Master-Plan für 10 Tage**. **Fokus auf SSA + MENA** (
 ### **🔴 Phase 1: Daten (Tag 1–3)**
 | **Tag** | **Aufgabe** | **Ergebnis** | **Status** |
 |---------|------------|--------------|------------|
-| Tag 1 | Rohdaten für SSA + MENA vorbereiten | `mona_ssa_mea.csv`, `unsc_ssa_mea.csv`, `wdi_ssa_mea.csv` | ⬜ |
+| Tag 1 | Rohdaten für SSA + MENA vorbereiten | `mona_ssa_mea.csv`, `unsc_ssa_mea.csv`, `wdi_ssa_mea.csv` |⬜  |
 | Tag 2 | Finalen Datensatz erstellen | `final_data_ssa_mea.csv` | ⬜ |
 | Tag 3 | Inhaltsanalyse der Bedingungen | `data_with_cond_types.csv` | ⬜ |
 
