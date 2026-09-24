@@ -1,0 +1,7 @@
+"Variante","FE","n_obs","n_laender","unsc3","unsc3_p"
+"Alle Jahre 2002-2025 (Referenz)","Laender",214,63,3.112,0.0728
+"Ohne Finanzkrise 2008-2010","Laender",175,60,2.923,0.1412
+"Ohne Corona 2020-2022","Laender",187,62,3.049,0.1088
+"Ohne beide Krisenzeitraeume","Laender",148,58,2.495,0.2625
+"Alle Jahre, mit Jahres-FE","Laender + Jahre",214,63,3.516,0.0454
+"Ohne beide Krisenzeitraeume, mit Jahres-FE","Laender + Jahre",148,58,2.132,0.3463

@@ -88,6 +88,26 @@ verschwunden ist. Vorbehalt: nur 25 UNSC-Programmjahre im Panel (Power).
   LAC-Subgroup-Befund (unsc3=−0.71, p<0.001) stammte aus der inzwischen
   zurückgebauten vordefinierten Regionseinteilung.
 
+### Krisen-Robustheit (`zeitraeume_krisen_robustheit.R`)
+
+Sorge: Verzerren Finanzkrise (2008-2010) und Corona (2020-2022) die Effekte?
+Theoretisch drei Kanaele: gemeinsame Schocks (von Jahres-FE absorbiert),
+Konfundierung (unplausibel: UNSC-Timing folgt dem UN-Wahlkalender, nicht der
+Krisenlage), Heterogenitaet/Selektion (pruefbar). Empirisch:
+
+| Variante (H1, count, Laender-FE) | unsc3 | p | N |
+|---|---|---|---|
+| Alle Jahre (Referenz) | +3.11 | 0.073 | 214 |
+| Ohne Finanzkrise 2008-2010 | +2.92 | 0.141 | 175 |
+| Ohne Corona 2020-2022 | +3.05 | 0.109 | 187 |
+| Ohne beide Krisenzeitraeume | +2.50 | 0.263 | 148 |
+| Alle Jahre, mit Jahres-FE | +3.52 | 0.045 | 214 |
+
+Fazit: Das positive Vorzeichen ist kein Krisenartefakt — es bleibt in allen
+Ausschlussfenstern bestehen und wird durch Jahres-FE eher verstaerkt. Die
+Interaktion unsc3 x Krise ist mit nur 3 behandelten Krisen-Land-Jahren nicht
+auswertbar. Grosse Grenze bleibt die Power (25 behandelte Land-Jahre gesamt).
+
 ### Herkunft des früheren negativen H1-Vorzeichens (`h1_sample_zerlegung.R`)
 
 Alter Wert −1.25 (validation "FAILED") war Artefakt aus (a) 20-SSA-Sample und

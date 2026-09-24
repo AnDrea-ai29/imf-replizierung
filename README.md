@@ -51,6 +51,7 @@ Wichtige Datenkorrekturen (dokumentiert in den Skripten):
 | `code/analysis/phase2_erweiterung.R` | Globale Durchschnittsmodelle H1, H2, H4 (ohne Regionen) | `results/models/model_h1/h2/h4.rds`, `results/tables/results_h1_h4.csv` |
 | `code/analysis/laender_ausreisser_analyse.R` | Laenderuebersicht, Extremwerte, Leave-one-out-Einfluss auf unsc3 | `results/tables/country_summary.csv`, `outlier_extremewerte.csv`, `influence_unsc3.csv` |
 | `code/analysis/h1_sample_zerlegung.R` | Dokumentation: Woher kam das fruehere negative H1-Vorzeichen? (Reproduktion des alten SSA-Befunds + Stufung nach Laenderpool und Zeitfenster) | `results/tables/h1_sample_zerlegung.csv` |
+| `code/analysis/zeitraeume_krisen_robustheit.R` | Krisen-Robustheit: Ausschlussfenster 2008-2010/2020-2022, Jahres-FE, unsc3 x Krise | `results/tables/krisen_robustheit.csv` |
 | `code/replication/final_robustness_check.R` | Pooled OLS, Year FE, Two-way FE, BP-/White-Tests, HC1-SE | `results/tables/robustness_checks.csv/.tex` |
 | `R/regional_effect_summary.R` | Optionale Helferfunktion: erst NUTZBAR, wenn der Autor selbst Regionsgruppen festgelegt hat | (Rueckgabeobjekt) |
 
