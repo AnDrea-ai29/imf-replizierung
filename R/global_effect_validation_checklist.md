@@ -12,10 +12,10 @@ Diese Checkliste hilft dir schnell zu prüfen, ob das globale Design sauber läu
 - [ ] Alternative: `FuelExportPct` + `MineralExportPct` existieren
 - [ ] `resource_dep` enthält keine unerwarteten NAs oder extremen Ausreißer, die die Analyse zerstören
 
-## 3. Regionale Variable korrekt?
-- [ ] `region` existiert im Panel (SSA, ECA, LAC, MENA, SA, EAP)
-- [ ] alle Laender haben eine Regionszuordnung; unmapped Codes werden beim Panelbau gemeldet
-- [ ] Regionen werden empirisch geprueft (Neu.md: keine Region a priori privilegieren)
+## 3. Keine vordefinierten Regionen
+- [ ] Regionen werden bewusst NICHT vorab festgelegt (Neu.md Abschnitt 6)
+- [ ] Analyse verlaeuft erst ueber Durchschnitts-, Laender- und Ausreisserergebnisse
+- [ ] Regionszuordnungen erst spaeter, nur deskriptiv, vom Autor selbst festgelegt
 
 ## 4. Deskriptive Prüfung
 - [ ] `region_summary` zeigt plausible Mittelwerte

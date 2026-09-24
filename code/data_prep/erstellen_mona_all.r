@@ -8,11 +8,15 @@
 # - Bedingungen nach dem bestehenden hierarchischen Muster klassifizieren
 # - auf Land-Jahr-Ebene aggregieren
 # - mit WDI und UNSC joinen
-# - region-Variable erzeugen (regionale Differenzierung, vgl. Neu.md Schritt 3)
 # - final_data_panel_ALL.csv erzeugen
 #
-# WICHTIG: Fehlende WDI-Werte bleiben NA (keine Null-Ersetzung mehr).
+# WICHTIG (1): Fehlende WDI-Werte bleiben NA (keine Null-Ersetzung mehr).
 # Modelle schaetzen auf Complete Cases; N wird transparent dokumentiert.
+#
+# WICHTIG (2): KEINE vordefinierten Regionen. Regionen werden bewusst NICHT
+# vorab festgelegt. Die Analyse verlaeuft erst ueber globale
+# Durchschnittsergebnisse, einzelne Laenderergebnisse und Ausreisser.
+# Regionszuordnungen sind spaeter allein ein deskriptives Hilfsmittel.
 # ---------------------------------------------------------------------------
 
 setwd("C:/Users/HP/io/imf-replizierung")
@@ -162,36 +166,7 @@ panel_all <- mona_agg %>%
 # Modelle laufen auf Complete Cases (transparent, kein Bias durch Scheinnullen).
 
 # ---------------------------------------------------------------------------
-# 5) Regionale Gruppierung (Neu.md Schritt 3: mehrere Gruppen, nicht nur SSA)
-# ---------------------------------------------------------------------------
-region_map <- list(
-  SSA = c("AGO", "BDI", "BEN", "BFA", "CAF", "CIV", "CMR", "COD", "COG", "COM",
-          "CPV", "DJI", "ETH", "GAB", "GHA", "GIN", "GMB", "GNB", "GNQ", "KEN",
-          "LBR", "LSO", "MDG", "MLI", "MOZ", "MRT", "MWI", "NER", "NGA", "RWA",
-          "SEN", "SLE", "SOM", "STP", "SYC", "TCD", "TGO", "TZA", "UGA", "ZMB"),
-  MENA = c("EGY", "IRQ", "JOR", "SDN", "TUN", "YEM"),
-  ECA = c("ALB", "ARM", "BGR", "BLR", "BIH", "CYP", "GEO", "GRC", "HRV", "HUN",
-          "ISL", "IRL", "KGZ", "LVA", "MDA", "MKD", "PRT", "ROU", "SRB", "TJK",
-          "TUR", "UKR"),
-  LAC = c("ARG", "BOL", "BRA", "BRB", "COL", "CRI", "DMA", "DOM", "ECU", "GRD",
-          "GTM", "HND", "HTI", "JAM", "KNA", "NIC", "PAN", "PER", "PRY", "SLV",
-          "SUR", "URY"),
-  SA = c("AFG", "BGD", "LKA", "MDV", "NPL", "PAK"),
-  EAP = c("MNG", "PNG", "SLB")
-)
-
-region_lookup <- unlist(lapply(names(region_map), function(r) setNames(rep(r, length(region_map[[r]])), region_map[[r]])))
-
-unmapped <- setdiff(unique(panel_all$ISO3), names(region_lookup))
-if (length(unmapped) > 0) {
-  cat("WARNUNG: ISO-Codes ohne Regionszuordnung:", paste(unmapped, collapse = ", "), "\n")
-}
-
-panel_all <- panel_all %>%
-  mutate(region = ifelse(ISO3 %in% names(region_lookup), region_lookup[ISO3], "Other"))
-
-# ---------------------------------------------------------------------------
-# 6) Diagnostik und finalen Datensatz speichern
+# 5) Diagnostik und finalen Datensatz speichern
 # ---------------------------------------------------------------------------
 cat("\n=== Diagnostik ===\n")
 cat("Beobachtungen:", nrow(panel_all), "| Laender:", n_distinct(panel_all$ISO3),
@@ -202,21 +177,8 @@ cat("Complete Cases H1 (avgcondtype_all, unsc3, 3 Kontrollen):",
 cat("Complete Cases H2/H4 (zusaetzlich resource_dep):",
     sum(complete.cases(panel_all[, c("avgcondtype_all", "unsc3", "resource_dep", "XDebtGNI", "DebtServGNI", "ResXDebt")])), "\n")
 
-cat("\nRegionen-Uebersicht:\n")
-print(panel_all %>%
-  group_by(region) %>%
-  summarise(
-    n_countries = n_distinct(ISO3),
-    n_obs = n(),
-    n_unsc3 = sum(unsc3 == 1, na.rm = TRUE),
-    avg_cond = round(mean(avgcondtype_all, na.rm = TRUE), 3),
-    avg_resource = round(mean(resource_dep, na.rm = TRUE), 1),
-    .groups = "drop"
-  ) %>%
-  arrange(desc(n_obs)))
-
 write.csv(panel_all, "data/processed/final_data_panel_ALL.csv", row.names = FALSE)
 
 cat("\n=== Abschluss ===\n")
 cat("Erstellt: data/processed/mona_ALL.csv\n")
-cat("Erstellt: data/processed/final_data_panel_ALL.csv (alle Laender, alle Jahre, inkl. region)\n")
+cat("Erstellt: data/processed/final_data_panel_ALL.csv (alle Laender, alle Jahre, keine vordefinierten Regionen)\n")
