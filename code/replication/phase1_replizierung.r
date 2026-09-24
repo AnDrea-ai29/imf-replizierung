@@ -1,91 +1,80 @@
-#### **Modelle:**
+# H1-Replikation im globalen Laenderpool (ALLE Laender, ALLE Jahre)
+# Datenbasis: final_data_panel_ALL.csv (aus Combined_ISO.xlsx)
+# Kein SSA-Filter, keine Jahr-Beschraenkung im Hauptmodell.
+# Vergleichsfenster 2002-2008 (Originalzeitraum) zusaetzlich fuer die
+# Replikationsbasis gemaess Neu.md Phase 2.
 
 setwd("C:/Users/HP/io/imf-replizierung")
 
 library(tidyverse)
 library(plm)
-library(stargazer)
 
-# Daten für Replizierung (2002–2008) - ALLE LAENDER
-data_repl <- read.csv("data/processed/data_with_cond_types.csv")
+data_repl <- read.csv("data/processed/final_data_panel_ALL.csv",
+                      stringsAsFactors = FALSE)
 
-# Jahr-Filter (2002-2008)
-data_repl <- data_repl[data_repl$Year >= 2002 & data_repl$Year <= 2008, ]
+cat("Panel:", nrow(data_repl), "Beobachtungen,",
+    n_distinct(data_repl$ISO3), "Laender, Jahre",
+    min(data_repl$Year), "-", max(data_repl$Year), "\n")
 
-# NAs in avgcondtype_all entfernen
-data_repl <- data_repl %>%
-  filter(!is.na(avgcondtype_all))
+# Complete Cases fuer H1 (Schluss auf vollstaendige Information, keine Null-Ersetzung)
+vars_h1 <- c("avgcondtype_all", "unsc3", "XDebtGNI", "DebtServGNI", "ResXDebt")
+data_h1 <- data_repl %>%
+  filter(complete.cases(across(all_of(vars_h1))))
 
-# Pruefe Spaltennamen
-print("Verfuegbare Spalten:")
-print(colnames(data_repl))
+cat("H1-Sample (Complete Cases):", nrow(data_h1), "Beobachtungen,",
+    n_distinct(data_h1$ISO3), "Laender\n")
 
-# Duplikate pro (ISO3, Year) aggregieren (Mittelwert)
-# Verwende Rohstoffabhaengigkeit falls vorhanden, sonst FuelExportPct + MineralExportPct
-if("Rohstoffabhaengigkeit" %in% colnames(data_repl)) {
-  data_repl <- data_repl %>%
-    group_by(ISO3, Year, unsc3, Rohstoffabhaengigkeit, XDebtGNI, DebtServGNI, ResXDebt) %>%
-    summarise(avgcondtype_all = mean(avgcondtype_all, na.rm = TRUE), .groups = "drop")
-} else if("Rohstoffabhängigkeit" %in% colnames(data_repl)) {
-  data_repl <- data_repl %>%
-    group_by(ISO3, Year, unsc3, Rohstoffabhängigkeit, XDebtGNI, DebtServGNI, ResXDebt) %>%
-    summarise(avgcondtype_all = mean(avgcondtype_all, na.rm = TRUE), .groups = "drop")
-} else {
-  data_repl <- data_repl %>%
-    mutate(Rohstoffabhängigkeit = FuelExportPct + MineralExportPct) %>%
-    group_by(ISO3, Year, unsc3, Rohstoffabhängigkeit, XDebtGNI, DebtServGNI, ResXDebt) %>%
-    summarise(avgcondtype_all = mean(avgcondtype_all, na.rm = TRUE), .groups = "drop")
-}
-
-print(paste("Anzahl Laender (2002-2008):", n_distinct(data_repl$ISO3)))
-print(paste("Anzahl Beobachtungen:", nrow(data_repl)))
-
+# ---------------------------------------------------------------------------
+# Modell 1: H1 ueber alle verfuegbaren Jahre (Hauptmodell)
+# ---------------------------------------------------------------------------
 model_repl <- plm(
-  avgcondtype_all ~ unsc3 + Rohstoffabhängigkeit + XDebtGNI + DebtServGNI + ResXDebt,
-  data = data_repl,
+  avgcondtype_all ~ unsc3 + XDebtGNI + DebtServGNI + ResXDebt,
+  data = data_h1,
   index = c("ISO3"),
   model = "within"
 )
 
-# Ergebnis speichern
 saveRDS(model_repl, "results/model_repl.rds")
+print(summary(model_repl))
 
-# Validierung
-summary_repl <- summary(model_repl)
+# ---------------------------------------------------------------------------
+# Modell 2: H1 im Originalzeitraum 2002-2008 (Vergleichsfenster)
+# ---------------------------------------------------------------------------
+data_h1_0208 <- data_h1 %>% filter(Year >= 2002, Year <= 2008)
 
-if ("unsc3" %in% names(coef(model_repl))) {
-  p_col <- ifelse("Pr(>|t|)" %in% colnames(summary_repl$coefficients), "Pr(>|t|)", "Pr(>|z|)")
-  r2_val <- summary_repl$r.squared["rsq"]
-  
-  validation <- data.frame(
-    unsc_coef = unname(coef(model_repl)["unsc3"]),
-    unsc_p = summary_repl$coefficients["unsc3", p_col],
-    n_obs = nobs(model_repl),
-    r2 = r2_val,
-    n_countries = length(unique(data_repl$ISO3)),
-    replication_success = ifelse(
-      abs(coef(model_repl)["unsc3"]) >= 1.8 & abs(coef(model_repl)["unsc3"]) <= 2.5 & summary_repl$coefficients["unsc3", p_col] < 0.05,
-      "SUCCESS",
-      "FAILED"
-    ),
-    row.names = NULL
+model_repl_0208 <- plm(
+  avgcondtype_all ~ unsc3 + XDebtGNI + DebtServGNI + ResXDebt,
+  data = data_h1_0208,
+  index = c("ISO3"),
+  model = "within"
+)
+
+saveRDS(model_repl_0208, "results/model_repl_2002_2008.rds")
+print(summary(model_repl_0208))
+
+# ---------------------------------------------------------------------------
+# Validierung: beide Zeitfenster dokumentieren
+# ---------------------------------------------------------------------------
+extract_validation <- function(m, dat, window_label) {
+  s <- summary(m)
+  data.frame(
+    window = window_label,
+    unsc_coef = coef(m)[["unsc3"]],
+    unsc_se = s$coefficients["unsc3", "Std. Error"],
+    unsc_p = s$coefficients["unsc3", "Pr(>|t|)"],
+    n_obs = nobs(m),
+    n_countries = n_distinct(dat$ISO3),
+    r2_within = s$r.squared[["rsq"]],
+    unsc_signifikant_negativ = (coef(m)[["unsc3"]] < 0 && s$coefficients["unsc3", "Pr(>|t|)"] < 0.05),
+    stringsAsFactors = FALSE
   )
-} else {
-  r2_val <- summary_repl$r.squared["rsq"]
-  
-  validation <- data.frame(
-    unsc_coef = NA,
-    unsc_p = NA,
-    n_obs = nobs(model_repl),
-    r2 = r2_val,
-    n_countries = length(unique(data_repl$ISO3)),
-    replication_success = "FAILED",
-    row.names = NULL
-  )
-  warning("unsc3 was dropped from the model (likely time-invariant)")
 }
 
-write.csv(validation, "results/validation_repl.csv", row.names = FALSE)
+validation <- rbind(
+  extract_validation(model_repl, data_h1, "2002-2025 (alle Jahre, global)"),
+  extract_validation(model_repl_0208, data_h1_0208, "2002-2008 (Originalzeitraum, global)")
+)
 
-# Anzeigen
-summary(model_repl)
+write.csv(validation, "results/validation_repl.csv", row.names = FALSE)
+cat("\n=== Validierung ===\n")
+print(validation)

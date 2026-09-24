@@ -1,0 +1,154 @@
+\documentclass[ngerman]{scrartcl}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{babel}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{varioref}
+\usepackage[unicode=true,pdfusetitle,
+bookmarks=true,bookmarksnumbered=false,bookmarksopen=false, breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false] {hyperref}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{cleveref}
+\usepackage{icomma}
+\usepackage{booktabs}
+\usepackage{blindtext}
+\usepackage{outlines}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+\usepackage[
+backend=bibtex,              
+style=authoryear,
+sorting=nyt,                 
+giveninits=false,           
+dashed=false  
+]{biblatex}
+
+% % % % % % % % % % % % % % % % % % % % %
+%Schriften - nur eine auskommentieren
+%Latin Modern - Standard
+%\usepackage{lmodern}
+%Times Roman für strenge Dozenten
+\usepackage{mathptmx}
+\renewcommand{\familydefault}{\rmdefault}
+%Garamond - sieht toll aus, aber eher exotisch
+%\usepackage[cmintegrals,cmbraces]{newtxmath}\usepackage{ebgaramond-maths}\usepackage{helvet}
+
+
+% Zeilenabstand
+\usepackage{setspace}
+\onehalfspacing % 1,5-facher Zeilenabstand für den gesamten Text
+
+\widowpenalties=3 10000 10000 150
+% Aktiviert Blocksatz:
+\usepackage{ragged2e}
+\justifying
+
+% Seitenränder
+\usepackage[
+top=2.5cm,    % Oberer Rand
+bottom=2cm,   % Unterer Rand
+left=2.5cm,   % Linker Rand
+right=3.5cm   % Rechter Rand
+]{geometry}
+
+
+
+% % % % % % % % % % % % % % % % % % % % %
+%LITERATUR
+%Fußnote _ODER_ Amerikanisch auskommentieren
+
+%Amerikanische In-Text-Zitierweise
+%\usepackage[backend=biber,style=authoryear,maxcitenames=1]{biblatex}
+\renewcommand{\cite}{\parencite}
+
+%Deutsches Fußnotensystem
+%\usepackage[backend=biber,style=authortitle-dw,firstfull,maxcitenames=1]{biblatex}\DeclareFieldFormat{title}{\mkbibemph{#1}}\DeclareFieldFormat{citetitle}{\mkbibemph{#1}}\renewcommand{\cite}{\footcite}
+
+%Ressource
+\addbibresource{literatur.bib}
+% % % % % % % % % % % % % % % % % % % % %
+\makeatletter
+\begin{document}
+	\input{metadaten.tex}
+	\input{titlepage.tex}
+	\clearpage
+	%\tableofcontents
+	\clearpage
+	
+	\section{Einleitung}
+	\label{sec:einleitung}
+	\noindent
+	\textbf{Problemstellung:} Hier die zentrale Forschungsfrage, Relevanz und Ausgangslage der Arbeit eintragen.
+	
+	\medskip
+	\textbf{Ziel der Arbeit:} Hier kurze Einordnung der Forschungsfrage, des Beitrags und der zentralen Hypothesen formulieren.
+	
+	\medskip
+	\textbf{Aufbau der Arbeit:} Ein kurzer Absatz zur Gliederung in Theorie, Daten, Ergebnisse, Diskussion und Fazit.
+	
+	\section{Theorie}
+\label{sec:theorie}
+\subsection{Theoretischer Rahmen}
+Hier den theoretischen Hintergrund, zentrale Konzepte und die Argumentationslogik eintragen.
+
+\subsection{Hypothesen oder zentrale Erwartungen}
+Hier die empirischen Erwartungen der Arbeit explizit formulieren.
+\section{Daten und Methodik}
+\label{sec:methodik}
+\subsection{Datenbasis}
+Beschreibung der Daten, Zeitraum, Länder, Variablen und Quellen.
+
+\subsection{Messung und Modellstrategie}
+Hier die Operationalisierung, abhängige und unabhängige Variablen sowie Schätzmodell(e) beschreiben.
+
+\subsection{Robustheitschecks}
+Angaben zu Alternative Spezifikationen, Sensitivitätsanalysen oder Heterogenitätschecks.
+	
+	\section{Ergebnisse}
+\label{sec:ergebnisse}
+\subsection{Hauptbefunde}
+Hier die wichtigsten Schätzergebnisse in zusammengefasster Form darstellen.
+
+\subsection{Interpretation}
+Interpretation der Richtung, Stärke und Bedeutung der Effekte in der Sprache der Forschung.
+
+
+In den Robustness-Checks zeigt sich kein stabiler signifikanter Effekt von UNSC-Mitgliedschaft, Ressourcenabhängigkeit 
+oder ihrer Interaktion auf die IMF-Konditionalität. 
+Die Ergebnisse sind insgesamt inkonsistent und sprechen eher gegen einen robusten Moderationseffekt.
+
+Das heißt: Die Daten liefern in diesem Spezifikationsrahmen keine belastbare Evidenz für einen signifikanten Haupteffekt 
+oder einen signifikanten gemeinsamen Effekt.
+
+
+
+\section{Diskussion}
+\label{sec:diskussion}
+Diskussion der Befunde im Lichte der Theorie, der bestehenden Literatur und möglicher Limitationen.
+
+\subsection{Beitrag der Arbeit}
+Hier der wissenschaftliche Beitrag der Studie und die zentrale Botschaft der Analyse formulieren.
+	
+	\section{Fazit}
+	
+	
+	
+	\onehalfspacing
+	%\input{/pfad/zum/inhalt}
+	
+	
+	
+	
+	
+	
+	\printbibliography
+	
+	\input{sections/eiderkl.tex}
+\end{document}

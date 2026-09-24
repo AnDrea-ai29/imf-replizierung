@@ -1,0 +1,16 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Einleitung}{3}{section.1}%
+\contentsline {section}{\numberline {2}Theorie}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Theoretischer Rahmen}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Hypothesen oder zentrale Erwartungen}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Daten und Methodik}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Datenbasis}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Messung und Modellstrategie}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Robustheitschecks}{3}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Ergebnisse}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Hauptbefunde}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Interpretation}{4}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Diskussion}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Beitrag der Arbeit}{4}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Fazit}{4}{section.6}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

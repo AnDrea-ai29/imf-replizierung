@@ -10,11 +10,11 @@
 ## 🎯 **Zusammenfassung: 10-Tage-Plan für 20 Seiten**
 
 ### **Kernforschungsfrage:**
-> **"Wie beeinflusst UNSC-Mitgliedschaft die IMF-Konditionalität in rohstoffabhängigen Ländern (SSA & MENA), und zeigt sich dies im Inhalt der Bedingungen?"**
+> **"Wie beeinflusst UNSC-Mitgliedschaft die IMF-Konditionalität in rohstoffabhängigen Ländern (SSA), und zeigt sich dies im Inhalt der Bedingungen?"**
 
 ### **Fokus:**
 - **Zeitraum:** 2002–2025 (Replizierung: 2002–2008, Erweiterung: 2008–2025)
-- **Regionen:** **Nur SSA + MENA** (ca. 60 Länder, überschaubar)
+- **Regionen:** **Nur SSA** (ca. 60 Länder, überschaubar)
 - **Hypothesen:** H1 (Replizierung), H2 (Rohstoffabhängigkeit), H3 (UNSC-Effekt), H4 (Inhaltsanalyse)
 - **Theorie:** Dependenz-Theorie (Amin, Emmanuel, Wallerstein)
 
@@ -29,8 +29,8 @@
 | **Tag 1** | Datenbeschaffung & Vorbereitung | Alle Rohdaten für SSA + MENA bereitstellen | `data_ssa_mea_2002_2025.csv` | 5h |
 | **Tag 2** | Datenaufbereitung (MONA + UNSC + WDI) | Finaler Datensatz mit allen Variablen | `final_data_ssa_mea.csv` | 5h |
 | **Tag 3** | Inhaltsanalyse der Bedingungen (MONA Key Codes) | Klassifizierte Bedingungen (rohstoff-spezifisch vs. stabilisierend) | `data_with_cond_types.csv` | 4h |
-| **Tag 4** | Replizierung (2002–2008, SSA + MENA) | Validierung des Codes (H1) | `model_repl.rds`, Validierungsbericht | 5h |
-| **Tag 5** | Erweiterung (2008–2025, SSA + MENA) | Modelle H2–H4 | `model_h2.rds`, `model_h3.rds`, `model_h4.rds` | 5h |
+| **Tag 4** | Replizierung (2002–2008, SSA) | Validierung des Codes (H1) | `model_repl.rds`, Validierungsbericht | 5h |
+| **Tag 5** | Erweiterung (2008–2025, SSA) | Modelle H2–H4 | `model_h2.rds`, `model_h3.rds`, `model_h4.rds` | 5h |
 | **Tag 6** | Robustheitschecks & Ergebniszusammenfassung | Heteroskedastizität, Year-FE, Ergebnisse speichern | `results_summary.csv` | 4h |
 | **Tag 7** | Einleitung + Theorie schreiben | Kapitel 1 | 4 Seiten (Word) | 4h |
 | **Tag 8** | Daten + Methodik schreiben | Kapitel 2 | 3 Seiten | 4h |
@@ -306,8 +306,8 @@ write_csv(validation, "results/validation_repl.csv")
 
 ---
 
-### **🟢 Tag 5: Erweiterung (2008–2025, SSA + MENA)**
-**Ziel:** Testen von H2–H4 für SSA + MENA.
+### **🟢 Tag 5: Erweiterung (2008–2025, SSA)**
+**Ziel:** Testen von H2–H4 für SSA
 
 #### **Modelle:**
 ```r

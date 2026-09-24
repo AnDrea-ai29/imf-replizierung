@@ -15,51 +15,55 @@ library(lmtest)     # Hypothesentests (bptest)
 library(stargazer)  # Regressionstabellen
 
 # 2. DATEN LADEN -----------------------------------------------------------
-# Finaler Datensatz mit WDI (aus Tag 4)
-final_data_with_wdi <- read.csv("data/processed/final_data_with_wdi.csv")
+# Die frühere Pipeline hat final_data_with_wdi.csv nicht mehr erzeugt. Die
+# aktuellen verarbeiteten Datensätze liegen unter final_data_panel_SSA.csv bzw.
+# data_with_cond_types.csv; diese werden hier kompatibel geladen.
+final_data_with_wdi <- NULL
+candidate_files <- c(
+  "data/processed/final_data_with_wdi.csv",
+  "data/processed/final_data_panel_SSA.csv",
+  "data/processed/final_data_ssa_mea.csv"
+)
+
+for (f in candidate_files) {
+  if (file.exists(f)) {
+    final_data_with_wdi <- read.csv(f, stringsAsFactors = FALSE)
+    break
+  }
+}
+
+if (is.null(final_data_with_wdi)) {
+  stop("Keine passende Daten-Datei gefunden. Bitte final_data_panel_SSA.csv oder final_data_with_wdi.csv erzeugen.")
+}
+
+# Kompatibilität mit alten Variablennamen
+if (!"resource_dep" %in% names(final_data_with_wdi)) {
+  if ("Rohstoffabhängigkeit" %in% names(final_data_with_wdi)) {
+    final_data_with_wdi <- final_data_with_wdi %>% rename(resource_dep = Rohstoffabhängigkeit)
+  } else if (all(c("FuelExportPct", "MineralExportPct") %in% names(final_data_with_wdi))) {
+    final_data_with_wdi <- final_data_with_wdi %>%
+      mutate(resource_dep = FuelExportPct + MineralExportPct)
+  } else {
+    stop("Die Rohstoffabhängigkeit ist in keinem erwarteten Format vorhanden.")
+  }
+}
 
 # Inhaltsanalyse-Daten (aus Tag 3)
-# Falls nicht vorhanden: 
 if (!file.exists("data/processed/data_with_cond_types.csv")) {
-  # Alternative: Daten direkt aus MONA laden
-  mona_full <- read.csv("data/raw/mona/Combined_ISO.xlsx")
-  ssa_countries <- c("AGO", "CAF", "CMR", "COM", "CPV", "GAB", "GHA", "GIN", "KEN", "LSO",
-                     "MDG", "MOZ", "MRT", "MWI", "RWA", "SLE", "SLV", "TZA", "UGA", "ZMB")
-  
-  # Economic Codes für Klassifizierung
-  rohstoff_codes <- c("RC100", "RC200", "EN100", "EN200", "FB030", "FB040")
-  stabil_codes <- c("FB010", "FB020", "FB050", "MC100", "MC200", "DB100", "DB200")
-  
-  mona_conditions <- mona_full %>%
-    filter(iso_3ltr %in% ssa_countries) %>%
-    rename(ISO3 = iso_3ltr, Year = `Approval Year`) %>%
-    mutate(
-      cond_type = case_when(
-        `Economic Code` %in% rohstoff_codes ~ "rohstoff",
-        `Economic Code` %in% stabil_codes ~ "stabil",
-        TRUE ~ "sonstige"
-      )
-    )
-  
-  cond_summary <- mona_conditions %>%
-    group_by(ISO3, Year) %>%
-    summarise(
-      total_cond = n(),
-      rohstoff_cond = sum(cond_type == "rohstoff"),
-      stabil_cond = sum(cond_type == "stabil"),
-      sonstige_cond = sum(cond_type == "sonstige"),
-      rohstoff_cond_share = ifelse(total_cond > 0, rohstoff_cond / total_cond, 0),
-      stabil_cond_share = ifelse(total_cond > 0, stabil_cond / total_cond, 0),
-      .groups = "drop"
-    )
-  
-  data_with_cond_types <- merge(
-    final_data_with_wdi,
-    cond_summary,
-    by = c("ISO3", "Year"),
-    all.x = TRUE
-  )
-  write.csv(data_with_cond_types, "data/processed/data_with_cond_types.csv", row.names = FALSE)
+  stop("data_with_cond_types.csv fehlt. Bitte den Datensatz aus der Datenvorbereitung erzeugen.")
+} else {
+  data_with_cond_types <- read.csv("data/processed/data_with_cond_types.csv", stringsAsFactors = FALSE)
+}
+
+if (!"resource_dep" %in% names(data_with_cond_types)) {
+  if ("Rohstoffabhängigkeit" %in% names(data_with_cond_types)) {
+    data_with_cond_types <- data_with_cond_types %>% rename(resource_dep = Rohstoffabhängigkeit)
+  } else if (all(c("FuelExportPct", "MineralExportPct") %in% names(data_with_cond_types))) {
+    data_with_cond_types <- data_with_cond_types %>%
+      mutate(resource_dep = FuelExportPct + MineralExportPct)
+  } else {
+    stop("resource_dep fehlt in data_with_cond_types.csv und kann nicht rekonstruiert werden.")
+  }
 }
 
 # 3. DATENPRÜFUNG -----------------------------------------------------------
@@ -80,8 +84,9 @@ print(final_data_with_wdi %>%
        head(10))
 
 # 4. MODELL H1 (REPLIZIERUNG) -----------------------------------------------
-# Nur 2002–2008 für H1
-repl_data <- final_data_with_wdi %>%
+# H1 basiert auf dem verarbeiteten Bedingungen-Datensatz, weil der annualisierte
+# Panel-Datensatz für die FE-Schätzung zu wenig Beobachtungen enthält.
+repl_data <- data_with_cond_types %>%
   filter(Year >= 2002 & Year <= 2008) %>%
   drop_na(avgcondtype_all, unsc3, XDebtGNI, DebtServGNI, ResXDebt)
 
@@ -102,7 +107,7 @@ print(paste("unsc3-Koeffizient:", round(unsc_coef_h1, 4)))
 print(paste("p-Wert:", round(unsc_pval_h1, 4)))
 
 # 5. MODELLE H2–H4 (ERWEITERUNG 2008–2025) -----------------------------
-ext_data <- final_data_with_wdi %>%
+ext_data <- data_with_cond_types %>%
   filter(Year >= 2008 & Year <= 2025) %>%
   drop_na(avgcondtype_all, unsc3, resource_dep, XDebtGNI, DebtServGNI, ResXDebt)
 
@@ -147,7 +152,7 @@ saveRDS(model_h4, "results/models/model_h4.rds")
 
 # 7. ERGEBNISTABELLE ERSTELLEN --------------------------------------------
 # Koeffizienten aller Modelle
-results_table <- data.frame(
+results_table <- tibble(
   Modell = c("H1 (Replizierung)", "H2", "H3", "H4"),
   unsc_coef = c(
     coef(model_h1)["unsc3"],
@@ -156,22 +161,22 @@ results_table <- data.frame(
     coef(model_h4)["unsc3"]
   ),
   unsc_resource_coef = c(
-    NA,
+    NA_real_,
     coef(model_h2)["unsc3:resource_dep"],
     coef(model_h3)["unsc3:resource_dep"],
     coef(model_h4)["unsc3:resource_dep"]
   ),
   p_unsc = c(
     unsc_pval_h1,
-    summary(model_h2)$p.value["unsc3"],
-    summary(model_h3)$p.value["unsc3"],
-    summary(model_h4)$p.value["unsc3"]
+    summary(model_h2)$coeftable["unsc3", "Pr(>|t|)"],
+    summary(model_h3)$coeftable["unsc3", "Pr(>|t|)"],
+    summary(model_h4)$coeftable["unsc3", "Pr(>|t|)"]
   ),
   p_interaction = c(
-    NA,
-    summary(model_h2)$p.value["unsc3:resource_dep"],
-    summary(model_h3)$p.value["unsc3:resource_dep"],
-    summary(model_h4)$p.value["unsc3:resource_dep"]
+    NA_real_,
+    summary(model_h2)$coeftable["unsc3:resource_dep", "Pr(>|t|)"],
+    summary(model_h3)$coeftable["unsc3:resource_dep", "Pr(>|t|)"],
+    summary(model_h4)$coeftable["unsc3:resource_dep", "Pr(>|t|)"]
   )
 )
 
