@@ -2,7 +2,11 @@
 
 **Design (siehe `Neu.md`):** Replizierung von Dreher, Sturm & Vreeland (2015, JCR) im erweiterten, globalen Laenderpool. Analyse-Reihenfolge: erst globale Durchschnittsergebnisse, dann einzelne Laenderergebnisse und Ausreisser. **Regionen werden NICHT vorab definiert** — sie sind allein ein spaeteres, deskriptives Hilfsmittel; welche Gruppen sinnvoll sind, entscheidet sich an den Laender- und Ausreisserbefunden.
 
-**Datenbasis:** `Combined_ISO.xlsx` (MONA, alle Laender, alle Jahre), WDI (2002-2025), UNSC-Mitgliedschaft (DPPA, 1946-heute).
+**Datenbasis:** `Combined_ISO.xlsx` (MONA, alle Laender, alle Jahre), WDI (2002-2025), UNSC-Mitgliedschaft (DPPA, 1946-heute). Original-Replikationsdatensatz: `data/final/Dreher_Sturm_Vreeland_JCR.dta`.
+
+**Abhaengige Variable in zwei Operationalisierungen:**
+- `avgcondtype_count` — durchschnittliche Anzahl Bedingungen pro Quartal (anzahlbasiert wie im Original; dort heisst die Variable `avgcondtype_all`, Benchmark unsc3 = -2.1 GLS / -3.3 OLS)
+- `avgcondtype_share` — Anteil der als rohstoff-/stabilisierend klassifizierten Bedingungen (eigene Erweiterung fuer H2/H4)
 
 ---
 
@@ -42,7 +46,7 @@ Wichtige Datenkorrekturen (dokumentiert in den Skripten):
 
 | Skript | Inhalt | Output |
 |--------|--------|--------|
-| `code/replication/phase1_replizierung.r` | H1 global: alle Jahre + Vergleichsfenster 2002-2008 | `results/model_repl.rds`, `results/model_repl_2002_2008.rds`, `results/validation_repl.csv` |
+| `code/replication/phase1_replizierung.r` | H1 global in BEIDEN Operationalisierungen (count + share), jeweils alle Jahre + Vergleichsfenster 2002-2008 | `results/model_repl*.rds`, `results/validation_repl.csv` |
 | `code/analysis/phase2_erweiterung.R` | Globale Durchschnittsmodelle H1, H2, H4 (ohne Regionen) | `results/models/model_h1/h2/h4.rds`, `results/tables/results_h1_h4.csv` |
 | `code/analysis/laender_ausreisser_analyse.R` | Laenderuebersicht, Extremwerte, Leave-one-out-Einfluss auf unsc3 | `results/tables/country_summary.csv`, `outlier_extremewerte.csv`, `influence_unsc3.csv` |
 | `code/analysis/h1_sample_zerlegung.R` | Dokumentation: Woher kam das fruehere negative H1-Vorzeichen? (Reproduktion des alten SSA-Befunds + Stufung nach Laenderpool und Zeitfenster) | `results/tables/h1_sample_zerlegung.csv` |
@@ -51,10 +55,12 @@ Wichtige Datenkorrekturen (dokumentiert in den Skripten):
 
 ### Kernergebnisse (Stand 2026-09-24, globaler Pool, alle Jahre)
 
-- **H1 (Durchschnitt):** unsc3-Koeffizient positiv und nicht signifikant (2002-2025: +0.076, p=0.12; 2002-2008: +0.018, p=0.91). Die Original-Evidenz laesst sich im globalen MONA-Panel nicht reproduzieren.
+- **H1 (Replikationsspezifikation, avgcondtype_count):** unsc3 = +3.11 (p=0.073) ueber alle Jahre; im Originalzeitraum 2002-2008: +3.45 (p=0.48). Der negative Original-Befund (ca. 2 Bedingungen pro Quartal weniger fuer UNSC-Mitglieder) laesst sich in diesem Panel nicht reproduzieren; der Punktcoeffizient zeigt tendenzmaessig in die Gegenrichtung. (Caveat: Das Originalmodell nutzt zusaetzliche Kovariaten — Wahljahr, US-Hilfe, IWF-Kredite — und den Zeitraum 1992-2008.)
+- **H1 (Anteilsspezifikation, avgcondtype_share):** unsc3 = +0.076, p=0.12 (alle Jahre) bzw. +0.018, p=0.91 (2002-2008). Ebenfalls kein negativer Effekt.
 - **H2 (Durchschnitt):** Interaktion unsc3 x resource_dep insignifikant (+0.0012, p=0.60).
 - **H4 (Durchschnitt):** resource_dep ist marginal positiv mit dem Anteil rohstoffspezifischer Bedingungen assoziiert (p=0.078); die UNSC-Interaktion ist insignifikant.
-- **Laenderergebnisse/Ausreisser:** Hoechste Rohstoffabhaengigkeit: AGO, IRQ, COG, MNG, YEM, PAN. Hoechste Konditionalitaet: COG, TCD, COD, CAF, YEM. Leave-one-out: Kein einzelnes Land dominiert den H1-Koeffizienten (groesstes |Delta|: TZA, 0.029 gegenueber einem Koeffizienten von 0.045); die Durchschnittsbefunde sind nicht auf ein Land zurueckzufuehren.
+- **Herkunft des frueheren negativen Vorzeichens** (`h1_sample_zerlegung.csv`): Der alte Wert (-1.25) beruhte auf dem 20-SSA-Subsample und einer anders berechneten anzahlbasierten Variable; selbst im SSA-Subsample ist die Count-Metrik des neuen Panels positiv (+4.93 bzw. +3.53, n.s.).
+- **Laenderergebnisse/Ausreisser:** Hoechste Rohstoffabhaengigkeit: AGO, IRQ, COG, MNG, YEM, PAN. Hoechste Konditionalitaet: COG, TCD, COD, CAF, YEM. Leave-one-out: Kein einzelnes Land dominiert den H1-Koeffizienten; die Durchschnittsbefunde sind nicht auf ein Land zurueckzufuehren.
 
 **Stichprobengroessen:** Panel 333 Land-Jahr-Beobachtungen (99 Laender); Complete Cases H1: 214 (FE-Modell: 204 nach Singleton-Entfall), H2/H4: 171 (FE-Modell: 158).
 

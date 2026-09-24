@@ -5,8 +5,8 @@
 # (siehe code/analysis/laender_ausreisser_analyse.R).
 #
 # Modelle (Neu.md Schritt 5-6):
-#   M1 (H1): avgcondtype_all ~ unsc3 + Kontrollen
-#   M2 (H2): avgcondtype_all ~ unsc3 * resource_dep + Kontrollen
+#   M1 (H1): avgcondtype_share ~ unsc3 + Kontrollen
+#   M2 (H2): avgcondtype_share ~ unsc3 * resource_dep + Kontrollen
 #   M4 (H4): rohstoff_cond_share ~ unsc3 * resource_dep + Kontrollen
 
 setwd("C:/Users/HP/io/imf-replizierung")
@@ -31,14 +31,14 @@ ctrl <- "XDebtGNI + DebtServGNI + ResXDebt"
 # ---------------------------------------------------------------------------
 cat("\n=== M1 (H1-Basis): global, alle Jahre ===\n")
 model_h1 <- feols(
-  as.formula(paste("avgcondtype_all ~ unsc3 +", ctrl, "| ISO3 + Year")),
+  as.formula(paste("avgcondtype_share ~ unsc3 +", ctrl, "| ISO3 + Year")),
   data = d, vcov = "hetero"
 )
 print(summary(model_h1))
 
 cat("\n=== M2 (H2): unsc3 * resource_dep ===\n")
 model_h2 <- feols(
-  as.formula(paste("avgcondtype_all ~ unsc3 * resource_dep +", ctrl, "| ISO3 + Year")),
+  as.formula(paste("avgcondtype_share ~ unsc3 * resource_dep +", ctrl, "| ISO3 + Year")),
   data = d, vcov = "hetero"
 )
 print(summary(model_h2))

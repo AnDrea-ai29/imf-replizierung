@@ -33,7 +33,7 @@ d <- d %>%
   mutate(
     Year = as.integer(Year),
     ISO3 = as.character(ISO3),
-    avgcondtype_all = as.numeric(avgcondtype_all),
+    avgcondtype_share = as.numeric(avgcondtype_share),
     unsc3 = as.numeric(unsc3),
     resource_dep = as.numeric(resource_dep),
     XDebtGNI = as.numeric(XDebtGNI),
@@ -45,7 +45,7 @@ d <- d %>%
 # konsistente Stichprobe ueber alle Spezifikationen, keine Schein-Nullen.
 d <- d %>%
   filter(complete.cases(across(c(
-    "avgcondtype_all", "unsc3", "resource_dep",
+    "avgcondtype_share", "unsc3", "resource_dep",
     "XDebtGNI", "DebtServGNI", "ResXDebt"
   ))))
 cat("Robustheits-Sample (Complete Cases):", nrow(d), "Beobachtungen
@@ -74,14 +74,14 @@ extract_term <- function(mod, term_pattern) {
 # ------------------------------------------------------------------
 # Model A: pooled OLS
 m_ols <- lm(
-  avgcondtype_all ~ unsc3 * resource_dep +
+  avgcondtype_share ~ unsc3 * resource_dep +
     XDebtGNI + DebtServGNI + ResXDebt,
   data = d
 )
 
 # Model B: OLS with year dummies
 m_ols_year <- lm(
-  avgcondtype_all ~ unsc3 * resource_dep +
+  avgcondtype_share ~ unsc3 * resource_dep +
     XDebtGNI + DebtServGNI + ResXDebt +
     factor(Year),
   data = d
@@ -89,7 +89,7 @@ m_ols_year <- lm(
 
 # Model C: OLS with country + year fixed effects (as additional robustness)
 m_ols_country_year <- lm(
-  avgcondtype_all ~ unsc3 * resource_dep +
+  avgcondtype_share ~ unsc3 * resource_dep +
     XDebtGNI + DebtServGNI + ResXDebt +
     factor(ISO3) + factor(Year),
   data = d
@@ -97,7 +97,7 @@ m_ols_country_year <- lm(
 
 # FE main model as comparison model
 m_fe <- feols(
-  avgcondtype_all ~ unsc3 * resource_dep +
+  avgcondtype_share ~ unsc3 * resource_dep +
     XDebtGNI + DebtServGNI + ResXDebt |
     ISO3 + Year,
   data = d,

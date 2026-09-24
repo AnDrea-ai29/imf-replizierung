@@ -29,7 +29,7 @@ country_summary <- d %>%
     n_obs = n(),
     jahr_von = min(Year),
     jahr_bis = max(Year),
-    avg_cond = round(mean(avgcondtype_all, na.rm = TRUE), 3),
+    avg_cond = round(mean(avgcondtype_share, na.rm = TRUE), 3),
     avg_resource_dep = round(mean(resource_dep, na.rm = TRUE), 1),
     avg_rohstoff_cond_share = round(mean(rohstoff_cond_share, na.rm = TRUE), 3),
     n_unsc_jahre = sum(unsc3 == 1, na.rm = TRUE),
@@ -74,14 +74,14 @@ print(as.data.frame(extrem), row.names = FALSE)
 # 3) Einfluss jedes Landes auf den unsc3-Koeffizienten (Leave-one-out)
 # ---------------------------------------------------------------------------
 cc_h1 <- d %>%
-  filter(complete.cases(across(c("avgcondtype_all", "unsc3",
+  filter(complete.cases(across(c("avgcondtype_share", "unsc3",
                                  "XDebtGNI", "DebtServGNI", "ResXDebt"))))
 cc_h2 <- cc_h1 %>%
   filter(complete.cases(across(c("resource_dep"))))
 
-m_h1_full <- feols(as.formula(paste("avgcondtype_all ~ unsc3 +", ctrl, "| ISO3 + Year")),
+m_h1_full <- feols(as.formula(paste("avgcondtype_share ~ unsc3 +", ctrl, "| ISO3 + Year")),
                    data = cc_h1, vcov = "hetero")
-m_h2_full <- feols(as.formula(paste("avgcondtype_all ~ unsc3 * resource_dep +", ctrl, "| ISO3 + Year")),
+m_h2_full <- feols(as.formula(paste("avgcondtype_share ~ unsc3 * resource_dep +", ctrl, "| ISO3 + Year")),
                    data = cc_h2, vcov = "hetero")
 
 cat("\nReferenz H1: unsc3 =", round(coef(m_h1_full)["unsc3"], 4),
@@ -92,12 +92,12 @@ cat("Referenz H2: unsc3 =", round(coef(m_h2_full)["unsc3"], 4),
 
 influence <- lapply(sort(unique(cc_h1$ISO3)), function(land) {
   h1 <- tryCatch(
-    feols(as.formula(paste("avgcondtype_all ~ unsc3 +", ctrl, "| ISO3 + Year")),
+    feols(as.formula(paste("avgcondtype_share ~ unsc3 +", ctrl, "| ISO3 + Year")),
           data = filter(cc_h1, ISO3 != land), vcov = "hetero", warn = FALSE),
     error = function(e) NULL
   )
   h2 <- tryCatch(
-    feols(as.formula(paste("avgcondtype_all ~ unsc3 * resource_dep +", ctrl, "| ISO3 + Year")),
+    feols(as.formula(paste("avgcondtype_share ~ unsc3 * resource_dep +", ctrl, "| ISO3 + Year")),
           data = filter(cc_h2, ISO3 != land), vcov = "hetero", warn = FALSE),
     error = function(e) NULL
   )

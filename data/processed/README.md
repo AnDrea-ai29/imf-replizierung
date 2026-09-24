@@ -1,56 +1,46 @@
 # Datenbeschreibung für den processed-Ordner
 
-## Wichtige Variable: Rohstoffabhängigkeit
+## Abhängige Variablen (zwei Operationalisierungen)
 
-Im aktuellen Projekt gibt es zwei Namen für dieselbe Variable:
+`final_data_panel_ALL.csv` enthält zwei Maße für IMF-Konditionalität:
 
-- `resource_dep`
-- `Rohstoffabhängigkeit`
+### avgcondtype_count — Original-Spezifikation (Dreher/Sturm/Vreeland 2015)
+- Bedeutung: durchschnittliche **Anzahl Bedingungen pro Quartal**
+- Berechnung: `nrcondtype_all / nrquarterssmpl`
+  - `nrcondtype_all`: Anzahl aller Bedingungen (Zeilen in Combined_ISO.xlsx) je Land-Jahr
+  - `nrquarterssmpl`: Summe der Programmlaufzeiten (in Quartalen) der in dem Jahr genehmigten Arrangements, berechnet aus Approval-/Revised- bzw. Initial-End-Datum, Minimum 1 Quartal
+- Range im Panel: ca. 0.1–39.5, Mittel ~8.3 (Original: 0.8–45.1, Mittel 8.2)
+- Im Original-Datensatz heisst diese Variable `avgcondtype_all` — hier bewusst anders benannt, um Verwechslungen zu vermeiden.
 
-Beide bezeichnen dieselbe Messung und sind im finalen Panel identisch. Sie entsprechen der Summe aus:
+### avgcondtype_share — eigene Erweiterung (H2/H4)
+- Bedeutung: **Anteil** der als rohstoff- oder stabilisierungsspezifisch klassifizierten Bedingungen an allen Bedingungen
+- Berechnung: `(rohstoff_cond + stabil_cond) / nrcondtype_all`
+- Range im Panel: 0–1.33, Mittel ~0.76
+- Für H4 additionally: `rohstoff_cond_share` (nur Rohstoff-Anteil)
 
-- `FuelExportPct`
-- `MineralExportPct`
+## Rohstoffabhängigkeit
 
-Formel:
+Zwei Namen für dieselbe Variable, beide im finalen Panel identisch:
 
-resource_dep = FuelExportPct + MineralExportPct
+- `resource_dep` (bevorzugt in neuen Analysen)
+- `Rohstoffabhängigkeit` (Lesbarkeit, Kompatibilität)
 
-## Bedeutung
-Diese Variable misst die Rohstoffabhängigkeit eines Landes im jeweiligen Land-Jahr-Paar. Sie wird in den FE-Regressionsmodellen als zentrale Interaktionsvariable verwendet.
+Formel: `resource_dep = FuelExportPct + MineralExportPct`
 
-## Hinweis zur Verwendung
-Für neue Analysen und Modelle sollte bevorzugt `resource_dep` verwendet werden, da dieser Name konsistent und kurz ist. Die deutsche Bezeichnung `Rohstoffabhängigkeit` dient vor allem der Lesbarkeit und Kompatibilität mit älteren Skripten.
+Fehlende WDI-Werte bleiben NA (keine Null-Ersetzung); Modelle schaetzen auf Complete Cases.
+
+## UNSC-Mitgliedschaft
+
+- `unsc`: Land ist im aktuellen Jahr UNSC-Mitglied
+- `unsc_t1`: Land war im Vorjahr UNSC-Mitglied
+- `unsc3`: `unsc == 1` ODER `unsc_t1 == 1` (relevante Dummy-Variable für die FE-Analyse)
+
+Berechnung: `unsc_t1 = lag(unsc, 1, default = 0)`; `unsc3 = 1, falls unsc == 1 oder unsc_t1 == 1, sonst 0`
+
+Im aktuellen Panel treten 25 Land-Jahr-Beobachtungen mit `unsc3 == 1` auf.
 
 ## Relevante Datensätze
 
-- `final_data_panel_ALL.csv`: globales Land-Jahr-Panel fuer H1
-- `final_data_panel_SSA.csv`: SSA-Land-Jahr-Panel fuer H2-H4
-- `data_with_cond_types.csv`: Inhalts- und Bedingungsdaten
-
-## Verifiziert
-Die Identität wurde mit dem aktuellen Datensatz geprüft: `identical(resource_dep, Rohstoffabhängigkeit) == TRUE`.
-
-
-
-## Wichtige Variable: UNSC-Mitgliedschaft
-
-Im aktuellen Projekt gibt es 3 unsc-Variablen:
-
-- `unsc`: Das Land ist im aktuellen Jahr Mitglied des UN-Sicherheitsrats
-- `unsc_t1`: Das Land war im Vorjahr UNSC-Mitglied
-- `unsc3`: Das Land war entweder im aktuellen Jahr oder im Vorjahr Mitglied im UNSC
-
-## Hinweis zur Verwendung
-`unsc` = Mitgliedschaftsstatus, wie im UNSC-Rohfile codiert
-`unsc_t1` = lagged/zeitlich verschobene Form, falls so definiert
-`unsc3` = die relevante Dummy-Variante für die FE-Regressionsanalyse
-
-Die UNSC-Variable ist auf eine kleine Gruppe von Ländern begrenzt, da nur wenige Staaten im UN-Sicherheitsrat vertreten sind. In diesem globalen Panel treten daher nur 22 Länder mit unsc3 = 1 auf, was der begrenzten Mitgliedschaft im UNSC entspricht.
-
-## Begründung
-Die Definition von unsc3 beruht auf der Erkenntnis, dass politische und wirtschaftlich Effekte eines Sicherheitsratsmandats nicht immer nur im selben Jahr sichtbar sind. Ein Land kann in Jahr t noch Einfluss ausüben, auch wenn die Mitgliedschaft bereits im Vorjahr begonnen hat. Deshalb wird in vielen Studien eine breitere Definition verwendet, die das aktuelle und das vorherige Jahr zusammenfasst. 
-
-## Berechnung
-unsc_t1 = lag(unsc, 1, default = 0)
-unsc3 = 1, falls unsc == 1 oder unsc_t1 == 1, sonst 0
+- `final_data_panel_ALL.csv`: globales Land-Jahr-Panel (99 Länder, alle Jahre aus Combined_ISO.xlsx), Grundlage aller aktiven Analysen
+- `mona_ALL.csv`: Land-Jahr-Aggregation der MONA-Bedingungen vor dem WDI/UNSC-Join
+- Die früheren SSA-Datensätze (`final_data_panel_SSA.csv`, `data_with_cond_types.csv` usw.) liegen in `archive/ssa_legacy/data/` und werden nicht mehr verwendet.

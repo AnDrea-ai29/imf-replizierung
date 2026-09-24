@@ -10,13 +10,16 @@
 # - mit WDI und UNSC joinen
 # - final_data_panel_ALL.csv erzeugen
 #
-# WICHTIG (1): Fehlende WDI-Werte bleiben NA (keine Null-Ersetzung mehr).
-# Modelle schaetzen auf Complete Cases; N wird transparent dokumentiert.
+# ZWEI Operationalisierungen der abhaengigen Variable:
+# - avgcondtype_count : durchschnittliche Anzahl Bedingungen pro Quartal
+#   (anzahlbasiert wie im Original, Dreher/Sturm/Vreeland 2015: dort heisst
+#   die Variable avgcondtype_all, Range ~0.8-45; berechenbar aus
+#   nrcondtype_all / nrquarterssmpl)
+# - avgcondtype_share : Anteil der als rohstoff-/stabilisierend klassifizierten
+#   Bedingungen an allen Bedingungen (0-1.x; eigene Erweiterung fuer H2/H4)
 #
-# WICHTIG (2): KEINE vordefinierten Regionen. Regionen werden bewusst NICHT
-# vorab festgelegt. Die Analyse verlaeuft erst ueber globale
-# Durchschnittsergebnisse, einzelne Laenderergebnisse und Ausreisser.
-# Regionszuordnungen sind spaeter allein ein deskriptives Hilfsmittel.
+# WICHTIG (1): Fehlende WDI-Werte bleiben NA (keine Null-Ersetzung).
+# WICHTIG (2): KEINE vordefinierten Regionen (nur spaeter deskriptiv).
 # ---------------------------------------------------------------------------
 
 setwd("C:/Users/HP/io/imf-replizierung")
@@ -62,6 +65,38 @@ mona_all <- mona_raw %>%
   filter(!is.na(ISO3))
 
 cat("Mona-Rohdaten nach ISO3/Year-Standardisierung:", nrow(mona_all), "Zeilen\n")
+
+# ---------------------------------------------------------------------------
+# 1b) Programmlaufzeit je Arrangement in Quartalen (fuer avgcondtype_count)
+# ---------------------------------------------------------------------------
+parse_datum <- function(x) {
+  if (inherits(x, "Date") || inherits(x, "POSIXct")) return(as.Date(x))
+  # readr parst auch einstellige Tagesangaben ("7-Dec-18"), as.Date nicht
+  as.Date(suppressWarnings(readr::parse_date(as.character(x), format = "%d-%b-%y")))
+}
+
+arr_quarters <- mona_all %>%
+  distinct(
+    ARR = `Arrangement Number`, ISO3, Year,
+    d_appr = `Approval date`,
+    d_iend = `Initial End Date`,
+    d_rend = `Revised End Date`
+  ) %>%
+  mutate(
+    d_appr = parse_datum(d_appr),
+    d_iend = parse_datum(d_iend),
+    d_rend = parse_datum(d_rend),
+    d_end = coalesce(d_rend, d_iend),
+    quarters = ifelse(!is.na(d_appr) & !is.na(d_end),
+                      pmax(1, ceiling(as.numeric(difftime(d_end, d_appr, units = "days")) / 91.3)),
+                      NA_real_)
+  ) %>%
+  select(ISO3, Year, ARR, quarters)
+
+cat("Arrangements:", nrow(arr_quarters),
+    "| Quartale: Range", paste(round(range(arr_quarters$quarters, na.rm = TRUE)), collapse = "-"),
+    "| Median", median(arr_quarters$quarters, na.rm = TRUE),
+    "| ohne Datum:", sum(is.na(arr_quarters$quarters)), "\n")
 
 # ---------------------------------------------------------------------------
 # 2) Bedingungen klassifizieren (hierarchisch, kompatibel zu bisheriger Logik)
@@ -113,21 +148,30 @@ mona_classified <- mona_all %>%
 # ---------------------------------------------------------------------------
 # 3) Aggregation auf Land-Jahr-Ebene
 # ---------------------------------------------------------------------------
+# count-basiert (Original-Spezifikation): Bedingungen / Programm-Quartale
+q_agg <- arr_quarters %>%
+  group_by(ISO3, Year) %>%
+  summarise(nrquarterssmpl = sum(quarters, na.rm = TRUE), .groups = "drop")
+
 mona_agg <- mona_classified %>%
   group_by(ISO3, Year) %>%
   summarise(
-    total_cond = n(),
+    nrcondtype_all = n(),
     rohstoff_cond = sum(rohstoff_cond, na.rm = TRUE),
     stabil_cond = sum(stabil_cond, na.rm = TRUE),
     sonstige_cond = sum(sonstige_cond, na.rm = TRUE),
-    avgcondtype_all = if_else(total_cond > 0,
-                              (sum(rohstoff_cond, na.rm = TRUE) + sum(stabil_cond, na.rm = TRUE)) / total_cond,
-                              0),
+    rohstoff_cond_share = if_else(nrcondtype_all > 0, rohstoff_cond / nrcondtype_all, 0),
+    stabil_cond_share = if_else(nrcondtype_all > 0, stabil_cond / nrcondtype_all, 0),
     .groups = "drop"
   ) %>%
+  left_join(q_agg, by = c("ISO3", "Year")) %>%
   mutate(
-    rohstoff_cond_share = if_else(total_cond > 0, rohstoff_cond / total_cond, 0),
-    stabil_cond_share = if_else(total_cond > 0, stabil_cond / total_cond, 0)
+    # anzahlbasiert, wie im Original (dort: avgcondtype_all)
+    avgcondtype_count = if_else(!is.na(nrquarterssmpl) & nrquarterssmpl > 0,
+                                nrcondtype_all / nrquarterssmpl, NA_real_),
+    # anteilsbasiert, eigene Erweiterung
+    avgcondtype_share = if_else(nrcondtype_all > 0,
+                                (rohstoff_cond + stabil_cond) / nrcondtype_all, 0)
   )
 
 write.csv(mona_agg, "data/processed/mona_ALL.csv", row.names = FALSE)
@@ -160,7 +204,7 @@ panel_all <- mona_agg %>%
     resource_dep = FuelExportPct + MineralExportPct,
     Rohstoffabhängigkeit = resource_dep
   ) %>%
-  filter(!is.na(avgcondtype_all))
+  filter(nrcondtype_all > 0)
 
 # Keine Null-Ersetzung fehlender Werte: NA bleibt NA,
 # Modelle laufen auf Complete Cases (transparent, kein Bias durch Scheinnullen).
@@ -171,14 +215,21 @@ panel_all <- mona_agg %>%
 cat("\n=== Diagnostik ===\n")
 cat("Beobachtungen:", nrow(panel_all), "| Laender:", n_distinct(panel_all$ISO3),
     "| Jahre:", min(panel_all$Year), "-", max(panel_all$Year), "\n")
+cat("avgcondtype_count (Bedingungen/Quartal): Range",
+    paste(round(range(panel_all$avgcondtype_count, na.rm = TRUE), 2), collapse = " - "),
+    "| Mean", round(mean(panel_all$avgcondtype_count, na.rm = TRUE), 2), "\n")
+cat("avgcondtype_share (Anteil klassifiziert): Range",
+    paste(round(range(panel_all$avgcondtype_share, na.rm = TRUE), 2), collapse = " - "),
+    "| Mean", round(mean(panel_all$avgcondtype_share, na.rm = TRUE), 2), "\n")
 cat("UNSC-Mitgliedsjahre (unsc3==1):", sum(panel_all$unsc3 == 1, na.rm = TRUE), "\n")
-cat("Complete Cases H1 (avgcondtype_all, unsc3, 3 Kontrollen):",
-    sum(complete.cases(panel_all[, c("avgcondtype_all", "unsc3", "XDebtGNI", "DebtServGNI", "ResXDebt")])), "\n")
+cat("Complete Cases H1 count:", sum(complete.cases(panel_all[, c("avgcondtype_count", "unsc3", "XDebtGNI", "DebtServGNI", "ResXDebt")])), "\n")
+cat("Complete Cases H1 share:", sum(complete.cases(panel_all[, c("avgcondtype_share", "unsc3", "XDebtGNI", "DebtServGNI", "ResXDebt")])), "\n")
 cat("Complete Cases H2/H4 (zusaetzlich resource_dep):",
-    sum(complete.cases(panel_all[, c("avgcondtype_all", "unsc3", "resource_dep", "XDebtGNI", "DebtServGNI", "ResXDebt")])), "\n")
+    sum(complete.cases(panel_all[, c("avgcondtype_share", "unsc3", "resource_dep", "XDebtGNI", "DebtServGNI", "ResXDebt")])), "\n")
 
 write.csv(panel_all, "data/processed/final_data_panel_ALL.csv", row.names = FALSE)
 
 cat("\n=== Abschluss ===\n")
 cat("Erstellt: data/processed/mona_ALL.csv\n")
-cat("Erstellt: data/processed/final_data_panel_ALL.csv (alle Laender, alle Jahre, keine vordefinierten Regionen)\n")
+cat("Erstellt: data/processed/final_data_panel_ALL.csv\n")
+cat("Depvars: avgcondtype_count (Original-Spezifikation) und avgcondtype_share (eigene Erweiterung)\n")
