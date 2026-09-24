@@ -39,6 +39,11 @@ Berechnung: `unsc_t1 = lag(unsc, 1, default = 0)`; `unsc3 = 1, falls unsc == 1 o
 
 Im aktuellen Panel treten 25 Land-Jahr-Beobachtungen mit `unsc3 == 1` auf.
 
+## Programmhistorie
+
+- `nrcntprogram`: kumulative Anzahl der Arrangements eines Landes bis einschließlich Jahr t (analog zur Original-Kontrolle "count"/`nrcntprogram` in Dreher et al. 2015, dort Range 1-7). Range im Panel: 1-9, Mittel ~2.7.
+- Caveat: Zählung beginnt mit dem MONA-Export (Jahr 2000); vor-2000-Programme sind erst nach Bereitstellung des erweiterten MONA-Exports enthalten.
+
 ## Relevante Datensätze
 
 - `final_data_panel_ALL.csv`: globales Land-Jahr-Panel (99 Länder, alle Jahre aus Combined_ISO.xlsx), Grundlage aller aktiven Analysen

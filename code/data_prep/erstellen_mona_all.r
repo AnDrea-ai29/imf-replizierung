@@ -93,6 +93,19 @@ arr_quarters <- mona_all %>%
   ) %>%
   select(ISO3, Year, ARR, quarters)
 
+# kumulative Anzahl der Arrangements je Land bis einschliesslich Jahr t
+# (analog nrcntprogram im Original-Datensatz, dort Range 1-7; Caveat: Zaehlung
+# beginnt mit unseren MONA-Daten im Jahr 2000, vor-2000-Programme fehlen bis
+# zur Bereitstellung des erweiterten MONA-Exports)
+nrcnt_arr <- arr_quarters %>%
+  distinct(ISO3, Year, ARR) %>%
+  count(ISO3, Year, name = "n_arr_jahr") %>%
+  arrange(ISO3, Year) %>%
+  group_by(ISO3) %>%
+  mutate(nrcntprogram = cumsum(n_arr_jahr)) %>%
+  ungroup() %>%
+  select(ISO3, Year, nrcntprogram)
+
 cat("Arrangements:", nrow(arr_quarters),
     "| Quartale: Range", paste(round(range(arr_quarters$quarters, na.rm = TRUE)), collapse = "-"),
     "| Median", median(arr_quarters$quarters, na.rm = TRUE),
@@ -165,6 +178,7 @@ mona_agg <- mona_classified %>%
     .groups = "drop"
   ) %>%
   left_join(q_agg, by = c("ISO3", "Year")) %>%
+  left_join(nrcnt_arr, by = c("ISO3", "Year")) %>%
   mutate(
     # anzahlbasiert, wie im Original (dort: avgcondtype_all)
     avgcondtype_count = if_else(!is.na(nrquarterssmpl) & nrquarterssmpl > 0,
@@ -222,6 +236,8 @@ cat("avgcondtype_share (Anteil klassifiziert): Range",
     paste(round(range(panel_all$avgcondtype_share, na.rm = TRUE), 2), collapse = " - "),
     "| Mean", round(mean(panel_all$avgcondtype_share, na.rm = TRUE), 2), "\n")
 cat("UNSC-Mitgliedsjahre (unsc3==1):", sum(panel_all$unsc3 == 1, na.rm = TRUE), "\n")
+cat("nrcntprogram: Range", paste(range(panel_all$nrcntprogram, na.rm = TRUE), collapse = "-"),
+    "| Mean", round(mean(panel_all$nrcntprogram, na.rm = TRUE), 2), "\n")
 cat("Complete Cases H1 count:", sum(complete.cases(panel_all[, c("avgcondtype_count", "unsc3", "XDebtGNI", "DebtServGNI", "ResXDebt")])), "\n")
 cat("Complete Cases H1 share:", sum(complete.cases(panel_all[, c("avgcondtype_share", "unsc3", "XDebtGNI", "DebtServGNI", "ResXDebt")])), "\n")
 cat("Complete Cases H2/H4 (zusaetzlich resource_dep):",

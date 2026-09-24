@@ -46,7 +46,8 @@ Wichtige Datenkorrekturen (dokumentiert in den Skripten):
 
 | Skript | Inhalt | Output |
 |--------|--------|--------|
-| `code/replication/phase1_replizierung.r` | H1 global in BEIDEN Operationalisierungen (count + share), jeweils alle Jahre + Vergleichsfenster 2002-2008 | `results/model_repl*.rds`, `results/validation_repl.csv` |
+| `code/replication/phase0_replikation_original.R` | **Spur A (Benchmark):** Reproduktion von Tabelle 2 auf dem Original-Datensatz (FE-OLS + GLS) plus Zeitfenster-Zerlegung 1992-2001/2002-2008 | `results/tables/original_replication.csv`, `results/models/model_original_*.rds` |
+| `code/replication/phase1_replizierung.r` | **Spur B:** H1 global in BEIDEN Operationalisierungen (count + share) und zwei Kontrollsaetzen (Basis / + nrcntprogram), jeweils alle Jahre + Vergleichsfenster 2002-2008 | `results/model_repl*.rds`, `results/validation_repl.csv` |
 | `code/analysis/phase2_erweiterung.R` | Globale Durchschnittsmodelle H1, H2, H4 (ohne Regionen) | `results/models/model_h1/h2/h4.rds`, `results/tables/results_h1_h4.csv` |
 | `code/analysis/laender_ausreisser_analyse.R` | Laenderuebersicht, Extremwerte, Leave-one-out-Einfluss auf unsc3 | `results/tables/country_summary.csv`, `outlier_extremewerte.csv`, `influence_unsc3.csv` |
 | `code/analysis/h1_sample_zerlegung.R` | Dokumentation: Woher kam das fruehere negative H1-Vorzeichen? (Reproduktion des alten SSA-Befunds + Stufung nach Laenderpool und Zeitfenster) | `results/tables/h1_sample_zerlegung.csv` |
@@ -55,7 +56,9 @@ Wichtige Datenkorrekturen (dokumentiert in den Skripten):
 
 ### Kernergebnisse (Stand 2026-09-24, globaler Pool, alle Jahre)
 
+- **Spur A, Benchmark (Originaldatensatz, `original_replication.csv`):** Reproduktion von Tabelle 2: FE-OLS unsc3 = -3.06 (p=0.076) vs. publiziert -3.329; GLS (RE) unsc3 = -2.45 (p=0.076) vs. publiziert -2.096. Zeitfenster-Zerlegung: Der Effekt lebt in den 1990ern (1992-2001: FE -4.65, p=0.042; 2002-2008: GLS -1.86, n.s., FE kollinear). Ab 2002 ist der Befund auch auf den Originaldaten statistisch Null.
 - **H1 (Replikationsspezifikation, avgcondtype_count):** unsc3 = +3.11 (p=0.073) ueber alle Jahre; im Originalzeitraum 2002-2008: +3.45 (p=0.48). Der negative Original-Befund (ca. 2 Bedingungen pro Quartal weniger fuer UNSC-Mitglieder) laesst sich in diesem Panel nicht reproduzieren; der Punktcoeffizient zeigt tendenzmaessig in die Gegenrichtung. (Caveat: Das Originalmodell nutzt zusaetzliche Kovariaten — Wahljahr, US-Hilfe, IWF-Kredite — und den Zeitraum 1992-2008.)
+- **H1 mit erweiterten Kontrollen (+ nrcntprogram):** +2.93 (p=0.090) ueber alle Jahre — das Ergebnis ist gegen die Programmhistorien-Kontrolle robust (Original-Kontrolle "count" analog nachgebaut; die uebrigen Original-Kovariaten benoetigen zusaetzliche Datenquellen, siehe Beschaffungsliste).
 - **H1 (Anteilsspezifikation, avgcondtype_share):** unsc3 = +0.076, p=0.12 (alle Jahre) bzw. +0.018, p=0.91 (2002-2008). Ebenfalls kein negativer Effekt.
 - **H2 (Durchschnitt):** Interaktion unsc3 x resource_dep insignifikant (+0.0012, p=0.60).
 - **H4 (Durchschnitt):** resource_dep ist marginal positiv mit dem Anteil rohstoffspezifischer Bedingungen assoziiert (p=0.078); die UNSC-Interaktion ist insignifikant.

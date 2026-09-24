@@ -1,0 +1,7 @@
+"Modell","Zeitraum","Schaetzer","unsc3_coef","unsc3_se","unsc3_p","n_obs","n_laender","Publiziert"
+"Tabelle 2 (Reproduktion)","1992-2008","OLS mit Laender-FE",-3.0632,1.7096,0.0755,217,102,"-3.329 (t=-1.95)"
+"Tabelle 2 (Reproduktion)","1992-2008","GLS (Random Effects)",-2.4489,1.3799,0.0759,217,102,"-2.096 (t=-4.02)"
+"Zeitfenster-Zerlegung","1992-2001","OLS mit Laender-FE",-4.6482,2.2512,0.0423,158,91,""
+"Zeitfenster-Zerlegung","1992-2001","GLS (Random Effects)",-2.1141,1.6247,0.1932,158,91,""
+"Zeitfenster-Zerlegung","2002-2008","OLS mit Laender-FE",NA,NA,NA,59,64,""
+"Zeitfenster-Zerlegung","2002-2008","GLS (Random Effects)",-1.8607,2.8736,0.5173,59,64,""
