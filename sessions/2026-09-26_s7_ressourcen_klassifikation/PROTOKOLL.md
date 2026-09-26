@@ -43,3 +43,43 @@ ein Power-Problem).
 bedingungsbeschreibungen_review.csv; rohstoff_final/stabil_final wo noetig
 korrigieren; danach hypothesen_original_basis.R neu laufen lassen und
 Ergebnis vergleichen (Soll: aehnlich, da die Top-86 bereits sauber sind).
+
+---
+
+## Review-Abschluss (2026-09-26, spaet)
+
+**Zwischenfall:** Der Autor-Review wurde aus Excel als CSV gespeichert —
+deutsche Excel-Voreinstellung (Semikolon-Trenner, verdoppelte Quotes) zerstoerte
+die Dateistruktur; 84 Beschreibungen mit Kommas im Text wurden dadurch nicht
+mehr eindeutig parsbar. Wiederherstellung aus Git + gezielte Anwendung der
+dokumentierten Review-Entscheidungen.
+
+**Auswertung des Reviews (1.552 valide Zeilen):** keine inhaltlichen
+Abweichungen vom Vorschlag in rohstoff_final/stabil_final erkennbar; 2
+Pruefhinweis-Klaerungen. Fazit: Die konservative Vorschlagskodierung wurde
+durch den Review bestaetigt.
+
+**Angewendete dokumentierte Entscheidungen:**
+- "remove gst exemptions for sugar and edible oils" (3 Zeilen) -> rohstoff_final=0
+  (Agrar, kein Extraktiv-Rohstoff).
+- "lib. cooking oil prices + imports" (1 Zeile) -> rohstoff_final=0 (Agrar).
+- Kraftstoff-Raffineriepreise ("low-/high-octane gasoline and cooking gas"):
+  bereits Vorschlag=1, bestaetigt (Mineraloelprodukte = Extraktiv).
+- Definitionsgrenze im Protokoll ergänzt: raffinierte Mineraloel-/Erdgasprodukte
+  zaehlen (Kraftstoff selbst: Preis/Steuer/Subvention/Fonds); Strom/Biomasse
+  nicht (-> energie-Sensitivitaetskategorie).
+
+**Ergebnis nach Review:** 82 rohstoffspezifische Bedingungszeilen (vorher 86).
+H4 unverendet insignifikant (unsc3 = -0.005, n.s.; Interaktion n.s.;
+H4_energie n.s.) — der H4-Befund ist gegen die Review-Korrekturen robust.
+
+**Offen (Autor, schnell):** 5 Komma-Beschreibungen mit rohstoff_final=1 sind
+im Excel-Export nicht verifizierbar gewesen und zur kurzen Bestaetigung
+vorzulegen (s. Chat/README); darunter 3 Utility-Regulierungs-Beschreibungen
+("reform regulatory authorities for gas, telecom, electricity"), fuer die
+0 (Institutionenreform, kein Extraktivsektor-Bezug) zu diskutieren ist.
+
+**Workflow-Lehre:** Review-CSV nie mit deutschem Excel als CSV wiederspeichern
+(Semikolon/Quote-Mangling). Alternativen: Korrekturen an die KI-Assistenz
+durchgeben, Texteditor verwenden, oder LibreOffice mit Komma-Trenner und UTF-8.
+Und: nach jedem Review-Schritt committen (Git-Rettung hat hier funktioniert).
