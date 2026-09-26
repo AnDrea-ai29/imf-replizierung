@@ -1,0 +1,103 @@
+"country","wdicode","ISO3","ISO3_note","idcnt"
+"afghanistan,islamic republic of","AFG","AFG","",5
+"albania","ALB","ALB","",7
+"algeria","DZA","DZA","",60
+"argentina","ARG","ARG","",10
+"armenia","ARM","ARM","",11
+"azerbaijan","AZE","AZE","",16
+"bangladesh","BGD","BGD","",21
+"belarus","BLR","BLR","",26
+"benin","BEN","BEN","",19
+"bolivia","BOL","BOL","",29
+"bosnia and herzegovina","BIH","BIH","",25
+"brazil","BRA","BRA","",30
+"bulgaria","BGR","BGR","",22
+"burkina faso","BFA","BFA","",20
+"burundi","BDI","BDI","",17
+"cambodia","KHM","KHM","",113
+"cameroon","CMR","CMR","",42
+"cape verde","CPV","CPV","",46
+"central african republic","CAF","CAF","",35
+"chad","TCD","TCD","",208
+"colombia","COL","COL","",44
+"congo, democratic republic of","ZAR","COD","Vintage-Korrektur",239
+"congo, republic of","COG","COG","",43
+"costa rica","CRI","CRI","",47
+"cote d'ivoire","CIV","CIV","",41
+"croatia","HRV","HRV","",95
+"czech republic","CZE","CZE","",52
+"djibouti","DJI","DJI","",56
+"dominica","DMA","DMA","",57
+"dominican republic","DOM","DOM","",59
+"ecuador","ECU","ECU","",63
+"egypt","EGY","EGY","",64
+"el salvador","SLV","SLV","",194
+"equatorial guinea","GNQ","GNQ","",83
+"estonia","EST","EST","",68
+"ethiopia","ETH","ETH","",69
+"gabon","GAB","GAB","",75
+"gambia, the","GMB","GMB","",81
+"georgia","GEO","GEO","",77
+"ghana","GHA","GHA","",78
+"grenada","GRD","GRD","",85
+"guatemala","GTM","GTM","",87
+"guinea","GIN","GIN","",79
+"guinea-bissau","GNB","GNB","",82
+"guyana","GUY","GUY","",90
+"haiti","HTI","HTI","",96
+"honduras","HND","HND","",93
+"hungary","HUN","HUN","",97
+"iraq","IRQ","IRQ","",103
+"jamaica","JAM","JAM","",107
+"jordan","JOR","JOR","",108
+"kazakhstan","KAZ","KAZ","",110
+"kenya","KEN","KEN","",111
+"kyrgyz republic","KGZ","KGZ","",112
+"lao people's dem. rep.","LAO","LAO","",119
+"latvia","LVA","LVA","",133
+"lesotho","LSO","LSO","",130
+"liberia","LBR","LBR","",121
+"lithuania","LTU","LTU","",131
+"macedonia (fyr)","MKD","MKD","",143
+"madagascar","MDG","MDG","",138
+"malawi","MWI","MWI","",155
+"mali","MLI","MLI","",144
+"mauritania","MRT","MRT","",152
+"mexico","MEX","MEX","",140
+"moldova","MDA","MDA","",137
+"mongolia","MNG","MNG","",149
+"mozambique","MOZ","MOZ","",151
+"nepal","NPL","NPL","",166
+"nicaragua","NIC","NIC","",162
+"niger","NER","NER","",160
+"nigeria","NGA","NGA","",161
+"pakistan","PAK","PAK","",170
+"panama","PAN","PAN","",171
+"papua new guinea","PNG","PNG","",175
+"paraguay","PRY","PRY","",180
+"peru","PER","PER","",172
+"philippines","PHL","PHL","",173
+"poland","POL","POL","",176
+"romania","ROM","ROU","Vintage-Korrektur",184
+"russian federation","RUS","RUS","",185
+"rwanda","RWA","RWA","",186
+"sao tome and principe","STP","STP","",199
+"senegal","SEN","SEN","",190
+"serbia and montenegro","YUG","SRB","Gilt fuer yugoslavia UND serbia and montenegro (idcnt 237)",237
+"sierra leone","SLE","SLE","",193
+"slovak republic","SVK","SVK","",202
+"sri lanka","LKA","LKA","",127
+"tajikistan","TJK","TJK","",211
+"tanzania","TZA","TZA","",219
+"togo","TGO","TGO","",209
+"turkey","TUR","TUR","",217
+"uganda","UGA","UGA","",220
+"ukraine","UKR","UKR","",221
+"uruguay","URY","URY","",223
+"uzbekistan","UZB","UZB","",225
+"venezuela","VEN","VEN","",227
+"vietnam","VNM","VNM","",229
+"yemen","YEM","YEM","",234
+"yugoslavia","YUG","SRB","Gilt fuer yugoslavia UND serbia and montenegro (idcnt 237)",237
+"zambia","ZMB","ZMB","",240
+"zimbabwe","ZWE","ZWE","",241

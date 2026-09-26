@@ -1,0 +1,18 @@
+	(1)
+VARIABLES	xtreg fe avgcondtype_0
+	
+unsc3	-2.410*
+	(-1.906)
+nrquarterssmpl	-0.184***
+	(-2.611)
+Constant	10.07***
+	(13.95)
+	
+Observations	314
+Number of idcnt	101
+R-squared	0.049
+Wooldridge	0.942
+F-test FE	2.06e-05
+Breusch-Pagan	0
+t-statistics in parentheses	
+*** p<0.01, ** p<0.05, * p<0.1	

@@ -1,0 +1,11 @@
+"Variable","n_gemeinsam","Korrelation","Median_RelDiff"
+"ExtBalGDP",262,0.94,0
+"XDebtGNI",244,0.931,-0.004
+"GFCFGDP",241,0.698,0
+"DebtServGNI",244,0.977,-0.008
+"ResXDebt",217,0.977,-0.003
+"USaidGDP",226,0.977,-0.139
+"imf_conc_gdp",290,0.348,0
+"imf_noconc_gdp",290,-0.004,0
+"legelec_l",300,0.978,0
+"imf_sum_gdp",290,0.835,0
