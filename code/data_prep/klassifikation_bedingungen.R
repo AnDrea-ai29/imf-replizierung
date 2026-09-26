@@ -73,7 +73,7 @@ vorschlag_stabil <- paste(
 energie_regex <- "\\b(energy|electricity|power\\s+(sector|company|tariff)|coal|fuel\\s+(price|adjustment|tariff))\\b"
 
 # Ambivalente Treffer kennzeichnen (manuell zu klaeren)
-ambiguen_regex <- "edible\\s+oils?"   # Agrar-Produkt, KEIN Extraktiv-Rohstoff
+ambiguen_regex <- "edible oils|cooking oil"  # Agrar-Produkte, KEIN Extraktiv-Rohstoff
 
 rev <- mona %>%
   mutate(
