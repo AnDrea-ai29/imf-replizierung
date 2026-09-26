@@ -83,3 +83,18 @@ vorzulegen (s. Chat/README); darunter 3 Utility-Regulierungs-Beschreibungen
 (Semikolon/Quote-Mangling). Alternativen: Korrekturen an die KI-Assistenz
 durchgeben, Texteditor verwenden, oder LibreOffice mit Komma-Trenner und UTF-8.
 Und: nach jedem Review-Schritt committen (Git-Rettung hat hier funktioniert).
+
+## Grenzfall-Entscheid (Autor, final — 2026-09-26)
+
+Alle 5 Komma-Beschreibungen mit rohstoff_final=1 bestaetigt bzw. entschieden:
+- Raffineriepreise (Oktan/Benzin/Diesel/Kochgas): 1 (Kraftstoffpreise).
+- GST-Ausnahmen "electricity, gas, petro products": 1 (Gas/Petrol dominieren).
+- 3 Utility-Regulierungsbeschreibungen ("gas, telecom, electricity
+  authorities"): 1 — BEGRUENDUNG des Autors: Extraktiv-Bezug ueber die
+  Gas-Massnahmen bzw. Gas-Zustaendigkeiten. Kodierregel damit ergaenzt:
+  Multi-Sektor-Bedingungen mit Gas-Anteil zaehlen als rohstoff-bezogen.
+
+Damit ist die Ressourcen-Klassifikation ABGESCHLOSSEN: 82 rohstoffspezifische
+Bedingungszeilen, alle Entscheidungen in bedingungsbeschreibungen_review.csv
+dokumentiert (pruefhinweis-Spalte), Modelle final geschaetzt (H4/H4_energie
+unveraendet insignifikant).
