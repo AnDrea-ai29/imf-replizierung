@@ -23,10 +23,11 @@
 # Klassifikation rein textbasiert (dokumentierter Unterschied zum 2000-2026-
 # Panel).
 #
-# resource_dep (FuelExportPct + MineralExportPct) liegt nur fuer 2000-2026 vor
-# (eigenes Panel); H2/H4 schaetzen daher auf dem Ueberlapp 2000-2008. Fuer den
-# vollen Zeitraum 1992-2008 benoetigt H2/H4 eine Treibstoff/Mineralien-Export-
-# serie ab 1992 (Beschaffung, s. Tagesplan Block 1).
+# resource_dep (FuelExportPct + MineralExportPct) seit 2026-09-26 ab 1990
+# verfuegbar (resource_dep_all.csv -> build_controls_wdi.R ->
+# controls_wdi_1990_2025.csv); H2/H4 schaetzen damit ueber die volle Periode
+# 1992-2008. Hinweis: die WDI-Fuel-Serie beginnt datenbedingt erst ~1995,
+# Programme 1992-1994 fallen daher im H2/H4-Sample heraus.
 #
 # Output: results/tables/hypothesen_original_basis.csv
 #         results/models/model_origbasis_*.rds
@@ -160,8 +161,8 @@ m_h1 <- feols(as.formula(paste("avgcondtype_all ~ unsc3 +", ctrl,
 print(summary(m_h1))
 
 cat("\n=== H1-Variante: Kontrollen aus neuer WDI (2026-Stand, Vintage-Robustheit) ===\n")
-# Durchgehend 1992-2025 verfuegbar: ExtBalGDP, XDebtGNI, GFCFGDP, DebtServGNI,
-# ResXDebt (USaidGDP/IMF-%-BIP erst ab 2000, BIP-Serie; legelec_l: DPI fehlt)
+# Alle 9 DSV-Kontrollen aus controls_wdi_1990_2025.csv verfuegbar (inkl.
+# USaidGDP, IMF-Serien mit BIP ab 1990; legelec_l aus dpi_all.csv bis 2023).
 d <- d %>%
   left_join(wdi %>%
               select(ISO3, Year,
@@ -273,8 +274,10 @@ cat("- M1_base reproduziert die Original-Basiszahl exakt (unsc3 = -2.410; mit\n"
 cat("  plain SE t = -1.906 wie in phase0, s. Tabellen-2-Spalte 1).\n")
 cat("- H1: negativer UNSC-Effekt auf der korrekt gemessenen Basis bestaetigt\n")
 cat("  (statt +3.11 im alten, anders gemessenen Panel).\n")
-cat("- resource_dep seit 2026-09-26 ab 1990 verfuegbar (neue WDI), H2/H4\n")
-cat("  laufen auf der vollen Periode; UNSC-Fallzahl im Sample oben angegeben.\n")
-cat("- USaidGDP/IMF-%-BIP-Variablen erst ab 2000 (BIP-Serie), legelec_l (DPI)\n")
-cat("  fehlt weiterhin: Vollkontrolliertes DSV-Vollmodell auf eigener Basis\n")
-cat("  erst nach deren Beschaffung moeglich.\n")
+cat("- H2/H4 auf der vollen Periode 1992-2008 (resource_dep ab 1990 aus der\n")
+cat("  neuen WDI; Fuel-Serie beginnt datenbedingt ~1995). UNSC-Fallzahl im\n")
+cat("  Sample oben angegeben (13).\n")
+cat("- Alle 9 DSV-Kontrollen auf eigener Basis verfuegbar; IMF-Serien sind\n")
+cat("  NFL-Nettofluesse (konzepttreu, Summen-Korrelation mit Original 0.835,\n")
+cat("  nur Typen-Aufteilung weicht ab); legelec_l aus DPI-2023 (Korrelation\n")
+cat("  0.978, Serie endet 2023).\n")
