@@ -1,0 +1,1637 @@
+"desc","n_rows","rohstoff_kw_alt","stabil_kw_alt","rohstoff_vorschlag","stabil_vorschlag","energie_vorschlag","pruefhinweis","dsv_klassen","rohstoff_final","stabil_final"
+"tax/expenditure reform",1588,0,0,0,0,0,NA,"Government Budget",0,0
+"bop/reserve test",1376,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"financial sector",1132,0,0,0,0,0,NA,"Financial sector",0,0
+"med/long-term ext debt ceiling",1119,0,1,0,1,0,NA,"Monetary Ceiling",0,1
+"credit to government/public sector",1116,0,0,0,0,0,NA,"Credit to Government",0,0
+"short-term debt",1031,0,1,0,1,0,NA,"Debt",0,1
+"fiscal deficit",1017,0,1,0,1,0,NA,"Government Budget",0,1
+"domestic credit",977,0,0,0,0,0,NA,"Debt",0,0
+"med/long-term ext debt-sub ceiling",893,0,1,0,1,0,NA,"Monetary Ceiling",0,1
+"other",695,0,0,0,0,0,NA,"Other",0,0
+"systemic and ownership reform",682,0,0,0,0,0,NA,"Systemic",0,0
+"public enterprises",490,0,0,0,0,0,NA,"Public Sector",0,0
+"revenues",476,0,0,0,0,0,NA,"Government Budget",0,0
+"medium /long term external debt",424,0,1,0,1,0,NA,"Debt",0,1
+"",417,0,0,0,0,0,NA,"",0,0
+"trade systems",404,0,0,0,0,0,NA,"Trade",0,0
+"expenditures",388,0,0,0,0,0,NA,"Government Budget",0,0
+"short term debt",332,0,1,0,1,0,NA,"Debt",0,1
+"pricing & marketing policies",312,0,0,0,0,0,NA,"Pricing",0,0
+"total domestic credit",305,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"domestic arrears",288,0,0,0,0,0,NA,"Arrears",0,0
+"no new external arrears",274,0,0,0,0,0,NA,"Debt",0,0
+"no new arrears/default(continuous injunction)",273,0,0,0,0,0,NA,"Debt",0,0
+"external arrears",252,0,0,0,0,0,NA,"Debt",0,0
+"public enterprises, reform and restructuring",243,0,0,0,0,0,NA,"Public Sector",0,0
+"bank regulation and supervision",213,0,0,0,0,0,NA,"Financial sector",0,0
+"exchange system",152,0,1,0,1,0,NA,"Exchange system",0,1
+"central bank reform",141,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"restructuring & privatization of financial institutions",137,1,0,0,0,0,NA,"Financial sector",0,0
+"budget approval and submission",136,0,1,0,1,0,NA,"Government Budget",0,1
+"treasury system",132,0,0,0,0,0,NA,"Government Budget",0,0
+"privatization",124,1,0,0,0,0,NA,"Privatization",0,0
+"general government tax and expenditure reform",118,0,0,0,0,0,NA,"Government Budget",0,0
+"financial legal reforms",117,0,0,0,0,0,NA,"Financial sector",0,0
+"ceiling on external arrears",106,0,0,0,0,0,NA,"Debt",0,0
+"reserve money",103,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"pricing and marketing",91,0,0,0,0,0,NA,"Pricing",0,0
+"medium/long term external debt subceiling",78,0,1,0,1,0,NA,"Monetary Ceiling",0,1
+"transparency",78,0,0,0,0,0,NA,"Governance",0,0
+"legal and regulatory framework",77,0,0,0,0,0,NA,"Governance",0,0
+"tax/expenditure reform (continued)",69,0,0,0,0,0,NA,"Government Budget",0,0
+"economic statistics",67,0,0,0,0,0,NA,"Other",0,0
+"governance",67,0,0,0,0,0,NA,"Governance",0,0
+"trade regime",64,0,0,0,0,0,NA,"Trade",0,0
+"other (tax/expenditure reform)",63,0,0,0,0,0,NA,"Government Budget",0,0
+"wages",58,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"monetary statistics",56,0,1,0,1,0,NA,"Financial sector",0,1
+"civil service reform",48,0,0,0,0,0,NA,"Public Sector",0,0
+"min. level of average reserve deposits",45,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"pension reform",45,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"financial sector (continued)",42,0,0,0,0,0,NA,"Financial sector",0,0
+"systemic and ownership reform (continued)",30,0,0,0,0,0,NA,"Systemic",0,0
+"broad money",27,0,0,0,1,0,NA,"Other",0,1
+"stock of reserve money of anb",27,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"other (systemic and ownership reform)",26,0,0,0,0,0,NA,"Systemic",0,0
+"nda of banking system",23,0,0,0,0,0,NA,"Financial sector",0,0
+"tax/expenditure reform (structural benchmarks)",23,0,0,0,0,0,NA,"Government Budget",0,0
+"inter-governmental relations",22,0,0,0,0,0,NA,"Governance",0,0
+"other (governance)",22,0,0,0,0,0,NA,"Governance",0,0
+"gross convert. currency reserves of nbm",21,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"education sector",20,0,0,0,0,0,NA,"Public Sector",0,0
+"general government expenditure",20,0,0,0,0,0,NA,"Government Budget",0,0
+"health sector",20,0,0,0,0,0,NA,"Public Sector",0,0
+"other (civil service reform)",20,0,0,0,0,0,NA,"Public Sector",0,0
+"financial sector continued",19,0,0,0,0,0,NA,"Financial sector",0,0
+"public employment",19,0,0,0,0,0,NA,"Public Sector",0,0
+"govt net lending",18,0,0,0,0,0,NA,"Credit to Government",0,0
+"public enterprises (continued)",18,0,0,0,0,0,NA,"Public Sector",0,0
+"budgetary arrears on wages, pensions, and benefits",17,0,1,0,1,0,NA,"Government Budget",0,1
+"labor market",17,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"other (financial sector)",17,0,0,0,0,0,NA,"Financial sector",0,0
+"central government expenditure",16,0,0,0,0,0,NA,"Government Budget",0,0
+"domestic budgetary arrears",16,0,1,0,1,0,NA,"Arrears",0,1
+"net claims of banking system on central government",16,0,0,0,0,0,NA,"Credit to Government",0,0
+"other (tax/expenditure reform, cont'd)",16,0,0,0,0,0,NA,"Government Budget",0,0
+"net official reserves in convertible currencies",15,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"other (statistics)",15,0,0,0,0,0,NA,"Other",0,0
+"other (structural benchmarks)",15,0,0,0,0,0,NA,"Other",0,0
+"sublimit on foreign financing of budget",15,0,1,0,1,0,NA,"Government Budget",0,1
+"corporate restructuring and governance",14,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"floor on fiscal reserve account balance",14,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"limits on stock of spending arrears",14,0,0,0,0,0,NA,"Arrears",0,0
+"other (continued)",13,0,0,0,0,0,NA,"Other",0,0
+"other (public enterprises)",13,0,0,0,0,0,NA,"Public Sector",0,0
+"tax/expenditure reform cont.",13,0,0,0,0,0,NA,"Government Budget",0,0
+"central bank credit to government",12,0,0,0,0,0,NA,"Credit to Government",0,0
+"domestic govt.wage bill arrears",12,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"domestic payments arrears reduction",12,0,0,0,0,0,NA,"Arrears",0,0
+"financial sector (prior actions)",12,0,0,0,0,0,NA,"Financial sector",0,0
+"institution building, legal and regulatory framework, transparency",12,0,0,0,0,0,NA,"Governance",0,0
+"other (trade system)",12,0,0,0,0,0,NA,"Trade",0,0
+"other-base money",12,0,0,0,1,0,NA,"Central Bank Reform",0,1
+"other: nfps deficit incl. cbk",12,0,1,0,1,0,NA,"Public Sector",0,1
+"other:deficit central gov.+ boj losses",12,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"wages/salaries in budget",12,0,1,0,1,0,NA,"Wages & Pensions",0,1
+"bank budgetary support",11,0,1,0,1,0,NA,"Financial sector",0,1
+"base money growth",11,0,0,0,1,0,NA,"Monetary Ceiling",0,1
+"credit to govt. from ofis",11,0,0,0,0,0,NA,"Credit to Government",0,0
+"credit to seven major public enterprises",11,0,0,0,0,0,NA,"Other",0,0
+"domestic govt.arrears on goods and services",11,0,0,0,0,0,NA,"Arrears",0,0
+"external debt arrears",11,0,1,0,1,0,NA,"Arrears",0,1
+"external nondebt arrears",11,0,1,0,0,0,NA,"Arrears",0,0
+"floor on revenue of state budget",11,0,1,0,1,0,NA,"Government Budget",0,1
+"govt. wage bill",11,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"net borrowing requirement, central govt",11,0,0,0,1,0,NA,"Debt",0,1
+"net domestic borrowing requirement, central govt",11,0,0,0,1,0,NA,"Debt; Public Sector",0,1
+"net domestic borrowing requirement, nfps",11,0,0,0,1,0,NA,"Debt",0,1
+"other (ta/expend reform, contd)",11,0,0,0,0,0,NA,"Government Budget",0,0
+"other: credit to enlarged government",11,0,0,0,0,0,NA,"Credit to Government",0,0
+"other: cumulative deficit of enlarged government",11,0,1,0,1,0,NA,"Debt",0,1
+"public sector wages and salaries",11,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"capital account",10,0,0,0,0,0,NA,"Capital Account",0,0
+"floor on tax revenue",10,0,0,0,0,0,NA,"Government Budget",0,0
+"gross banking system credit to federation",10,0,0,0,0,0,NA,"Credit to Government",0,0
+"gross banking system credit to republika srpska",10,0,0,0,0,0,NA,"Credit to Government",0,0
+"gross banking system credit to state govt",10,0,0,0,0,0,NA,"Credit to Government",0,0
+"other (systemic and ownership reform, contd)",10,0,0,0,0,0,NA,"Systemic",0,0
+"other-oil price stabilization fund",10,1,0,1,0,0,NA,"BOP/ Reserves",1,0
+"pricing and marketing policies (continued)",10,0,0,0,0,0,NA,"Pricing",0,0
+"social safety net",10,0,0,0,0,0,NA,"Social",0,0
+"tax/expenditure reform cont. 1",10,0,0,0,0,0,NA,"Government Budget",0,0
+"uearmarked state cash revenue",10,0,0,0,0,0,NA,"Government Budget",0,0
+"ceiling on central government arrears",9,0,0,0,0,0,NA,"Arrears",0,0
+"ceiling on general government arrears",9,0,0,0,0,0,NA,"Arrears",0,0
+"govt. assumpn/guarantee of p.ent.debt to banks",9,0,1,0,1,0,NA,"Arrears",0,1
+"increase in end-user electricity prices",9,0,0,0,0,1,NA,"Pricing",0,0
+"nfps deficit",9,0,1,0,1,0,NA,"Public Sector",0,1
+"nir of national bank of romania",9,0,0,0,0,0,NA,"Financial sector",0,0
+"other (program prior actions)",9,0,0,0,0,0,NA,"Other",0,0
+"social welfare",9,0,0,0,0,0,NA,"Social",0,0
+"stock of payments arrears",9,0,0,0,0,0,NA,"Arrears",0,0
+"systemic & ownership reform (structural benchmark)",9,0,0,0,0,0,NA,"Systemic",0,0
+"arrears of the pension fund",8,0,0,0,0,0,NA,"Arrears",0,0
+"bank credit to 12 agencies",8,0,0,0,0,0,NA,"Debt",0,0
+"borrowing req. of the combined public sector",8,0,0,0,1,0,NA,"Public Sector",0,1
+"cbr revenues",8,0,0,0,0,0,NA,"Other",0,0
+"ceiling on tax and social insurance arrears",8,0,0,0,0,0,NA,"Arrears",0,0
+"change in debt of federal government",8,0,1,0,1,0,NA,"Debt",0,1
+"change in short-term federal government debt",8,0,1,0,1,0,NA,"Debt",0,1
+"external and domestic public sector debt (mlt)",8,0,1,0,1,0,NA,"Debt",0,1
+"fiscal reserve account",8,0,1,0,1,0,NA,"Monetary Ceiling",0,1
+"net consumer lending of banco nacion",8,0,0,0,0,0,NA,"Other",0,0
+"net domestic financing of govt. and stabilization fund",8,0,0,0,0,0,NA,"Government Budget",0,0
+"noninterest federal government spending",8,0,1,0,0,0,NA,"Government Budget",0,0
+"operating losses of major pes",8,0,0,0,0,0,NA,"Other",0,0
+"other (fiscal reforms)",8,0,1,0,1,0,NA,"Government Budget",0,1
+"other (tax/expenditure reform 3)",8,0,0,0,0,0,NA,"Government Budget",0,0
+"other - domestic arrears",8,0,0,0,0,0,NA,"Arrears",0,0
+"other domestic arrears of general govt",8,0,0,0,0,0,NA,"Arrears",0,0
+"other: credit to autonomous bodies",8,0,0,0,0,0,NA,"Debt",0,0
+"other: discret. expend. of nfps (excl",8,0,0,0,0,0,NA,"Public Sector",0,0
+"primary expenditure of federal government",8,0,0,0,0,0,NA,"Government Budget",0,0
+"short-term public sector debt",8,0,1,0,1,0,NA,"Debt",0,1
+"systemic/ownership reform cont",8,0,0,0,0,0,NA,"Systemic",0,0
+"tax collection of stc and scc",8,0,0,0,0,0,NA,"Governance",0,0
+"tax revenue",8,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure (pgm prior actions, continued)",8,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure reform cont. 2",8,0,0,0,0,0,NA,"Government Budget",0,0
+"wage bills of 60 soes",8,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"agricultural sector",7,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"bank credit to auton. bodies",7,0,0,0,0,0,NA,"Financial sector",0,0
+"ceiling non-interest expndtrs of central admin.",7,0,1,0,0,0,NA,"Monetary Ceiling",0,0
+"ceiling on external and domestic",7,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"civil service reduction",7,0,0,0,0,0,NA,"Public Sector",0,0
+"credit by national development banks and trust funds",7,0,0,0,0,0,NA,"Financial sector",0,0
+"discretionary current expenditure",7,0,0,0,0,0,NA,"Government Budget",0,0
+"federal government cash revenue",7,0,0,0,0,0,NA,"Government Budget",0,0
+"financial reform (ccr, 2nd review)",7,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector (2)",7,0,0,0,0,0,NA,"Financial sector",0,0
+"nda of central bank of jordan",7,0,0,0,0,0,NA,"Financial sector",0,0
+"net borrowing requirements of nfps",7,0,0,0,1,0,NA,"Debt",0,1
+"net credit from banking system to general government",7,0,0,0,0,0,NA,"Credit to Government",0,0
+"no new loans for zesco and znoc",7,0,0,0,0,0,NA,"Debt",0,0
+"other: stock of treasury obligations",7,0,0,0,0,0,NA,"Government Budget",0,0
+"pension arrears",7,0,0,0,0,0,NA,"Arrears",0,0
+"primary balance of nfps",7,0,1,0,0,0,NA,"Public Sector",0,0
+"revenues/primary balance",7,0,1,0,0,0,NA,"BOP/ Reserves",0,0
+"systemic and ownership reform (structural benchmarks)",7,0,0,0,0,0,NA,"Systemic",0,0
+"tax/expenditure reform (performance criteria)",7,0,0,0,0,0,NA,"Government Budget",0,0
+"aggregate wage ceilings",6,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"bcc credit to non-financial private sector",6,0,0,0,0,0,NA,"Public Sector",0,0
+"bcc credit to non-financial public sector",6,0,0,0,0,0,NA,"Public Sector",0,0
+"ceiling on tax arrears",6,0,0,0,0,0,NA,"Arrears",0,0
+"central government budget arrears",6,0,1,0,1,0,NA,"Government Budget",0,1
+"central government revenue",6,0,0,0,0,0,NA,"Government Budget",0,0
+"change in debt of consolidated public sector",6,0,1,0,1,0,NA,"Debt",0,1
+"combined federal/provincial deficits",6,0,1,0,1,0,NA,"Debt",0,1
+"cumulative floor on state government tax collection",6,0,0,0,0,0,NA,"Government Budget",0,0
+"financial sector (structural benchmarks)",6,0,0,0,0,0,NA,"Financial sector",0,0
+"financing of see's",6,0,0,0,0,0,NA,"Other",0,0
+"fiscal revenue",6,0,1,0,1,0,NA,"Government Budget",0,1
+"govt assumption of enterprise debt and guarantees",6,0,1,0,1,0,NA,"Debt",0,1
+"minimum reserves of banking system",6,0,1,0,1,0,NA,"Central Bank Reform",0,1
+"mlt debt subceiling (1-12 years)",6,0,1,0,1,0,NA,"Monetary Ceiling",0,1
+"net domestic assets of bank of latvia",6,0,0,0,0,0,NA,"Financial sector",0,0
+"net lending by general government",6,0,0,0,0,0,NA,"Debt",0,0
+"net lending by govt.",6,0,0,0,0,0,NA,"Credit to Government",0,0
+"net lending to extra-budgetary funds",6,0,1,0,1,0,NA,"Government Budget",0,1
+"nfps saving",6,0,0,0,0,0,NA,"Public Sector",0,0
+"nfps wage bill",6,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"non-cash netting operations of consolidated budget",6,0,1,0,1,0,NA,"Government Budget",0,1
+"other (credit to public sector)",6,0,0,0,0,0,NA,"Public Sector",0,0
+"other (judiciary system)",6,0,0,0,0,0,NA,"Governance",0,0
+"other (pension reform)",6,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"other (pricing and marketing policies)",6,0,0,0,0,0,NA,"Pricing",0,0
+"other (primary nondevelopment public expenditure)",6,0,0,0,0,0,NA,"Public Sector",0,0
+"other (tax/expenditure reform, 2)",6,0,0,0,0,0,NA,"Government Budget",0,0
+"other continued",6,0,0,0,0,0,NA,"Other",0,0
+"other-domestic arrears",6,0,0,0,0,0,NA,"Arrears",0,0
+"other: domestic arrears",6,0,0,0,0,0,NA,"Arrears",0,0
+"other: gross international reserves",6,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"primary balance of energy sector",6,1,1,0,0,1,NA,"Other",0,0
+"primary balance, nfps",6,0,1,0,0,0,NA,"Public Sector",0,0
+"publish quart. rpts. of wapda",6,0,0,0,0,0,NA,"Other",0,0
+"reduction of tax arrears",6,0,0,0,0,0,NA,"Arrears",0,0
+"social fund pension arrears",6,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"state budget tax revenues",6,0,1,0,1,0,NA,"Government Budget",0,1
+"systemic and ownership reform: 2",6,0,0,0,0,0,NA,"Systemic",0,0
+"tax/expenditure reform (cont.)",6,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure reform (prior actions)",6,0,0,0,0,0,NA,"Government Budget",0,0
+"trade system (continued)",6,0,0,0,0,0,NA,"Trade",0,0
+"wage arrears",6,0,0,0,0,0,NA,"Arrears",0,0
+"wage bill",6,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"accumulation of budgetary arrears to wapda",5,0,1,0,1,0,NA,"Arrears",0,1
+"arrears to renge and rongaz",5,0,0,0,0,0,NA,"Arrears",0,0
+"asset sales",5,0,0,0,0,0,NA,"Government Budget",0,0
+"balance on stabilization reserve fund",5,0,1,0,1,0,NA,"Government Budget",0,1
+"cbr revenue plus oil and gas surcharges",5,1,0,1,0,0,NA,"Pricing",1,0
+"ceiling on aggregate wage bill of monitored state-owned enterprises",5,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"ceiling on the stock of total external debt of the nfps",5,0,1,0,1,0,NA,"Monetary Ceiling",0,1
+"central government non-interest current expenditure",5,0,1,0,0,0,NA,"Government Budget",0,0
+"central government wage bill",5,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"contracting of foreign currency swap and forward sales",5,0,0,0,0,0,NA,"Capital Account",0,0
+"credit to 19 public enterprises",5,0,0,0,0,0,NA,"Financial sector",0,0
+"cumulative aggregate collection rates (distrigaz nord&sud)",5,0,0,0,0,0,NA,"Other",0,0
+"cumulative aggregate collection rates (termoelectrica)",5,0,0,0,0,0,NA,"Other",0,0
+"directed credit",5,0,0,0,0,0,NA,"Debt",0,0
+"domestic arrears ceiling",5,0,0,0,0,0,NA,"Arrears",0,0
+"domestic arrears of government",5,0,0,0,0,0,NA,"Arrears",0,0
+"external public enterprise debt",5,0,1,0,1,0,NA,"Debt",0,1
+"financial sector (continued, 2nd year prior actions)",5,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector reform (structural benchmark)",5,0,0,0,0,0,NA,"Financial sector",0,0
+"floor for central govt. fiscal balance",5,0,1,0,1,0,NA,"Monetary Ceiling",0,1
+"floor for general govt. fiscal balance",5,0,1,0,1,0,NA,"Monetary Ceiling",0,1
+"floor on nfa, banking system",5,0,0,0,0,0,NA,"Financial sector",0,0
+"general government net lending",5,0,0,0,0,0,NA,"Other",0,0
+"govt borrowing from public enterprises",5,0,0,0,1,0,NA,"Credit to Government",0,1
+"issuance of domestic government guarantees on bank lending to enterprises",5,0,0,0,0,0,NA,"Other",0,0
+"limits on assumption of enterprise debt and guaranteeing of bank loans",5,0,1,0,1,0,NA,"Debt",0,1
+"national bank net credit to government",5,0,0,0,0,0,NA,"Credit to Government",0,0
+"nda of state-owned banks",5,0,0,0,0,0,NA,"Financial sector",0,0
+"nda, banking system",5,0,0,0,0,0,NA,"Financial sector",0,0
+"net bank borrowing by 10 large public enterprises.",5,0,0,0,1,0,NA,"Public Sector",0,1
+"net credit of banking system to ord 13/1995 enterprises",5,0,0,0,0,0,NA,"Debt",0,0
+"net credit to public sector enterprises",5,0,0,0,0,0,NA,"Public Sector",0,0
+"net lending financed from domestic",5,0,0,0,0,0,NA,"Debt",0,0
+"net lending+govt.guaranteed loans",5,0,0,0,0,0,NA,"Debt",0,0
+"net reduction of domestic arrears",5,0,0,0,0,0,NA,"Arrears",0,0
+"no new domestic arrears",5,0,0,0,0,0,NA,"Arrears",0,0
+"no new tax exemptions",5,0,0,0,0,0,NA,"Government Budget",0,0
+"no wage increases for large soes making losses (in arrears), state monopolies, subsidized enterprises",5,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"other (energy sector, ccr 2nd review)",5,1,0,0,0,1,NA,"Private Sector Reforms",0,0
+"other (fiscal deficit, central govt)",5,0,1,0,1,0,NA,"Government Budget",0,1
+"other (fiscal reform)",5,0,1,0,1,0,NA,"Government Budget",0,1
+"other (net dom. borrowing, central govt)",5,0,0,0,1,0,NA,"Credit to Government",0,1
+"other (net dom. borrowing, nfps)",5,0,0,0,1,0,NA,"Public Sector",0,1
+"other (tax/expenditure reform 2)",5,0,0,0,0,0,NA,"Government Budget",0,0
+"other (tax/expenditure reform: 4th review)",5,0,0,0,0,0,NA,"Government Budget",0,0
+"other reserve requirements for dmbs",5,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"other-pub. enterprises (cont.)",5,0,0,0,0,0,NA,"Public Sector",0,0
+"other: civil service reform",5,0,0,0,0,0,NA,"Public Sector",0,0
+"other: general govt net lending",5,0,0,0,0,0,NA,"Credit to Government",0,0
+"other: social security reform",5,0,0,0,0,0,NA,"Social",0,0
+"outstanding public enterprise external arrears",5,0,0,0,0,0,NA,"Arrears",0,0
+"overall fiscal deficit (genl govt) excl. for. proj. loans",5,0,1,0,1,0,NA,"Government Budget",0,1
+"price liberalization",5,0,0,0,0,0,NA,"Pricing",0,0
+"pricing & marketing policies (structural benchmark)",5,0,0,0,0,0,NA,"Pricing",0,0
+"public enterprises (str. benchmarks)",5,0,0,0,0,0,NA,"Public Sector",0,0
+"reduction in central government non-interest domestic arrears",5,0,1,0,0,0,NA,"Arrears",0,0
+"stock of domestic arrears of soes",5,0,0,0,0,0,NA,"Arrears",0,0
+"stock of general government guarantees for domestic borrowing",5,0,0,0,1,0,NA,"Other",0,1
+"stock of general government payment obligations",5,0,0,0,0,0,NA,"Other",0,0
+"system/ownership reform cont.1",5,0,0,0,0,0,NA,"Systemic",0,0
+"systemic and ownership reform (program prior actions)",5,0,0,0,0,0,NA,"Systemic",0,0
+"tax/expenditure reform (4th/5th reviews prior actions)",5,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure reform (ccr, 2nd review)",5,0,0,0,0,0,NA,"Government Budget",0,0
+"arrears to kyrgyz energo",4,0,0,0,0,0,NA,"Arrears",0,0
+"bank borrowing to autonomous bodies",4,0,0,0,1,0,NA,"Financial sector",0,1
+"ceiling on new domestic arrears",4,0,0,0,0,0,NA,"Arrears",0,0
+"ceiling on public sector issuance of eurobonds",4,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"ceiling on stock of domestic arrears",4,0,0,0,0,0,NA,"Arrears",0,0
+"ceiling on warrants issued w/o cash backing (nonacc of domestic arrears)",4,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"central government deficit",4,0,1,0,1,0,NA,"Government Budget",0,1
+"eliminate tax exemptions in investment law",4,0,0,0,0,0,NA,"Governance",0,0
+"external payment arrears",4,0,0,0,1,0,NA,"Arrears",0,1
+"fed govt spending (floor on external debt service payments)",4,0,1,0,1,0,NA,"Government Budget",0,1
+"financial sector (program prior actions)",4,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector (structural benchmark)",4,0,0,0,0,0,NA,"Financial sector",0,0
+"floor on balance of fiscal reserve account",4,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"floor on deposits of banking dept less fund credit",4,0,0,0,0,0,NA,"Debt",0,0
+"government domestic arrears",4,0,0,0,0,0,NA,"Arrears",0,0
+"government noninterest spending",4,0,1,0,0,0,NA,"Government Budget",0,0
+"gross bank credits to public ents.",4,0,0,0,0,0,NA,"Financial sector",0,0
+"implement pricing system for petroleum products",4,1,0,1,0,0,NA,"Pricing",1,0
+"increase diesel retail prices",4,0,0,0,0,0,NA,"Pricing",0,0
+"introduce vat",4,0,0,0,0,0,NA,"Government Budget",0,0
+"limit on foreign financing of budget",4,0,1,0,1,0,NA,"Capital Account",0,1
+"limit on guysuco wage bill",4,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"minimum cost coverage for household services",4,0,0,0,0,0,NA,"Other",0,0
+"nda of of nbb",4,0,0,0,0,0,NA,"Financial sector",0,0
+"net bank credit to 23 enterprises",4,0,0,0,0,0,NA,"Financial sector",0,0
+"net credit of banking system to selected enterprises",4,0,0,0,0,0,NA,"Debt",0,0
+"net domestic financing of general government budget deficit",4,0,1,0,1,0,NA,"Government Budget",0,1
+"new public enterprise external arrears",4,0,0,0,0,0,NA,"Arrears",0,0
+"other (energy sector, ccr 3rd review)",4,1,0,0,0,1,NA,"Private Sector Reforms",0,0
+"other (governance, transparency and legal)",4,0,0,0,0,0,NA,"Governance",0,0
+"other (please indicate)",4,0,0,0,0,0,NA,"Other",0,0
+"other (prior actions)",4,0,0,0,0,0,NA,"Other",0,0
+"other (social sector)",4,0,0,0,0,0,NA,"Social",0,0
+"other (systemic and ownership reform, 2)",4,0,0,0,0,0,NA,"Systemic",0,0
+"other - intermediate indicators",4,0,0,0,0,0,NA,"Other",0,0
+"other general government current discretionary spending.",4,0,0,0,0,0,NA,"Government Budget",0,0
+"other tax/expend. (continued)",4,0,0,0,0,0,NA,"Government Budget",0,0
+"other- domestic arrears",4,0,0,0,0,0,NA,"Arrears",0,0
+"other- minimum reserves of banks",4,0,1,0,1,0,NA,"Central Bank Reform",0,1
+"other- net lending by gen. govt.",4,0,0,0,0,0,NA,"Government Budget",0,0
+"other-stock of arrears on gas payments",4,1,0,1,0,0,NA,"Arrears",1,0
+"other: credit to government",4,0,0,0,0,0,NA,"Credit to Government",0,0
+"other: net bank credit to 23 pes",4,0,0,0,0,0,NA,"Financial sector",0,0
+"overall fiscal deficit (genl govt) excl. foreign project loans",4,0,1,0,1,0,NA,"Government Budget",0,1
+"payment by oil parastatal to budget",4,1,1,1,1,0,NA,"Government Budget",1,1
+"promulgation of gst law",4,0,0,0,0,0,NA,"Governance",0,0
+"prsp development & implementation",4,0,0,0,0,0,NA,"Social",0,0
+"sfsi stock of arrears",4,0,0,0,0,0,NA,"Arrears",0,0
+"share of net lending in nbb credit auctions",4,0,0,0,0,0,NA,"Debt",0,0
+"social policies system",4,0,0,0,0,0,NA,"Social",0,0
+"state budget stock of arrears",4,0,1,0,1,0,NA,"Arrears",0,1
+"stock of govt. guarantees for housing support programs",4,0,0,0,0,0,NA,"Social",0,0
+"stocks of budget arrears",4,0,1,0,1,0,NA,"Arrears",0,1
+"systemic and ownership reform (ccr 2nd review)",4,0,0,0,0,0,NA,"Systemic",0,0
+"systemic and ownership reform (ccr 3rd review)",4,0,0,0,0,0,NA,"Systemic",0,0
+"tax collections",4,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure (6th/7th reviews prior actions)",4,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure reform (prior actions, 3rd review)",4,0,0,0,0,0,NA,"Government Budget",0,0
+"us of excess oil proceeds by fed. govt",4,1,0,1,0,0,NA,"Other",1,0
+"abstension from tax reductions and other measures",3,0,0,0,0,0,NA,"Government Budget",0,0
+"accumulation of budgetary arrears to wapda by list of priority connections",3,0,1,0,1,0,NA,"Arrears",0,1
+"balance of federal budget",3,0,1,0,1,0,NA,"Government Budget",0,1
+"ban on introduction of new gst exemptions",3,0,0,0,0,0,NA,"Government Budget",0,0
+"bog claims on gnpc",3,0,0,0,0,0,NA,"Trade",0,0
+"cap on size of civil service",3,0,0,0,0,0,NA,"Public Sector",0,0
+"ceiling on vat refund arrears/outstanding vat refund claims",3,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"central govt. expenditures",3,0,0,0,0,0,NA,"Government Budget",0,0
+"central govt. transfers to aroaima",3,0,0,0,0,0,NA,"Government Budget",0,0
+"combined public sector savings",3,0,0,0,0,0,NA,"Public Sector",0,0
+"credit to 7 major public enterprises",3,0,0,0,0,0,NA,"Credit to Government",0,0
+"cumulative use of counterpart fund",3,0,0,0,0,0,NA,"Other",0,0
+"enterprise debt to banks by public sector",3,0,1,0,1,0,NA,"Debt",0,1
+"exchange system (continued)",3,0,1,0,1,0,NA,"Exchange system",0,1
+"exchange system continued",3,0,1,0,1,0,NA,"Exchange system",0,1
+"expand ogl list",3,0,0,0,0,0,NA,"Other",0,0
+"external debt-service paymt",3,0,1,0,1,0,NA,"Debt",0,1
+"federal govt cash revenue",3,0,0,0,0,0,NA,"Government Budget",0,0
+"financial reform (concluded)",3,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector (cont.)",3,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector (prior actions, 1st review)",3,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector (str. benchmarks)",3,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector continued 1",3,0,0,0,0,0,NA,"Financial sector",0,0
+"governance (public sector expenditure audits)",3,0,0,0,0,0,NA,"Governance",0,0
+"government wage bill",3,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"implement automatic petro pricing mechanism",3,0,0,0,0,0,NA,"Pricing",0,0
+"import tariff reform",3,0,0,0,0,0,NA,"Trade",0,0
+"increase nonmineral export proceeds to exporter",3,1,0,0,0,0,NA,"Trade",0,0
+"increase retention period for nonmineral export proceeds",3,1,0,0,0,0,NA,"Trade",0,0
+"land reform",3,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"ma net credit to federal govt",3,0,0,0,0,0,NA,"Credit to Government",0,0
+"mlt debt subceiling (1-5 years)",3,0,1,0,1,0,NA,"Debt",0,1
+"net claim of banking system on central government",3,0,0,0,0,0,NA,"Credit to Government",0,0
+"net domestic assets of banking system",3,0,0,0,0,0,NA,"Financial sector",0,0
+"net international reserves in convertible currencies",3,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"net lending by general govt.",3,0,0,0,0,0,NA,"Credit to Government",0,0
+"nfps and central bk borrowing req.",3,0,0,0,1,0,NA,"Public Sector",0,1
+"nfps savings",3,0,0,0,0,0,NA,"Public Sector",0,0
+"no payment by bcc of exp of govt not authorized by mof",3,0,0,0,0,0,NA,"Government Budget",0,0
+"non-pension arrears",3,0,0,0,0,0,NA,"Arrears",0,0
+"other (administrative reform, ccr 3rd review)",3,0,0,0,0,0,NA,"Public Sector",0,0
+"other (ccr, 2nd review)",3,0,0,0,0,0,NA,"Other",0,0
+"other (foreign reserve management)",3,0,1,0,1,0,NA,"Capital Account",0,1
+"other (legislations)",3,0,0,0,0,0,NA,"Governance",0,0
+"other (social safety net)",3,0,0,0,0,0,NA,"Social",0,0
+"other (social security system)",3,0,0,0,0,0,NA,"Social",0,0
+"other (systemic,ownership reform, cont'd)",3,0,0,0,0,0,NA,"Systemic",0,0
+"other (unsecured refinancing by central bank)",3,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"other - cont.",3,0,0,0,0,0,NA,"Other",0,0
+"other-central govt. expenditure",3,0,0,0,0,0,NA,"Government Budget",0,0
+"other-tax/exp. reform (cont.)",3,0,0,0,0,0,NA,"Government Budget",0,0
+"psbr of central government",3,0,0,0,0,0,NA,"Public Sector",0,0
+"public enterprises and civil service reform",3,0,0,0,0,0,NA,"Public Sector",0,0
+"public enterprises continued",3,0,0,0,0,0,NA,"Public Sector",0,0
+"publication of quarterly fiscal reports",3,0,1,0,1,0,NA,"Government Budget",0,1
+"quarterly petroleum price adjustment",3,1,0,1,0,0,NA,"Pricing",1,0
+"raising of funds from divestiture of public assets",3,0,0,0,0,0,NA,"Other",0,0
+"reduce export surrender requirement",3,1,0,0,0,0,NA,"Trade",0,0
+"reduce/eliminate road arrears",3,0,0,0,0,0,NA,"Arrears",0,0
+"remove gst exemptions for sugar and edible oils",3,1,0,1,0,0,"ambivalent: edible oils = Agrar, klaren!","Trade",1,0
+"sbp's forex reserves held w/foreign branches of domestic banks",3,0,1,0,1,0,NA,"Capital Account",0,1
+"social security reform",3,0,0,0,0,0,NA,"Social",0,0
+"social spending",3,0,0,0,0,0,NA,"Social",0,0
+"start voucher auctions",3,0,0,0,0,0,NA,"Financial sector",0,0
+"stock of arrears on private external debt payments",3,0,1,0,1,0,NA,"Arrears",0,1
+"stock of external arrears on current transactions",3,0,0,0,0,0,NA,"Arrears",0,0
+"systemic & owner. ref.(concl.)",3,0,0,0,0,0,NA,"Systemic",0,0
+"systemic and ownership reform (continued, 2nd-year prior actins)",3,0,0,0,0,0,NA,"Systemic",0,0
+"systemic and ownership reform (prior actions)",3,0,0,0,0,0,NA,"Systemic",0,0
+"systemic and ownership reform (structural benchmark)",3,0,0,0,0,0,NA,"Systemic",0,0
+"systemic/ownership (prior actions)",3,0,0,0,0,0,NA,"Systemic",0,0
+"tax/expenditure reform (ccr 3rd review)",3,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure reform (continued, 2nd-year prior actions)",3,0,0,0,0,0,NA,"Government Budget",0,0
+"abolish remaining import bans",2,0,0,0,0,0,NA,"Trade",0,0
+"adjust nss rates to reflect pib yields",2,0,0,0,0,0,NA,"Systemic",0,0
+"adopt arbitration awards enforcement law",2,0,0,0,0,0,NA,"Governance",0,0
+"adopt legislation extending gst to retail stage",2,0,0,0,0,0,NA,"Governance",0,0
+"adopt procedures for intro of 3% turnover tax on traders",2,0,0,0,0,0,NA,"Government Budget",0,0
+"adopt regulations under pcst",2,0,0,0,0,0,NA,"Other",0,0
+"adoption of unique taxpayer id number",2,0,0,0,0,0,NA,"Systemic",0,0
+"all nbt credit via auctions",2,0,0,0,0,0,NA,"Debt",0,0
+"amendment to civil service law",2,0,0,0,0,0,NA,"Public Sector",0,0
+"appoint provisional bidder for gabon telcom",2,0,0,0,0,0,NA,"Privatization",0,0
+"audit of socar (1998 accounts)",2,0,0,0,0,0,NA,"Other",0,0
+"bank reserve deposits with bol",2,0,1,0,1,0,NA,"Financial sector",0,1
+"bog claims on cocobod",2,0,0,0,0,0,NA,"Trade",0,0
+"bog net foreign assets",2,0,0,0,0,0,NA,"BOP/ Reserves",0,0
+"budget system law adoption",2,0,1,0,1,0,NA,"Government Budget",0,1
+"cabinet approval of central bank law",2,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"cabinet approval of gst law",2,0,0,0,0,0,NA,"Governance",0,0
+"cabinet approval of privatization/liquidation action plans",2,1,0,0,0,0,NA,"Privatization",0,0
+"call for bids for sale of cmdt & ohvn assets",2,0,0,0,0,0,NA,"Privatization",0,0
+"ceiling on the stock of arrears of senelec",2,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"ceiling on the stock of debt of sonacos",2,0,1,0,1,0,NA,"Monetary Ceiling",0,1
+"ceiling on the stock of government guarantee deposits",2,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"central govt. & sfsi domestic arrears",2,0,0,0,0,0,NA,"Arrears",0,0
+"change in monetary base",2,0,1,0,1,0,NA,"Monetary Ceiling",0,1
+"civil service caps",2,0,0,0,0,0,NA,"Public Sector",0,0
+"combined public sector overall balance",2,0,1,0,0,0,NA,"Public Sector",0,0
+"complete review of import duties and taxes",2,0,0,0,0,0,NA,"Trade",0,0
+"complete study on divestiture/sale of oil",2,1,0,1,0,0,NA,"Other",1,0
+"completion of civil service reform in 4 ministries",2,0,0,0,0,0,NA,"Public Sector",0,0
+"contract rep. for imperial fleet",2,0,0,0,0,0,NA,"Government Budget",0,0
+"cumulative deposits in sa at the beac",2,0,0,0,0,0,NA,"Other",0,0
+"currency board to be fully funded",2,0,0,0,0,0,NA,"Exchange system",0,0
+"domestic expenditure arrears",2,0,0,0,0,0,NA,"Arrears",0,0
+"effectiveness of agreed central bank law",2,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"effectiveness of amendments to investment law",2,0,0,0,0,0,NA,"Governance",0,0
+"electricity producer price for termoelectrica",2,0,0,0,0,1,NA,"Pricing",0,0
+"electricity tariff adj. by nepra",2,0,0,0,0,1,NA,"Trade",0,0
+"elimin. of 10% duty on imp., reduction of tariff limit. on # of rates",2,0,0,0,0,0,NA,"Trade",0,0
+"ensure 121 soes subject to wage bill freeze",2,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"enterprise pricing",2,0,0,0,0,0,NA,"Pricing",0,0
+"expand agric. tax base",2,0,0,0,0,0,NA,"Government Budget",0,0
+"export retention",2,1,0,0,0,0,NA,"Trade",0,0
+"finalize privatization plans for sonabel",2,1,0,0,0,0,NA,"Privatization",0,0
+"financial sector - continued",2,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector reform (continued)",2,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector reform (prior actions, board approval)",2,0,0,0,0,0,NA,"Financial sector",0,0
+"floor on external debt service payments",2,0,1,0,1,0,NA,"Debt",0,1
+"govt wage, pension, compensation arrears",2,0,0,0,0,0,NA,"Arrears",0,0
+"gross issuance of promissory notes by government",2,0,0,0,0,0,NA,"Government Budget; Other",0,0
+"gross issuance of promissory notes by govt",2,0,0,0,0,0,NA,"Government Budget",0,0
+"harmonize provincial taxation of agricult income with punjab",2,0,0,0,0,0,NA,"Governance",0,0
+"implement power tariff decision approved by nera",2,0,0,0,0,1,NA,"Trade",0,0
+"implementation of the redefined rules for the composition of bank's capital",2,0,0,0,0,0,NA,"Financial sector",0,0
+"inclusion of subsidies/tax credits in publication",2,0,0,0,0,0,NA,"Governance",0,0
+"increase kyiv tariffs on heating, water, sewage, rent, transport",2,0,0,0,0,0,NA,"Trade",0,0
+"inventory and settlement of cross debts",2,0,1,0,1,0,NA,"Debt",0,1
+"invite bids for all subsidiaries of national bank of commerce",2,0,0,0,0,0,NA,"Financial sector",0,0
+"issue financial instructions",2,0,0,0,0,0,NA,"Financial sector",0,0
+"kesc or wapda downward electricity tariff (from 6/03)",2,0,0,0,0,1,NA,"Trade",0,0
+"loan contract enforcement",2,0,0,0,0,0,NA,"Financial sector",0,0
+"maize pricing policy",2,0,0,0,0,0,NA,"Pricing",0,0
+"measures to develop interbank forex market",2,0,0,0,0,0,NA,"Exchange system",0,0
+"minimum govt debt to be swapped for tcmfs",2,0,1,0,1,0,NA,"Debt",0,1
+"national reference price for heating",2,0,0,0,0,0,NA,"Pricing",0,0
+"national revenue authority",2,0,0,0,0,0,NA,"Government Budget",0,0
+"net domestic borrowing by c. govt.",2,0,0,0,1,0,NA,"Credit to Government",0,1
+"no new tax arrears from zesco/snoc (parastatals)",2,0,0,0,0,0,NA,"Arrears",0,0
+"no wage bill increases for soes making losses or in arrears",2,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"nonissance of new tax offsets or kos",2,0,0,0,0,0,NA,"Trade",0,0
+"offer 60% of ssb for sale",2,0,0,0,0,0,NA,"Privatization",0,0
+"offer international bank for sale",2,0,0,0,0,0,NA,"Privatization",0,0
+"offer savings bank for sale",2,0,0,0,0,0,NA,"Privatization",0,0
+"other (civil service pensions)",2,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"other (continued 2)",2,0,0,0,0,0,NA,"Other",0,0
+"other (financial sector 2)",2,0,0,0,0,0,NA,"Financial sector",0,0
+"other (financial sector reforms)",2,0,0,0,0,0,NA,"Financial sector",0,0
+"other (financial sector: 4th review)",2,0,0,0,0,0,NA,"Financial sector",0,0
+"other (fiscal monitoring, reporting)",2,0,1,0,1,0,NA,"Government Budget",0,1
+"other (investment, statistics)",2,0,0,0,0,0,NA,"Other",0,0
+"other (national accounts)",2,0,0,0,0,0,NA,"Other",0,0
+"other (pricing & marketing policies)",2,0,0,0,0,0,NA,"Pricing",0,0
+"other (prior actions, board approval)",2,0,0,0,0,0,NA,"Other",0,0
+"other (public enterprises, continued)",2,0,0,0,0,0,NA,"Public Sector",0,0
+"other (statistics strengthening)",2,0,0,0,0,0,NA,"Other",0,0
+"other (systemic and ownership reform 3)",2,0,0,0,0,0,NA,"Systemic",0,0
+"other (trade reform)",2,0,0,0,0,0,NA,"Trade",0,0
+"other continued 1",2,0,0,0,0,0,NA,"Other",0,0
+"other implementation of contingency measures (a)",2,0,0,0,0,0,NA,"Other",0,0
+"other- civil service reform",2,0,0,0,0,0,NA,"Public Sector",0,0
+"other-civil service reform",2,0,0,0,0,0,NA,"Public Sector",0,0
+"other-cont. systemic&ownersh.",2,0,0,0,0,0,NA,"Systemic",0,0
+"other-public enterprise reform measures",2,0,0,0,0,0,NA,"Public Sector",0,0
+"other: civil service",2,0,0,0,0,0,NA,"Public Sector",0,0
+"other: extension of gst to all goods + manufacturing and import level",2,0,0,0,0,0,NA,"Trade",0,0
+"other: fiscal deficit incl. privatization receipts",2,1,1,0,1,0,NA,"Government Budget",0,1
+"other: government wage bill",2,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"other: privatize national motors",2,0,0,0,0,0,NA,"Privatization",0,0
+"other: tax reform",2,0,0,0,0,0,NA,"Government Budget",0,0
+"other: trade system",2,0,0,0,0,0,NA,"Trade",0,0
+"outsource the disposal of assets of liquidated banks",2,0,0,0,0,0,NA,"Financial sector",0,0
+"passage of bankruptcy law",2,0,0,0,0,0,NA,"Governance",0,0
+"pension reform (4th/5th reviews prior actions)",2,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"petroleum price adjustment mechanism",2,1,0,1,0,0,NA,"Pricing",1,0
+"prepare/announce tender for 5 pes",2,0,0,0,0,0,NA,"Financial sector",0,0
+"pricing/marketing (structural benchmarks)",2,0,0,0,0,0,NA,"Pricing",0,0
+"pricing: flour and electricity",2,0,0,0,0,1,NA,"Pricing",0,0
+"privatization legislation for shipyard",2,1,0,0,0,0,NA,"Privatization",0,0
+"privatization-strategy statement",2,1,0,0,0,0,NA,"Privatization",0,0
+"privatize habib bank",2,0,0,0,0,0,NA,"Privatization",0,0
+"promulgation of amendments to banking law",2,0,0,0,0,0,NA,"Financial sector",0,0
+"public enterprise borrowing",2,0,0,0,1,0,NA,"Public Sector",0,1
+"public enterprises (con't)",2,0,0,0,0,0,NA,"Public Sector",0,0
+"public enterprises (cont.)",2,0,0,0,0,0,NA,"Public Sector",0,0
+"publication of subsidy/tax credit decisions",2,1,0,0,0,0,NA,"Governance",0,0
+"reform gst",2,0,0,0,0,0,NA,"Governance",0,0
+"reinstate automatic petro pricing mechanism",2,0,0,0,0,0,NA,"Pricing",0,0
+"remove oil import restrictions",2,1,0,1,0,0,NA,"Trade",1,0
+"sale contract for biochim",2,0,0,0,0,0,NA,"Privatization",0,0
+"sale of govt shares or liquidation of enterprises",2,0,0,0,0,0,NA,"Privatization",0,0
+"size of public service",2,0,0,0,0,0,NA,"Public Sector",0,0
+"social security reform-con't",2,0,0,0,0,0,NA,"Social",0,0
+"state budget tax revenue",2,0,1,0,1,0,NA,"Government Budget",0,1
+"statistics on preliminary treasury balance",2,0,1,0,0,0,NA,"Government Budget",0,0
+"stock of government road sector arrears",2,0,0,0,0,0,NA,"Arrears",0,0
+"strict observance of credit concentration ratios",2,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"submission to parliament of reformed public pension law",2,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"submit to parliament income tax reform amendments",2,0,0,0,0,0,NA,"Governance; Government Budget",0,0
+"submit vat law to parliament",2,0,0,0,0,0,NA,"Governance",0,0
+"system of tax id numbers",2,0,0,0,0,0,NA,"Trade",0,0
+"systemic & owner ref. (con't)",2,0,0,0,0,0,NA,"Systemic",0,0
+"systemic & ownership reform 2",2,0,0,0,0,0,NA,"Systemic",0,0
+"systemic and ownership reform (perf. criteria)",2,0,0,0,0,0,NA,"Systemic",0,0
+"tax expenditure reform",2,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure reform (ccr 5the and 6th reviews)",2,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure reform (perf. criteria)",2,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure reform 2",2,0,0,0,0,0,NA,"Government Budget",0,0
+"tender for government shares in iba",2,0,0,0,0,0,NA,"Financial sector",0,0
+"total government revenue",2,0,0,0,0,0,NA,"Government Budget",0,0
+"trade system (structural benchmark)",2,0,0,0,0,0,NA,"Trade",0,0
+"trade system continued",2,0,0,0,0,0,NA,"Trade",0,0
+"trade systems continued",2,0,0,0,0,0,NA,"Trade",0,0
+"unified end-user natural gas price",2,1,0,1,0,0,NA,"Pricing",1,0
+"unify exchange rates",2,0,1,0,0,0,NA,"Exchange system",0,0
+"withdraw certain banking licenses",2,0,0,0,0,0,NA,"Financial sector",0,0
+"18,000 layoffs in the group of 22 companies",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"1995 budget",1,0,1,0,1,0,NA,"Government Budget",0,1
+"1999 budget law with state prop. fund accts. to parl.",1,0,1,0,1,0,NA,"Government Budget",0,1
+"2001 budget incorporating vat implementation",1,0,1,0,1,0,NA,"Government Budget",0,1
+"2003/04 budget based on nam",1,0,1,0,1,0,NA,"Government Budget",0,1
+"2004-06 medium-term fiscal framework",1,0,1,0,1,0,NA,"Government Budget",0,1
+"5-year psip",1,0,0,0,0,0,NA,"Other",0,0
+"51% sale bid of zncb shares",1,0,0,0,0,0,NA,"Privatization",0,0
+": external arrears; med-, long-term",1,0,0,0,0,0,NA,"Arrears",0,0
+": external arrears; short-term",1,0,0,0,0,0,NA,"Arrears",0,0
+": no new external payments arrears",1,0,0,0,1,0,NA,"Arrears",0,1
+"abolish price control on land transport",1,0,0,0,0,0,NA,"Pricing",0,0
+"abolish quality control list of imports; adopt short list of goods controlled for health/safety",1,0,0,0,0,0,NA,"Trade",0,0
+"abstain from new tax reductions/exemptions",1,0,0,0,0,0,NA,"Governance",0,0
+"accting. framework by dept. public acct. & treasury",1,0,0,0,0,0,NA,"Government Budget",0,0
+"action plan - civil service reform",1,0,0,0,0,0,NA,"Public Sector",0,0
+"action plan by council of ministers",1,0,0,0,0,0,NA,"Governance",0,0
+"action plan for large taxpayers' unit",1,0,0,0,0,0,NA,"Government Budget",0,0
+"action plan for restructuring district heating sector",1,0,0,0,0,0,NA,"Governance",0,0
+"action plan for settlement of domestic arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"action plan for tax reform",1,0,0,0,0,0,NA,"Government Budget",0,0
+"action plan to improve public spending management",1,0,0,0,0,0,NA,"Government Budget",0,0
+"action plan to improve quality of external sector data",1,0,0,0,0,0,NA,"Governance",0,0
+"adjust inaa's tariffs by 1.5% per month",1,0,0,0,0,0,NA,"Trade",0,0
+"adjust petroleum prices",1,1,0,1,0,0,NA,"Pricing",1,0
+"adjusting the base exchange rate",1,0,1,0,1,0,NA,"Exchange system",0,1
+"adjustment of electricity tariffs",1,0,0,0,0,1,NA,"Capital Account",0,0
+"adjustment of wage scale",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"adjustments in water and electricity rates",1,0,0,0,0,1,NA,"Pricing",0,0
+"adjustments of domestic energy prices",1,1,0,0,0,1,NA,"Pricing",0,0
+"adopt action plan to settle cross-debts for 1996",1,0,1,0,1,0,NA,"Debt",0,1
+"adopt action plan to settle debts remaining after compensation for 1995",1,0,1,0,1,0,NA,"Debt",0,1
+"adopt and submit to parliament draft anticorruption law",1,0,0,0,0,0,NA,"Governance",0,0
+"adopt decrees separating postal services form sipe",1,0,0,0,0,0,NA,"Privatization",0,0
+"adopt draft law amending investment code",1,0,0,0,0,0,NA,"Governance",0,0
+"adopt draft law on clearing expenditures",1,0,0,0,0,0,NA,"Governance",0,0
+"adopt draft law separating post and telecom and eliminating opt monopoly",1,0,0,0,0,0,NA,"Privatization",0,0
+"adopt fiscal regime for gas & power projects",1,1,1,1,1,0,NA,"Governance",1,1
+"adopt list of products exempt from turnover tax and updating customs valuation database",1,0,0,0,0,0,NA,"Trade",0,0
+"adopt new procurement code",1,0,0,0,0,0,NA,"Governance",0,0
+"adopt petroleum tax system",1,1,0,1,0,0,NA,"Systemic",1,0
+"adopt plan to restructure telecomm. sector",1,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"adopt regulations for business registration",1,0,0,0,0,0,NA,"Systemic",0,0
+"adopt regulations for vat & excise tax",1,0,0,0,0,0,NA,"Government Budget",0,0
+"adopt telecomm code encouraging private participation",1,0,0,0,0,0,NA,"Privatization",0,0
+"adoption new divestiture strategy public enterprise sector",1,0,0,0,0,0,NA,"Public Sector",0,0
+"adoption of a law on financial disclosure of public officials",1,0,0,0,0,0,NA,"Public Sector",0,0
+"adoption of audited budget acts",1,0,1,0,1,0,NA,"Government Budget",0,1
+"adoption of central bank law",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"adoption of domestic arrears repayment plan",1,0,0,0,0,0,NA,"Arrears",0,0
+"adoption of draft audited budget account",1,0,1,0,1,0,NA,"Government Budget",0,1
+"adoption of expanded nomenclature in the draft 2003 budget",1,0,1,0,1,0,NA,"Government Budget",0,1
+"adoption of gst timetable",1,0,0,0,0,0,NA,"Systemic",0,0
+"adoption of new banking systems law",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"adoption of reform program for energy sector",1,1,0,0,0,1,NA,"Private Sector Reforms",0,0
+"adoption of regulatory framework for banks' audit",1,0,0,0,0,0,NA,"Financial sector",0,0
+"agreement on restructuring of tors debt",1,0,1,0,1,0,NA,"Debt",0,1
+"allow forex deposit accounts at banks",1,0,0,0,0,0,NA,"Exchange system",0,0
+"amend budget law",1,0,1,0,1,0,NA,"Government Budget",0,1
+"amend decision 284 (loan classification)",1,0,0,0,0,0,NA,"Debt",0,0
+"amend gra act",1,0,0,0,0,0,NA,"Other",0,0
+"amend investment code to eliminate tax incentives",1,0,0,0,0,0,NA,"Government Budget",0,0
+"amend legislation on tax system of commercial banks",1,0,0,0,0,0,NA,"Financial sector",0,0
+"amendment to tax code",1,0,0,0,0,0,NA,"Governance",0,0
+"amendments to labor code",1,0,0,0,0,0,NA,"Other",0,0
+"amendments to the labor code",1,0,0,0,0,0,NA,"Social",0,0
+"anb holding deposits with commercial banks",1,0,0,0,0,0,NA,"Financial sector",0,0
+"announce tender for priv. of the savings bank",1,0,0,0,0,0,NA,"Financial sector",0,0
+"announcement of tender for bcr",1,0,0,0,0,0,NA,"Financial sector",0,0
+"announcement of withdrawal of sonagraines",1,0,0,0,0,0,NA,"Privatization",0,0
+"annual oil fund budget regulations",1,1,1,1,1,0,NA,"Governance",1,1
+"any new domestic arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"application of pass-through mechanism for petroleum products",1,1,0,1,0,0,NA,"Governance",1,0
+"appoint auditor of 2001 financial year",1,0,0,0,0,0,NA,"Government Budget",0,0
+"appoint priv. advisor for the savings bank",1,0,0,0,0,0,NA,"Privatization",0,0
+"appoint receiver for ab if not sold",1,0,0,0,0,0,NA,"Privatization",0,0
+"appoint receiver for iti bank if not sold",1,0,0,0,0,0,NA,"Privatization",0,0
+"appoint receiver for rb bank if not sold",1,0,0,0,0,0,NA,"Privatization",0,0
+"appoint sales advisor for divestitures",1,0,0,0,0,0,NA,"Other",0,0
+"appoint sales advisor for ecg divestiture",1,0,0,0,0,0,NA,"Privatization",0,0
+"appointment of three magistrates in supreme audit coart.",1,0,0,0,0,0,NA,"Governance",0,0
+"approval of 2000 budget",1,0,1,0,1,0,NA,"Government Budget",0,1
+"approval of 2003 budget for soe",1,0,1,0,1,0,NA,"Government Budget",0,1
+"approval of annual expenditure plans for 2004",1,0,0,0,0,0,NA,"Government Budget",0,0
+"approval of budgets for soe consistent w/2002 wage policy.",1,0,1,0,0,0,NA,"Wages & Pensions",0,0
+"approval of revenue & exp plan for 2005 budget",1,0,1,0,1,0,NA,"Government Budget",0,1
+"approval of strategy for oil revenue mgmt",1,1,0,1,0,0,NA,"Governance",1,0
+"approval/adoption of regulations implementing 1996 statistical law",1,0,0,0,0,0,NA,"Other",0,0
+"approval/adoption of revised budget framework act",1,0,1,0,1,0,NA,"Government Budget",0,1
+"approve civil service reform law",1,0,0,0,0,0,NA,"Public Sector",0,0
+"approve contract with ifc for privatization of elec. dist.",1,1,0,0,0,0,NA,"Privatization",0,0
+"approve legislation on statistics institute",1,0,0,0,0,0,NA,"Other",0,0
+"approve new code for income taxes.",1,0,0,0,0,0,NA,"Systemic",0,0
+"approve new code of fiscal incentives",1,0,1,0,1,0,NA,"Systemic",0,1
+"approve new rehab plan for railways",1,0,0,0,0,0,NA,"Other",0,0
+"approve social security reform law",1,0,0,0,0,0,NA,"Social",0,0
+"appt of new commissioner ura",1,0,0,0,0,0,NA,"Other",0,0
+"asycuda software introduction",1,0,0,0,0,0,NA,"Other",0,0
+"ation plan to rehab crm and wps",1,0,0,0,0,0,NA,"Other",0,0
+"audit of 1999 accounts of 5 ministries",1,0,0,0,0,0,NA,"Government Budget",0,0
+"audit of central bank",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"audit of crm and inps",1,0,0,0,0,0,NA,"Other",0,0
+"audit of five commercial banks",1,0,0,0,0,0,NA,"Financial sector",0,0
+"audit of international reserves of nat'l bank",1,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"audit of payment arrears/liquidation strategy",1,0,0,0,0,0,NA,"Arrears",0,0
+"audit of procurement system",1,0,0,0,0,0,NA,"Systemic",0,0
+"audit report on below-the-line accounts",1,0,0,0,0,0,NA,"Government Budget",0,0
+"auditor gen. to verify 6/2000 stock of cent. gov. dom. arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"audits of 2 major pension funds",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"audits of bom's nir",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"audits of govt pension system",1,0,0,0,0,0,NA,"Systemic",0,0
+"automatic domestic petro price adjustment",1,0,0,0,0,0,NA,"Pricing",0,0
+"automatic domestic petroleum price adjustment",1,1,0,1,0,0,NA,"Pricing",1,0
+"automatic domestic price setting mechanisms",1,0,0,0,0,0,NA,"Pricing",0,0
+"banking supervision for scb's",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"banks to publish qly financial information",1,0,0,0,0,0,NA,"Financial sector",0,0
+"banks with less than min car",1,0,0,0,0,0,NA,"Financial sector",0,0
+"begin collecting taxes under vat law",1,0,0,0,0,0,NA,"Government Budget",0,0
+"bids for capital of edm",1,0,0,0,0,0,NA,"Privatization",0,0
+"bids for tanz telecomm co.",1,0,0,0,0,0,NA,"Privatization",0,0
+"bill modifying fnr to parliament",1,0,0,0,0,0,NA,"Other",0,0
+"bnb credit to government",1,0,0,0,0,0,NA,"Credit to Government",0,0
+"bnb should not purchase bulg. govt. sec.",1,0,0,0,0,0,NA,"Other",0,0
+"bog inspections of banks",1,0,0,0,0,0,NA,"Financial sector",0,0
+"breakup of romcereal",1,0,0,0,0,0,NA,"Privatization",0,0
+"bring all financial mgt units in line ministries under finance officer control",1,0,0,0,0,0,NA,"Financial sector",0,0
+"bring bank (rb) to point of sale",1,0,0,0,0,0,NA,"Privatization",0,0
+"bring gobi and nic to point of sale",1,0,0,0,0,0,NA,"Privatization",0,0
+"bring kesc to point of sale",1,0,0,0,0,0,NA,"Privatization",0,0
+"bring to point of sale all pes except one",1,0,0,0,0,0,NA,"Privatization",0,0
+"bring to point of sale at least 8 enterprises",1,0,0,0,0,0,NA,"Privatization",0,0
+"bring to point-of-sale 10 state farms, brewery, cement factory",1,0,0,0,0,0,NA,"Privatization",0,0
+"bring trade & development bank to point of sale",1,0,0,0,0,0,NA,"Privatization",0,0
+"budget approval",1,0,1,0,1,0,NA,"Government Budget",0,1
+"budget execution laws for 00/01",1,0,1,0,1,0,NA,"Government Budget",0,1
+"budget law for 2001",1,0,1,0,1,0,NA,"Government Budget",0,1
+"budget preparation for wage bill/expenditure/revenue",1,0,1,0,1,0,NA,"Wages & Pensions",0,1
+"budgetary expend. for debt swaps",1,0,1,0,1,0,NA,"Debt",0,1
+"budgetary expenditures",1,0,1,0,1,0,NA,"Government Budget",0,1
+"budgetary revenue",1,0,1,0,1,0,NA,"Government Budget",0,1
+"budgetary spending for debt swaps",1,0,1,0,1,0,NA,"Government Budget",0,1
+"c. govt. expend. excl. dom. net lending",1,0,0,0,0,0,NA,"Government Budget",0,0
+"c. govt. nonint. exp., excl. ext. on lend",1,0,0,0,0,0,NA,"Government Budget",0,0
+"cabinet approval of comm.operations of public ent. to be taxed",1,0,0,0,0,0,NA,"Public Sector",0,0
+"cabinet approval of draft banking legislation",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"cabinet approval of legislation to establish national revenue authority",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"cabinet of ministers adoption of vat refunds",1,0,0,0,0,0,NA,"Government Budget",0,0
+"cabinet of ministers list of vat exemptions",1,0,0,0,0,0,NA,"Government Budget",0,0
+"cabinet of ministers to improve annual budget process",1,0,1,0,1,0,NA,"Government Budget",0,1
+"caistab audit",1,0,0,0,0,0,NA,"Other",0,0
+"cancel remaining forestry conc. that have not completed restructuring agreements with govt.",1,0,0,0,0,0,NA,"Other",0,0
+"capital adequacy ratio",1,0,0,0,0,0,NA,"Other",0,0
+"capitalization of national petroleum co. (ypfb)",1,1,0,1,0,0,NA,"Other",1,0
+"capitalize/privatize national petro/company",1,0,0,0,0,0,NA,"Privatization",0,0
+"cartac economic costs study",1,0,0,0,0,0,NA,"Other",0,0
+"cbc adoption of bks to be liquidated",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"cbe financial restructuring plan",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"cbe restructuring plan",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"cbr reform",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"ceiling of 135,000 employees in budgetary institutions and reduce workforce",1,0,1,0,1,0,NA,"Government Budget",0,1
+"ceiling on central govt wage bill",1,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"ceiling on civil service wage bill",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"ceiling on outstanding payments arrears to kyrgyzenergo",1,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"ceiling on outstanding stock of pension arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"ceiling on outstanding stock of wage arrears",1,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"ceiling on petroleum subsidies",1,1,0,1,0,0,NA,"Government Budget",1,0
+"ceiling on the stock of social fund arrears to mif",1,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"ceiling on total noninterest public expenditure",1,0,1,0,0,0,NA,"Monetary Ceiling",0,0
+"ceiling on treasury advances and loans",1,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"cent. govt. financial operations table",1,0,0,0,0,0,NA,"Government Budget",0,0
+"central bank refinance facility (p2)",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"central government arrears excluding suppliers",1,0,0,0,0,0,NA,"Arrears",0,0
+"central government current expenditure",1,0,0,0,0,0,NA,"Government Budget",0,0
+"central government domestic arrears to suppliers",1,0,0,0,0,0,NA,"Arrears",0,0
+"central government tax revenues",1,0,0,0,0,0,NA,"Government Budget",0,0
+"central govt. transfers to linmine and aroaima",1,0,0,0,0,0,NA,"Government Budget",0,0
+"centralize foreign reserve management",1,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"certify of former state comm. banks",1,0,0,0,0,0,NA,"Privatization",0,0
+"civil service employment reductions",1,0,0,0,0,0,NA,"Public Sector",0,0
+"civil service management system",1,0,0,0,0,0,NA,"Systemic",0,0
+"civil service positions",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"civil service reform (4th/5th reviews prior actions)",1,0,0,0,0,0,NA,"Public Sector",0,0
+"civil service reform (audit of fed civil service)",1,0,0,0,0,0,NA,"Public Sector",0,0
+"civil service reform law draft",1,0,0,0,0,0,NA,"Public Sector",0,0
+"civil service retrenchment",1,0,0,0,0,0,NA,"Public Sector",0,0
+"civil service retrenchment target",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"close all accounts of republican government and consolidate under treasury",1,0,0,0,0,0,NA,"Other",0,0
+"close or sell at least 8 companies",1,0,0,0,0,0,NA,"Privatization",0,0
+"code of ethics and code of good conduct",1,0,0,0,0,0,NA,"Other",0,0
+"comb. op. surplus of sel. pub. ents.",1,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"commercial bank restructuring plans",1,0,0,0,0,0,NA,"Financial sector",0,0
+"commercial banks min capital req. som 30 mln",1,0,0,0,0,0,NA,"Financial sector",0,0
+"commerical bank account consolidation",1,0,0,0,0,0,NA,"Financial sector",0,0
+"communic. to staff of results of civil service census",1,0,0,0,0,0,NA,"Public Sector",0,0
+"complet study on unified vat rate",1,0,0,0,0,0,NA,"Government Budget",0,0
+"complete accounting separation of bulgargaz",1,0,0,0,0,0,NA,"Other",0,0
+"complete accounting separation of nek's functions",1,0,0,0,0,0,NA,"Other",0,0
+"complete audit of 2001 foreign trade bank",1,0,0,0,0,0,NA,"Trade",0,0
+"complete audit of snh (oil co.)",1,1,0,1,0,0,NA,"Other",1,0
+"complete audits by uganda revenue authority",1,0,0,0,0,0,NA,"Government Budget",0,0
+"complete bamis repayment of central bank advance",1,0,0,0,0,0,NA,"Other",0,0
+"complete bcm and ba recapitalization",1,0,0,0,0,0,NA,"Government Budget",0,0
+"complete camel-based exams of 12 banks",1,0,0,0,0,0,NA,"Financial sector",0,0
+"complete civil service census",1,0,0,0,0,0,NA,"Public Sector",0,0
+"complete compilation of debt/arrears of pes",1,0,1,0,1,0,NA,"Arrears",0,1
+"complete comprehensive survey of govt employment and pay",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"complete evaluation of remaining banks",1,0,0,0,0,0,NA,"Financial sector",0,0
+"complete evaluation of remaining bks applying for banking licenses",1,0,0,0,0,0,NA,"Financial sector",0,0
+"complete final recap of ftb",1,0,0,0,0,0,NA,"Other",0,0
+"complete final recapitalization of ftb (financial sector reform)",1,0,0,0,0,0,NA,"Financial sector",0,0
+"complete financial audit of sonatam",1,0,0,0,0,0,NA,"Other",0,0
+"complete independent external audit of fiscal fraud",1,0,1,0,1,0,NA,"Other",0,1
+"complete inventory of domest. arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"complete isolation program for group b enterprises",1,0,0,0,0,0,NA,"Other",0,0
+"complete medium-term expenditure framework",1,0,0,0,0,0,NA,"Government Budget",0,0
+"complete pcc audit",1,0,0,0,0,0,NA,"Other",0,0
+"complete phase 2 of demobilization program",1,0,0,0,0,0,NA,"Other",0,0
+"complete privatization of somelec",1,1,0,0,0,0,NA,"Privatization",0,0
+"complete process of sme privatization",1,1,0,0,0,0,NA,"Privatization",0,0
+"complete prov. report on govt disengagement from stee",1,0,0,0,0,0,NA,"Governance",0,0
+"complete retrenchment of 10,000 civil servants",1,0,0,0,0,0,NA,"Public Sector",0,0
+"complete review of tax/customs exemptions",1,0,0,0,0,0,NA,"Government Budget",0,0
+"complete study of statistical system",1,0,0,0,0,0,NA,"Systemic",0,0
+"complete survey of domestic arrears as of end-1996",1,0,0,0,0,0,NA,"Arrears",0,0
+"complete transfer of all taxpayers' files",1,0,0,0,0,0,NA,"Government Budget",0,0
+"complete transfer of all taxpayers' files.",1,0,0,0,0,0,NA,"Systemic",0,0
+"complete withdrawal of sonagraines",1,0,0,0,0,0,NA,"Privatization",0,0
+"complete, comprehensive survey of government employment and pay",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"completion bcc financial audit",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"completion of civil service census",1,0,0,0,0,0,NA,"Public Sector",0,0
+"completion of operational/managerial audit of oil co.",1,1,0,1,0,0,NA,"Other",1,0
+"completion of privatization of bcr",1,1,0,0,0,0,NA,"Privatization",0,0
+"completion of report on performance of public enterprises",1,0,0,0,0,0,NA,"Public Sector",0,0
+"completion of tax arrears census and strategy for reduction",1,0,0,0,0,0,NA,"Arrears",0,0
+"completion of the audit on oil bonus",1,1,0,1,0,0,NA,"Other",1,0
+"completion, provisional report on govt disengagement from cotontchad",1,0,0,0,0,0,NA,"Other",0,0
+"comprehensive census of government arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"computerization of central and regional treasury offices",1,0,0,0,0,0,NA,"Systemic",0,0
+"computerization of customs offices",1,0,0,0,0,0,NA,"Systemic",0,0
+"computerization of hydrocarbon customs procedures",1,1,0,1,0,0,NA,"Systemic",1,0
+"computerized budget procedures",1,0,1,0,1,0,NA,"Government Budget",0,1
+"computerized expenditure system",1,0,0,0,0,0,NA,"Systemic",0,0
+"conclude bidding of telecommunications comp.",1,0,0,0,0,0,NA,"Privatization",0,0
+"conclusion of audit customs inspectorate; adopt plan to tighten custom",1,0,0,0,0,0,NA,"Trade",0,0
+"conduct 40 general meetings for farms",1,0,0,0,0,0,NA,"Privatization",0,0
+"consolidate commercial bank accounts",1,0,0,0,0,0,NA,"Financial sector",0,0
+"cont. tax expenditure reform",1,0,0,0,0,0,NA,"Government Budget",0,0
+"cont.-tax/expenditure reform",1,0,0,0,0,0,NA,"Government Budget",0,0
+"containment of overall wage bill",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"contracting/guaranteeing nonconc. external debt of pes",1,0,1,0,1,0,NA,"Debt",0,1
+"conversion of ltu into functioning ltu",1,0,0,0,0,0,NA,"Other",0,0
+"convert permanent advance of central bank to govt into t-bills",1,0,0,0,0,0,NA,"Credit to Government",0,0
+"corp restructuring of wapda power wing into 12 ind cos",1,0,0,0,0,0,NA,"Other",0,0
+"corp restructuring of wapda power wing into 12 ind cos.",1,0,0,0,0,0,NA,"Other",0,0
+"correct wage bill for ghost workers",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"council decree to sell seedcotton to all ginning cos.",1,0,0,0,0,0,NA,"Other",0,0
+"credit to nonfinancial pub. enter.",1,0,0,0,0,0,NA,"Financial sector",0,0
+"credit to soes from the banking system",1,0,0,0,0,0,NA,"Credit to Government",0,0
+"credit to state enterprises",1,0,0,0,0,0,NA,"Debt",0,0
+"cummulative floor on budget spending on education",1,0,1,0,1,0,NA,"Government Budget",0,1
+"cummulative floor on budgetary spending on health",1,0,1,0,1,0,NA,"Government Budget",0,1
+"cummulative floor on tax collections",1,0,0,0,0,0,NA,"Government Budget",0,0
+"currency board cover",1,0,0,0,0,0,NA,"Exchange system",0,0
+"currency boards: maintain full for.reserve cover",1,0,1,0,1,0,NA,"Exchange system",0,1
+"current tax revenue floor",1,0,0,0,0,0,NA,"Government Budget",0,0
+"customs clearance computerization",1,0,0,0,0,0,NA,"Trade",0,0
+"customs clearance procedures for airports",1,0,0,0,0,0,NA,"Trade",0,0
+"customs com. risk-based assessment profiles",1,0,0,0,0,0,NA,"Trade",0,0
+"customs comm. increase import share to 50%",1,0,0,0,0,0,NA,"Trade",0,0
+"customs committee reform",1,0,0,0,0,0,NA,"Trade",0,0
+"customs duties order 2004",1,0,0,0,0,0,NA,"Trade",0,0
+"customs order act",1,0,0,0,0,0,NA,"Trade",0,0
+"customs revenue",1,0,0,0,0,0,NA,"Trade",0,0
+"customs security system",1,0,0,0,0,0,NA,"Systemic",0,0
+"decide on privatization or liquidation of ncb",1,1,0,0,0,0,NA,"Privatization",0,0
+"decontrol maize price",1,0,0,0,0,0,NA,"Pricing",0,0
+"decontrol of petroleum prices",1,1,0,1,0,0,NA,"Pricing",1,0
+"decontrol petrol. products",1,0,0,1,0,0,NA,"Pricing",1,0
+"decree on petroleum product sector reform",1,1,0,1,0,0,NA,"Private Sector Reforms",1,0
+"deputy accountant general position",1,0,0,0,0,0,NA,"Government Budget",0,0
+"deregulate oil prices/impose excise duty",1,1,0,1,0,0,NA,"Trade",1,0
+"deregulate oil prices/impose excise duty on oil",1,1,0,1,0,0,NA,"Trade",1,0
+"designate successful bidder for air mauritanie",1,0,0,0,0,0,NA,"Privatization",0,0
+"detailed report on strengthening of tax and customs administration",1,0,0,0,0,0,NA,"Trade",0,0
+"disaggregate budget execution reports",1,0,1,0,1,0,NA,"Government Budget",0,1
+"distribution of taxpayer registration forms and tax id numbers assigned",1,0,0,0,0,0,NA,"Government Budget",0,0
+"divestiture of zncb",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"divestiture strategy for petro refinery",1,0,0,0,0,0,NA,"Privatization",0,0
+"domestci payments arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"domestic arrears (central government)",1,0,0,0,0,0,NA,"Arrears",0,0
+"domestic arrears on private suppliers",1,0,0,0,0,0,NA,"Arrears",0,0
+"domestic arrears on wage bill",1,0,0,0,0,0,NA,"Arrears",0,0
+"domestic arrears to others",1,0,0,0,0,0,NA,"Arrears",0,0
+"domestic arrears to pension funds",1,0,0,0,0,0,NA,"Arrears",0,0
+"domestic financing of the budget",1,0,1,0,1,0,NA,"Government Budget",0,1
+"domestic petroleum prices",1,1,0,1,0,0,NA,"Pricing",1,0
+"domestica arrears 2",1,0,0,0,0,0,NA,"Arrears",0,0
+"draft 2000 budget law",1,0,1,0,1,0,NA,"Government Budget",0,1
+"draft laws on mortgages etc.",1,0,0,0,0,0,NA,"Governance",0,0
+"draft legislation for tax withholding",1,0,0,0,0,0,NA,"Governance",0,0
+"draft of key pieces of secondary legislation to energy law",1,1,0,0,0,1,NA,"Governance",0,0
+"draft vat legislation",1,0,0,0,0,0,NA,"Government Budget",0,0
+"draft vat legislation to parliament",1,0,0,0,0,0,NA,"Government Budget",0,0
+"draw-up mid-term expenditure framework for priority sectors",1,0,0,0,0,0,NA,"Government Budget",0,0
+"edd, oned, aid, & telecomm. privatization",1,1,0,0,0,0,NA,"Privatization",0,0
+"elimin. of arrears accumul.by govt before 95 to sonabel, onatel, onea",1,0,0,0,0,0,NA,"Arrears",0,0
+"eliminate 392 precision tarifaires",1,0,0,0,0,0,NA,"Government Budget",0,0
+"eliminate 473 precision tarifaires granting tax exemptions",1,0,0,0,0,0,NA,"Government Budget",0,0
+"eliminate all special vat exemptions",1,0,0,0,0,0,NA,"Government Budget",0,0
+"eliminate earmarking of budget revenue",1,0,1,0,1,0,NA,"Government Budget",0,1
+"eliminate electricity subsidies for higher income households",1,0,0,0,0,1,NA,"Private Sector Reforms",0,0
+"eliminate electricity subsidy for higher income households",1,1,0,0,0,1,NA,"Private Sector Reforms",0,0
+"eliminate exchange restrictions for travel/education",1,0,1,0,0,0,NA,"Exchange system",0,0
+"eliminate exchange restructions for travel and education",1,0,1,0,0,0,NA,"Exchange system",0,0
+"eliminate export tar.",1,1,0,0,0,0,NA,"Trade",0,0
+"eliminate export tax",1,1,0,0,0,0,NA,"Trade",0,0
+"eliminate import surcharge",1,0,0,0,0,0,NA,"Trade",0,0
+"eliminate remaining electricity subsidies to households",1,0,0,0,0,1,NA,"Private Sector Reforms",0,0
+"eliminate remaining household electricity subsidies",1,0,0,0,0,1,NA,"Private Sector Reforms",0,0
+"eliminate surrender requirement on snim's repatriated export proceeds",1,1,0,0,0,0,NA,"Trade",0,0
+"eliminate tax exemption",1,0,0,0,0,0,NA,"Government Budget",0,0
+"eliminate wage and pension arrears",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"eliminate withholding tax on int. inc.",1,0,0,0,0,0,NA,"Government Budget",0,0
+"elimination of 20 income tax exemptions",1,0,0,0,0,0,NA,"Government Budget",0,0
+"elimination of 5 percent gst rate",1,0,0,0,0,0,NA,"Government Budget",0,0
+"elimination of 59 tariff lines",1,0,0,0,0,0,NA,"Trade",0,0
+"elimination of ban on rice imports",1,0,0,0,0,0,NA,"Pricing",0,0
+"elimination of domestic arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"elimination of export & import licenses",1,1,0,0,0,0,NA,"Trade",0,0
+"elimination of for.exch.auction & adopt avg rate for interbank mkt",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"elimination of retail price controls and fertilizers",1,0,0,0,0,0,NA,"Pricing",0,0
+"elimination of special import tax",1,0,0,0,0,0,NA,"Trade",0,0
+"enact a new tax code",1,0,0,0,0,0,NA,"Government Budget",0,0
+"enact general sales tax",1,0,0,0,0,0,NA,"Government Budget",0,0
+"enact law on 1st pillar of pension reform",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"enact law on enterprise profits",1,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"enact law on urban and industrial land privatization",1,1,0,0,0,0,NA,"Privatization",0,0
+"enact organic budget law",1,0,1,0,1,0,NA,"Government Budget",0,1
+"enact revised law on banks and banking on bank insolvency",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"enact vat & excise tax laws",1,0,0,0,0,0,NA,"Government Budget",0,0
+"enactment of budget law conforming with program objectives",1,0,1,0,1,0,NA,"Private Sector Reforms",0,1
+"enactment of law on labor relations, employment law",1,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"end production in group b enterprises in liquidation, sell core assets in at least half",1,0,0,0,0,0,NA,"Other",0,0
+"equalization grant distribution",1,0,0,0,0,0,NA,"Governance",0,0
+"estab. subdir. for enterp. taxn.",1,0,0,0,0,0,NA,"Governance",0,0
+"establish arrears monitoring unit in treasury",1,0,0,0,0,0,NA,"Arrears",0,0
+"establish central revenue authority",1,0,0,0,0,0,NA,"Government Budget",0,0
+"establish customized valuation database at customs",1,0,0,0,0,0,NA,"Systemic",0,0
+"establish general framework to deal with banks (min car between 9 and 1.8 percent).",1,0,0,0,0,0,NA,"Financial sector",0,0
+"establish large taxpayers' unit",1,0,0,0,0,0,NA,"Government Budget",0,0
+"establish monitoring system of treasury payments",1,0,0,0,0,0,NA,"Other",0,0
+"establish national privatization commission",1,1,0,0,0,0,NA,"Privatization",0,0
+"establish supervisory board",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"establishment of anti-corruption committee",1,0,0,0,0,0,NA,"Governance",0,0
+"establishment of new expenditure procedures",1,0,0,0,0,0,NA,"Government Budget",0,0
+"establishment of regulatory commission on tariffs",1,0,0,0,0,0,NA,"Government Budget",0,0
+"evaluation phase completion for sonelec privatization",1,1,0,0,0,0,NA,"Privatization",0,0
+"exchange rate",1,0,1,0,1,0,NA,"Exchange system",0,1
+"expand large taxpayer unit",1,0,0,0,0,0,NA,"Government Budget",0,0
+"expand treasury coverage to all accounts",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"expeditious vat refund system",1,0,0,0,0,0,NA,"Government Budget",0,0
+"export finance scheme/elimination of interest subsidy",1,1,1,0,0,0,NA,"Other",0,0
+"export forex retention",1,1,0,0,0,0,NA,"Exchange system",0,0
+"extend gst to retail stage",1,0,0,0,0,0,NA,"Governance",0,0
+"extend gst to services",1,0,0,0,0,0,NA,"Governance",0,0
+"extend vat to large retailer",1,0,0,0,0,0,NA,"Government Budget",0,0
+"extension of basis for vat on imports to include excise/stat taxes",1,0,0,0,0,0,NA,"Trade",0,0
+"extension of gst to all retailers/traders above the prs 5 mln threshold",1,0,0,0,0,0,NA,"Government Budget",0,0
+"extension of incom tax to all new issuance of nss instruments",1,0,0,0,0,0,NA,"Government Budget",0,0
+"external audit of bank of mongolia",1,0,0,0,0,0,NA,"Other",0,0
+"external audit of miba",1,0,0,0,0,0,NA,"Other",0,0
+"external debt service payments",1,0,1,0,1,0,NA,"Capital Account",0,1
+"external financial audit of liquidation funds",1,0,0,0,0,0,NA,"Financial sector",0,0
+"externd gst to services",1,0,0,0,0,0,NA,"Governance",0,0
+"federal & regional budgets consolidation",1,0,1,0,0,0,NA,"Government Budget",0,0
+"federal budget for fy 2004/05",1,0,1,0,1,0,NA,"Government Budget",0,1
+"federal budget for fy03/04",1,0,1,0,1,0,NA,"Government Budget",0,1
+"fill accountant general position",1,0,0,0,0,0,NA,"Other",0,0
+"fin. inst. act & bog act",1,0,0,0,0,0,NA,"Financial sector",0,0
+"final bid documents for enel",1,0,0,0,0,0,NA,"Privatization",0,0
+"final bids for 40% of enitel",1,0,0,0,0,0,NA,"Privatization",0,0
+"finalization of expenditure sheets",1,0,0,0,0,0,NA,"Government Budget",0,0
+"finalize privatization of amc and other enterprises",1,1,0,0,0,0,NA,"Privatization",0,0
+"finalize restructuring of customs",1,0,0,0,0,0,NA,"Trade",0,0
+"finance pacific to point-of-sale",1,0,0,0,0,0,NA,"Financial sector",0,0
+"finance treasury via t-bills only",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"financial rehab action plan for bulgargaz",1,0,0,0,0,0,NA,"Other",0,0
+"financial restructuring plan for cmdt",1,0,0,0,0,0,NA,"Other",0,0
+"financial sector (ccr 3rd review)",1,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector (ccr 4th review)",1,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector (ccr 5th and 6th reviews)",1,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector continued 2",1,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector legislation",1,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector reform",1,0,0,0,0,0,NA,"Financial sector",0,0
+"financial sector strategy",1,0,0,0,0,0,NA,"Financial sector",0,0
+"financial statements of liquidation funds",1,0,0,0,0,0,NA,"Financial sector",0,0
+"first milestone for loan restructuring",1,0,0,0,0,0,NA,"Debt",0,0
+"fiscal responsibility law",1,0,1,0,1,0,NA,"Financial sector",0,1
+"floor for domestic budgetary receipts",1,0,1,0,1,0,NA,"Government Budget",0,1
+"floor on cumulative flow of social spending",1,0,0,0,0,0,NA,"Government Budget",0,0
+"floor on deposits of banking dept",1,0,0,0,0,0,NA,"Financial sector",0,0
+"floor on deposits of banking dept of bnb (net of fund credit)",1,0,0,0,0,0,NA,"Debt",0,0
+"floor on general govt cigarette taxes",1,0,0,0,0,0,NA,"Government Budget",0,0
+"floor on general govt tax revenue",1,0,0,0,0,0,NA,"Government Budget",0,0
+"floor on gross reserves of central bank",1,0,1,0,1,0,NA,"Central Bank Reform",0,1
+"floor on net international reserves in convertible currencies",1,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"floor on nfa",1,0,0,0,0,0,NA,"Other",0,0
+"floor on nir in convertible currencies",1,0,0,0,0,0,NA,"Exchange system",0,0
+"floor on payroll tax collections",1,0,0,0,0,0,NA,"Government Budget",0,0
+"floor on reduction in domestic arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"floor on required reserves of banking system",1,0,1,0,1,0,NA,"Central Bank Reform",0,1
+"floor on total budget revenue",1,0,1,0,1,0,NA,"Government Budget",0,1
+"follow-up on-site exams of banks",1,0,0,0,0,0,NA,"Financial sector",0,0
+"forestry concession management",1,0,0,0,0,0,NA,"Governance",0,0
+"forex purchase by banks circular",1,0,0,0,0,0,NA,"Capital Account",0,0
+"forex regulations of cemac",1,0,0,0,0,0,NA,"Exchange system",0,0
+"formulate draft pip",1,0,0,0,0,0,NA,"Other",0,0
+"formulate program to reorganize the saving bank.",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"framework for electricity tariffs",1,0,0,0,0,1,NA,"Trade",0,0
+"fuel oil arrears payments by senelec/sar",1,1,0,1,0,0,NA,"Arrears",1,0
+"full backing of currency board liabilities",1,0,0,0,0,0,NA,"Exchange system",0,0
+"full coverage of monetary liabilities of bnb",1,0,1,0,1,0,NA,"Financial sector",0,1
+"full forex backing for currency board",1,0,0,0,0,0,NA,"Exchange system",0,0
+"full forex cover for currency board liabilities",1,0,0,0,0,0,NA,"Exchange system",0,0
+"full privatization of the international bank/uujsb",1,1,0,0,0,0,NA,"Privatization",0,0
+"fully operational large taxpayer unit",1,0,0,0,0,0,NA,"Government Budget",0,0
+"fx forward contracts",1,0,0,0,0,0,NA,"Exchange system",0,0
+"fx future contracts",1,0,0,0,0,0,NA,"Exchange system",0,0
+"gazette on for. exchange exposure",1,0,1,0,0,0,NA,"Exchange system",0,0
+"gazette on foreign exchange exposure",1,0,1,0,0,0,NA,"Exchange system",0,0
+"general govt wage, compensation payments and pension arrears",1,0,0,0,0,0,NA,"Government Budget",0,0
+"general manager of fiduciary trust contract",1,0,0,0,0,0,NA,"Government Budget",0,0
+"gncb invitation to bid",1,0,0,0,0,0,NA,"Privatization",0,0
+"gog & guysuco agreement",1,0,0,0,0,0,NA,"Other",0,0
+"golfis plan",1,0,0,0,0,0,NA,"Other",0,0
+"governance (commence anticorruption commission)",1,0,0,0,0,0,NA,"Governance",0,0
+"government decree on salary coefficients",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"government expenditure",1,0,0,0,0,0,NA,"Government Budget",0,0
+"government expenditure and net lending",1,0,0,0,0,0,NA,"Government Budget",0,0
+"government payments arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"government payroll system computer interface",1,0,0,0,0,0,NA,"Systemic",0,0
+"government revenue",1,0,0,0,0,0,NA,"Government Budget",0,0
+"government revenue excluding grants & divestiture receipts",1,0,0,0,0,0,NA,"Government Budget",0,0
+"government spending and net lending",1,0,0,0,0,0,NA,"Government Budget",0,0
+"government wages and salaries",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"government's 2002/03 accounts",1,0,0,0,0,0,NA,"Government Budget",0,0
+"govt approval of law lifting all qrs on imports",1,0,0,0,0,0,NA,"Trade",0,0
+"govt approval of public spending review report",1,0,0,0,0,0,NA,"Government Budget",0,0
+"govt resolution on external debt limits",1,0,1,0,1,0,NA,"Debt",0,1
+"govt. balance sheet",1,0,1,0,0,0,NA,"Government Budget",0,0
+"govt. strategy for boz",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"govt. to ensure bhu note to brou",1,0,0,0,0,0,NA,"Other",0,0
+"granting socar tax credits",1,0,0,0,0,0,NA,"Government Budget",0,0
+"gross bank credit to publ.enterprises",1,0,0,0,0,0,NA,"Financial sector",0,0
+"gross bank credit to public enter.",1,0,0,0,0,0,NA,"Public Sector",0,0
+"gross nbt credit auctions via auction",1,0,0,0,0,0,NA,"Other",0,0
+"gst extension to all other agricultural inputs",1,0,0,0,0,0,NA,"Government Budget",0,0
+"gst extension to urea and pesticides",1,0,0,0,0,0,NA,"Government Budget",0,0
+"gst penalty regime/gst exemptions",1,0,0,0,0,0,NA,"Government Budget",0,0
+"guidelines to deal with troubled banks",1,0,0,0,0,0,NA,"Financial sector",0,0
+"guysuco revised modernization plan",1,0,0,0,0,0,NA,"Other",0,0
+"guysuco wage policy/downsizing",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"guysuco: reduce permanent employment",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"guysuco: replace api with profit sharing",1,0,0,0,0,0,NA,"Other",0,0
+"guysuco: revise management contract",1,0,0,0,0,0,NA,"Other",0,0
+"harmonize provincial taxation of agricultural income",1,0,0,0,0,0,NA,"Government Budget",0,0
+"harmonize provincial taxation of agricultural income with punjab",1,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"harmonize provincial taxatoin of agricultural income with punjab",1,0,0,0,0,0,NA,"Government Budget",0,0
+"hasyma bidding process",1,0,0,0,0,0,NA,"Privatization",0,0
+"heat producer price for termoelectrica",1,0,0,0,0,0,NA,"Pricing",0,0
+"household electricity prices",1,0,0,0,0,1,NA,"Pricing",0,0
+"identify priority civil service sectors/targets for recruitment reductions",1,0,0,0,0,0,NA,"Public Sector",0,0
+"identify strategic partner or contractor to operate lesotho airway",1,0,0,0,0,0,NA,"Privatization",0,0
+"imf/eu financial management",1,0,0,0,0,0,NA,"Governance",0,0
+"implement ab restructuring plan",1,0,0,0,0,0,NA,"Financial sector",0,0
+"implement actions plan to settle cross-debts for 1995-96",1,0,1,0,1,0,NA,"Debt",0,1
+"implement excise stamps on cigarettes",1,0,0,0,0,0,NA,"Other",0,0
+"implement interim tre sys, all govt accts into sta",1,0,0,0,0,0,NA,"Other",0,0
+"implement new common ext. tariff",1,0,0,0,0,0,NA,"Government Budget",0,0
+"implement new customs tariff",1,0,0,0,0,0,NA,"Trade",0,0
+"implement new tax wihholding system",1,0,0,0,0,0,NA,"Governance",0,0
+"implement performance-based contract for jwa",1,0,0,0,0,0,NA,"Other",0,0
+"implement periodic t-bill auctions",1,0,0,0,0,0,NA,"Other",0,0
+"implement restructuring plan with bamis",1,0,0,0,0,0,NA,"Other",0,0
+"implement revised loan classification and loss requirements of restructured loans",1,0,0,0,0,0,NA,"Financial sector",0,0
+"implement uin",1,0,0,0,0,0,NA,"Other",0,0
+"implementation of computerized syst.to monitor execution of the budget",1,0,1,0,1,0,NA,"Government Budget",0,1
+"implementation of monthly cash flow plan",1,0,0,0,0,0,NA,"Systemic",0,0
+"implementation of new accounting system by banks",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"implementation of port tariff reform",1,0,0,0,0,0,NA,"Trade",0,0
+"implementation of revised requirements for loan classification, loss provisioning and interest suspension",1,0,1,0,0,0,NA,"Financial sector",0,0
+"implementation of revised system for boz",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"import categories exempt from vat",1,0,0,0,0,0,NA,"Trade",0,0
+"improve expenditure management",1,0,0,0,0,0,NA,"Government Budget",0,0
+"inclusion of provisions in the 96/97 budget on agriculture taxation",1,0,1,0,1,0,NA,"Government Budget",0,1
+"income tax deduction allowance reform",1,0,0,0,0,0,NA,"Governance",0,0
+"income tax reform package",1,0,0,0,0,0,NA,"Government Budget",0,0
+"incorporation of tax exemptions",1,0,0,0,0,0,NA,"Government Budget",0,0
+"increase bom's provisioning requirements",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"increase electricity tariffs",1,0,0,0,0,1,NA,"Pricing",0,0
+"increase energy prices enough to achieve operating cost recovery",1,1,0,0,0,1,NA,"Pricing",0,0
+"increase gst rate to at least 12%",1,0,0,0,0,0,NA,"Governance",0,0
+"increase in municipal water price by 36 percent",1,0,0,0,0,0,NA,"Pricing",0,0
+"increase of the refinery prices of high- an low-octane gasoline and cooking gas reliative to end-june refinery prices",1,1,0,1,0,0,NA,"Pricing",1,0
+"increase petro price ceilings pending removal of controls",1,0,0,0,0,0,NA,"Pricing",0,0
+"increase production price to 60% of fob cocoa price",1,0,0,0,0,0,NA,"Other",0,0
+"increase the refinery prices of high- and low- octane gasoline and diesel by 60 percent, and cooking gas by 40 percent",1,1,0,1,0,0,NA,"Pricing",1,0
+"information system link of treasury and mef",1,0,0,0,0,0,NA,"Other",0,0
+"inspection of 3 scbs",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"integrate charges into tariffs",1,0,0,0,0,0,NA,"Trade",0,0
+"integrate loans to parastatals/ministry into treasury acct.sys.",1,0,0,0,0,0,NA,"Systemic",0,0
+"integrate payroll & personnel database",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"interest rates",1,0,1,0,1,0,NA,"Central Bank Reform",0,1
+"international reserves",1,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"interprofessional agreement in cotton sector",1,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"intorduce uniform chart of accounts for commercial banks",1,0,0,0,0,0,NA,"Financial sector",0,0
+"intro fixed surcharge/auto price adjust. for petro prods",1,0,0,0,0,0,NA,"Pricing",0,0
+"introduce 3 and 6-mont and one year t-bills",1,0,0,0,0,0,NA,"Debt",0,0
+"introduce 3-mo, 6-mo, one-year t-bills",1,0,0,0,0,0,NA,"Government Budget",0,0
+"introduce 3-month, 6-month and one-year t-bills",1,0,0,0,0,0,NA,"Debt",0,0
+"introduce anti-corruption unit",1,0,0,0,0,0,NA,"Governance",0,0
+"introduce new customs tariff",1,0,0,0,0,0,NA,"Trade",0,0
+"introduce treasury computer system",1,0,0,0,0,0,NA,"Systemic",0,0
+"introduce version 1.16f or asycuda",1,0,0,0,0,0,NA,"Systemic",0,0
+"introduction of a screen-based foreign exchange market",1,0,1,0,0,0,NA,"Exchange system",0,0
+"introduction of large taxpayer unit",1,0,0,0,0,0,NA,"Government Budget",0,0
+"inventory of tax arrears of private suppliers as of end-1997",1,0,0,0,0,0,NA,"Arrears",0,0
+"inventory of tax arrears of private suppliers for 1996",1,0,0,0,0,0,NA,"Arrears",0,0
+"invite bids for telecommunications co.",1,0,0,0,0,0,NA,"Privatization",0,0
+"invite to bid for gebon telecom priv.",1,0,0,0,0,0,NA,"Privatization",0,0
+"invite to bid for hgvegab priv.",1,0,0,0,0,0,NA,"Privatization",0,0
+"issue at least 75% of gross credit by nbt via credit auction",1,0,0,0,0,0,NA,"Debt",0,0
+"issue decrees determining each ministry's wage bill.",1,1,0,0,0,0,NA,"Wages & Pensions",0,0
+"issue directive from boz to zncb (commercial bank)",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"issue forex guidelines to commercial banks",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"issue implementation guidelines for tax administration.",1,0,0,0,0,0,NA,"Systemic",0,0
+"issue instructions and regulations for comm. banks",1,0,0,0,0,0,NA,"Financial sector",0,0
+"issue nt report on acct. proc. & methodology",1,0,0,0,0,0,NA,"Other",0,0
+"issue regs for state enterprise law",1,0,0,0,0,0,NA,"Other",0,0
+"issue tender for biochim bank",1,0,0,0,0,0,NA,"Financial sector",0,0
+"issue tender for one bank",1,0,0,0,0,0,NA,"Financial sector",0,0
+"keep petro development surcharge rate within bands",1,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"launch audit of enterprises",1,0,0,0,0,0,NA,"Other",0,0
+"launch tenders to establish cellular operation (independent of opt)",1,0,0,0,0,0,NA,"Other",0,0
+"law on single rate vat",1,0,0,0,0,0,NA,"Government Budget",0,0
+"law that proceeds from privatization revert to government",1,1,0,0,0,0,NA,"Privatization",0,0
+"legislation on deposit insurance, regulations on stock exchange",1,0,1,0,0,0,NA,"Governance",0,0
+"legislation on permanent, limited deposit insurance",1,0,0,0,0,0,NA,"Other",0,0
+"legislation to assembly to broaden vat base",1,0,0,0,0,0,NA,"Government Budget",0,0
+"legislation to assembly to close bhn",1,0,0,0,0,0,NA,"Other",0,0
+"legislation to liquidate bankrupt soes",1,0,0,0,0,0,NA,"Privatization",0,0
+"lib. cooking oil prices + imports",1,1,0,1,0,0,"ambivalent: edible oils = Agrar, klaren!","Pricing",1,0
+"liberalize telecom sector",1,0,0,0,0,0,NA,"Privatization",0,0
+"licensing regulation reform",1,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"lift import restrictions and liberalize foreign currency accts",1,0,0,0,0,0,NA,"Trade",0,0
+"limit credit to 7 major pes",1,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"limit departures in tariff adj. by distributors",1,0,0,0,0,0,NA,"Trade",0,0
+"limit on credit by housing bank",1,0,0,0,0,0,NA,"Debt",0,0
+"limit on tariff rates for major agric. goods",1,0,0,0,0,0,NA,"Government Budget",0,0
+"link between gpf & pib yields",1,0,0,0,0,0,NA,"Other",0,0
+"liquidate dicol & guinegaz & flexible price adjustment",1,0,0,0,0,0,NA,"Pricing",0,0
+"liquidation of nonfinancial public enterprises",1,0,0,0,0,0,NA,"Public Sector",0,0
+"list of banks for liquidation, priv., and restr.",1,0,0,0,0,0,NA,"Privatization",0,0
+"local government tax code",1,0,0,0,0,0,NA,"Government Budget",0,0
+"lra-appoint commissioner general",1,0,0,0,0,0,NA,"Other",0,0
+"m/l debt subceiling (1-12 years)",1,0,1,0,1,0,NA,"Monetary Ceiling",0,1
+"m/lt external debt contracted by govt/public instit.",1,0,1,0,1,0,NA,"Debt",0,1
+"m/lt external debt contracted by soes and priv sector ventures w/govt guarantees",1,0,1,0,1,0,NA,"Debt",0,1
+"maintain curr. board arrangmt of the present exchange rate",1,0,1,0,1,0,NA,"Exchange system",0,1
+"maintenance of exchange rate",1,0,1,0,1,0,NA,"Exchange system",0,1
+"maize pricing policy (establish)",1,0,0,0,0,0,NA,"Pricing",0,0
+"maize-meal price floor",1,0,0,0,0,0,NA,"Pricing",0,0
+"make all prudential regs consistent with int norms",1,0,0,0,0,0,NA,"Governance",0,0
+"make all prudential regulations consistent with international norms",1,0,0,0,0,0,NA,"Governance",0,0
+"making all prudential regulations consistent with international norms",1,0,0,0,0,0,NA,"Governance",0,0
+"maximum level of domestic arrears of government",1,0,0,0,0,0,NA,"Arrears",0,0
+"measures relating to gas, telecommunication, and electricity authorities",1,1,0,1,0,1,NA,"Other",1,0
+"medium-term expenditure framework",1,0,0,0,0,0,NA,"Government Budget",0,0
+"minimum nonwage spending in priority areas",1,0,0,0,0,0,NA,"Government Budget",0,0
+"minimum nonwage spending on priority program areas",1,0,0,0,0,0,NA,"Government Budget",0,0
+"minimum profit tax",1,0,0,0,0,0,NA,"Government Budget",0,0
+"minimum receipt of tupp payments by treasury",1,0,0,0,0,0,NA,"Other",0,0
+"minimum total reserve deposits of banks",1,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"minimum total revenue collected by uganda revenue authority",1,0,0,0,0,0,NA,"Government Budget",0,0
+"mlt external debt subceiling (1-12 years)",1,0,1,0,1,0,NA,"Monetary Ceiling",0,1
+"modalities for privatization of two entities",1,1,0,0,0,0,NA,"Privatization",0,0
+"monthly financial statements to mef/bcu",1,0,0,0,0,0,NA,"Financial sector",0,0
+"monthly reports on tax arrears and third party payment",1,0,0,0,0,0,NA,"Arrears",0,0
+"mx. level of domestic govt. arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"nat assembly approval of law to privatize telecomm co",1,0,0,0,0,0,NA,"Privatization",0,0
+"nat assembly approval of property rights law",1,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"natl. bank: shift to new accounts plan",1,0,0,0,0,0,NA,"Other",0,0
+"nbkr fin.statements of bks. used in court",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"nbm to monitor banks' compliance with quarterly targets & impose sanctions",1,0,0,0,0,0,NA,"Financial sector",0,0
+"nbr weekly auctions to sell fx",1,0,0,0,0,0,NA,"Exchange system",0,0
+"negative import list",1,0,0,0,0,0,NA,"Trade",0,0
+"net borrowing req.",1,0,0,0,1,0,NA,"Debt",0,1
+"net credit to central government from bot",1,0,0,0,0,0,NA,"Credit to Government",0,0
+"net credit to state enterprises",1,0,0,0,0,0,NA,"Public Sector",0,0
+"net domestic assets",1,0,0,0,0,0,NA,"BOP/ Reserves",0,0
+"net domestic borrowing of nfps",1,0,0,0,1,0,NA,"Debt",0,1
+"net domestic credit to the nfps",1,0,0,0,0,0,NA,"Public Sector",0,0
+"net domestic financing of deficit",1,0,1,0,1,0,NA,"Debt",0,1
+"new accounting plan for commercial banks",1,0,0,0,0,0,NA,"Other",0,0
+"new chart of accounts for banks",1,0,0,0,0,0,NA,"Financial sector",0,0
+"new civil servants statutes",1,0,0,0,0,0,NA,"Public Sector",0,0
+"new domestic arrears on wage bill",1,0,0,0,0,0,NA,"Arrears",0,0
+"new domestic arrears to pension funds",1,0,0,0,0,0,NA,"Arrears",0,0
+"new domestic arrears to private suppliers",1,0,0,0,0,0,NA,"Arrears",0,0
+"new expenditure mgmt. to become operational",1,0,0,0,0,0,NA,"Government Budget",0,0
+"new govt/cmdt/producer performance contract",1,0,0,0,0,0,NA,"Governance",0,0
+"new price structure for petroleum products",1,1,0,1,0,0,NA,"Pricing",1,0
+"new tax law on real property",1,0,0,0,0,0,NA,"Government Budget",0,0
+"nir floor in convertible currencies",1,0,0,0,0,0,NA,"BOP/ Reserves",0,0
+"no accounts and funds outside the budget",1,0,1,0,1,0,NA,"Government Budget",0,1
+"no banks will be opened or reopened unless viable",1,0,0,0,0,0,NA,"Financial sector",0,0
+"no govt promissory notes (kos) or tax offsets",1,0,0,0,0,0,NA,"Governance",0,0
+"no govt. actions on price, marketing, foreign trade, exchange system",1,0,1,0,1,0,NA,"Systemic",0,1
+"no new export restrictions (p2)",1,1,0,0,0,0,NA,"Trade",0,0
+"no new external and domestic arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"no new tax exempt.&concessions automatic expiry of curr.timebound ones",1,0,0,0,0,0,NA,"Government Budget",0,0
+"no purchase by bcc of congo franc notes ot for. curr.",1,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"no tax incentives",1,0,0,0,0,0,NA,"Government Budget",0,0
+"no tax or tariff exemptions",1,0,0,0,0,0,NA,"Government Budget",0,0
+"no wage bill increases for loss-making soes (or in arrears), or state monopolies",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"no wasge bill increases for loss-making (or in-arrears) soes or state monopolies",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"nominate controller for cotton co.",1,0,0,0,0,0,NA,"Other",0,0
+"offer 40% of telecor shares for sale",1,0,0,0,0,0,NA,"Privatization",0,0
+"offer at least 40% of telecomm co for sale",1,0,0,0,0,0,NA,"Privatization",0,0
+"offer for sale minority share and mgt rights in telecomm co",1,0,0,0,0,0,NA,"Privatization",0,0
+"offer four public enterprises for sale",1,0,0,0,0,0,NA,"Privatization",0,0
+"offer olani for sale",1,0,0,0,0,0,NA,"Privatization",0,0
+"offer produce buying co for sale",1,0,0,0,0,0,NA,"Privatization",0,0
+"offer tema oil refinery & ghana oil co ltd for sale",1,1,0,1,0,0,NA,"Privatization",1,0
+"offer tor for sale",1,0,0,0,0,0,NA,"Privatization",0,0
+"ofida assessing value of imports",1,0,0,0,0,0,NA,"Trade",0,0
+"on-site inspection of 2 scbs",1,0,0,0,0,0,NA,"Systemic",0,0
+"open market committee",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"operation of large taxpayers unit",1,0,0,0,0,0,NA,"Trade",0,0
+"operational agreement between nbt and mof",1,0,0,0,0,0,NA,"Other",0,0
+"ot-elimination of import surcharge",1,0,0,0,0,0,NA,"Trade",0,0
+"oth-elimination of export permits",1,1,0,0,0,0,NA,"Trade",0,0
+"other (1st review prior actions)",1,0,0,0,0,0,NA,"Other",0,0
+"other (action plan, public enterprise sector)",1,0,0,0,0,0,NA,"Public Sector",0,0
+"other (ccr 5th and 6th reviews)",1,0,0,0,0,0,NA,"Other",0,0
+"other (civli service reform)",1,0,0,0,0,0,NA,"Public Sector",0,0
+"other (create large taxpayer unit)",1,0,0,0,0,0,NA,"Government Budget",0,0
+"other (data)",1,0,0,0,0,0,NA,"Other",0,0
+"other (domestic arrears)",1,0,0,0,0,0,NA,"Arrears",0,0
+"other (energy)",1,1,0,0,0,1,NA,"Private Sector Reforms",0,0
+"other (external debt)",1,0,1,0,1,0,NA,"Debt",0,1
+"other (financial sector, 2)",1,0,0,0,0,0,NA,"Financial sector",0,0
+"other (hipc initiative)",1,0,0,0,0,0,NA,"Social",0,0
+"other (public employment)",1,0,0,0,0,0,NA,"Public Sector",0,0
+"other (social policy)",1,0,0,0,0,0,NA,"Social",0,0
+"other (systemic and ownership reform 2)",1,0,0,0,0,0,NA,"Systemic",0,0
+"other (systemic/ownership reform)",1,0,0,0,0,0,NA,"Systemic",0,0
+"other - bring bcm to point of sale",1,0,0,0,0,0,NA,"Other",0,0
+"other - increase petroleum product prices",1,1,0,1,0,0,NA,"Pricing",1,0
+"other - no new arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"other - plan to eliminate arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"other - present to fund balance sheets/analytical summaries of cb",1,0,1,0,0,0,NA,"Central Bank Reform",0,0
+"other - privatize at least 8 public enterprises",1,0,0,0,0,0,NA,"Privatization",0,0
+"other - sign contract for private management services of customs",1,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"other - systemic and ownership reform",1,0,0,0,0,0,NA,"Systemic",0,0
+"other 2",1,0,0,0,0,0,NA,"Other",0,0
+"other approval of divestiture plan of uganda commercial bank by d&ric",1,0,0,0,0,0,NA,"Other",0,0
+"other approval of information memo by government",1,0,0,0,0,0,NA,"Governance",0,0
+"other continued 2",1,0,0,0,0,0,NA,"Other",0,0
+"other continued 3",1,0,0,0,0,0,NA,"Other",0,0
+"other gross foreign reserves (currency board cover)",1,0,1,0,1,0,NA,"Exchange system",0,1
+"other new domestic arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"other strengthen commercial banks",1,0,0,0,0,0,NA,"Other",0,0
+"other, 1",1,0,0,0,0,0,NA,"Other",0,0
+"other, 2",1,0,0,0,0,0,NA,"Other",0,0
+"other, 3",1,0,0,0,0,0,NA,"Other",0,0
+"other- bog net foreign assets",1,0,0,0,0,0,NA,"BOP/ Reserves",0,0
+"other- central govt. wage bill",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"other- clearance of arrears by rescheduling",1,0,0,0,0,0,NA,"Arrears",0,0
+"other- currency board cover",1,0,0,0,0,0,NA,"Exchange system",0,0
+"other- no new arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"other- no new external or domestic payments arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"other- non-accumulation of new external payments arrears",1,0,0,0,1,0,NA,"Arrears",0,1
+"other- nonassumption by govt. of arrears of nonbudgetary enterprises",1,0,1,0,0,0,NA,"Arrears",0,0
+"other- offer for the privatization of seeg and octra",1,1,0,0,0,0,NA,"Privatization",0,0
+"other- reduction of domestic arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"other- restructuring of opat",1,0,0,0,0,0,NA,"Governance",0,0
+"other- sale of govt. assets in the financial sector",1,0,0,0,0,0,NA,"Privatization",0,0
+"other- sales of govt. shares in sit, togogaz, sotonam",1,0,0,0,0,0,NA,"Privatization",0,0
+"other- separation of treasury management and public accounting",1,0,0,0,0,0,NA,"Governance",0,0
+"other- tax reform",1,0,0,0,0,0,NA,"Government Budget",0,0
+"other- udeac tariff",1,0,0,0,0,0,NA,"Government Budget",0,0
+"other-1",1,0,0,0,0,0,NA,"Other",0,0
+"other-1996 budget",1,0,1,0,1,0,NA,"Government Budget",0,1
+"other-2",1,0,0,0,0,0,NA,"Other",0,0
+"other-adoption of 1993 budget",1,0,1,0,1,0,NA,"Government Budget",0,1
+"other-appoint of experts for commercializtion of ncpb",1,0,0,0,0,0,NA,"Governance",0,0
+"other-budgeting expenditures",1,0,1,0,0,0,NA,"Government Budget",0,0
+"other-caistab finacial table",1,0,0,0,0,0,NA,"Financial sector",0,0
+"other-central government expend.",1,0,0,0,0,0,NA,"Government Budget",0,0
+"other-combined operating surplus of selected public enterprises",1,0,1,0,1,0,NA,"Public Sector",0,1
+"other-contributions to employer fund",1,0,0,0,0,0,NA,"Other",0,0
+"other-debt consolidation",1,0,1,0,1,0,NA,"Debt",0,1
+"other-divestiture of public enterprises",1,0,0,0,0,0,NA,"Public Sector",0,0
+"other-eliminate export taxes",1,1,0,0,0,0,NA,"Trade",0,0
+"other-eliminate restrictions on national bank gold sales",1,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"other-encashment of tax checks",1,0,0,0,0,0,NA,"Government Budget",0,0
+"other-expand agricultural tax base",1,0,0,0,0,0,NA,"Government Budget",0,0
+"other-financial sector",1,0,0,0,0,0,NA,"Financial sector",0,0
+"other-forex market operations",1,0,0,0,0,0,NA,"Exchange system",0,0
+"other-government revenues",1,0,0,0,0,0,NA,"Government Budget",0,0
+"other-government wage bill",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"other-implementation of tax id no.",1,0,0,0,0,0,NA,"Government Budget",0,0
+"other-limit on forex purchases",1,0,0,0,0,0,NA,"Exchange system",0,0
+"other-privatization program",1,1,0,0,0,0,NA,"Privatization",0,0
+"other-pub. enterp. bankruptcy law",1,0,0,0,0,0,NA,"Public Sector",0,0
+"other-public ent. taxn.",1,0,0,0,0,0,NA,"Public Sector",0,0
+"other-public investment program",1,0,0,0,0,0,NA,"Public Sector",0,0
+"other-raise agricultural taxes",1,0,0,0,0,0,NA,"Government Budget",0,0
+"other-reduction in civil service positions",1,0,0,0,0,0,NA,"Public Sector",0,0
+"other-reform gst",1,0,0,0,0,0,NA,"Governance",0,0
+"other-reserve money of nat. bank",1,0,1,0,1,0,NA,"Central Bank Reform",0,1
+"other-submission of vat outline",1,0,0,0,0,0,NA,"Government Budget",0,0
+"other-tax revenue",1,0,0,0,0,0,NA,"Government Budget",0,0
+"other-treasury expenditure",1,0,0,0,0,0,NA,"Government Budget",0,0
+"other: adoption of vat legislation",1,0,0,0,0,0,NA,"Government Budget",0,0
+"other: amendment to soc. sec. law",1,0,0,0,0,0,NA,"Social",0,0
+"other: announce medium-term strategy; 1st phase of trade reform",1,0,0,0,0,0,NA,"Trade",0,0
+"other: bank credit to state enterprises",1,0,0,0,0,0,NA,"Public Sector",0,0
+"other: begin auction of central bank securities",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"other: ceiling on selected current expenditure (see table 2, viii)",1,0,0,0,0,0,NA,"Monetary Ceiling",0,0
+"other: civil service monitoring system",1,0,0,0,0,0,NA,"Public Sector",0,0
+"other: civil service payroll",1,0,0,0,0,0,NA,"Public Sector",0,0
+"other: complete capitalization of electric company",1,0,0,0,0,0,NA,"Privatization",0,0
+"other: credit by housing bank",1,0,0,0,0,0,NA,"Other",0,0
+"other: customs reform",1,0,0,0,0,0,NA,"Other",0,0
+"other: domestic arrears of govt.",1,0,0,0,0,0,NA,"Arrears",0,0
+"other: domestic petroleum prices",1,1,0,1,0,0,NA,"Pricing",1,0
+"other: elimination of import permits",1,0,0,0,0,0,NA,"Trade",0,0
+"other: est. monitoring of fdi",1,0,0,0,0,0,NA,"Capital Account",0,0
+"other: fishing licenses",1,0,0,0,0,0,NA,"Governance",0,0
+"other: goverment wage bill",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"other: harmonize excise duty rates",1,0,0,0,0,0,NA,"Other",0,0
+"other: import authorization auctions",1,0,0,0,0,0,NA,"Governance",0,0
+"other: import tariff reform",1,0,0,0,0,0,NA,"Trade",0,0
+"other: introduction of automatic petroleum price mechanism",1,1,0,1,0,0,NA,"Pricing",1,0
+"other: issue of new sro",1,0,0,0,0,0,NA,"Public Sector",0,0
+"other: mlt ext. debt contracted by govt. or public institution",1,0,1,0,1,0,NA,"Debt",0,1
+"other: mlt ext. debt contracted by state ents. & joint venture/private",1,0,1,0,1,0,NA,"Debt",0,1
+"other: no new arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"other: no new concessional or mandatory credit schemes",1,0,0,0,0,0,NA,"Other",0,0
+"other: no renewal importer/exporter card",1,1,0,0,0,0,NA,"Trade",0,0
+"other: passage of central bank law & compl. restructuring of cbk",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"other: present budget law to national assembly",1,0,1,0,1,0,NA,"Government Budget",0,1
+"other: privatization of parthenon paits",1,1,0,0,0,0,NA,"Privatization",0,0
+"other: privatization of security lesotho",1,1,0,0,0,0,NA,"Privatization",0,0
+"other: prudential banking ratios",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"other: reduction of stock govt. debt",1,0,1,0,1,0,NA,"Debt",0,1
+"other: s-term debt of comm. banks",1,0,1,0,1,0,NA,"Debt",0,1
+"other: short-term debt of commercial banks",1,0,1,0,1,0,NA,"Debt",0,1
+"other: submission of gst law to parliament",1,0,0,0,0,0,NA,"Trade",0,0
+"other: tax revenue",1,0,0,0,0,0,NA,"Government Budget",0,0
+"outsourcing of liquidated bank assets",1,0,0,0,0,0,NA,"Privatization",0,0
+"paliamentary approval of 2002 budget",1,0,1,0,1,0,NA,"Government Budget",0,1
+"parallel test phase of all modules",1,0,0,0,0,0,NA,"Systemic",0,0
+"parliament adoption of bsl",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"parliamentary apporval of pension and pension disability legislation",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"parliamentary approval for bom's supervisory board",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"parliamentary approval of amendments to social sec. laws",1,0,0,0,0,0,NA,"Social",0,0
+"parliamentary approval of privatization law",1,1,0,0,0,0,NA,"Privatization",0,0
+"parliamentary approval of privtization law",1,0,0,0,0,0,NA,"Privatization",0,0
+"passage of bank and financial institutions act",1,0,0,0,0,0,NA,"Financial sector",0,0
+"passage of central bank act",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"passage of profits tax law",1,0,0,0,0,0,NA,"Government Budget",0,0
+"passage of security mkt law and adoption of regulations",1,0,0,0,0,0,NA,"Governance",0,0
+"pension fund audit",1,0,0,0,0,0,NA,"Other",0,0
+"pension reform (6th/7th reviews prior actions)",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"pension reform law",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"petroleum development surcharge rate within bands",1,1,0,1,0,0,NA,"Private Sector Reforms",1,0
+"petroleum pricing formula",1,1,0,1,0,0,NA,"Pricing",1,0
+"petroleum products taxes",1,1,0,1,0,0,NA,"Government Budget",1,0
+"phase 1: integrated fin. mgmt. system",1,0,0,0,0,0,NA,"Financial sector",0,0
+"pilot customs house in karachi",1,0,0,0,0,0,NA,"Trade",0,0
+"plan to eliminate civil service pension deficit",1,0,1,0,1,0,NA,"Wages & Pensions",0,1
+"plan to reform public pensions",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"plan to split post and telecom",1,0,0,0,0,0,NA,"Privatization",0,0
+"power/water utility revenue collection reform statements",1,0,0,0,0,0,NA,"Other",0,0
+"prep. of monthly treasury balances for 9/93",1,0,1,0,0,0,NA,"Government Budget",0,0
+"prepare for financial sector survey",1,0,0,0,0,0,NA,"Financial sector",0,0
+"present organic budget law to nat'l assembly",1,0,1,0,1,0,NA,"Governance",0,1
+"price stabilization and transport stabilization fund audits",1,0,0,0,0,0,NA,"Governance",0,0
+"pricing & marketing policies 2",1,0,0,0,0,0,NA,"Pricing",0,0
+"pricing and marketing (prior actions)",1,0,0,0,0,0,NA,"Pricing",0,0
+"pricing and marketing policies (perf. criteria)",1,0,0,0,0,0,NA,"Pricing",0,0
+"pricing policy",1,0,0,0,0,0,NA,"Pricing",0,0
+"primary balance",1,0,1,0,0,0,NA,"BOP/ Reserves",0,0
+"primary budget balance",1,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"priv/liq all state farms",1,0,0,0,0,0,NA,"Privatization",0,0
+"privatization (bring to point-of-sale nitel/m-tel)",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization law to parliament",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization of 20 farms",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization of 5 public enterprises",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization of at least 900 small scale enternprises",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization of companies",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization of distribution component of petroca",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization of insurance comp.",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization of ivama",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization of refineries of ypfb (request for bid)",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization of sonasut (solicit bids)",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization of stee (solicit bids)",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization sales of tug 10 bil for cash priv. receipts",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization strategy",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatization/liquidation of enterprises",1,1,0,0,0,0,NA,"Privatization",0,0
+"privatizatoin program of large agricultural estates",1,0,0,0,0,0,NA,"Privatization",0,0
+"privatize gncb",1,0,0,0,0,0,NA,"Privatization",0,0
+"privatize linmine",1,0,0,0,0,0,NA,"Privatization",0,0
+"privatize retail units; bread corp.",1,0,0,0,0,0,NA,"Privatization",0,0
+"procedures for intro of 3% turnover tax on traders",1,0,0,0,0,0,NA,"Capital Account",0,0
+"procedures for tax-exempted products",1,0,0,0,0,0,NA,"Government Budget",0,0
+"processing of outstanding payments orders with treasury",1,0,0,0,0,0,NA,"Other",0,0
+"procurement & tender act",1,0,0,0,0,0,NA,"Financial sector",0,0
+"procurement regulations by mof",1,0,0,0,0,0,NA,"Financial sector",0,0
+"production of admin. and management accounts",1,0,0,0,0,0,NA,"Other",0,0
+"production of snh's quarterly accounts",1,0,0,0,0,0,NA,"Other",0,0
+"program legislation for privatization",1,1,0,0,0,0,NA,"Privatization",0,0
+"progress report on vcb and icb audits",1,0,0,0,0,0,NA,"Other",0,0
+"prohibit tax liability offsets",1,0,0,0,0,0,NA,"Governance",0,0
+"promulgation of new income tax law",1,0,0,0,0,0,NA,"Government Budget",0,0
+"protocol to transfer sonidep to private sector",1,0,0,0,0,0,NA,"Privatization",0,0
+"public enterpises (continued)",1,0,0,0,0,0,NA,"Public Sector",0,0
+"public enterprise reform",1,0,0,0,0,0,NA,"Public Sector",0,0
+"public enterprises (cont. 2)",1,0,0,0,0,0,NA,"Public Sector",0,0
+"public enterprises (structural benchmarks)",1,0,0,0,0,0,NA,"Public Sector",0,0
+"public enterprises obligation",1,0,0,0,0,0,NA,"Public Sector",0,0
+"public investment program",1,0,0,0,0,0,NA,"Public Sector",0,0
+"public investment projects",1,0,0,0,0,0,NA,"Public Sector",0,0
+"public reform plans for special pension regimes",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"public sector reform",1,0,0,0,0,0,NA,"Public Sector",0,0
+"public service staff limits",1,0,0,0,0,0,NA,"Public Sector",0,0
+"public utilities reg. comm. regulations",1,0,0,0,0,0,NA,"Public Sector",0,0
+"publication of audit (virtual poverty fund)",1,0,0,0,0,0,NA,"Other",0,0
+"publication of audits of 5 contracts",1,0,0,0,0,0,NA,"Other",0,0
+"publish audited financial statements",1,0,0,0,0,0,NA,"Government Budget",0,0
+"publish financial recovery plan for wapda",1,0,0,0,0,0,NA,"Government Budget",0,0
+"publish monthly industrial production index",1,0,0,0,0,0,NA,"Systemic",0,0
+"publish tax exemptions",1,0,0,0,0,0,NA,"Government Budget",0,0
+"put into effect mgmt contract for jwa",1,0,0,0,0,0,NA,"Other",0,0
+"put into effect vat",1,0,0,0,0,0,NA,"Government Budget",0,0
+"quarterly financial reports of liquidation funds",1,0,0,0,0,0,NA,"Financial sector",0,0
+"quarterly report on import data and duty reconciliation",1,0,0,0,0,0,NA,"Trade",0,0
+"raise revenue by 1 percent of gdp",1,0,0,0,0,0,NA,"Government Budget",0,0
+"recapitalization of agd banks and establishment of business plan for their management",1,0,0,0,0,0,NA,"Financial sector",0,0
+"recapitalization of central bank",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"reconcile monthly sgs import verification data and customs duties collected on inspected imports",1,0,0,0,0,0,NA,"Trade",0,0
+"reconcile trade date from asycuda with ceps's manual",1,0,0,0,0,0,NA,"Other",0,0
+"recover loans of gncb",1,0,0,0,0,0,NA,"Debt",0,0
+"recruitment of independent observers for public procurement",1,0,0,0,0,0,NA,"Other",0,0
+"red reserve requirement",1,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"reduce by 50% electricity subsidies for higher-income households",1,0,0,0,0,1,NA,"Private Sector Reforms",0,0
+"reduce by 50% electricity subsidy for higher income households",1,1,0,0,0,1,NA,"Private Sector Reforms",0,0
+"reduce employment in budgetary sphere by 10,000.",1,0,1,0,1,0,NA,"Government Budget",0,1
+"reduce govt employment to 168,804 people",1,0,0,0,0,0,NA,"Public Sector",0,0
+"reduce import duty",1,0,0,0,0,0,NA,"Trade",0,0
+"reduce import surcharges by 50%",1,0,0,0,0,0,NA,"Trade",0,0
+"reduce maximum import tariff to 50%",1,0,0,0,0,0,NA,"Trade",0,0
+"reduce maximum tariff rate to 35%",1,0,0,0,0,0,NA,"Trade",0,0
+"reduce maximum tariff rate to 40%",1,0,0,0,0,0,NA,"Trade",0,0
+"reduce maximum tariff to 30% with 2000 budget",1,0,1,0,1,0,NA,"Trade",0,1
+"reduce maximum tariff to 35% and no. of nonzero rates to 4",1,0,0,0,0,0,NA,"Trade",0,0
+"reduce maximum tariff to 35% and number of nonzero rates to 4",1,0,0,0,0,0,NA,"Trade",0,0
+"reduce number of civil servants by 600",1,0,0,0,0,0,NA,"Public Sector",0,0
+"reduce number of commodity groups requiring import permits to max of 5",1,1,0,0,0,0,NA,"Trade",0,0
+"reduce number of govt.accts. held by line ministries",1,0,0,0,0,0,NA,"Governance",0,0
+"reduce number of import tariff bands to 8",1,0,0,0,0,0,NA,"Trade",0,0
+"reduce number of tariff bands to 7 (including zero rate)",1,0,0,0,0,0,NA,"Trade",0,0
+"reduce rice tariffs",1,0,0,0,0,0,NA,"Trade",0,0
+"reduce size of budgetary sector employm. to 360,000",1,0,1,0,1,0,NA,"Governance",0,1
+"reduce statuatory liquidation req.",1,0,0,0,0,0,NA,"Privatization",0,0
+"reduction in number and level of import tariff rates",1,0,0,0,0,0,NA,"Trade",0,0
+"reduction in stock of domestic arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"reduction of 2500 government employees",1,0,0,0,0,0,NA,"Public Sector",0,0
+"reduction of maximum duty rate to 25% (except alcohol, tobacco, and vehicles) and number of duties to 19",1,0,0,0,0,0,NA,"Government Budget",0,0
+"reduction of the maximum customs tariff",1,0,0,0,0,0,NA,"Trade",0,0
+"refinery privatization bid request",1,1,0,0,0,0,NA,"Privatization",0,0
+"reform of tax system",1,0,0,0,0,0,NA,"Government Budget",0,0
+"reform petroleum products taxation",1,1,0,1,0,0,NA,"Government Budget",1,0
+"reform regulatory authorities for gas, telecom, electricity",1,1,0,1,0,1,NA,"Other",1,0
+"reform regulatory authorities for gas, telecommunications, and electricity",1,1,0,1,0,1,NA,"Private Sector Reforms",1,0
+"reform strategy for mining infrastructure agency",1,1,0,1,0,0,NA,"Private Sector Reforms",1,0
+"register 140,000 properties in land book",1,0,0,0,0,0,NA,"Systemic",0,0
+"regulations governing investment trusts",1,0,0,0,0,0,NA,"Governance",0,0
+"regulations on asset quality, provisioning",1,0,0,0,0,0,NA,"Governance",0,0
+"regulations on reserve/liquidity requirements",1,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"reinstate automatic petroleum pricing mechanism",1,1,0,1,0,0,NA,"Pricing",1,0
+"reinstatement of passthrough mechanism for petroleum products",1,1,0,1,0,0,NA,"Governance",1,0
+"reject tax and customs preferences and exceptions",1,0,0,0,0,0,NA,"Governance",0,0
+"removal of all identified ghost wrokers",1,0,0,0,0,0,NA,"Other",0,0
+"remove 25 public enterprises from government control",1,0,0,0,0,0,NA,"Privatization",0,0
+"remove 30% import margin req.",1,0,0,0,0,0,NA,"Trade",0,0
+"remove all article viii restrict.",1,0,0,0,0,0,NA,"Government Budget",0,0
+"remove all remaining import restrictions",1,0,0,0,0,0,NA,"Trade",0,0
+"remove art. viii restrictions & mcps",1,0,0,0,0,0,NA,"Governance",0,0
+"remove discretionary tax exemptions",1,0,0,0,0,0,NA,"Governance",0,0
+"remove gst exemptions for electricity, gas, petro products",1,1,0,1,0,1,NA,"Governance",1,0
+"remove petroleum price controls",1,1,0,1,0,0,NA,"Pricing",1,0
+"remove remaining art.iv restrict.",1,0,0,0,0,0,NA,"Governance",0,0
+"remove remaining requirements for import/export licenses",1,1,0,0,0,0,NA,"Trade",0,0
+"removing income/sales tax exemptions",1,0,0,0,0,0,NA,"Government Budget",0,0
+"remuneration of controller, auditor general staff",1,0,0,0,0,0,NA,"Other",0,0
+"render operational the regulatory agency for mod'd proc. system",1,0,0,0,0,0,NA,"Systemic",0,0
+"reorganization of nbg functions",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"repayment of domestic arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"repayment of gnpc debt to bog",1,0,1,0,1,0,NA,"Debt",0,1
+"report and proposed solution for closed banks",1,0,0,0,0,0,NA,"Financial sector",0,0
+"report on arrears outstanding at end-june 1998",1,0,0,0,0,0,NA,"Arrears",0,0
+"reporting on correspondent banks",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"reporting requirements on local government accounts",1,0,0,0,0,0,NA,"Government Budget",0,0
+"required reserves",1,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"required reserves of banking system",1,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"reserve coverage of cba liabilities",1,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"reserve requirement of the banking system",1,0,1,0,1,0,NA,"BOP/ Reserves",0,1
+"resolve d 1.4 trillion in non-performing loans",1,0,0,0,0,0,NA,"Debt",0,0
+"resolve d 35 trillion in npls",1,0,0,0,0,0,NA,"Debt",0,0
+"restructure ab bank",1,0,0,0,0,0,NA,"Financial sector",0,0
+"restructure ministry of finance",1,0,0,0,0,0,NA,"Governance",0,0
+"restructure or sell ab bank",1,0,0,0,0,0,NA,"Financial sector",0,0
+"restructure tax unit in charge of large enterprise",1,0,0,0,0,0,NA,"Governance",0,0
+"restructure/sell iti bank",1,0,0,0,0,0,NA,"Financial sector",0,0
+"restructuring bcc's balance sheet",1,0,1,0,0,0,NA,"Central Bank Reform",0,0
+"results of military census",1,0,0,0,0,0,NA,"Governance",0,0
+"retire 2,200 civil servants",1,0,0,0,0,0,NA,"Public Sector",0,0
+"retirement of 850 civil servants",1,0,0,0,0,0,NA,"Public Sector",0,0
+"revenue/expenditure/trade reporting",1,0,0,0,0,0,NA,"Trade",0,0
+"review and streamline public service rules",1,0,0,0,0,0,NA,"Public Sector",0,0
+"review of domestic arrears major contractors",1,0,0,0,0,0,NA,"Arrears",0,0
+"review of the role of the cgp.",1,0,0,0,0,0,NA,"Governance",0,0
+"revise mining royalty",1,1,0,1,0,0,NA,"Governance",1,0
+"revised customs legislation",1,0,0,0,0,0,NA,"Trade",0,0
+"revised law on chamber of accounts",1,0,0,0,0,0,NA,"Other",0,0
+"revised tax reform legislation",1,0,0,0,0,0,NA,"Government Budget",0,0
+"revision of accrod cadre of groundnut sector",1,0,0,0,0,0,NA,"Other",0,0
+"revision of legal basis of customs/indirect tax exemptions",1,0,0,0,0,0,NA,"Government Budget",0,0
+"revoke licenses and appoint liquidators for 3 banks",1,0,0,0,0,0,NA,"Privatization",0,0
+"revoke licenses and appoint liquidators for remaining 2 banks",1,0,0,0,0,0,NA,"Privatization",0,0
+"rice import tax reforms",1,0,0,0,0,0,NA,"Trade",0,0
+"road fund spending reform",1,0,0,0,0,0,NA,"Government Budget",0,0
+"s-term ext. debt of comm. banks",1,0,1,0,1,0,NA,"Debt",0,1
+"sale of govt assets in financial sector",1,0,0,0,0,0,NA,"Financial sector",0,0
+"sbp deposits reduction",1,0,0,0,0,0,NA,"Financial sector",0,0
+"sbp financial statement",1,0,0,0,0,0,NA,"Financial sector",0,0
+"securitization of deposits of cne",1,0,0,0,0,0,NA,"Other",0,0
+"selec investment bank for gabon telecom priv.",1,0,0,0,0,0,NA,"Privatization",0,0
+"select inv bank for onatel privatization",1,1,0,0,0,0,NA,"Privatization",0,0
+"select provis. bidder for hevegab priv.",1,0,0,0,0,0,NA,"Privatization",0,0
+"select provisional bidder for agrogabon",1,0,0,0,0,0,NA,"Privatization",0,0
+"self-assessment of income",1,0,0,0,0,0,NA,"Other",0,0
+"separate accts of pension & health funds of ihss",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"set minimum capital-asset ratio",1,0,0,0,0,0,NA,"Other",0,0
+"settlement of contributions to pension funds",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"short-term external credits",1,0,0,0,0,0,NA,"Debt",0,0
+"sign a mgmt. contract for cbe",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"sign agreement to privatize linmine",1,0,0,0,0,0,NA,"Privatization",0,0
+"sign contract to sell 25% & 2 shares of bcr capital",1,0,0,0,0,0,NA,"Privatization",0,0
+"sign sale contracts for all cotton ginneries",1,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"single enterprise profit tax rate",1,0,0,0,0,0,NA,"Government Budget",0,0
+"sirama bidding process",1,0,0,0,0,0,NA,"Privatization",0,0
+"social outlays & outcomes database",1,0,0,0,0,0,NA,"Systemic",0,0
+"sonacos / sonagraines audit report",1,0,0,0,0,0,NA,"Privatization",0,0
+"specific ad-valorem customs duties",1,0,0,0,0,0,NA,"Government Budget",0,0
+"stabilization fund quarterly indicators",1,0,0,0,0,0,NA,"BOP/ Reserves",0,0
+"stock of arrears on private current transactions",1,0,0,0,0,0,NA,"Arrears",0,0
+"stock of central govt domestic arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"stock of external arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"stopanska banka credit ceiling",1,0,0,0,0,0,NA,"Debt",0,0
+"strategy for restructuring water/electric sectors",1,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"study for restructuring octra",1,0,0,0,0,0,NA,"Other",0,0
+"study of forestry sector",1,0,0,0,0,0,NA,"Other",0,0
+"study on commercialization or privatization of admarc",1,1,0,0,0,0,NA,"Privatization",0,0
+"study on health/education spending delays",1,0,0,0,0,0,NA,"Social",0,0
+"study on trade tariff structure",1,0,0,0,0,0,NA,"Trade",0,0
+"submission to parliament of new central bank law",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"submit amendments to pension legislation",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"submit budget system law amendments",1,0,1,0,1,0,NA,"Government Budget",0,1
+"submit law to congress to simplify comp. establishment",1,0,0,0,0,0,NA,"Other",0,0
+"submit new accounting law to na",1,0,0,0,0,0,NA,"Other",0,0
+"submit new basic budget law",1,0,1,0,1,0,NA,"Government Budget",0,1
+"submit new draft central bank/banking laws to parl",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"submit new income tax law to na.",1,0,0,0,0,0,NA,"Government Budget",0,0
+"submit to assembly amendment to allow vat",1,0,0,0,0,0,NA,"Government Budget",0,0
+"submit to cabinet modalities for zesco/zncb privatization",1,1,0,0,0,0,NA,"Privatization",0,0
+"submit to nbe's board audit of nbe's fin.statements",1,0,0,0,0,0,NA,"Financial sector",0,0
+"submit to parliament draft law for privatization of savings bank",1,1,0,0,0,0,NA,"Privatization",0,0
+"submit to parliament income tax law amendments",1,0,0,0,0,0,NA,"Government Budget",0,0
+"submit to parliament privatization law",1,1,0,0,0,0,NA,"Privatization",0,0
+"submit to parliament proposal for sale of trade $ develp bank",1,0,0,0,0,0,NA,"Privatization",0,0
+"submit to president recommendations on civil service pension",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"submit vat legislation to parliament",1,0,0,0,0,0,NA,"Governance",0,0
+"supervision of district treasury officers to mof",1,0,0,0,0,0,NA,"Government Budget",0,0
+"supervisory directive from boz to zncb",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"system of advancement of civil servants",1,0,0,0,0,0,NA,"Systemic",0,0
+"systemic and ownership reform (ccr 4th review)",1,0,0,0,0,0,NA,"Systemic",0,0
+"systemic/owner. reform (con't)",1,0,0,0,0,0,NA,"Systemic",0,0
+"systemic/ownership (structural benchmarks)",1,0,0,0,0,0,NA,"Systemic",0,0
+"systemic/ownership reform",1,0,0,0,0,0,NA,"Systemic",0,0
+"systemic/ownership reform (cnt",1,0,0,0,0,0,NA,"Systemic",0,0
+"t-bills regular auction mechanism",1,0,0,0,0,0,NA,"Government Budget",0,0
+"tariff & subsidy policy for electricity tariff",1,1,0,0,0,1,NA,"Trade",0,0
+"tariff reform program",1,0,0,0,0,0,NA,"Trade",0,0
+"tax administration reform",1,0,0,0,0,0,NA,"Governance",0,0
+"tax arrears",1,0,0,0,0,0,NA,"Arrears",0,0
+"tax procedures code",1,0,0,0,0,0,NA,"Systemic",0,0
+"tax reform",1,0,0,0,0,0,NA,"Government Budget",0,0
+"tax reform legislation",1,0,0,0,0,0,NA,"Governance",0,0
+"tax-vat",1,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure (structural benchmarks)",1,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure ref. (con't)",1,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure reform (ccr 4th review)",1,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure reform (continued, 3)",1,0,0,0,0,0,NA,"Government Budget",0,0
+"tax/expenditure reform--con't",1,0,0,0,0,0,NA,"Government Budget",0,0
+"taxes in fezs",1,0,0,0,0,0,NA,"Government Budget",0,0
+"taxpayer identification number",1,0,0,0,0,0,NA,"Systemic",0,0
+"telecom competition",1,0,0,0,0,0,NA,"Private Sector Reforms",0,0
+"tenders for all fin. services purchased by mof",1,0,0,0,0,0,NA,"Financial sector",0,0
+"terms of reference for review of nbc restructuring and chart list of firms",1,0,0,0,0,0,NA,"Other",0,0
+"the poverty reduction fund",1,0,0,0,0,0,NA,"Government Budget",0,0
+"timely monetary survey",1,0,1,0,1,0,NA,"Central Bank Reform",0,1
+"timetable for financial rehab for bulgargaz",1,0,0,0,0,0,NA,"Other",0,0
+"timetable for implementing basle comm recommendations",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
+"timetable for public sector reform program",1,0,0,0,0,0,NA,"Public Sector",0,0
+"timetable for reduction of tariffs",1,0,0,0,0,0,NA,"Trade",0,0
+"tims customs software",1,0,0,0,0,0,NA,"Systemic",0,0
+"top mgmt. positions at treasury",1,0,0,0,0,0,NA,"Governance",0,0
+"trade policy (prior actions)",1,0,0,0,0,0,NA,"Trade",0,0
+"trade systems (structural benchmarks)",1,0,0,0,0,0,NA,"Trade",0,0
+"trade systems continued 1",1,0,0,0,0,0,NA,"Trade",0,0
+"trade systems continued 2",1,0,0,0,0,0,NA,"Trade",0,0
+"transactions entered into treasury ledger",1,0,0,0,0,0,NA,"Government Budget",0,0
+"transfer fiduciary trust of all category 4 loans above k$100",1,0,0,0,0,0,NA,"Government Budget",0,0
+"transfer fiduciary trust of cat.4&5 loans above k$50",1,0,0,0,0,0,NA,"Government Budget",0,0
+"transfer of assets of liquidation funds",1,0,0,0,0,0,NA,"Financial sector",0,0
+"transfer ownership of asset packages of zccm",1,0,0,0,0,0,NA,"Privatization",0,0
+"transfer property tax to dgi",1,0,0,0,0,0,NA,"Government Budget",0,0
+"transfer to fiduciary trust of all new loans",1,0,0,0,0,0,NA,"Government Budget",0,0
+"transfer/consolidate govt accounts at central bank",1,0,0,0,0,0,NA,"BOP/ Reserves",0,0
+"transfers to local governments",1,0,0,0,0,0,NA,"Government Budget",0,0
+"transformation into regular treasury accts",1,0,0,0,0,0,NA,"Government Budget",0,0
+"treasury accounts of postal service",1,0,0,0,0,0,NA,"Other",0,0
+"treasury acct. system to parastatals",1,0,0,0,0,0,NA,"Government Budget",0,0
+"treasury audit",1,0,0,0,0,0,NA,"Other",0,0
+"treasury single account",1,0,0,0,0,0,NA,"Government Budget",0,0
+"unification of domestic/export prices",1,1,0,0,0,0,NA,"Pricing",0,0
+"unified revenue agency strategy",1,0,0,0,0,0,NA,"Government Budget",0,0
+"update results of survey of cross-debts for 1996",1,0,1,0,1,0,NA,"Debt",0,1
+"update taxpayers' file of ntd",1,0,0,0,0,0,NA,"Systemic",0,0
+"updating administrative status of civil servants and roster",1,0,0,0,0,0,NA,"Systemic",0,0
+"ura operational plan production",1,0,0,0,0,0,NA,"Other",0,0
+"use of fully comuterized system",1,0,0,0,0,0,NA,"Systemic",0,0
+"vat & excise tax laws to parliament",1,0,0,0,0,0,NA,"Government Budget",0,0
+"vat audit",1,0,0,0,0,0,NA,"Government Budget",0,0
+"vat computerization system",1,0,0,0,0,0,NA,"Systemic",0,0
+"vat extension on agricultural producers",1,0,0,0,0,0,NA,"Government Budget",0,0
+"vat law to parliament",1,0,0,0,0,0,NA,"Governance",0,0
+"vat payment obligation",1,0,0,0,0,0,NA,"Government Budget",0,0
+"vat reform",1,0,0,0,0,0,NA,"Government Budget",0,0
+"vat: publicity and education campaign",1,0,0,0,0,0,NA,"Government Budget",0,0
+"verify treasury account balances at end-99",1,0,1,0,0,0,NA,"Government Budget",0,0
+"wage and pension arrears",1,0,0,0,0,0,NA,"Wages & Pensions",0,0
+"wapda fip for fy 02/03 & 03/04",1,0,0,0,0,0,NA,"Other",0,0
+"water and electricity rate adjustments",1,0,0,0,0,1,NA,"Pricing",0,0
+"withdraw banade's license to operate as financial intermediary",1,0,0,0,0,0,NA,"Financial sector",0,0
+"withdrawal of cpsp from purchase & marketing of local/imported rice",1,0,0,0,0,0,NA,"Other",0,0
+"withdrawal of subsidies to dhcs",1,0,0,0,0,0,NA,"Other",0,0
+"withholding tax on services to nonresidents",1,0,0,0,0,0,NA,"Governance",0,0
+"write off nonperforming assets, reconstitute capital in identified banks",1,0,0,0,0,0,NA,"BOP/ Reserves",0,0
