@@ -5,8 +5,8 @@
 \contentsline {subsection}{\numberline {2.2}Hypothesen oder zentrale Erwartungen}{3}{subsection.2.2}%
 \contentsline {section}{\numberline {3}Daten und Methodik}{3}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Datenbasis}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Messung und Modellstrategie}{3}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Robustheitschecks}{3}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.2}Messung und Modellstrategie}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Robustheitschecks}{4}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Ergebnisse}{4}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Hauptbefunde}{4}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Interpretation}{4}{subsection.4.2}%

@@ -10,9 +10,18 @@
 - `avgcondtype_count` — durchschnittliche Anzahl Bedingungen pro Quartal (anzahlbasiert wie im Original; dort heisst die Variable `avgcondtype_all`, Benchmark unsc3 = -2.1 GLS / -3.3 OLS)
 - `avgcondtype_share` — Anteil der als rohstoff-/stabilisierend klassifizierten Bedingungen (eigene Erweiterung fuer H2/H4)
 
+> Wichtig: Das Projekt unterscheidet strikt zwischen (i) der validierten Originalbasis und (ii) der erweiterten globalen MONA-Panel-Logik. Die H1–H4 sind projektinterne Hypothesen, die auf der validierten Originalbasis getestet werden; sie sind nicht die originalen H1–H4-Formeln der Studienreplikation selbst.
+
+## Phase A vs. Phase B
+
+- **Phase A: validierte Originalbasis**. Ziel ist die Rekonstruktion und Verifikation der Originaldatenbasis aus den MONA-/UNSC-/WDI-Konstruktionsdateien. Die Logik in `code/data_prep/phase_a/` dient der Replikationsvalidierung; auf dieser Basis werden die projektinternen H1–H4 getestet.
+- **Phase B: erweitertes globales MONA-Panel**. Ziel ist der Aufbau eines eigenen, modernisierten Panels mit globalem MONA-Export, Aggregation auf Land-Jahr-Ebene und Join mit WDI/UNSC. Die Logik in `code/data_prep/phase_b/` ist eine Erweiterung des Replikationsfundaments, keine Neuinterpretation der Originalstudienbasis.
+
+Dieses Trennen ist wichtig, weil die Originalbasis und das erweiterte Panel unterschiedliche Konstruktionen, Zeiträume und Messkonzepte nutzen. Nur so lassen sich Replikationsbefund und eigene Erweiterung sauber auseinanderhalten.
+
 ---
 
-## Hypothesen
+## Projekt-Hypothesen
 
 | Hypothese | Aussage | Test |
 |-----------|---------|------|

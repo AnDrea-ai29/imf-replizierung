@@ -105,11 +105,12 @@ Hier die empirischen Erwartungen der Arbeit explizit formulieren.
 \subsection{Datenbasis}
 Beschreibung der Daten, Zeitraum, Länder, Variablen und Quellen.
 
+Die Quartalsvariable operationalisiert die Programmdauer als die im Sample relevante Anzahl von 90-Tage-Perioden. Dabei wird die Laufzeit durch Rundung auf die nächstliegende ganze Zahl transformiert, damit die Messung mit der Originaldefinition der DSV-Replikation übereinstimmt und kleine Datumsabweichungen nicht als reale inhaltliche Unterschiede interpretiert werden.
 
-
+„Zeilenzählung ohne Dedup“ bedeutet, dass die ursprüngliche Bedingungszählung auf der Ebene einzelner MONA-Einträge durchgeführt wird, ohne vorab doppelte Einträge zu entfernen. Diese Vorgehensweise ist erforderlich, um die Originalmessung und damit die Validierung gegen den Referezdatensatz exakt zu reproduzieren.
 
 Definition nach Codebook für Rohstoff-Klassifikation:
-rohstoff_final = 1 nur wenn der Gegenstand der Bedingung der Extraktivsektor ist: Öl, Gas, Bergbau, Mineralien, Kraftstoffe — einschließlich fiskalischer Operationen mit explizitem Öl-/Mineral-Bezug (Ölpreis-Fonds, Öl-Parastatal-Zahlungen, Petroleum-Steuer).
+rohstoff\_final = 1 nur wenn der Gegenstand der Bedingung der Extraktivsektor ist: Öl, Gas, Bergbau, Mineralien, Kraftstoffe — einschließlich fiskalischer Operationen mit explizitem Öl-/Mineral-Bezug (Ölpreis-Fonds, Öl-Parastatal-Zahlungen, Petroleum-Steuer).
 Nicht rohstoff: Bank-Privatisierung, allgemeine Export-/Zoll-Bedingungen, Agrar (z. B. „sugar and edible oils"), Strom/Energie ohne Extraktiv-Bezug („energy sector" → gehört zur breiteren Sensitivitätskategorie, nicht zur engen).
 
 

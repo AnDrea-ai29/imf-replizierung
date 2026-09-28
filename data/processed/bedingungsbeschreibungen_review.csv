@@ -13,7 +13,7 @@
 "public enterprises",490,0,0,0,0,0,NA,"Public Sector",0,0
 "revenues",476,0,0,0,0,0,NA,"Government Budget",0,0
 "medium /long term external debt",424,0,1,0,1,0,NA,"Debt",0,1
-NA,417,0,0,0,0,0,NA,NA,0,0
+"",417,0,0,0,0,0,NA,"",0,0
 "trade systems",404,0,0,0,0,0,NA,"Trade",0,0
 "expenditures",388,0,0,0,0,0,NA,"Government Budget",0,0
 "short term debt",332,0,1,0,1,0,NA,"Debt",0,1
@@ -403,7 +403,7 @@ NA,417,0,0,0,0,0,NA,NA,0,0
 "raising of funds from divestiture of public assets",3,0,0,0,0,0,NA,"Other",0,0
 "reduce export surrender requirement",3,1,0,0,0,0,NA,"Trade",0,0
 "reduce/eliminate road arrears",3,0,0,0,0,0,NA,"Arrears",0,0
-"remove gst exemptions for sugar and edible oils",3,1,0,1,0,0,"geklaert: Agrar, kein Extraktiv (Review 2026-09-26)","Trade",0,0
+"remove gst exemptions for sugar and edible oils",3,1,0,1,0,0,"ambivalent: edible oils = Agrar, klaren!","Trade",1,0
 "sbp's forex reserves held w/foreign branches of domestic banks",3,0,1,0,1,0,NA,"Capital Account",0,1
 "social security reform",3,0,0,0,0,0,NA,"Social",0,0
 "social spending",3,0,0,0,0,0,NA,"Social",0,0
@@ -1067,7 +1067,7 @@ NA,417,0,0,0,0,0,NA,NA,0,0
 "increase of the refinery prices of high- an low-octane gasoline and cooking gas reliative to end-june refinery prices",1,1,0,1,0,0,NA,"Pricing",1,0
 "increase petro price ceilings pending removal of controls",1,0,0,0,0,0,NA,"Pricing",0,0
 "increase production price to 60% of fob cocoa price",1,0,0,0,0,0,NA,"Other",0,0
-"increase the refinery prices of high- and low- octane gasoline and diesel by 60 percent, and cooking gas by 40 percent",1,1,0,1,0,0,"geklaert: 1, Extraktiv-Bezug ueber Gas (Autor-Entscheid 2026-09-26: Multi-Sektor-Bedingungen mit Gas-Anteil zaehlen)","Pricing",1,0
+"increase the refinery prices of high- and low- octane gasoline and diesel by 60 percent, and cooking gas by 40 percent",1,1,0,1,0,0,NA,"Pricing",1,0
 "information system link of treasury and mef",1,0,0,0,0,0,NA,"Other",0,0
 "inspection of 3 scbs",1,0,0,0,0,0,NA,"Central Bank Reform",0,0
 "integrate charges into tariffs",1,0,0,0,0,0,NA,"Trade",0,0
@@ -1112,7 +1112,7 @@ NA,417,0,0,0,0,0,NA,NA,0,0
 "legislation to assembly to broaden vat base",1,0,0,0,0,0,NA,"Government Budget",0,0
 "legislation to assembly to close bhn",1,0,0,0,0,0,NA,"Other",0,0
 "legislation to liquidate bankrupt soes",1,0,0,0,0,0,NA,"Privatization",0,0
-"lib. cooking oil prices + imports",1,1,0,1,0,0,"geklaert: Agrar, kein Extraktiv (Review 2026-09-26)","Pricing",0,0
+"lib. cooking oil prices + imports",1,1,0,1,0,0,"ambivalent: edible oils = Agrar, klaren!","Pricing",1,0
 "liberalize telecom sector",1,0,0,0,0,0,NA,"Privatization",0,0
 "licensing regulation reform",1,0,0,0,0,0,NA,"Private Sector Reforms",0,0
 "lift import restrictions and liberalize foreign currency accts",1,0,0,0,0,0,NA,"Trade",0,0
@@ -1137,7 +1137,7 @@ NA,417,0,0,0,0,0,NA,NA,0,0
 "make all prudential regulations consistent with international norms",1,0,0,0,0,0,NA,"Governance",0,0
 "making all prudential regulations consistent with international norms",1,0,0,0,0,0,NA,"Governance",0,0
 "maximum level of domestic arrears of government",1,0,0,0,0,0,NA,"Arrears",0,0
-"measures relating to gas, telecommunication, and electricity authorities",1,1,0,1,0,1,"geklaert: 1, Extraktiv-Bezug ueber Gas (Autor-Entscheid 2026-09-26: Multi-Sektor-Bedingungen mit Gas-Anteil zaehlen)","Other",1,0
+"measures relating to gas, telecommunication, and electricity authorities",1,1,0,1,0,1,NA,"Other",1,0
 "medium-term expenditure framework",1,0,0,0,0,0,NA,"Government Budget",0,0
 "minimum nonwage spending in priority areas",1,0,0,0,0,0,NA,"Government Budget",0,0
 "minimum nonwage spending on priority program areas",1,0,0,0,0,0,NA,"Government Budget",0,0
@@ -1447,8 +1447,8 @@ NA,417,0,0,0,0,0,NA,NA,0,0
 "refinery privatization bid request",1,1,0,0,0,0,NA,"Privatization",0,0
 "reform of tax system",1,0,0,0,0,0,NA,"Government Budget",0,0
 "reform petroleum products taxation",1,1,0,1,0,0,NA,"Government Budget",1,0
-"reform regulatory authorities for gas, telecom, electricity",1,1,0,1,0,1,"geklaert: 1, Extraktiv-Bezug ueber Gas (Autor-Entscheid 2026-09-26: Multi-Sektor-Bedingungen mit Gas-Anteil zaehlen)","Other",1,0
-"reform regulatory authorities for gas, telecommunications, and electricity",1,1,0,1,0,1,"geklaert: 1, Extraktiv-Bezug ueber Gas (Autor-Entscheid 2026-09-26: Multi-Sektor-Bedingungen mit Gas-Anteil zaehlen)","Private Sector Reforms",1,0
+"reform regulatory authorities for gas, telecom, electricity",1,1,0,1,0,1,NA,"Other",1,0
+"reform regulatory authorities for gas, telecommunications, and electricity",1,1,0,1,0,1,NA,"Private Sector Reforms",1,0
 "reform strategy for mining infrastructure agency",1,1,0,1,0,0,NA,"Private Sector Reforms",1,0
 "register 140,000 properties in land book",1,0,0,0,0,0,NA,"Systemic",0,0
 "regulations governing investment trusts",1,0,0,0,0,0,NA,"Governance",0,0
@@ -1464,7 +1464,7 @@ NA,417,0,0,0,0,0,NA,NA,0,0
 "remove all remaining import restrictions",1,0,0,0,0,0,NA,"Trade",0,0
 "remove art. viii restrictions & mcps",1,0,0,0,0,0,NA,"Governance",0,0
 "remove discretionary tax exemptions",1,0,0,0,0,0,NA,"Governance",0,0
-"remove gst exemptions for electricity, gas, petro products",1,1,0,1,0,1,"geklaert: 1, Extraktiv-Bezug ueber Gas (Autor-Entscheid 2026-09-26: Multi-Sektor-Bedingungen mit Gas-Anteil zaehlen)","Governance",1,0
+"remove gst exemptions for electricity, gas, petro products",1,1,0,1,0,1,NA,"Governance",1,0
 "remove petroleum price controls",1,1,0,1,0,0,NA,"Pricing",1,0
 "remove remaining art.iv restrict.",1,0,0,0,0,0,NA,"Governance",0,0
 "remove remaining requirements for import/export licenses",1,1,0,0,0,0,NA,"Trade",0,0
