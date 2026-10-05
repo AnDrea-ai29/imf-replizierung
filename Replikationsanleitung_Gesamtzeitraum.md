@@ -8,7 +8,7 @@ und Schätzdateien in `data/raw/original/construction/`.
 
 **Revision 4 (2026-09-26, rekonstruiert):** Diese Fassung wurde nach einem
 Dateiverlust aus dem Sitzungsverlauf wiederhergestellt (die im Projekt
-umherkopierte Datei in `code/replication/` war die veraltete Erstfassung vom
+umherkopierte Datei in der damaligen `code/replication/` war die veraltete Erstfassung vom
 2026-09-25 und wurde entfernt; kanonischer Ort ist diese Datei im
 Projektstamm). Sie vereint den Stand nach Abschluss aller Schritte 1–6:
 Spur-A-Exaktreplikation, 314/314-Nachbau, komplettes Kontrollpanel (WDI-2026 +
@@ -82,14 +82,14 @@ jeweiligen Spaltenwerts, N wie Original; Restdifferenzen benannt.
 
 ## Schritt 1: Spur A — UMGESETZT (2026-09-25)
 
-`code/replication/phase0_replikation_original.R` ist auf die Tabellen-2-
+`code/phase_a/replication/phase0_replikation_original.R` ist auf die Tabellen-2-
 Spezifikation umgeschrieben und ausgeführt:
 
 - Fünf Spalten je xtreg fe (plm, Panel-Index `idcnt`) und xtgls panels(hetero)
   (manueller FGLS mit QR-Pivotierung bei Rangdefizit).
-- Output: `results/tables/original_replication.csv`,
-  `results/tables/original_replication_zeitfenster.csv`,
-  `results/models/model_original_{fe_basis,fe_voll,gls_voll}.rds`.
+- Output: `results/phase_a/tables/original_replication.csv`,
+  `results/phase_a/tables/original_replication_zeitfenster.csv`,
+  `results/phase_a/models/model_original_{fe_basis,fe_voll,gls_voll}.rds`.
 - Zeitfenster-Zerlegung (eigene Analyse, korrigierter Regressorsatz):
   1992–2001 Vollmodell-FE −4.98 (t=−2.20); 2002–2008 statistisch Null
   (Basis-FE +0.26, t=0.13; im Vollmodell dort mit Länder-Dummies kollinear —
@@ -99,13 +99,13 @@ Spezifikation umgeschrieben und ausgeführt:
 
 Erstellt: `data/processed/crosswalk_dsv_iso3.csv` (102 Länder, Spalten
 `country`, `wdicode`, `ISO3`, `ISO3_note`, `idcnt`), erzeugt von
-`code/data_prep/rebuild_conditionality_1992_2008.R` aus `Data MONA.dta`.
+`code/shared/data_prep/rebuild_conditionality_1992_2008.R` aus `Data MONA.dta`.
 Vintage-Fixes: `ROM`→`ROU`, `ZAR`→`COD`, `YUG`→`SRB` (für `yugoslavia` und
 `serbia and montenegro`; beide teilen `idcnt` 237 → 101 Gruppen).
 
 ## Schritt 3: Konditionalitätsblock 1992–2008 — UMGESETZT (2026-09-25)
 
-Erstellt: `code/data_prep/rebuild_conditionality_1992_2008.R` →
+Erstellt: `code/shared/data_prep/rebuild_conditionality_1992_2008.R` →
 `data/processed/conditionality_dsv_1992_2008.csv` (314 Land-Jahre, Keys
 ISO3 + Year; Zählungen, Typen, Arrangement-Typen, `nrquarterssmpl`,
 `avgcondtype_*`, `nrcntprogram`, `unsc`, `unsc3`).
@@ -133,7 +133,7 @@ Bedingungs-/Revisionsebene) und Quartalsregel nach DSV übernehmen.
 
 ## Schritt 4: Kontrollvariablen — KOMPLETT UMGESETZT (2026-09-26)
 
-Erstellt: `code/data_prep/build_controls_wdi.R` →
+Erstellt: `code/shared/data_prep/build_controls_wdi.R` →
 `data/processed/controls_wdi_1990_2025.csv` (266 Länder, ISO3 × Jahr).
 
 Verfügbarkeit (alle `Data_all`-Serien durchgehend 1990–2025; `dpi_all.csv`
@@ -158,7 +158,7 @@ als Alternativ-Konzept enthalten; `OutCreditIMF_all.xlsx` ist das globale
 Aggregat (GRA/PRGT/Totals, 1984–2026, geparst als
 `imf_credit_outstanding_global_1984_2026.csv`) — nur Summen-Referenz.
 
-Vintage-Validierung: `results/tables/wdi_kontrollen_vintage_check.csv` —
+Vintage-Validierung: `results/shared/tables/wdi_kontrollen_vintage_check.csv` —
 Korrelationen 0.93–0.98, `legelec_l` 0.978, `imf_sum_gdp` 0.835 (Ausnahmen:
 GFCFGDP 0.70; USaidGDP −14 % Median-Abweichung durch Konzeptunterschied
 Markt- vs. Faktorkosten-BIP).
@@ -208,7 +208,7 @@ UNSC-Mitglied im Kalenderjahr t ODER t+1 ("election year included",
 Handkorrekturen des Originals auf 0 (Äthiopien 1992, Russland 1995/96/99)
 betreffen nur dessen Programm-Subsample.
 
-Erstellt: `code/data_prep/build_unsc_dsv_rule.R` →
+Erstellt: `code/shared/data_prep/build_unsc_dsv_rule.R` →
 `data/processed/unsc_dsv_rule_1946_2026.csv` (`ISO3`, `year`, `unsc`,
 `unsc3_dsv`, Vollpanel), plus `unsc`/`unsc3` in
 `conditionality_dsv_1992_2008.csv`.
@@ -220,13 +220,13 @@ Zeitrichtung — 4 Diskrepanzen im 88er-Overlap (BFA 2007 falsch-negativ; BGR
 
 ## Schritt 6: Spur B — ABGESCHLOSSEN (2026-09-26)
 
-Umgesetzt in `code/replication/phase1_replikation_gesamtzeitraum.R`: alle fünf
+Umgesetzt in `code/phase_a/replication/phase1_replikation_1992_2008.R`: alle fünf
 Tabellen-2-Modellvarianten je als xtreg-fe (within) und xtgls panels(hetero)-
 Nachbau auf Spur-B-Basis (Nachbau × eigene WDI-2026/DPI-Kontrollen;
 restriktierte Spalten mit Complete-Case-Regel auf den eigenen Kontrollen als
 fullsample-Analogon).
 
-Dreispaltige Validierungstabelle: `results/tables/replication_gesamtzeitraum.csv`
+Dreispaltige Validierungstabelle: `results/phase_a/tables/replication_1992_2008.csv`
 (publiziert | Spur A | Spur B). Kernaussagen:
 
 - Basis-FE: Spur B = Spur A = publiziert (−2.410, t=−1.906, N=314, Abweichung 0).
@@ -240,7 +240,7 @@ Dreispaltige Validierungstabelle: `results/tables/replication_gesamtzeitraum.csv
   eigenen Kontrollen (N=174) nicht der Original-fullsample-Regel (N=217)
   entspricht — dokumentierte Eigenheit, kein Messfehler.
 
-Zusätzlich `code/analysis/hypothesen_original_basis.R` (H1–H4 auf der
+Zusätzlich `code/phase_a/analysis/hypothesen_original_basis.R` (H1–H4 auf der
 Original-Zählbasis, Kontrollen aus Original-.dta bzw. neuer WDI):
 
 - **M1_base** (Sanity): −2.410 exakt.

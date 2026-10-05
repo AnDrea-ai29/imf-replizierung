@@ -1,5 +1,10 @@
 # H2/H4 und Review-Join in der Replication
 
+Dieses Dokument beschreibt die kuratierte Phase-A-Analyse auf historischer
+Basis. Phase-B-H4 ist bis zur Freigabe des Crosswalks für die moderne MONA-
+Taxonomie ausgesetzt; die früheren Phase-B-Klassifikationsresultate sind
+nicht als aktuelle Ergebnisse zu verwenden.
+
 ## 1) Was ist ein Review-Join?
 
 Ein Review-Join ist ein Daten-Join zwischen:
@@ -13,7 +18,7 @@ In der Review-Datei steht für jede eindeutige Bedingungsbeschreibung eine manue
 - `stabil_final`
 - `energie_vorschlag`
 
-Im Skript `code/analysis/hypothesen_original_basis.R` passiert das so:
+Im Skript `code/phase_a/analysis/hypothesen_original_basis.R` passiert das so:
 
 - Jede MONA-Zeile bekommt aus `areadescription` einen Textwert `desc`
 - Die Review-Datei wird auf `desc` gemerged
@@ -46,7 +51,7 @@ Es bedeutet nur:
 
 In der letzten Ausführung war der Exit-Code 0, und der Output enthielt:
 
-- `results/tables/hypothesen_original_basis.csv`
+- `results/phase_a/tables/hypothesen_original_basis.csv`
 
 ## 3) Was sind H2 und H4?
 
