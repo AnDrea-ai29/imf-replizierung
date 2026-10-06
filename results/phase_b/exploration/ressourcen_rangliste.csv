@@ -1,0 +1,105 @@
+"Rang","ISO3","Land","Rohstoffanteil_Prozent","Beobachtungsjahre"
+1,"NGA","nigeria",99.6,1
+2,"AGO","ANGOLA",99.3,2
+3,"IRQ","iraq",98.6,3
+4,"DZA","algeria",96.4,3
+5,"COG","congo, republic of",86.3,3
+6,"VEN","venezuela",85.3,1
+7,"YEM","yemen",80.9,2
+8,"AZE","azerbaijan",80,2
+9,"GAB","gabon",78.1,6
+10,"PNG","papua new guinea",76.3,2
+11,"ZMB","zambia",72.2,5
+12,"COD","congo, democratic republic of",71,1
+13,"GIN","guinea",65.5,3
+14,"JAM","jamaica",65,5
+15,"MNG","mongolia",58.6,3
+16,"KAZ","kazakhstan",55.4,3
+17,"MOZ","mozambique",53.9,9
+18,"RUS","russian federation",53.1,2
+19,"CMR","cameroon",50.1,6
+20,"NER","niger",46.5,7
+21,"MRT","mauritania",44.2,2
+22,"PER","peru",43.6,7
+23,"GRC","GREECE",40.4,2
+24,"COL","colombia",40,3
+25,"ECU","ecuador",39.8,5
+26,"BOL","bolivia",39,3
+27,"PRY","paraguay",38.5,3
+28,"BLR","belarus",38,1
+29,"ARM","armenia",35.5,7
+30,"EGY","egypt",33.5,4
+31,"RWA","rwanda",30.1,7
+32,"TGO","togo",28.5,3
+33,"GEO","georgia",25.4,7
+34,"PAN","panama",24.8,4
+35,"SEN","senegal",24.3,8
+36,"VNM","vietnam",23.6,1
+37,"LTU","lithuania",22.1,3
+38,"BIH","bosnia and herzegovina",20.3,3
+39,"CAF","central african republic",19.4,7
+40,"ALB","albania",19.2,4
+41,"MDG","madagascar",18.1,5
+42,"POL","poland",17.5,2
+43,"CIV","cote d'ivoire",17.5,6
+44,"BGR","bulgaria",17.2,5
+45,"SRB","yugoslavia",16.2,2
+46,"JOR","jordan",16,6
+47,"SLE","sierra leone",14.6,2
+48,"ZWE","zimbabwe",14,2
+49,"GHA","ghana",13.9,5
+50,"UKR","ukraine",13,10
+51,"KEN","kenya",12.7,7
+52,"TZA","tanzania",12.6,7
+53,"HRV","croatia",12.6,5
+54,"MKD","macedonia (fyr)",12.4,7
+55,"BRA","brazil",12.2,1
+56,"TUN","TUNISIA",12,2
+57,"CYP","CYPRUS",11.5,1
+58,"GUY","guyana",11.5,2
+59,"KGZ","kyrgyz republic",11.3,5
+60,"ARG","argentina",11.2,6
+61,"MEX","mexico",10.9,2
+62,"ROU","romania",10.5,8
+63,"PRT","PORTUGAL",10.4,1
+64,"BRB","BARBADOS",9.8,2
+65,"EST","estonia",9.6,4
+66,"CZE","czech republic",9.3,1
+67,"GTM","guatemala",8.5,3
+68,"SVK","slovak republic",8.2,1
+69,"HUN","hungary",7.7,2
+70,"HND","honduras",6.2,6
+71,"DOM","dominican republic",5.8,3
+72,"SLV","el salvador",4.6,5
+73,"LVA","latvia",4.5,5
+74,"SUR","SURINAME",4.1,1
+75,"DMA","dominica",4.1,2
+76,"BDI","burundi",4,3
+77,"TUR","turkey",4,1
+78,"PHL","philippines",3.9,2
+79,"BFA","burkina faso",3.7,8
+80,"UGA","uganda",3.1,8
+81,"MDA","moldova",3,7
+82,"MWI","malawi",3,8
+83,"NPL","nepal",2.9,2
+84,"GMB","gambia, the",2.8,3
+85,"PAK","pakistan",2.6,8
+86,"SYC","SEYCHELLES",2.5,5
+87,"MDV","MALDIVES",2.3,1
+88,"IRL","IRELAND",2.3,1
+89,"LKA","sri lanka",2.2,5
+90,"URY","uruguay",2.1,6
+91,"NIC","nicaragua",2,4
+92,"CRI","costa rica",1.6,3
+93,"BGD","bangladesh",1.3,2
+94,"ETH","ethiopia",0.8,3
+95,"COM","COMOROS",0.6,2
+96,"MLI","mali",0.6,6
+97,"BEN","benin",0.6,4
+98,"STP","sao tome and principe",0.4,2
+99,"CPV","cape verde",0.3,5
+100,"LSO","lesotho",0.3,2
+101,"SLB","SOLOMON ISLANDS",0.3,3
+102,"GRD","grenada",0.1,3
+103,"KNA","ST. KITTS AND NEVIS",0.1,1
+104,"HTI","haiti",0.1,1

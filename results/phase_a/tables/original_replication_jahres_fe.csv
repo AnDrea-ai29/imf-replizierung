@@ -1,0 +1,6 @@
+"Spezifikation","Sample","Kontrollsatz","Koeffizient","Standardfehler","t_Wert","p_Wert","n_obs","Jahr_von","Jahr_bis","Status"
+"Basis","alle","nrquarterssmpl",-2.0298476158034,1.23769202432842,-1.64002641683403,0.102611818961574,314,1992,2008,"geschaetzt"
+"Basis","fullsample==1","nrquarterssmpl",-2.23464212895023,1.77238192064268,-1.2608129788076,0.209705890749573,217,1992,2006,"geschaetzt"
+"Vollmodell","alle, Complete Cases","nrquarterssmpl + legelec_l + XDebtGNI + DebtServGNI + ResXDebt + ExtBalGDP + GFCFGDP + USaidGDP + imf_conc_gdp + imf_noconc_gdp",-3.00102473697204,1.74987668264075,-1.71499212872714,0.0889940587917641,217,1992,2008,"geschaetzt"
+"Trunkiert","alle, Complete Cases","nrquarterssmpl + legelec_l + imf_noconc_gdp",-2.33521198283452,1.37268183132245,-1.70120411704201,0.090690951130504,288,1992,2008,"geschaetzt"
+"Trunkiert","fullsample==1","nrquarterssmpl + legelec_l + imf_noconc_gdp",-2.57041518470029,1.7226700080321,-1.49211118363674,0.138209832680952,217,1992,2006,"geschaetzt"

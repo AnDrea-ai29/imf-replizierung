@@ -2,7 +2,7 @@
 
 ## 1) Skriptname
 
-- Datei: `code/data_prep/rebuild_conditionality_1992_2008.R`
+- Datei: `code/shared/data_prep/rebuild_conditionality_1992_2008.R`
 - Zweck: Nachbau des Original-Konditionalitätsblocks 1992–2008
 - Wichtig für: Validierung des originalen Basisdatensatzes, bevor die eigene Erweiterung überhaupt ernsthaft genutzt werden kann
 

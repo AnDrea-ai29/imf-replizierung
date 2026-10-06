@@ -111,6 +111,9 @@ Kontrollsatz. Sie ersetzen die früheren Phase-B-Ergebnisse.
 | H1-Robustheit: IMF-Kreditbestand statt Nettoflüsse | -0.787 | 1.919 | 0.682 | 281 | 1992–2023 |
 | H2-Robustheit: IMF-Kreditbestand statt Nettoflüsse | -0.104 | 0.101 | 0.302 | 212 | 1992–2023 |
 | H2-Robustheit: Winsorisierung | -0.111 | 0.103 | 0.285 | 212 | 1992–2023 |
+| H1-Robustheit: Poisson-FE auf Bedingungszahl (Offset log Quartale) | -0.043 | 0.152 | 0.780 | 281 | 1992–2023 |
+| H1-Robustheit: Original-Handkorrektur unsc3 (RUS 1995/96/99, ETH 1992) | -0.933 | 1.920 | 0.628 | 281 | 1992–2023 |
+| H2-Robustheit: Original-Handkorrektur unsc3 (RUS 1995/96/99, ETH 1992) | -0.111 | 0.103 | 0.286 | 212 | 1992–2023 |
 | H2-Robustheit: Zeitfenster 1992–2008 | 0.274 | 0.104 | 0.012 | 112 | 1992–2007 |
 | H2-Robustheit: Zeitfenster 2009–2023 | -0.377 | 0.202 | 0.072 | 88 | 2009–2023 |
 
@@ -123,6 +126,18 @@ fehlende Bestandswerte als fehlend behandelt und ausschließt, lieferte für
 H1 und H2 dieselben Complete-Case-Stichproben und Schätzungen. Die
 Ergebnisse stehen in derselben Hypothesen-Tabelle unter „IMF-Kreditbestand
 statt Nettoflüsse“.
+
+Als weitere Zählmodell-Robustheit wird H1 zusätzlich als Poisson-Fixed-Effects-Modell auf der Bedingungszahl `nrcondtype_all` mit dem Logarithmus der Programmlaufzeit als Offset geschätzt (analog zu `xtpoisson` in Tabelle S2 des Originals). Der Koeffizient ist eine Semi-Elastizität: temporäre UNSC-Mitgliedschaft geht mit rund 4 Prozent weniger Bedingungen pro Quartal einher und ist wie im linearen Hauptmodell nicht signifikant. Die Stichprobe entspricht dem H1-Hauptmodell (N = 281).
+
+Als UNSC-Kodierungs-Robustheit werden die Original-Handkorrekturen
+(`replace unsc3 = 0` für RUS 1995/1996/1999 und ETH 1992 in `txt2dta7.do`),
+die der Phase-B-Nachbau bewusst nicht auf das Vollpanel anwendet, auf der
+Schätzstichprobe nachgezogen. Ergebnis: H1 ist numerisch identisch
+(-0.933), weil Russland im Modell nur Jahre mit `unsc3 = 1` beiträgt und
+das Länder-FE die innerhalb Russlands konstante Behandlung aufsaugt; H2
+ändert sich erst in der fünften Dezimalstelle (-0.1106 vs. -0.1106). Die
+kodierungsbedingte Abweichung hat damit keinen Einfluss auf die
+Phase-B-Schlüsse.
 
 Mit dem vollständigen Kontrollsatz sind H1 und die H2-Hauptinteraktion nicht
 signifikant. Die H2-Zeitfenster sind Robustheitsanalysen: im älteren Fenster
@@ -141,6 +156,31 @@ als Vergleichsgruppe; zudem kann der Dreijahreszeitraum noch in die Laufzeit
 eines Programms fallen. Beobachtungsdaten, Übersicht und Grafik werden mit
 `code/phase_b/analysis/phase_b_h4_exploration.R` unter
 `results/phase_b/exploration/` erzeugt.
+
+Eine rein deskriptive Zusatzauswertung zur Komposition der Bedingungen
+(`code/phase_b/analysis/phase_b_komposition_exploration.R`) stellt die Anteile
+rohstoff- bzw. stabilitätsklassifizierter Bedingungen nach Quartilen der
+Rohstoffexportabhängigkeit gegenüber
+(`results/phase_b/exploration/komposition_ressourcen_quartile.csv` und
+`..._unsc3.csv`). Sie nutzt das Klassifikationspanel und ist ausdrücklich
+explorativ; Arrangement-Typen werden nicht als Kontrollen verwendet.
+
+Vorangestellte deskriptive Evidenz nach dem Vorbild der
+Original-Tabelle 1 erzeugt `code/phase_b/analysis/phase_b_deskriptive_evidenz.R`:
+Mittelwerte, Standardabweichungen und Welch-t-Tests für UNSC- vs.
+Nicht-UNSC-Jahre (1992–2023), zusätzlich getrennt nach Median-Split der
+Rohstoffexportabhängigkeit für H2. Ausdrücklich deskriptiv gekennzeichnet;
+Outputs unter `results/phase_b/tables/phase_b_deskriptive_evidenz.csv` und
+`..._h2_split.csv`.
+
+Die Länderliste der temporären UNSC-Mitglieder (Wahljahr + zweijährige
+Amtszeit, entsprechend dem `unsc3`-Behandlungsfenster) erzeugt
+`code/phase_b/analysis/phase_b_unsc_mitgliederliste.R` nach dem Vorbild von
+Tabelle 1 des Originals; nur nicht-ständige Mitglieder. Output:
+`results/phase_b/tables/phase_b_unsc_mitglieder.csv`. Bekannte, dokumentierte
+Abweichung: Die drei RUS-Programmjahre 1995/1996/1999 sind im Phase-B-Panel
+als `unsc3 == 1` kodiert, während das Original sie per Handkorrektur auf 0
+setzt (ständiges Mitglied).
 
 ### Modellvergleich zur DSV-Spezifikation
 
@@ -210,6 +250,22 @@ gegenüber der publizierten Spezifikation ändert:
 - `results/phase_a/tables/original_replication_jahres_fe.csv`
 - `results/phase_a/models/model_original_fe_basis_jahres_fe.rds`
 - `results/phase_a/models/model_original_fe_voll_jahres_fe.rds`
+
+Die Supplement-Tabellen S2 und S3 (Scope-Depvar) sind als separate
+Validierungsreplikation mit
+`code/phase_a/replication/phase0_replikation_tabelleS2S3.R` umgesetzt:
+S2 schätzt `scope_0` je Spezifikation mit Länder-FE, AR(1)-GLS und Poisson-FE,
+S3 schätzt `scope_1`–`scope_3` nur mit AR(1)-GLS. Das AR(1)-GLS ist ein
+iterativer Prais-Winsten-FGLS-Nachbau mit gemeinsamem rho und
+`nrcntprogram` als Panel-Zeitindex; da keine Stata-Sollwerte für S2/S3 im
+Repo liegen, ist es dokumentiert, aber nicht zeilengleich gegen Stata
+validiert. Ergebnisse:
+`results/phase_a/tables/original_replication_tabelleS2.csv` und
+`original_replication_tabelleS3.csv`. Der UNSC-Koeffizient auf den
+Scope-Maßen ist durchweg negativ, aber in den FE- und Poisson-Schätzungen
+nicht signifikant — konsistent mit dem Originalbefund, dass der Effekt
+für den Konditionalitätsumfang schwächer ausfällt als für die
+Bedingungszahl.
 
 Im geprüften Lauf betrug der UNSC-Koeffizient im Basis-FE-Modell ohne
 Jahres-FE -2.410 (p = 0.058); mit Jahres-FE lag er bei -2.030

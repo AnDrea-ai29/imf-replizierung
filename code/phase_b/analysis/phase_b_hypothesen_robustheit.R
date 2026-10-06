@@ -131,6 +131,77 @@ fit_model <- function(dat, outcome, measure = NULL, label,
   )
 }
 
+# Poisson-FE robustness on the raw condition count with the log programme
+# duration as exposure, analogous to xtpoisson fe in DSV Table S2: instead of
+# modelling the ratio avgcondtype_count directly, the count outcome uses
+# nrquarterssmpl as offset. Coefficients are semi-elasticities of conditions
+# per quarter with respect to unsc3.
+fit_poisson <- function(dat, label, controls_used = controls) {
+  needed <- unique(c(
+    "nrcondtype_all", "nrquarterssmpl", "unsc3", controls_used, "ISO3", "Year"
+  ))
+  sample <- dat %>%
+    filter(complete.cases(across(all_of(needed)))) %>%
+    filter(nrcondtype_all >= 0, nrquarterssmpl > 0)
+  if (nrow(sample) == 0) stop("Keine Complete Cases fuer ", label)
+
+  rhs <- paste("unsc3", paste(controls_used, collapse = " + "), sep = " + ")
+  model <- tryCatch(
+    fepois(
+      as.formula(paste("nrcondtype_all ~", rhs, "| ISO3 + Year")),
+      data = sample,
+      offset = ~log(nrquarterssmpl),
+      vcov = "hetero"
+    ),
+    error = function(e) e
+  )
+  if (inherits(model, "error")) {
+    return(data.frame(
+      Spezifikation = label,
+      Modelltyp = "Poisson-FE: Bedingungszahl mit Offset log(Quartale)",
+      AV = "nrcondtype_all",
+      Mass = NA_character_,
+      Fokus_Term = "unsc3",
+      Koeffizient = NA_real_,
+      Standardfehler = NA_real_,
+      p_Wert = NA_real_,
+      n_obs = nrow(sample),
+      n_obs_pre_fe = nrow(sample),
+      n_laender = n_distinct(sample$ISO3),
+      n_unsc3 = sum(sample$unsc3 == 1),
+      n_unsc3_laender = n_distinct(sample$ISO3[sample$unsc3 == 1]),
+      Jahr_von = min(sample$Year),
+      Jahr_bis = max(sample$Year),
+      Status = paste("nicht geschaetzt:", conditionMessage(model)),
+      stringsAsFactors = FALSE
+    ))
+  }
+  tab <- coeftable(model)
+  p_col <- grep("^Pr\\(", colnames(tab), value = TRUE)[1]
+  coefficient <- if ("unsc3" %in% rownames(tab)) unname(tab["unsc3", "Estimate"]) else NA_real_
+  standard_error <- if ("unsc3" %in% rownames(tab)) unname(tab["unsc3", "Std. Error"]) else NA_real_
+  p_value <- if ("unsc3" %in% rownames(tab)) unname(tab["unsc3", p_col]) else NA_real_
+  data.frame(
+    Spezifikation = label,
+    Modelltyp = "Poisson-FE: Bedingungszahl mit Offset log(Quartale)",
+    AV = "nrcondtype_all",
+    Mass = NA_character_,
+    Fokus_Term = "unsc3",
+    Koeffizient = coefficient,
+    Standardfehler = standard_error,
+    p_Wert = p_value,
+    n_obs = nobs(model),
+    n_obs_pre_fe = nrow(sample),
+    n_laender = n_distinct(sample$ISO3),
+    n_unsc3 = sum(sample$unsc3 == 1),
+    n_unsc3_laender = n_distinct(sample$ISO3[sample$unsc3 == 1]),
+    Jahr_von = min(sample$Year),
+    Jahr_bis = max(sample$Year),
+    Status = if (is.finite(coefficient) && is.finite(standard_error) &&
+                 is.finite(p_value)) "geschaetzt" else "Term nicht schaetzbar",
+    stringsAsFactors = FALSE
+  )
+}
 results <- list(
   H1_count = fit_model(
     d, "avgcondtype_count",
@@ -174,6 +245,31 @@ results[["H2_imf_stock_reported"]] <- fit_model(
   "H2 Robustheit: berichteter IMF-Kreditbestand, fehlend ausgeschlossen",
   controls_used = reported_stock_controls
 )
+
+results[["H1_poisson"]] <- fit_poisson(
+  d,
+  label = "H1 Robustheit: Poisson-FE auf Bedingungszahl, Offset log(Quartale)"
+)
+# Original-Handkorrekturen der UNSC-Kodierung (txt2dta7.do: "replace unsc3 = 0")
+# fuer RUS 1995/1996/1999 und ETH 1992. Der Phase-B-Nachbau wendet diese
+# Korrekturen bewusst nicht auf das Vollpanel an; hier werden sie als
+# Robustheitslauf auf der Schaetzstichprobe nachgezogen. ETH 1992 liegt nicht
+# im Panel, die Korrektur ist dort ohne Wirkung; RUS betrifft 3 Faelle.
+d_hand <- d %>%
+  mutate(unsc3 = ifelse((ISO3 == "RUS" & Year %in% c(1995, 1996, 1999)) |
+                          (ISO3 == "ETH" & Year == 1992),
+                        0L, unsc3))
+cat("UNSC-Handkorrektur:", sum(d$unsc3 == 1) - sum(d_hand$unsc3 == 1),
+    "Beobachtungen von unsc3==1 auf 0 gesetzt\n")
+results[["H1_unsc_handkorrektur"]] <- fit_model(
+  d_hand, "avgcondtype_count",
+  label = "H1 Robustheit: Original-Handkorrektur unsc3 (RUS 1995/96/99, ETH 1992)"
+)
+results[["H2_unsc_handkorrektur"]] <- fit_model(
+  d_hand, "avgcondtype_count", "resource_dep",
+  "H2 Robustheit: Original-Handkorrektur unsc3 (RUS 1995/96/99, ETH 1992)"
+)
+
 # Directly comparable H1/H2 specification ladder:
 # DSV baseline controls only duration; the full model adds all nine controls.
 fit_comparison_fe <- function(dat, outcome, measure = NULL,

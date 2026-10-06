@@ -88,3 +88,42 @@ cat(
   "oder inferenzielle H3-Tests ausgefuehrt.\n",
   sep = ""
 )
+
+# ---------------------------------------------------------------------------
+# Vergleichsansicht (sortierte Ansicht der deskriptiven UNSC-Luecken):
+# Laender mit beobachteter Zaehl-AV in UNSC-Jahren, sortiert nach
+# Konditionalitaet in UNSC-Jahren; Nicht-UNSC-Jahre als Vergleichsspalte.
+# Hinweis: positive Luecken spiegeln v.a. die Epochenverschiebung (Post-2008-
+# Konditionalitaet), da UNSC-Fenster mit Programmen stark ungleich ueber die
+# Zeit verteilt sind. Rein deskriptiv (explorativ), keine Inferenz.
+# ---------------------------------------------------------------------------
+vergleich <- panel %>%
+  filter(!is.na(avgcondtype_count)) %>%
+  group_by(ISO3) %>%
+  summarise(
+    country = first(country),
+    n_obs_unsc3 = sum(unsc3 == 1L & !is.na(avgcondtype_count)),
+    mean_count_unsc3 = mean_or_na(avgcondtype_count[unsc3 == 1L]),
+    n_obs_non_unsc3 = sum(unsc3 == 0L & !is.na(avgcondtype_count)),
+    mean_count_non_unsc3 = mean_or_na(avgcondtype_count[unsc3 == 0L]),
+    descriptive_unsc3_gap = if (n_obs_unsc3 > 0L && n_obs_non_unsc3 > 0L) {
+      mean_count_unsc3 - mean_count_non_unsc3
+    } else {
+      NA_real_
+    },
+    .groups = "drop"
+  ) %>%
+  filter(n_obs_unsc3 > 0L) %>%
+  arrange(desc(mean_count_unsc3))
+
+vergleich_path <- file.path(output_dir, "h3_vergleichsansicht.csv")
+write.csv(vergleich, vergleich_path, row.names = FALSE, na = "")
+
+cat("\nVergleichsansicht (sortiert nach Konditionalitaet in UNSC-Jahren):\n")
+print(
+  head(vergleich[, c("ISO3", "country", "n_obs_unsc3", "mean_count_unsc3",
+                     "n_obs_non_unsc3", "mean_count_non_unsc3",
+                     "descriptive_unsc3_gap")], 10),
+  digits = 3, row.names = FALSE
+)
+cat("Ausgabe:", vergleich_path, "\n")

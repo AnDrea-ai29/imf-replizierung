@@ -1,0 +1,21 @@
+"Mass","Ebene","n","Perzentil","Wert","Land_beim_Perzentil"
+"Bedingungen pro Quartal","Land-Jahre (Panel)",526,0,0.1,
+"Bedingungen pro Quartal","Land-Jahre (Panel)",526,0.25,4.9,
+"Bedingungen pro Quartal","Land-Jahre (Panel)",526,0.5,8.1,
+"Bedingungen pro Quartal","Land-Jahre (Panel)",526,0.75,13.5,
+"Bedingungen pro Quartal","Land-Jahre (Panel)",526,1,59.1,
+"Bedingungen pro Quartal","Laender (Mittel je Land)",104,0,2,"MALDIVES (MDV)"
+"Bedingungen pro Quartal","Laender (Mittel je Land)",104,0.25,7.2,"grenada (GRD)"
+"Bedingungen pro Quartal","Laender (Mittel je Land)",104,0.5,9.5,"algeria (DZA)"
+"Bedingungen pro Quartal","Laender (Mittel je Land)",104,0.75,12.5,"ghana (GHA)"
+"Bedingungen pro Quartal","Laender (Mittel je Land)",104,1,40.5,"PORTUGAL (PRT)"
+"Gesamtbedingungen je Programm","Land-Jahre (Panel)",526,0,1,
+"Gesamtbedingungen je Programm","Land-Jahre (Panel)",526,0.25,43,
+"Gesamtbedingungen je Programm","Land-Jahre (Panel)",526,0.5,74,
+"Gesamtbedingungen je Programm","Land-Jahre (Panel)",526,0.75,147.8,
+"Gesamtbedingungen je Programm","Land-Jahre (Panel)",526,1,823,
+"Gesamtbedingungen je Programm","Laender (Mittel je Land)",104,0,16,"slovak republic (SVK)"
+"Gesamtbedingungen je Programm","Laender (Mittel je Land)",104,0.25,66.5,"lesotho (LSO)"
+"Gesamtbedingungen je Programm","Laender (Mittel je Land)",104,0.5,97.9,"georgia (GEO)"
+"Gesamtbedingungen je Programm","Laender (Mittel je Land)",104,0.75,140.3,"yugoslavia (SRB)"
+"Gesamtbedingungen je Programm","Laender (Mittel je Land)",104,1,527,"PORTUGAL (PRT)"

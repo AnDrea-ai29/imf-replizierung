@@ -1,0 +1,3 @@
+"Rohstoffgruppe","resource_dep_grenze","n_nicht_unsc","mean_nicht_unsc","sd_nicht_unsc","n_unsc","mean_unsc","sd_unsc","differenz","p_welch"
+"hohe Rohstoffabhaengigkeit (> Median)",11.81,182,10.8966394582568,8.30924047566418,16,12.4093513257576,6.80661549351512,1.51271186750076,0.413517262731969
+"niedrige Rohstoffabhaengigkeit (<= Median)",11.81,182,10.5202333726211,8.66557201940091,16,12.8484918727106,15.3618747199031,2.32825850008956,0.558329237902763

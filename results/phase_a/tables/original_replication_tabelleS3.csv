@@ -1,0 +1,16 @@
+"AV","Spezifikation","Sample","Regressoren","gls_coef","gls_se","gls_t","gls_rho","gls_n","gls_iterations","gls_konvergiert"
+"scope_1","Basis","alle","unsc3 + nrquarterssmpl",-1.47368603160368,0.588730717821872,-2.5031580432152,-0.374944004351976,314,11,TRUE
+"scope_1","Basis","fullsample==1","unsc3 + nrquarterssmpl",-2.44331602945566,0.827689185925012,-2.9519728794391,-0.543495704698837,217,14,TRUE
+"scope_1","Vollmodell","alle, Complete Cases","unsc3 + nrquarterssmpl + legelec_l + XDebtGNI + DebtServGNI + ResXDebt + ExtBalGDP + GFCFGDP + USaidGDP + imf_conc_gdp + imf_noconc_gdp",-2.55734906574785,0.825463058356168,-3.09807815123861,-0.590080392006319,217,15,TRUE
+"scope_1","Trunkiert","alle, Complete Cases","unsc3 + nrquarterssmpl + ResXDebt",-1.47798174650726,0.666297424717374,-2.21820119916295,-0.445351666609818,281,12,TRUE
+"scope_1","Trunkiert","fullsample==1","unsc3 + nrquarterssmpl + ResXDebt",-2.43309835558041,0.817261213522622,-2.97713670405706,-0.560786677086973,217,14,TRUE
+"scope_2","Basis","alle","unsc3 + nrquarterssmpl",0.0426889800095187,0.580751356860959,0.0735064662444501,-0.173880570756535,314,10,TRUE
+"scope_2","Basis","fullsample==1","unsc3 + nrquarterssmpl",-0.620072279630943,0.796859627612544,-0.778144930605569,-0.244834420466862,217,11,TRUE
+"scope_2","Vollmodell","alle, Complete Cases","unsc3 + nrquarterssmpl + legelec_l + XDebtGNI + DebtServGNI + ResXDebt + ExtBalGDP + GFCFGDP + USaidGDP + imf_conc_gdp + imf_noconc_gdp",-0.951194696965465,0.789488089625004,-1.20482463189187,-0.302817960861551,217,14,TRUE
+"scope_2","Trunkiert","alle, Complete Cases","unsc3 + nrquarterssmpl + ResXDebt",0.00668717892354462,0.665514823044115,0.0100481291956157,-0.191141620576081,281,11,TRUE
+"scope_2","Trunkiert","fullsample==1","unsc3 + nrquarterssmpl + ResXDebt",-0.620731006962327,0.800339043952397,-0.775585061921891,-0.244813758448295,217,11,TRUE
+"scope_3","Basis","alle","unsc3 + nrquarterssmpl",0.405454978019123,0.543613569636072,0.745851466310084,0.00514205501457416,314,8,TRUE
+"scope_3","Basis","fullsample==1","unsc3 + nrquarterssmpl",-0.479222259576978,0.67947708427416,-0.705280973660648,-0.20676946533677,217,11,TRUE
+"scope_3","Vollmodell","alle, Complete Cases","unsc3 + nrquarterssmpl + legelec_l + XDebtGNI + DebtServGNI + ResXDebt + ExtBalGDP + GFCFGDP + USaidGDP + imf_conc_gdp + imf_noconc_gdp",-0.555976686789611,0.684062317294504,-0.812757365423259,-0.217478439975945,217,14,TRUE
+"scope_3","Trunkiert","alle, Complete Cases","unsc3 + nrquarterssmpl + ResXDebt",0.305352106793567,0.591655644209131,0.516097682464828,-0.0123263003757016,281,9,TRUE
+"scope_3","Trunkiert","fullsample==1","unsc3 + nrquarterssmpl + ResXDebt",-0.49591882917684,0.681610124942642,-0.727569634061073,-0.207709710402992,217,11,TRUE

@@ -1,7 +1,17 @@
-\documentclass[ngerman]{scrartcl}
+% !TEX program = xelatex
+\documentclass[12pt,ngerman]{scrartcl}
 \usepackage{microtype}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setkomafont{disposition}{\rmfamily\bfseries}
+\setkomafont{section}{\normalsize\bfseries}
+\setkomafont{subsection}{\normalsize\bfseries}
+\setkomafont{subsubsection}{\normalsize\bfseries}
+\setkomafont{paragraph}{\normalsize\bfseries}
+\setkomafont{subparagraph}{\normalsize\bfseries}
+\setkomafont{caption}{\normalsize}
+\setkomafont{captionlabel}{\normalsize\bfseries}
+\setkomafont{title}{\rmfamily\bfseries\normalsize}
 \setlength{\parskip}{\medskipamount}
 \setlength{\parindent}{0pt}
 \usepackage{babel}
@@ -21,26 +31,18 @@ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false, breaklinks=false,pdf
 \usepackage{graphicx}
 \usepackage{titling}
 \usepackage{csquotes}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{array}
 \MakeOuterQuote{"}
 \usepackage[
-backend=bibtex,              
-style=authoryear,
-sorting=nyt,                 
-giveninits=false,           
-dashed=false  
+backend=biber,
+style=apa,
+sorting=nyt
 ]{biblatex}
+\DeclareLanguageMapping{ngerman}{ngerman-apa}
 
 % % % % % % % % % % % % % % % % % % % % %
-%Schriften - nur eine auskommentieren
-%Latin Modern - Standard
-%\usepackage{lmodern}
-%Times Roman für strenge Dozenten
-\usepackage{mathptmx}
-\renewcommand{\familydefault}{\rmdefault}
-%Garamond - sieht toll aus, aber eher exotisch
-%\usepackage[cmintegrals,cmbraces]{newtxmath}\usepackage{ebgaramond-maths}\usepackage{helvet}
-
-
 % Zeilenabstand
 \usepackage{setspace}
 \onehalfspacing % 1,5-facher Zeilenabstand für den gesamten Text
@@ -60,18 +62,7 @@ right=3.5cm   % Rechter Rand
 
 
 
-% % % % % % % % % % % % % % % % % % % % %
-%LITERATUR
-%Fußnote _ODER_ Amerikanisch auskommentieren
-
-%Amerikanische In-Text-Zitierweise
-%\usepackage[backend=biber,style=authoryear,maxcitenames=1]{biblatex}
-\renewcommand{\cite}{\parencite}
-
-%Deutsches Fußnotensystem
-%\usepackage[backend=biber,style=authortitle-dw,firstfull,maxcitenames=1]{biblatex}\DeclareFieldFormat{title}{\mkbibemph{#1}}\DeclareFieldFormat{citetitle}{\mkbibemph{#1}}\renewcommand{\cite}{\footcite}
-
-%Ressource
+% Literatur
 \addbibresource{literatur.bib}
 % % % % % % % % % % % % % % % % % % % % %
 \makeatletter
@@ -80,77 +71,94 @@ right=3.5cm   % Rechter Rand
 	\input{titlepage.tex}
 	\clearpage
 	%\tableofcontents
+% TODO: Klaeren, ob ein Inhaltsverzeichnis gefordert ist.
 	\clearpage
 	
 	\section{Einleitung}
 	\label{sec:einleitung}
 	\noindent
 	\textbf{Problemstellung:} Hier die zentrale Forschungsfrage, Relevanz und Ausgangslage der Arbeit eintragen.
+% SLOT EI-1 — Problemstellung / Forschungsfrage (3-4 eigene Saetze)
+% Muss enthalten: (a) IMF-Konditionalitaet praegt Politik im Globalen
+% Sueden; (b) umkaempfte Frage: Ist die Strenge politisch ungleich
+% verteilt? (Stone-Linie; DSV 2015 zeigen fuer 1992-2008 einen
+% UNSC-"Rabatt" von rund 30 Prozent \parencite[121]{DreherPoliticsIMFConditionality2015});
+% (c) Forschungsfrage: haelt dieser Befund ueber den Originalzeitraum
+% hinaus? (d) Relevanz: Rueckkehr des IMF als Kreditgeber nach der
+% Finanzkrise \parencite[545]{KentikelenisIMFConditionalityDevelopment2016}.
+% SLOT EI-2 — Forschungsstand-Kurzabriss (2-3 eigene Saetze, optional)
+% Drei Strassen: (1) Determinanten von IMF-Vergabe und Strenge
+% \parencite{BarroIMFProgramsWho2005} (Auswahlmechanik) und Stone-Linie
+% (Geopolitik); (2) Entwicklung der Konditionalitaet
+% \parencite[545]{KentikelenisIMFConditionalityDevelopment2016};
+% (3) DSV 2015 als Ausgangspunkt der eigenen Replikation.
 	
 	\medskip
 	\textbf{Ziel der Arbeit:} Hier kurze Einordnung der Forschungsfrage, des Beitrags und der zentralen Hypothesen formulieren.
+% SLOT EI-3 — Ziel und Beitrag (2-3 eigene Saetze)
+% Muss enthalten: Replikation des DSV-Designs mit ERWEITERTem
+% Zeitraum 1992-2023 bei identischer Messregel; Vorab-Kennzeichnung
+% der Testhierarchie (H1/H2 konfirmatorisch, H3 explorativ, H4 nicht
+% konfirmatorisch — Anti-HARKing); Kernbefund als Vorankuendigung:
+% keine Evidenz fuer den UNSC-Effekt im erweiterten Zeitraum, der
+% Effekt ist zeitlich in den 1990ern lokalisiert.
 	
 	\medskip
 	\textbf{Aufbau der Arbeit:} Ein kurzer Absatz zur Gliederung in Theorie, Daten, Ergebnisse, Diskussion und Fazit.
+% SLOT EI-4 — Aufbau (1 Absatz)
+% Roten Faden sichtbar machen: Theorie (Konditionalitaet ->
+% politische Oekonomie -> Dependenztheorie -> Hypothesen) -> Daten &
+% Methodik (Phase-A-Validierung + Phase-B-Panel, Messregeln,
+% Abweichungen vom Original) -> Ergebnisse (H1/H2 konfirmatorisch,
+% H3/H4 explorativ) -> Diskussion (1990er-Befund, Limitationen,
+% Ausblick) -> Fazit.
 	
 	\section{Theorie}
 \label{sec:theorie}
-\subsection{Theoretischer Rahmen}
-Hier den theoretischen Hintergrund, zentrale Konzepte und die Argumentationslogik eintragen.
 
-\subsection{Hypothesen oder zentrale Erwartungen}
-Hier die empirischen Erwartungen der Arbeit explizit formulieren.
+		\input{sections/theorie.tex}
+
+
 \section{Daten und Methodik}
 \label{sec:methodik}
-\subsection{Datenbasis}
-Beschreibung der Daten, Zeitraum, Länder, Variablen und Quellen.
 
-Die Quartalsvariable operationalisiert die Programmdauer als die im Sample relevante Anzahl von 90-Tage-Perioden. Dabei wird die Laufzeit durch Rundung auf die nächstliegende ganze Zahl transformiert, damit die Messung mit der Originaldefinition der DSV-Replikation übereinstimmt und kleine Datumsabweichungen nicht als reale inhaltliche Unterschiede interpretiert werden.
+		\input{sections/daten-methodik.tex}
 
-„Zeilenzählung ohne Dedup“ bedeutet, dass die ursprüngliche Bedingungszählung auf der Ebene einzelner MONA-Einträge durchgeführt wird, ohne vorab doppelte Einträge zu entfernen. Diese Vorgehensweise ist erforderlich, um die Originalmessung und damit die Validierung gegen den Referezdatensatz exakt zu reproduzieren.
-
-Definition nach Codebook für Rohstoff-Klassifikation:
-rohstoff\_final = 1 nur wenn der Gegenstand der Bedingung der Extraktivsektor ist: Öl, Gas, Bergbau, Mineralien, Kraftstoffe — einschließlich fiskalischer Operationen mit explizitem Öl-/Mineral-Bezug (Ölpreis-Fonds, Öl-Parastatal-Zahlungen, Petroleum-Steuer).
-Nicht rohstoff: Bank-Privatisierung, allgemeine Export-/Zoll-Bedingungen, Agrar (z. B. „sugar and edible oils"), Strom/Energie ohne Extraktiv-Bezug („energy sector" → gehört zur breiteren Sensitivitätskategorie, nicht zur engen).
-
-
-\subsection{Messung und Modellstrategie}
-Hier die Operationalisierung, abhängige und unabhängige Variablen sowie Schätzmodell(e) beschreiben.
-
-\subsection{Robustheitschecks}
-Angaben zu Alternative Spezifikationen, Sensitivitätsanalysen oder Heterogenitätschecks.
-	
 	\section{Ergebnisse}
 \label{sec:ergebnisse}
-\subsection{Hauptbefunde}
-Hier die wichtigsten Schätzergebnisse in zusammengefasster Form darstellen.
 
-\subsection{Interpretation}
-Interpretation der Richtung, Stärke und Bedeutung der Effekte in der Sprache der Forschung.
-
-
-In den Robustness-Checks zeigt sich kein stabiler signifikanter Effekt von UNSC-Mitgliedschaft, Ressourcenabhängigkeit 
-oder ihrer Interaktion auf die IMF-Konditionalität. 
-Die Ergebnisse sind insgesamt inkonsistent und sprechen eher gegen einen robusten Moderationseffekt.
-
-Das heißt: Die Daten liefern in diesem Spezifikationsrahmen keine belastbare Evidenz für einen signifikanten Haupteffekt 
-oder einen signifikanten gemeinsamen Effekt.
-
-
+		\input{sections/ergebnisse.tex}
 
 \section{Diskussion}
 \label{sec:diskussion}
-Diskussion der Befunde im Lichte der Theorie, der bestehenden Literatur und möglicher Limitationen.
 
-\subsection{Beitrag der Arbeit}
-Hier der wissenschaftliche Beitrag der Studie und die zentrale Botschaft der Analyse formulieren.
-	
+		\input{sections/diskussion.tex}
+
 	\section{Fazit}
+% NOTIZ (Fazit-Checkliste — vor Abgabe aufloesen):
+% 1. Kernbefunde H1/H2 in 2-3 Saetzen zusammenfassen — KEINE neuen
+%    Zahlen, keine neuen Argumente; das Fazit fasst nur zusammen.
+% 2. Zeitliche Einordnung als roten Faden nennen: Effekt der 1990er,
+%    kein Artefakt der IMF-Inaktivitaet (Nachkrisen-Kreditvergabe).
+% 3. Beitrag der Arbeit: Replikation mit Zeiterweiterung; explizite
+%    Explorationsstruktur H3/H4 als methodische Sauberkeit.
+% 4. Limitationen in 1-2 Saetzen (kleine UNSC-Zellen,
+%    Klassifikationsunsicherheit, Datenluecken bei resource_dep).
+% 5. Ausblick: konfirmatorische Kompositionshypothese mit
+%    belastbarerer Klassifikation; ggf. Zeitfenster-Projektion.
 	
 	
-	
+	\section{Appendix}
 	\onehalfspacing
-	%\input{/pfad/zum/inhalt}
+	\input{figures/phase_b/phase_b_h1_ergebnisse.tex}
+	\input{figures/phase_b/phase_b_h1_modellvergleich.tex}
+	\input{figures/phase_b/phase_b_h2_ergebnisse.tex}
+	\input{figures/phase_b/phase_b_h2_modellvergleich.tex}
+	\input{figures/phase_b/phase_b_h3_laenderprofile.tex}
+	\input{figures/phase_b/phase_b_h4_ergebnisse.tex}
+	\input{figures/phase_b/phase_b_h4_modellvergleich.tex}
+	\input{figures/phase_b/phase_b_hypothesen_robustheit.tex}
+	\input{figures/phase_b/phase_b_modellvergleich.tex}
 	
 	
 	

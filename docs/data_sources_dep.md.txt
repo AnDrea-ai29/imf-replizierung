@@ -1,69 +1,106 @@
 #Datenquellen-Übersicht (Dependenz-Version)
 
 **Erstellt:** 2026-09-13
+**Letzte Aktualisierung:** 2026-10-05
 **Issue:** #0b
 
 ## 1. Originalstudie (JCR Replication/JCR_MONA_usage/ oder ../JCR-MONA_Data)
-- [X] Original-Datensatz gefunden: `<Dreher_Sturm_Vreeland_JCR.dta>`
-- [X] Codebook erstellt: `<CODEBOOK_MONA.md>`
+- [X] Original-Datensatz gefunden: `<Dreher_Sturm_Vreeland_JCR.dta>` (data/final/)
+- [X] Codebook erstellt: `<docs/CODEBOOK_MONA.md>`
 - [X] Original-Code gefunden: `<Dreher_Sturm_Vreeland_JCR.do>`, `<MergeActionImplementation.do>`, `<txt2dta7.do>`
 - Enthaltene Variablen: `unsc`, `avgcondtype_all`, `XDebtGNI`, `DebtServGNI`, `ResXDebt`, `GFCFGDP`, `ExtBalGDP`
 - Zeitraum Original: 1992–2008
 - **Codes für Kontrollvariablen (aus Original übernehmen):**
-  - XDebtGNI = `<DT_DOD_DECT_GN_ZS>`
-  - DebtServGNI = `<DT_TDS_DECT_GN_ZS>`
-  - ResXDebt = `<FI_RES_TOTL_DT_ZS>`
-  - ExtBalGDP = `<NE_RSB_GNFS_ZS>`
-  - GFCFGDP = `<NE_GDI_FTOT_ZS>`
-  - nomGDPUSD = `<NY_GDP_FCST_CD>`
+  - XDebtGNI = `<DT.DOD.DECT.GN.ZS>`
+  - DebtServGNI = `<DT.TDS.DECT.GN.ZS>`
+  - ResXDebt = `<FI.RES.TOTL.DT.ZS>`
+  - ExtBalGDP = `<NE.RSB.GNFS.ZS>`
+  - GFCFGDP = `<NE.GDI.FTOT.ZS>`
+  - nomGDPUSD = `<NY.GDP.FCST_CD>`
   - USaidGDP = abgeleitet aus `100*1000000*usaid/nomGDPUSD`
   - imf_conc_gdp = abgeleitet aus `100*imf_conc/gdp_cur` [siehe Zeile 753-759]
   - imf_noconc_gdp = abgeleitet aus `100*imf_noconc/gdp_cur` [siehe Zeile 753-759]
 
-## 2. MONA-Daten (Combined.xlsx)
-- [X] Datei vorhanden unter: `C:/Users/HP/io/MONA/Combined.xlsx`
-- Enthält: `Country Name`, `Country Code`, `Arrangement Number`, `Arrangement Type`,
-  `Approval date`, `Revised End Date`, `Initial End Date`, `Key Code`
-- Daten verfügbar ab: 2002
-- Anzahl Länder: `102`
-- Anzahl Programme (2002–2025): `14` ()
-
-## 3. WDI-Indikatoren (Rohstoffabhängigkeit – NEU)
-   Variable | WDI-Code | Verfügbar ab | Verfügbar bis | Abdeckung Afrika | Status |
- |----------|----------|-------------|---------------|-----------------|--------|
- | FuelExportPct | TX.VAL.FUEL.ZS.UN | <1962> | <2025> | <von 54 Ländern> | ☐ |
- | MineralExportPct | TX.VAL.MMTL.ZS.UN | <1962> | <2025> | <von 54 Ländern> | ☐ |
- | nomGDPUSD | NY.GDP.MKTP.CD | <1960> | <2025> | <von 54 Ländern> | ☐ |
-
-- [X] alle 3 Indikatoren für 2002–2025 abrufbar
+## 2. MONA-Daten
+- [X] Historische Zeilen (1992–2008): `data/raw/original/construction/Data MONA.dta`
+  - [X] Validierter DSV-Nachbau: `data/processed/conditionality_dsv_1992_2008.csv`
+  - [X] Zähl-Einheit: eine MONA-Zeile = eine Bedingung (keine nachträgliche Deduplizierung)
+- [X] Moderne Zeilen (2009–2025): `data/raw/mona/Combined_ISO.xlsx` (ISO3-bereinigt)
+  - Phase-B-Modelle nutzen daraus nur Bewilligungsjahre bis einschließlich 2023
 - [X] Download-Link gespeichert: `<https://databank.worldbank.org/reports.aspx?source=2&series=DT.DOD.DECT.GN.ZS&country=#>`
-- **Berechnung:** `Rohstoffabhängigkeit = FuelExportPct + MineralExportPct`
 
-**Anmerkung:** alle anderen Kontrollvariablen besitzen die gleichen WDI-Codes wie im Original
+## 3. WDI-Kontrollpanel (alle Länder, 1990–2025)
+Aufbau: `code/shared/data_prep/build_controls_wdi.R` → Output `data/processed/controls_wdi_1990_2025.csv`
+Rohdaten: `data/raw/wdi/Data_all/*.csv` (je Serie durchgehend 1990–2025)
 
-## 4. UNSC-Mitgliedsdaten (2002–2025)
-- [X] Datei vorhanden unter: `C:\Users\HP\io\imf-replizierung\data\unsc`
-- Enthält: `ID`, `Year`, `Security Council Member`, `Last Update`
-- Quelle: `Peace Security Data Hub`
-- [X] Vorhanden bis 2008 (aus Originaldatensatz)
-- [X] Ergänzt für 2009–2024 
+| Variable | WDI-Code | Bedeutung |
+|----------|----------|-----------|
+| ExtBalGDP | NE.RSB.GNFS.ZS | Leistungsbilanz, % BIP |
+| XDebtGNI | DT.DOD.DECT.GN.ZS | Gesamtverschuldung, % BNE |
+| GFCFGDP | NE.GDI.FTOT.ZS | Bruttoinvestitionen, % BIP |
+| DebtServGNI | DT.TDS.DECT.GN.ZS | Schuldendienst, % BNE |
+| ResXDebt | FI.RES.TOTL.DT.ZS | Devisenreserven, % Gesamtschuld |
+| NetUSAid | DC.DAC.USAL.CD | US-Entwicklungshilfe, Nettoflüsse in US$ |
+| nomGDP | NY.GDP.MKTP.CD | BIP laufende US$ |
+| imf_conc | DT.NFL.IMFC.CD | Konzessionäre IMF-Nettoflüsse, US$ |
+| imf_noconc | DT.NFL.IMFN.CD | Nicht-konzessionäre IMF-Nettoflüsse, US$ |
+| UseIMFCredit | DT.DOD.DIMF.CD | IMF-Kreditbestand (DOD), US$ |
+| ExportGDP | NE.EXP.GNFS.ZS | Exporte, % BIP (Handelsoffenheit; Placebo für H2) |
+| FuelExportPct | TX.VAL.FUEL.ZS.UN | Treibstoffexporte, % Warenexporte |
+| MineralExportPct | TX.VAL.MMTL.ZS.UN | Erze/Metall-Exporte, % Warenexporte |
+| legelec | DPI (Database of Political Institutions) | Legislativwahljahr |
+
+**Berechnete Variablen (build_controls_wdi.R):**
+- `USaidGDP = 100 * NetUSAid / nomGDP`
+- `imf_conc_gdp = 100 * imf_conc(NA→0) / nomGDP`; `imf_noconc_gdp` analog
+  - DSV-Regel: NA → 0 vor der Division (DSV-Konvention, auf Nettoflüsse übertragen)
+- `imf_sum_gdp = imf_conc_gdp + imf_noconc_gdp`
+- `UseIMFCredGDP = 100 * UseIMFCredit(NA→0) / nomGDP`
+  - Alternatives IMF-Maß (Kreditbestand statt Nettoflüsse), nur für Robustheitsspezifikationen
+- `resource_dep = FuelExportPct + MineralExportPct`
+  - Fehlende WDI-Werte bleiben NA (keine Null-Ersetzung)
+- `legelec_l = legelec im Kalenderjahr t-1` (Konstruktion exakt nach txt2dta7.do; DPI-2023-Stand, Serie läuft nur bis 2023)
+
+- [X] Vintage-Validierung gegen Original-.dta (1992–2008):
+  `results/shared/tables/wdi_kontrollen_vintage_check.csv`
+
+## 4. UNSC-Mitgliedschaft (global, 1946–2026)
+- [X] Quelle: `Peace Security Data Hub` → `data/raw/unsc/DPPA-SCMembership.csv`
 - [X] Download-Link gespeichert: `<https://psdata.un.org/dataset/DPPA-SCMEMBERSHIP>`
-- **Wichtig:** 
-> Nur temporäre Mitglieder heraussuchen (keine ständigen: USA, UK, Frankreich, Russland, China)
-> 33 afrikanische Länder mit temporärer Mitgliedschaft 2000–2027
-> Sudan: NICHT enthalten (nie gewählt 2000–2025)
-> unsc3 = 1 für Mitgliedschaft in Jahr t ODER t-1 (zweijährige Amtszeit)
+- [X] `code/shared/data_prep/create_unsc_correct.R`:
+  - DPPA-Namen → ISO3 (Override-Tabelle für historische/abweichende Ländernamen)
+  - Vollständiges Jahr-Panel für alle WDI-Länder; Nicht-Mitgliedschaft = 0
+  - Output: `data/raw/unsc/unsc_membership_ISO3_correct.csv`
+- [X] `code/shared/data_prep/build_unsc_dsv_rule.R` → `data/processed/unsc_dsv_rule_1946_2026.csv`
+- **Wichtig:**
+> Nur temporäre Mitglieder (keine ständigen: USA, UK, Frankreich, Russland, China)
+> `unsc3_dsv = 1` für Mitgliedschaft in Jahr t ODER t+1 (DSV-Regel, "election year included",
+> verifiziert gegen `rebuild_conditionality_1992_2008.R`)
+> Handkorrekturen des Originals (AETH 1992, RUS 1995/1996/1999) betreffen nur dessen
+> Programm-Subsample und werden NICHT auf das Vollpanel angewandt
 
+## 5. Phase-B-Panel und Zielvariable
+- [X] Aufbau: `code/phase_b/data_prep/build_phase_b_identical_measurement.R`
+  → `data/processed/phase_b_panel_identical_measurement_1992_2025.csv`
+  (543 Land-Jahre aus 116 Ländern; Modelljahre nur 1992–2023)
+- **Berechnung der Zielvariable:**
+> `avgcondtype_count = nrcondtype_all / nrquarterssmpl`
+> `nrcondtype_all`: MONA-Zeilen je Land und Bewilligungsjahr summiert
+> `nrquarterssmpl`: maximale Programmlaufzeit des Land-Jahres in gerundeten
+> 90-Tage-Quartalen (mind. 1), Fenster 31.03.1992–31.12.2025
+> Bewusst anders benannt als das Original-`avgcondtype_all`, um Verwechslungen zu vermeiden
+- [X] H2-Interaktion: `unsc3_dsv × resource_dep`
+- [X] H4-Exploration (deskriptiv, kein Hypothesentest):
+  `resource_dep_change_pp = resource_dep(t+3) − resource_dep(t)`
+  (`code/phase_b/analysis/phase_b_h4_exploration.R`, Spearman-Korrelation)
 
-## 5. Afrikanische Länderliste
-- [X] ISO-Codes  für alle 54 afrikanischen Länder erstellt (→ an #0c übergeben)
-- Quelle: [UN M49 – Africa](https://unstats.un.org/unsd/methodology/m49/)
-- **Hinweis:** 
-> im Originaldatensatz sind wdicode und idcnt angegeben
-> ISO-Codes für 61 afrikanische Länder
-> Ein Land kann in einem Jahr mehrfach vorkommen, wenn es mehrere Sitze gibt (ständige + temporäre Mitglieder)
-> temporäre Mitglieder wechseln alle 2 Jahre (5 Sitze pro Jahr)
-
-## 6. Fehlende Daten / Probleme
-- `<hier eventuelle Lücken oder nicht verfügbare Indikatoren notieren>`
-- `<Länder mit fehlenden Rohstoffdaten identifizieren>`
+## 6. Fehlende Daten / Konzeptabweichungen
+- IMF-Serien sind Nettoflüsse (DT.NFL.*), im Original Kreditbestand: Konzeptabweichung,
+  Korrelation mit Originalvintage 0.65/0.35; `UseIMFCredGDP` als alternative Robustheit
+- `USaidGDP`: Abweichung zum Original (dort Faktorkosten-BIP und Aid in Mio. US$);
+  Median-Abweichung −14 %
+- DPI läuft nur bis 2023; nicht parsbare DPI-Zeilen (Chile 2014–2017) wurden verworfen
+  (außerhalb des Original-Zeitraums)
+- Fehlende Kontrollwerte bleiben NA; Modelle schätzen auf vollständige Fälle, deshalb können
+  Schätzjahre vom Panelzeitraum abweichen
+- Länder mit fehlenden Rohstoffdaten identifizieren (NA bleibt NA, kein Ersatz durch 0)

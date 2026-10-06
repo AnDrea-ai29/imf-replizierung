@@ -1,0 +1,35 @@
+% LaTeX table fragment. Requires \usepackage[utf8]{inputenc}, \usepackage{booktabs,longtable,array}, and \usepackage{pdflscape}.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{landscape}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3.5cm}>{\raggedleft\arraybackslash}p{1.80cm}>{\raggedleft\arraybackslash}p{1.80cm}>{\raggedleft\arraybackslash}p{1.80cm}>{\raggedleft\arraybackslash}p{1.80cm}>{\raggedleft\arraybackslash}p{1.80cm}>{\raggedleft\arraybackslash}p{1.80cm}}
+\caption{Phase B: Gesamtvergleich der Modellspezifikationen (1992–2023)}\label{tab:phase-b-model-comparison}\\
+\toprule
+Spezifikation & Effekt & Schaetzer & Robuster\_SE & p\_Wert & N & Jahre
+ \\
+\midrule
+\endfirsthead
+\toprule
+Spezifikation & Effekt & Schaetzer & Robuster\_SE & p\_Wert & N & Jahre
+ \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{r}{Fortsetzung auf der naechsten Seite}\\
+\endfoot
+\bottomrule
+\endlastfoot
+H1 Basismodell: Länder-FE, nur nrquarterssmpl & unsc3 & -0.454 & 1.854 & 0.806 & 514 & 1992--2023 \\
+H1 Vollmodell: Länder-FE, DSV-Kontrollen & unsc3 & 0.144 & 2.816 & 0.959 & 282 & 1992--2023 \\
+H1 Vollmodell: Länder- und Jahres-FE & unsc3 & -0.933 & 1.920 & 0.628 & 281 & 1992--2023 \\
+H1 Vollmodell: DSV-nahes GLS & unsc3 & 0.046 & 1.422 & 0.974 & 282 & 1992--2023 \\
+H2 Basismodell: Länder-FE, nur nrquarterssmpl & unsc3:resource\_dep & 0.060 & 0.078 & 0.439 & 380 & 1992--2023 \\
+H2 Vollmodell: Länder-FE, DSV-Kontrollen & unsc3:resource\_dep & -0.055 & 0.132 & 0.677 & 212 & 1992--2023 \\
+H2 Vollmodell: Länder- und Jahres-FE & unsc3:resource\_dep & -0.111 & 0.103 & 0.286 & 212 & 1992--2023 \\
+H2 Vollmodell: DSV-nahes GLS & unsc3:resource\_dep & -0.014 & 0.067 & 0.841 & 212 & 1992--2023 \\
+\end{longtable}
+\noindent\footnotesize Basismodelle, DSV-Vollmodelle, Zwei-Wege-FE-Modelle und DSV-nahe GLS-Spezifikationen für H1/H2.\par
+\end{landscape}
+\endgroup
+

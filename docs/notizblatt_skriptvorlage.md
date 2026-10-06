@@ -56,12 +56,9 @@ Wichtige Fragen:
 
 ## 6) Kritische Begriffe
 
-- Gate:
-- Granularität:
-- unsc3:
-- Review-Join:
-- resource_dep:
-- Rohstoff-Klassifikation:
+Welche Begriffe kommen neu vor? 
+Welche Begriffe kommen häufig vor?
+Hinter welchen Begriffen steckt eine komplizierte Berechnung?
 
 ## 7) Wichtige Formeln / Variablen
 

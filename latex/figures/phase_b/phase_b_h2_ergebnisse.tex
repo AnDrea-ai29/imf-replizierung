@@ -1,0 +1,36 @@
+% LaTeX table fragment. Requires \usepackage[utf8]{inputenc}, \usepackage{booktabs,longtable,array}, and \usepackage{pdflscape}.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{landscape}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3.5cm}>{\raggedleft\arraybackslash}p{1.54cm}>{\raggedleft\arraybackslash}p{1.54cm}>{\raggedleft\arraybackslash}p{1.54cm}>{\raggedleft\arraybackslash}p{1.54cm}>{\raggedleft\arraybackslash}p{1.54cm}>{\raggedleft\arraybackslash}p{1.54cm}>{\raggedleft\arraybackslash}p{1.54cm}}
+\caption{Phase B: H2: UNSC-Mitgliedschaft und Rohstoffabhängigkeit — Ergebnisse (1992–2023)}\label{tab:phase_b_h2_ergebnisse}\\
+\toprule
+Ergebnis & Effekt & Schaetzer & Robuster\_SE & p\_Wert & N & Jahre & Laender
+ \\
+\midrule
+\endfirsthead
+\toprule
+Ergebnis & Effekt & Schaetzer & Robuster\_SE & p\_Wert & N & Jahre & Laender
+ \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{Fortsetzung auf der naechsten Seite}\\
+\endfoot
+\bottomrule
+\endlastfoot
+H2 Hauptmodell: Rohstoffsumme & unsc3:resource\_dep & -0.111 & 0.103 & 0.286 & 212 & 1992--2023 & 62 \\
+H2 Robustheit: Fuel-Exporte & unsc3:FuelExportPct & -0.224** & 0.098 & 0.024 & 213 & 1992--2023 & 63 \\
+H2 Robustheit: Mineral-Exporte & unsc3:MineralExportPct & 0.012 & 0.113 & 0.915 & 217 & 1992--2023 & 62 \\
+H2 Placebo: gesamte Exporte & unsc3:ExportGDP & -0.119 & 0.132 & 0.368 & 281 & 1992--2023 & 69 \\
+H2 Robustheit: IMF-Kreditbestand statt Nettoflüsse & unsc3:resource\_dep & -0.104 & 0.101 & 0.302 & 212 & 1992--2023 & 62 \\
+H2 Robustheit: berichteter IMF-Kreditbestand, fehlend ausgeschlossen & unsc3:resource\_dep & -0.104 & 0.101 & 0.302 & 212 & 1992--2023 & 62 \\
+H2 Robustheit: Rohstoffsumme winsorisiert (1./99. Perzentil) & unsc3:resource\_dep\_winsor & -0.111 & 0.103 & 0.285 & 212 & 1992--2023 & 62 \\
+H2 Robustheit: Zeitraum 1992-2008 & unsc3:resource\_dep & 0.274** & 0.104 & 0.012 & 112 & 1992--2007 & 48 \\
+H2 Robustheit: Zeitraum 2009-2023 & unsc3:resource\_dep & -0.377* & 0.202 & 0.072 & 88 & 2009--2023 & 44 \\
+\end{longtable}
+\noindent\footnotesize Koeffizienten der Hypothese, nicht die Koeffizienten aller Kontrollen. Heteroskedastizitaetskonsistente robuste Standardfehler. Signifikanz: * p<0.10, ** p<0.05, *** p<0.01.\par
+\end{landscape}
+\endgroup
+

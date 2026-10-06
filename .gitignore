@@ -21,3 +21,20 @@ Thumbs.db
 # R/Stata-spezifisch
 .RData
 .Rhistory
+# LaTeX-Build-Artefakte
+*.aux
+*.bbl
+*.bcf
+*.bcf-SAVE-ERROR
+*.bbl-SAVE-ERROR
+*.fdb_latexmk
+*.fls
+*.xdv
+*.run.xml
+*.synctex.gz
+*.synctex(busy)
+*.blx.bib
+*.out
+
+# Editor
+.vscode/

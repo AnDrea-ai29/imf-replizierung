@@ -1,0 +1,38 @@
+% LaTeX table fragment. Requires \usepackage[utf8]{inputenc}, \usepackage{booktabs,longtable,array}, and \usepackage{pdflscape}.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{landscape}
+\begin{longtable}{>{\raggedright\arraybackslash}p{4.8cm} r r r r}
+\caption{Phase B: H1: UNSC-Mitgliedschaft und Konditionalität — Modellvergleich (1992–2023)}\label{tab:phase_b_h1_modellvergleich}\\
+\toprule
+Kennzahl & Basis-FE & Vollmodell-FE & Länder- und Jahres-FE & DSV-GLS
+ \\
+\midrule
+\endfirsthead
+\toprule
+Kennzahl & Basis-FE & Vollmodell-FE & Länder- und Jahres-FE & DSV-GLS
+ \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{Fortsetzung auf der naechsten Seite}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Fokuseffekt & unsc3 & unsc3 & unsc3 & unsc3 \\
+Koeffizient & -0.454 & 0.144 & -0.933 & 0.046 \\
+Robuster Standardfehler & 1.854 & 2.816 & 1.920 & 1.422 \\
+p-Wert & 0.806 & 0.959 & 0.628 & 0.974 \\
+Beobachtungen & 514 & 282 & 281 & 282 \\
+Länder & 116 & 69 & 69 & 58 \\
+Länder mit unsc3 = 1 & 30 & 17 & 17 & 17 \\
+Jahre & 1992--2023 & 1992--2023 & 1992--2023 & 1992--2023 \\
+Länder-FE & Ja & Ja & Ja & Ja \\
+Jahres-FE & Nein & Nein & Ja & Nein \\
+Kontrollen & Laufzeit & DSV-Vollsatz & DSV-Vollsatz & DSV-Vollsatz \\
+\end{longtable}
+\noindent\footnotesize Koeffizienten der Hypothese, nicht die Koeffizienten aller Kontrollen. Heteroskedastizitaetskonsistente robuste Standardfehler. Signifikanz: * p<0.10, ** p<0.05, *** p<0.01.\par
+\end{landscape}
+\endgroup
+

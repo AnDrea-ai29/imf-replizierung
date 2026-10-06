@@ -24,6 +24,7 @@
    - [3.9 Zeitvariablen](#39-zeitvariablen)
    - [3.10 Externe Daten (WDI, Polity, DPI)](#310-externe-daten-wdi-polity-dpi)
    - [3.11 Dummy-Variablen](#311-dummy-variablen)
+   - [3.12 Variablen der eigenen Reproduktionspipeline](#312-variablen-der-eigenen-reproduktionspipeline)
 4. [Methodische Hinweise](#4-methodische-hinweise)
 5. [Datenpipeline](#5-datenpipeline)
 6. [Fehlende Werte & Korrekturen](#6-fehlende-werte--korrekturen)
@@ -267,7 +268,7 @@ Die Studie untersucht den Einfluss politischer Faktoren auf die **Strenge der IM
 
 ### 3.7 Scope-Variablen
 
-#### 7.1 Scope nach Bedingungstyp
+#### 7.1 Scope nach Bedingungstyp (Anzahl unterschiedlicher Policy-Areas)
 
 | Variable | Beschreibung | Berechnung | Typ |
 |----------|--------------|-------------|-----|
@@ -427,8 +428,8 @@ Die Studie untersucht den Einfluss politischer Faktoren auf die **Strenge der IM
 | Variable | Beschreibung | Label | Berechnung |
 |----------|--------------|-------|-------------|
 | `unsc` 	| Temporäres Mitglied im UN-Sicherheitsrat | `"Temporary member of the UN Security Council"` | MONA |
-| `unsc3` 	| UNSC-Mitgliedschaft (inkl. t-1) | `"Temporary member of the UN Security Council"` | `(unsc==1 | unsc_t0==1)` |
-| `unsc_t0` | UNSC-Mitgliedschaft (t-1) | – | `f.unsc` (forward) |
+| `unsc3` 	| UNSC-Mitgliedschaft (t oder t+1, Wahljahr inklusive -- DSV-Regel) | `"Temporary member of the UN Security Council"` | `(unsc==1 | unsc_t0==1)` |
+| `unsc_t0` | UNSC-Mitgliedschaft (t+1) | – | `f.unsc` (forward) |
 | `unsc_t1` | UNSC-Mitgliedschaft (t+1) | – | `(unsc[_n]==1 & unsc[_n+1]==1)` |
 | `unsc_t2` | UNSC-Mitgliedschaft (t-1) | – | `(unsc[_n]==1 & unsc[_n-1]==1)` |
 | `unsc_t3` | UNSC-Mitgliedschaft (t-1, nicht t) | – | `(unsc[_n-1]==1 & unsc[_n]~=1)` |
@@ -489,6 +490,65 @@ Die Studie untersucht den Einfluss politischer Faktoren auf die **Strenge der IM
 | `revstatus_0` | Summe aller Review-Status | Summe aller `revstatus_X` |
 
 ---
+
+---
+
+### 3.12 Variablen der eigenen Reproduktionspipeline
+
+Die folgenden Variablen sind **nicht Teil des Original-Datensatzes**. Sie werden in der eigenen Replikation für den erweiterten Zeitraum 1992–2025 neu aufgebaut und in `phase_b_panel_identical_measurement_1992_2025.csv` bzw. `controls_wdi_1990_2025.csv` geführt. Quellverzeichnis: `docs/data_sources_dep.md.txt`.
+
+#### 12.1 Kontrollpanel (`build_controls_wdi.R` → `controls_wdi_1990_2025.csv`)
+
+##### Neu bezogene Rohvariablen (WDI/DPI)
+
+| Variable | Quelle/Code | Beschreibung | Abgrenzung zum Original |
+|----------|-------------|--------------|--------------------------|
+| `NetUSAid` | DC.DAC.USAL.CD | US-Entwicklungshilfe, Nettoflüsse in US$ | Original nutzt `usaid` (andere Quelle) |
+| `nomGDP` | NY.GDP.MKTP.CD | BIP laufende US$ | Original `nomGDPUSD` = Faktorkosten-BIP (NY.GDP.FCST.CD) — anderer Indikator |
+| `imf_conc` | DT.NFL.IMFC.CD | Konzessionäre IMF-**Nettoflüsse**, US$ | Konzeptabweichung: Original misst Bestand, nicht Flüsse |
+| `imf_noconc` | DT.NFL.IMFN.CD | Nicht-konzessionäre IMF-Nettoflüsse, US$ | dito |
+| `ExportGDP` | NE.EXP.GNFS.ZS | Exporte, % BIP (Handelsoffenheit) | Nicht identisch zu `Openness` (NE.TRD.GNFS.ZS, Trade % GDP) |
+| `FuelExportPct` | TX.VAL.FUEL.ZS.UN | Treibstoffexporte, % Warenexporte | – |
+| `MineralExportPct` | TX.VAL.MMTL.ZS.UN | Erze-/Metall-Exporte, % Warenexporte | – |
+| `legelec` | DPI-2023 (`dpi_all.csv`) | Legislativwahljahr | Serie läuft nur bis 2023 (Original-Vintage: DPI 2006 rev4) |
+
+##### Neu berechnete Variablen
+
+| Variable | Berechnung | Beschreibung |
+|----------|------------|--------------|
+| `USaidGDP` | `100 * NetUSAid / nomGDP` | US-Hilfe, % BIP; Abweichung zur Originalformel (Faktorkosten-BIP, Aid in Mio.), Median-Abweichung −14 % |
+| `imf_conc_gdp` | `100 * imf_conc(NA→0) / nomGDP` | Konzessionäre IMF-Flüsse, % BIP; NA→0-Regel nach DSV-Konvention (txt2dta7.do Zeile 749–751) |
+| `imf_noconc_gdp` | `100 * imf_noconc(NA→0) / nomGDP` | Nicht-konzessionäre IMF-Flüsse, % BIP; dito |
+| `imf_sum_gdp` | `imf_conc_gdp + imf_noconc_gdp` | Summe beider IMF-Maße |
+| `resource_dep` | `FuelExportPct + MineralExportPct` | Rohstoffexportabhängigkeit; fehlende WDI-Werte bleiben NA |
+| `legelec_l` | `legelec` im Kalenderjahr t−1 | Konstruktion exakt nach `txt2dta7.do` |
+| `UseIMFCredGDP` | `100 * UseIMFCredit(NA→0) / nomGDP` | IMF-Kreditbestand (DT.DOD.DIMF.CD), % BIP; nur Robustheitsspezifikation (Bestand statt Nettoflüsse) |
+
+#### 12.2 UNSC (`create_unsc_correct.R`, `build_unsc_dsv_rule.R` → `unsc_dsv_rule_1946_2026.csv`)
+
+| Variable | Beschreibung |
+|----------|--------------|
+| `unsc` | Temporäre UNSC-Mitgliedschaft im Jahr t (Quelle: DPPA Peace Security Data Hub, nicht MONA wie im Original) |
+| `unsc3_dsv` | `1` bei temporärer Mitgliedschaft in Jahr t **oder t+1** (DSV-Regel, "election year included", verifiziert gegen `rebuild_conditionality_1992_2008.R`); im Phase-B-Panel als `unsc3` geführt. Handkorrekturen des Originals (AETH 1992, RUS 1995/1996/1999) werden nicht auf das Vollpanel angewandt |
+
+#### 12.3 Phase-B-Panel (`build_phase_b_identical_measurement.R` → `phase_b_panel_identical_measurement_1992_2025.csv`)
+
+| Variable | Berechnung | Beschreibung |
+|----------|------------|--------------|
+| `nrcondtype_all` | MONA-Zeilen je Land und Bewilligungsjahr summiert | Eine MONA-Zeile = eine Bedingung, keine nachträgliche Deduplizierung |
+| `nrquarterssmpl` | Maximale Programmlaufzeit des Land-Jahres in gerundeten 90-Tage-Quartalen (mind. 1) | Fenster 31.03.1992–31.12.2025; neu berechnet, nicht aus dem Original übernommen |
+| `avgcondtype_count` | `nrcondtype_all / nrquarterssmpl` | **Aktive Zielvariable**: Bedingungen pro Quartal; entspricht dem Original-`avgcondtype_all`, bewusst anders benannt |
+| `nrcntprogram` | `row_number()` je Land (chronologisch, Range 1–7 im Original) | Technischer Panel-Zeitindex: Zeitvariable `t` für `xtset idcnt nrcntprogram` und `xtgls … t(nrcntprogram) corr(ar1)` in den Tabellen S1–S3; macht das unausgeglichene Programm-Land-Jahr-Panel sequenziell adressierbar. Im Original-Skriptpaket nicht erzeugt (nur im finalen `.dta` enthalten) und **kein inhaltlicher Regressor** (nicht in Tabelle 2) |
+| `source` | `historical_DSV_MONA` / `current_Combined_ISO` | Herkunft der MONA-Zeilen; Quellvintage wechselt 2009 |
+
+#### 12.4 H4-Klassifikation und H4-Exploration
+
+| Variable | Berechnung | Beschreibung |
+|----------|------------|--------------|
+| `nrcondtype_all_h4`, `rohstoff_cond`, `stabil_cond` | Deterministische Textregel (`phase_a_definition_rules.R`) auf MONA-Bedingungsbeschreibungen | Klassifizierte Zähler; klassifikationsbasiertes H4 wird nicht mehr confirmatorisch ausgewertet |
+| `rohstoff_cond_share`, `stabil_cond_share` | Anteile an `nrcondtype_all` | – |
+| `classification_version` | Versionsmerkmal der Regel | Reproduzierbarkeit der Klassifikation |
+| `resource_dep_change_pp` | `resource_dep(t+3) − resource_dep(t)` | H4-Exploration (`phase_b_h4_exploration.R`), deskriptiv, Spearman-Korrelation |
 
 ---
 

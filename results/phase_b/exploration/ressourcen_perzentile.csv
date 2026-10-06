@@ -1,0 +1,21 @@
+"Ebene","n","Perzentil","Wert","Land_beim_Perzentil"
+"Laender (Mittel je Land)",104,0,0.1,"haiti (HTI)"
+"Laender (Mittel je Land)",104,0.05,0.32,"cape verde (CPV)"
+"Laender (Mittel je Land)",104,0.1,0.92,"ethiopia (ETH)"
+"Laender (Mittel je Land)",104,0.25,3.83,"philippines (PHL)"
+"Laender (Mittel je Land)",104,0.5,12.62,"tanzania (TZA)"
+"Laender (Mittel je Land)",104,0.75,38.61,"paraguay (PRY)"
+"Laender (Mittel je Land)",104,0.9,71.82,"zambia (ZMB)"
+"Laender (Mittel je Land)",104,0.95,84.61,"venezuela (VEN)"
+"Laender (Mittel je Land)",104,0.99,99.25,"ANGOLA (AGO)"
+"Laender (Mittel je Land)",104,1,99.64,"nigeria (NGA)"
+"Land-Jahre (Paneljahre)",396,0,0.01,
+"Land-Jahre (Paneljahre)",396,0.05,0.23,
+"Land-Jahre (Paneljahre)",396,0.1,0.6,
+"Land-Jahre (Paneljahre)",396,0.25,3.78,
+"Land-Jahre (Paneljahre)",396,0.5,11.81,
+"Land-Jahre (Paneljahre)",396,0.75,35.32,
+"Land-Jahre (Paneljahre)",396,0.9,65.96,
+"Land-Jahre (Paneljahre)",396,0.95,81.45,
+"Land-Jahre (Paneljahre)",396,0.99,98.68,
+"Land-Jahre (Paneljahre)",396,1,99.92,

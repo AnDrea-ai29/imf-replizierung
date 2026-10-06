@@ -1,8 +1,8 @@
-# Notizblatt: Beispiel für `code/analysis/hypothesen_original_basis.R`
+# Notizblatt: Beispiel für `code/phase_a/analysis/hypothesen_original_basis.R`
 
 ## 1) Skriptname
 
-- Datei: `code/analysis/hypothesen_original_basis.R`
+- Datei: `code/phase_a/analysis/hypothesen_original_basis.R`
 - Zweck: Schätzung der Hypothesen H1 bis H4 auf der Original-Zählbasis 1992–2008
 - Wichtig für: Reproduktion der Originalbasis und Test der Ressourcen-Hypothesen mit validierter Klassifikation
 
@@ -32,12 +32,12 @@ Wichtige Fragen:
 
 ## 4) Output-Dateien
 
-- `results/tables/hypothesen_original_basis.csv`
-- `results/models/model_origbasis_m1base.rds`
-- `results/models/model_origbasis_h1.rds`
-- `results/models/model_origbasis_h2.rds`
-- `results/models/model_origbasis_h4.rds`
-- `results/models/model_origbasis_h4_energie.rds`
+- `results/phase_a/tables/hypothesen_original_basis.csv`
+- `results/phase_a/models/model_origbasis_m1base.rds`
+- `results/phase_a/models/model_origbasis_h1.rds`
+- `results/phase_a/models/model_origbasis_h2.rds`
+- `results/phase_a/models/model_origbasis_h4.rds`
+- `results/phase_a/models/model_origbasis_h4_energie.rds`
 
 Wichtige Fragen:
 

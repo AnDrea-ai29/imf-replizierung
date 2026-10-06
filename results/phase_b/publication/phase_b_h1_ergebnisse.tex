@@ -1,0 +1,30 @@
+% LaTeX table fragment. Requires \usepackage[utf8]{inputenc}, \usepackage{booktabs,longtable,array}, and \usepackage{pdflscape}.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{landscape}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3.5cm}>{\raggedleft\arraybackslash}p{1.54cm}>{\raggedleft\arraybackslash}p{1.54cm}>{\raggedleft\arraybackslash}p{1.54cm}>{\raggedleft\arraybackslash}p{1.54cm}>{\raggedleft\arraybackslash}p{1.54cm}>{\raggedleft\arraybackslash}p{1.54cm}>{\raggedleft\arraybackslash}p{1.54cm}}
+\caption{Phase B: H1: UNSC-Mitgliedschaft und Konditionalität — Ergebnisse (1992–2023)}\label{tab:phase_b_h1_ergebnisse}\\
+\toprule
+Ergebnis & Effekt & Schaetzer & Robuster\_SE & p\_Wert & N & Jahre & Laender
+ \\
+\midrule
+\endfirsthead
+\toprule
+Ergebnis & Effekt & Schaetzer & Robuster\_SE & p\_Wert & N & Jahre & Laender
+ \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{Fortsetzung auf der naechsten Seite}\\
+\endfoot
+\bottomrule
+\endlastfoot
+H1 Hauptmodell: Bedingungen pro Quartal & unsc3 & -0.933 & 1.920 & 0.628 & 281 & 1992--2023 & 69 \\
+H1 Robustheit: IMF-Kreditbestand statt Nettoflüsse & unsc3 & -0.787 & 1.919 & 0.682 & 281 & 1992--2023 & 69 \\
+H1 Robustheit: berichteter IMF-Kreditbestand, fehlend ausgeschlossen & unsc3 & -0.787 & 1.919 & 0.682 & 281 & 1992--2023 & 69 \\
+\end{longtable}
+\noindent\footnotesize Koeffizienten der Hypothese, nicht die Koeffizienten aller Kontrollen. Heteroskedastizitaetskonsistente robuste Standardfehler. Signifikanz: * p<0.10, ** p<0.05, *** p<0.01.\par
+\end{landscape}
+\endgroup
+

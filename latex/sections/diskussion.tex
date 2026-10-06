@@ -1,0 +1,95 @@
+% Kapitel Diskussion der Hausarbeit
+% ----------------------------------------------------------------------
+% GERUEST-Konventionen: wie sections/theorie.tex (SLOT/NOTIZ/TODO).
+% Vor Abgabe muessen alle SLOT/NOTIZ/TODO-Marker aufgeloest sein.
+
+% SLOT D1 — Einordnung der Befunde (2-3 eigene Saetze)
+% Behauptung: den H1-Nullbefund im modernen Zeitraum (1992-2023) vor dem
+% Hintergrund des Originals einordnen (dort ca. 30 Prozent weniger
+% Konditionen). Moegliche Erklaerungen, abwaegen: veraenderte
+% Konditionalitaetspraxis nach 2008, zu kleine UNSC-Zellen (Power-Problem),
+% oder tatsaechlich nachlassende Geberlogik der Hauptanteilseigner.
+% WICHTIG: die Fuel-Export-Ausnahme (p = 0,024) nicht ueberbewerten —
+% eine einzige Spezifikation von vielen (Mineral-Variante p = 0,91,
+% Placebo gesamte Exporte p = 0,37). Leave-one-out existiert NUR fuer
+% die HAUPTinteraktion resource_dep (dort: Abhaengigkeit von PER/GAB);
+% fuer die Fuel-Spezifikation selbst liegt kein LOO-Befund vor.
+% NOTIZ (eigenes Phase-A-Ergebnis — staerkstes Argument hier):
+% Auf den ORIGINALDATEN gilt (s. docs/session_protokoll_2026-09-24.md
+% und Ergebnistabelle original_replication_zeitfenster; Zahlen vor
+% Abgabe gegen die Tabelle pruefen):
+%   1992-2001: unsc3 = -4,65 (p = 0,042) — Effekt signifikant.
+%   2002-2008: unsc3 = -1,86 (p = 0,52) — statistisch Null.
+% D.h. der publizierte Effekt wird von den 1990ern getragen und ist
+% ab 2002 selbst auf Originaldaten null. Der Phase-B-Nullbefund
+% (1992-2023) ist damit KEIN Replikationsfehler, sondern bildet einen
+% realen zeitlichen Rueckgang ab. Achtung fuer die Formulierung: Das
+% Originalpapier selbst berichtet KEINE Subperioden-Zerlegung — die
+% Einsicht stammt aus der eigenen Phase-A-Analyse und muss so
+% (als eigener Befund) zitiert werden, nicht DSV zugeschrieben werden.
+% ERGAENZUNG (direkter Differenztest, phase0_replikation_original.R):
+% Interaktion unsc3 x ab2002 — Basis: +2,54 (SE 2,74, p = 0,36);
+% Vollmodell: +5,21 (SE 5,42, p = 0,34); Tabelle
+% results/phase_a/tables/original_replication_zeitfenster_interaktion.csv.
+% Richtung wie erwartet (Effekt nach 2002 deutlich schwächer Richtung
+% Null), aber die Differenz ist auf dem kleinen Sample NICHT
+% signifikant. In der Arbeit ehrlich beides berichten: signifikante
+% Fruehperiode + Null spät + nicht-signifikanter Differenztest.
+% NOTIZ (Finanzkrise/IMF-Rueckkehr, verifiziert gegen Kentikelenis et al.
+% 2016 — alle drei Stellen auf ARTIKEL-S. 545, Tab.-1-Diskussion ca. S. 551):
+% - Mitte der 2000er: Nachfrage nach IMF-Krediten auf historischem Tief,
+%   Zweifel an der Zukunft des IMF (dort zitieren die Autoren Momani und
+%   Helleiner 2007 — Original NICHT in literatur.bib: entweder Bib-Eintrag
+%   + eigene Lektuere nachtragen ODER als Sekundaerzitat nur ueber
+%   Kentikelenis et al. laufen lassen).
+% - 2009: G-20-Zusagen von 750 Mrd. USD; 2009-2014 insgesamt 129 neue
+%   Kredite an 76 Laender (Artikel-S. 545).
+% - Post-2008: Konditionen-Median sinkt kurzfristig (von ca. 42 in
+%   1996-2007 auf 33-35), steigt bis 2014 wieder auf 44; Zahl aktiver
+%   Programme nimmt nach der Krisenspitze wieder ab.
+% Verwendung im Argument: Der Phase-B-Nullbefund ist KEIN Artefakt der
+% IMF-Inaktivitaet — auch in der Phase massiver Nachkrisen-Kreditvergabe
+% zeigt sich kein UNSC-Effekt im erweiterten Panel. Caveat: Nachkrisen-
+% programme unterscheiden sich in Typ und Zusammensetzung von den
+% BOP-Krisen der 1990er; die Einflusskauf-Logik war an deren geopolitische
+% Konstellation geknuepft (vgl. Originalpapier: Zimbabwe/Irak 1992).
+% Quellen: \parencite[TODO]{DreherPoliticsIMFConditionality2015},
+% \parencite[TODO]{KentikelenisIMFConditionalityDevelopment2016},
+% \parencite[TODO]{StubbsHowEvaluateEffects2020} (Endogenitaet,
+% Identifikation, Evaluationsproblematik).
+
+% SLOT D2 — Limitationen buendeln (2 eigene Saetze)
+% Behauptung: die Daten-/Klassifikationslimitationen (SLOT M1/M2 in
+% daten-methodik.tex) hier als Methodik-Diskussion zusammenfuehren, nicht
+% als reine Fehlerliste: was koennen die Modelle deshalb aussagen und was
+% nicht (deskriptiv-vorsichtig, keine kausale Lesart).
+
+% SLOT D3 — Abhaengigkeitstheoretische Lesart (1-2 eigene Saetze)
+% Behauptung: aus der Rahmung in theorie.tex (SLOT 4/5) folgt: ein
+% ausbleibendes "Entgegenkommen" fuer rohstoffreiche Laender (H2-Null,
+% H4-Null) spricht gegen eine Machtressourcen-Logik im modernen
+% Konditionalitaetsregime — oder dafuer, dass deren Mechanismus nach 2008
+% an Bedeutung verloren hat. Formulierung braucht Sorgfalt, weil H2/H4
+% nur explorativ getestet wurden.
+% Quellen: \parencite[TODO]{MuchhalaExaminingFeaturesEconomic2025},
+% \parencite[TODO]{AntunesDeOliveiraDependencyTheory2024}.
+% NOTIZ (fakultativ, 1 Satz): Auch auf der Outcome-Seite kein Muster —
+% Konditionalitaetsintensitaet korreliert nicht mit der Veraenderung
+% der Rohstoffexportabhaengigkeit t bis t+3 (Spearman rho = 0,039,
+% n = 333 Programm-Landjahre; h4_conditionality_resource_change_3y):
+% kein Beleg dafuer, dass Konditionalitaet Rohstofforientierung
+% systematisch auf- oder abbaut — in keine Richtung.
+
+\subsection{Beitrag der Arbeit}
+% SLOT D4 — Beitrag (2-3 eigene Saetze)
+% Behauptung: die Replikation uetraegt das DSV-Design auf den modernen
+% Zeitraum 1992-2023 und zeigt: der Originalbefund laesst sich nicht
+% ohne weiteres fortsetzen. Explorative H3/H4-Ergebnisse liefern
+% Hypothesen fuer Folgestudien (Kompositionshypothese konfirmatorisch
+% pruefen, sobald eine belastbarere Policy-Area-Klassifikation vorliegt).
+
+% SLOT D5 — Ausblick (1-2 eigene Saetze, optional)
+% Behauptung: konfirmatorische Erweiterungen nennen: eigene
+% Policy-Area-Klassifikation fuer post-2008-Bedingungen, groessere
+% Zahl UNSC-Fenster im Panel, alternativ IMF-Kreditbestand statt
+% Nettofluesse (bereits gerechnet, s. Robustheitstabelle).
