@@ -1,0 +1,32 @@
+% LaTeX table fragment. Requires \usepackage{booktabs,array}.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{center}
+\begin{tabular}{l r r r r}
+\toprule
+& \multicolumn{1}{c}{Basis-FE} & \multicolumn{1}{c}{Vollmodell-FE} & \multicolumn{1}{c}{L\"ander- und Jahres-FE} & \multicolumn{1}{c}{DSV-GLS} \\
+\midrule
+Fokuseffekt & unsc3:resource\_dep & unsc3:resource\_dep & unsc3:resource\_dep & unsc3:resource\_dep \\
+Koeffizient & 0.060 & $-$0.055 & $-$0.111 & $-$0.014 \\
+& (0.078) & (0.132) & (0.103) & (0.067) \\
+\midrule
+Kontrollen & Laufzeit & DSV-Vollsatz & DSV-Vollsatz & DSV-Vollsatz \\
+L\"ander-FE & Ja & Ja & Ja & Ja \\
+Jahres-FE & Nein & Nein & Ja & Nein \\
+\midrule
+Beobachtungen & 380 & 212 & 212 & 212 \\
+L\"ander & 104 & 62 & 62 & 51 \\
+L\"ander mit unsc3 = 1 & 27 & 16 & 16 & 16 \\
+Jahre & 1992--2023 & 1992--2023 & 1992--2023 & 1992--2023 \\
+\midrule
+R$^2$ (within) & 0.027 & 0.101 & 0.486 & -- \\
+F-Test (L\"ander-FE) & $<$0.001 & 0.100 & 0.021 & -- \\
+Wooldridge-Test & 0.747 & 0.261 & 0.064 & -- \\
+Breusch-Pagan-Test & $<$0.001 & $<$0.001 & $<$0.001 & -- \\
+\bottomrule
+\end{tabular}
+\captionof{table}{H2: UNSC-Mitgliedschaft und Rohstoffabh\"angigkeit — Modellvergleich (1992--2023)}\label{tab:h2_modellvergleich}
+\end{center}
+\noindent\footnotesize Robuste Standardfehler in Klammern. p-Werte der diagnostischen Tests. Die Zwei-Wege-FE-Spezifikation ist die vorab gew\"ahlte Hauptspezifikation. Kontrollen wie in Tabelle H1 (Fu\ss note). Die Jahr-FE absorbieren rund 38 Prozent der innerstaatlichen Variation (R$^2$ springt von 0{,}10 auf 0{,}49).\par
+\endgroup

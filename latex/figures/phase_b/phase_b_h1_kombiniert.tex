@@ -1,0 +1,32 @@
+% LaTeX table fragment. Requires \usepackage{booktabs,array}.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{center}
+\begin{tabular}{l r r r r}
+\toprule
+& \multicolumn{1}{c}{Basis-FE} & \multicolumn{1}{c}{Vollmodell-FE} & \multicolumn{1}{c}{L\"ander- und Jahres-FE} & \multicolumn{1}{c}{DSV-GLS} \\
+\midrule
+Fokuseffekt & unsc3 & unsc3 & unsc3 & unsc3 \\
+Koeffizient & $-$0.454 & 0.144 & $-$0.933 & 0.046 \\
+& (1.854) & (2.816) & (1.920) & (1.422) \\
+\midrule
+Kontrollen & Laufzeit & DSV-Vollsatz & DSV-Vollsatz & DSV-Vollsatz \\
+L\"ander-FE & Ja & Ja & Ja & Ja \\
+Jahres-FE & Nein & Nein & Ja & Nein \\
+\midrule
+Beobachtungen & 514 & 282 & 281 & 282 \\
+L\"ander & 116 & 69 & 69 & 58 \\
+L\"ander mit unsc3 = 1 & 30 & 17 & 17 & 17 \\
+Jahre & 1992--2023 & 1992--2023 & 1992--2023 & 1992--2023 \\
+\midrule
+R$^2$ (within) & 0.038 & 0.069 & 0.424 & -- \\
+F-Test (L\"ander-FE) & 0.001 & 0.183 & 0.009 & -- \\
+Wooldridge-Test & 0.819 & 0.464 & 0.091 & -- \\
+Breusch-Pagan-Test & $<$0.001 & $<$0.001 & $<$0.001 & -- \\
+\bottomrule
+\end{tabular}
+\captionof{table}{H1: UNSC-Mitgliedschaft und Konditionalit\"at — Modellvergleich (1992--2023)}\label{tab:h1_modellvergleich}
+\end{center}
+\noindent\footnotesize Robuste Standardfehler in Klammern. p-Werte der diagnostischen Tests. Die Zwei-Wege-FE-Spezifikation ist die vorab gew\"ahlte Hauptspezifikation. Kontrollen (DSV-Vollsatz): Programmlaufzeit (\texttt{nrquarterssmpl}), Wahljahr (\texttt{legelec\_l}), Schulden/BIP (\texttt{XDebtGNI}), Schuldendienst/BIP (\texttt{DebtServGNI}), Reserven (\texttt{ResXDebt}), Au\ss enhandel (\texttt{ExtBalGDP}), Staatsausgaben (\texttt{GFCFGDP}), US-Hilfe (\texttt{USaidGDP}), IMF-Kreditfl\"usse (\texttt{imf\_conc\_gdp}, \texttt{imf\_noconc\_gdp}). Die Jahr-FE absorbieren rund ein Drittel der innerstaatlichen Variation (R$^2$ springt von 0{,}07 auf 0{,}42) — die Konditionalit\"atspraxis ist stark epochal gepr\"agt. Diagnostik: \texttt{code/phase\_b/analysis/phase\_b\_diagnostik.R}.\par
+\endgroup

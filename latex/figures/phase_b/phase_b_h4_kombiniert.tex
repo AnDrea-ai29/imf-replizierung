@@ -1,0 +1,27 @@
+% LaTeX table fragment. Requires \usepackage{booktabs,array}.
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{center}
+\begin{tabular}{l r r r}
+\toprule
+& \multicolumn{1}{c}{Basis-FE} & \multicolumn{1}{c}{Vollmodell-FE} & \multicolumn{1}{c}{L\"ander- und Jahres-FE} \\
+\midrule
+Fokuseffekt & unsc3:resource\_dep & unsc3:resource\_dep & unsc3:resource\_dep \\
+Koeffizient & 6.61e-04 & 5.01e-05 & $-$1.93e-06 \\
+& (5.00e-04) & (7.02e-04) & (4.96e-04) \\
+\midrule
+Kontrollen & Laufzeit & DSV-Vollsatz & DSV-Vollsatz \\
+L\"ander-FE & Ja & Ja & Ja \\
+Jahres-FE & Nein & Nein & Ja \\
+\midrule
+Beobachtungen & 380 & 212 & 212 \\
+L\"ander & 104 & 62 & 62 \\
+L\"ander mit unsc3 = 1 & 27 & 16 & 16 \\
+Jahre & 1992--2023 & 1992--2023 & 1992--2023 \\
+\bottomrule
+\end{tabular}
+\captionof{table}{H4: Rohstoffanteil der IMF-Konditionalit\"at — Modellvergleich (1992--2023, explorativ)}\label{tab:h4_modellvergleich}
+\end{center}
+\noindent\footnotesize Robuste Standardfehler in Klammern. Die Analyse ist explorativ; die Klassifikation beruht auf einer deterministischen Textregel mit bekannter Unsicherheit. Diagnostische Tests werden nicht berichtet. Kontrollen wie in Tabelle H1.\par
+\endgroup
