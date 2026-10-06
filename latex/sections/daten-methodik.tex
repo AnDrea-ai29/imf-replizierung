@@ -79,6 +79,19 @@ Auch hier zeigen sich keine signifikanten Rohunterschiede; die UNSC-Zellen sind 
 
 \subsection{Messung und Modellstrategie}
 Hier die Operationalisierung, abhängige und unabhängige Variablen sowie Schätzmodell(e) beschreiben.
+% NOTIZ (R2-within-Interpretation, 2026-10-07):
+% Der Within-R2 der H1-Hauptspezifikation springt von 0,07 (ohne
+% Jahr-FE) auf 0,42 (mit Jahr-FE). Die Jahr-FE absorbieren also rund
+% ein Drittel der innerstaatlichen Variation — die
+% Konditionalitaetspraxis ist stark epochal gepraegt (Nachfragetief
+% 2008, Nachkrisen-Anstieg ab 2009, Euro-Krisenprogramme 2010-2013).
+% Das konsistentiert die Jahresreihen-Abbildung (konditionalitaet_
+% jahresreihe.png) und erklaert, WARUM der H1-Koeffizient nach
+% Kontrolle der Jahre null ist: Der vermeintliche UNSC-Effekt des
+% Originals fusste teilweise auf nicht kontrollierter Zeitvariation.
+% Die diagnostischen Tests (F-Test, Wooldridge, BP) rechtfertigen
+% die FE-Spezifikation und die robusten Standardfehler; Details
+% in der H1-Tabellenfussnote und phase_b_diagnostik.R.
 
 % TODO vor Abgabe: Formulierung
 Die saubere Reihenfolge in der Hausarbeit: H1 und H2 konfirmatorisch testen und als Ihre Ergebnisse berichten → die Quartils-Tabelle im Anhang oder in der Beschreibung der Daten als Kontext („die Programme rohstoffreicher Länder unterscheiden sich inhaltlich“) → und wenn Sie möchten, im Ausblick formulieren: „Für eine künftige Studie böte sich an, die Kompositionshypothese konfirmatorisch zu prüfen, sobald eine belastbarere Klassifikation vorliegt.“ Genau deshalb steht die Bemerkung auch schon so in daten-methodik.tex.

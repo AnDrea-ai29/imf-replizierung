@@ -31,7 +31,8 @@ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false, breaklinks=false,pdf
 \usepackage{graphicx}
 \usepackage{titling}
 \usepackage{csquotes}
-\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{rotating}
 \usepackage{longtable}
 \usepackage{array}
 \MakeOuterQuote{"}
@@ -150,17 +151,31 @@ right=3.5cm   % Rechter Rand
 	
 	\section{Appendix}
 	\onehalfspacing
-	\input{figures/phase_b/phase_b_h1_ergebnisse.tex}
-	\input{figures/phase_b/phase_b_h1_modellvergleich.tex}
-	\input{figures/phase_b/phase_b_h2_ergebnisse.tex}
-	\input{figures/phase_b/phase_b_h2_modellvergleich.tex}
-	\input{figures/phase_b/phase_b_h3_laenderprofile.tex}
-	\input{figures/phase_b/phase_b_h4_ergebnisse.tex}
-	\input{figures/phase_b/phase_b_h4_modellvergleich.tex}
+	% Jede Tabelle auf eigener Seite; Seiten bleiben Hochformat, die Tabelle ist um 90 Grad gedreht ("seitlich" lesbar).
+	\clearpage
+	\begin{sidewaystable}[p]
+		\input{figures/phase_b/phase_b_h1_kombiniert.tex}
+	\end{sidewaystable}
+	\clearpage
+	\begin{sidewaystable}[p]
+		\input{figures/phase_b/phase_b_h2_kombiniert.tex}
+	\end{sidewaystable}
+	\clearpage
+	% Vollstaendige H3-Laenderprofile (ca. 120 Zeilen, explorativ) aus Platzgruenden nicht im Anhang;
+	% einsehbar im Repository unter figures/phase_b/phase_b_h3_laenderprofile.tex
+	% (erzeugt von code/phase_b/analysis/export_phase_b_tables.R).
+	%\input{figures/phase_b/phase_b_h3_laenderprofile.tex}
+	\clearpage
+	\begin{sidewaystable}[p]
+		\input{figures/phase_b/phase_b_h4_kombiniert.tex}
+	\end{sidewaystable}
+	\clearpage
 	\input{figures/phase_b/phase_b_hypothesen_robustheit.tex}
-	\input{figures/phase_b/phase_b_modellvergleich.tex}
-	
-	
+	\clearpage
+	\begin{sidewaystable}[p]
+		\input{figures/phase_b/phase_b_modellvergleich.tex}
+	\end{sidewaystable}
+	\clearpage
 	
 	
 	

@@ -1,19 +1,5 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
-[1] Config.pm:331> INFO - Logfile is 'Vorlage.blg'
-[445] biber-MSWIN64:342> INFO - === 
-[633] Biber.pm:421> INFO - Reading 'Vorlage.bcf'
-[1008] Biber.pm:1002> INFO - Found 3 citekeys in bib section 0
-[1064] Biber.pm:4487> INFO - Processing section 0
-[1101] Biber.pm:4678> INFO - Looking for bibtex file 'literatur.bib' for section 0
-[1233] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1334] bibtex.pm:1519> INFO - Found BibTeX data source 'literatur.bib'
-[1516] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1516] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1516] Biber.pm:4307> INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
-[1516] Biber.pm:4313> INFO - No sort tailoring available for locale 'de-DE'
-[1552] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1552] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1552] Biber.pm:4307> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
-[1552] Biber.pm:4313> INFO - No sort tailoring available for locale 'de-DE'
-[1564] bbl.pm:676> INFO - Writing 'Vorlage.bbl' with encoding 'UTF-8'
-[1578] bbl.pm:779> INFO - Output to Vorlage.bbl
+[0] Config.pm:331> INFO - Logfile is 'Vorlage.blg'
+[371] biber-MSWIN64:342> INFO - === 
+[1373] Utils.pm:479> ERROR - Cannot find control file 'Vorlage.bcf'! - Did latex run successfully on your .tex file before you ran biber?
+[1373] Biber.pm:137> INFO - ERRORS: 1
